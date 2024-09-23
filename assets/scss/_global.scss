@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    font-size: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    line-height: 26px;
+    color: $body;
+    font-family: $pop;
+}
+
+// admin style start
+.admin-bar {
+    header {
+        top: 32px;
+
+        @include breakpoint(768) {
+            top: 46px;
+        }
+    }
+}
+
+.d-none {
+    display: none !important;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.align-center {
+    align-items: center;
+}
+.space-between {
+    justify-content: space-between;
+    gap: 10px;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-end {
+    justify-content: end;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.unstyle {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+.margin_bottom-0 {
+    margin-bottom: 0 !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+.mid-align {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.margin-0 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        margin: 0;
+    }
+}
+
+.m-auto {
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    width: 100%;
+}

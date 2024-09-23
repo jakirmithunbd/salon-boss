@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 26px;
+  color: #4f5b6d;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-bar header {
+  top: 32px;
+}
+@media only screen and (max-width: 768px) {
+  .admin-bar header {
+    top: 46px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.d-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+
+.justify-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.unstyle {
+  padding: 0;
+  margin: 0;
+}
+.unstyle li {
+  list-style: none;
+}
+
+.margin_bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.mid-align {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.margin-0 h1,
+.margin-0 h2,
+.margin-0 h3,
+.margin-0 h4,
+.margin-0 h5,
+.margin-0 h6,
+.margin-0 p,
+.margin-0 span {
+  margin: 0;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+}
