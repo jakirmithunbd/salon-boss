@@ -12,6 +12,7 @@ html {
     width: 100%;
     max-width: 100%;
     font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -20,10 +21,14 @@ body {
 }
 
 body {
-    font-size: 16px;
-    line-height: 26px;
-    color: $body;
+    @include font(17, 31);
     font-family: $pop;
+    color: $text;
+    background: #181818;
+
+    @include breakpoint(768) {
+        @include font(16, 30);
+    }
 }
 
 // admin style start
@@ -49,10 +54,10 @@ body {
 .text-center {
     text-align: center;
 }
-.text-right {
+.text-end {
     text-align: right !important;
 }
-.text-left {
+.text-start {
     text-align: left !important;
 }
 .align-center {
@@ -72,9 +77,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.flex-end {
-    justify-content: end;
 }
 .flex-col {
     flex-direction: column;
@@ -138,9 +140,98 @@ body {
 .m-auto {
     margin: 0 auto;
 }
+@media only screen and (min-width: 1025px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .hide-tab {
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    .text-center-mobile {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.hide
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $pop;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    span {
+        -webkit-text-fill-color: $primary;
+    }
+}
+
+h1,
+h2 {
+    @include font(50, 62);
+
+    @include breakpoint(1024) {
+        @include font(40, 52);
+    }
+    @include breakpoint(768) {
+        @include font(30, 42);
+    }
+}
+h3 {
+    @include font(24, 36);
+
+    @include breakpoint(1024) {
+        @include font(22, 34);
+    }
+    @include breakpoint(768) {
+        @include font(20, 32);
+    }
+
+}
+
+h4 {
+    @include font(22, 34);
+
+    @include breakpoint(1024) {
+        @include font(20, 32);
+    }
+    @include breakpoint(768) {
+        @include font(18, 30);
+    }
+}
 
 .container {
-    max-width: 1170px;
-    margin: 0 auto;
     width: 100%;
+    max-width: 1475px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+.hero-bg {
+    background-image: url(../images/Salon-Boss-hreo-bg.png);
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.sb-header-gutter {
+    .container{
+        padding-top: var(--header-height);
+    }
 }
