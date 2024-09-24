@@ -69,9 +69,11 @@
         .hero-image {
             width: 40%;
             flex-grow: 1;
+            padding-bottom: 70px;
 
             @include breakpoint(1024) {
                 width: 100%;
+                padding-bottom: 40px;
             }
     
             img {
@@ -100,8 +102,6 @@
         }
 
         .slick-track {
-            // display: flex;
-            // gap: 22px;
             
             .slick-slide {
                 width: fit-content !important;
@@ -204,4 +204,9 @@
             }
         }
     }
+}
+
+// Backed Service Style 
+.backed-service-section {
+
 }

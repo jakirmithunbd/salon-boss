@@ -32,6 +32,8 @@ $('.sb-service-slider-wrapper').slick({
     slidesToShow: 4,
     autoplay: true,
     arrows: false,
+    infinite: true,
+    speed: 200,
     responsive: [
       {
         breakpoint: 768,

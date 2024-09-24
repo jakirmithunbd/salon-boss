@@ -783,10 +783,12 @@ section:after {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding-bottom: 70px;
 }
 @media only screen and (max-width: 1024px) {
   .hero-home .container .hero-image {
     width: 100%;
+    padding-bottom: 40px;
   }
 }
 .hero-home .container .hero-image img {
