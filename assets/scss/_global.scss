@@ -160,11 +160,15 @@ svg {
     .hide-mobile {
         display: none !important;
     }
-    .text-center-mobile {
+}
+.text-center-mobile {
+    @include breakpoint(575) {
         text-align: center;
         justify-content: center;
+
     }
 }
+
 p {
     margin-bottom: 20px;
 }
@@ -338,8 +342,37 @@ section {
     }
 }
 
+.sb-simple-btn {
+    @include font(18, 27);
+    font-weight: 700;
+    color: $primary;
+    @extend .relative;
+    padding-right: 22px;
+    
+    &:after {
+        position: absolute;
+        content: "";
+        width: 17px;
+        height: 12px;
+        mask: url(../images/vectors/right-arrow.svg);
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: $primary;
+        right: 0;
+        top: calc(50% - 5px);
+        @extend .transition;
+    }
 
-.image-box {
+    &:hover {
+        &::after {
+            right: -10px;
+        }
+    }
+}
+
+
+.sb-image-box {
     @extend .d-flex, .space-between;
     gap: 20px;
 
@@ -349,7 +382,7 @@ section {
         gap: 10px;
     }
 
-    .image-box-image {
+    .sb-image-box-media {
         width: 25%;
 
         @include breakpoint(575) {
@@ -359,7 +392,7 @@ section {
             width: 100%;
         }
     }
-    .image-box-content{
+    .sb-image-box-content{
         width: 50%;
         flex-grow: 1;
 
@@ -380,35 +413,8 @@ section {
         p {
             margin-bottom: 10px;
         }
-        .image-box-btn {
-            @include font(18, 27);
-            font-weight: 700;
-            color: $primary;
-            @extend .relative;
-            padding-right: 22px;
-            
-            &:after {
-                position: absolute;
-                content: "";
-                width: 17px;
-                height: 12px;
-                mask: url(../images/vectors/right-arrow.svg);
-                mask-size: cover;
-                mask-repeat: no-repeat;
-                mask-position: center;
-                background-color: $primary;
-                right: 0;
-                top: calc(50% - 5px);
-                @extend .transition;
-            }
-
-            &:hover {
-                &::after {
-                    right: -10px;
-                }
-            }
-        }
     }
+
     &.image-position-right {
         flex-direction: row-reverse;
 
@@ -416,7 +422,7 @@ section {
             flex-direction: column;
         }
 
-        .image-box-content {
+        .sb-image-box-content {
             @extend .text-end;
 
             @include breakpoint(575) {
@@ -424,7 +430,7 @@ section {
             }
         }
 
-        .image-box-btn {
+        .sb-simple-btn {
             padding-right: inherit;
             padding-left: 22px;
 
@@ -445,9 +451,40 @@ section {
         flex-direction: column;
         align-items: center;
 
-        .image-box-content {
+        .sb-image-box-content {
             text-align: center;
         }
     }
 
+}
+
+
+.sb-section-title {
+
+    h5 {
+        @include font(17, 29);
+        color: #FFEAB3;
+        font-weight: 700;
+        letter-spacing: 0.16px;
+        margin-bottom: 17px;
+    }
+    h3 {
+        @include font(48, 62);
+        -webkit-text-fill-color: $white;
+        margin-bottom: 17px;
+
+        @include breakpoint(1024) {
+            @include font(40, 52);
+        }
+        @include breakpoint(768) {
+            @include font(30, 42);
+        }
+    }
+    p {
+        @include font(18, 34);
+
+        @include breakpoint(768) {
+            @include font(16, 28);
+        }
+    }
 }

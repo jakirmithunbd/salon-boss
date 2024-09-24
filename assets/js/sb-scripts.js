@@ -25,33 +25,63 @@ if(common_header) {
 };
 
 
-// Service Slider 
-$('.sb-service-slider-wrapper').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 4,
-    autoplay: true,
-    arrows: false,
-    infinite: true,
-    speed: 200,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
+// Service Slider (Custom) 
+function initTextSlider(customSpeed) {
+    var slider = document.querySelector('.sb-service-slider'); 
+    var items = slider.getElementsByTagName('p'); 
+    var isPaused = false; 
+    var itemWidth = items[0].offsetWidth + 20; 
+    var sliderWidth = itemWidth * items.length; 
+
+    var innerSlider = document.createElement('div');
+    innerSlider.classList.add('inner-slider');
+
+    while (items.length) {
+        innerSlider.appendChild(items[0]);
+    }
+
+    slider.appendChild(innerSlider);
+
+    Object.assign(innerSlider.style, {
+        display: 'inline-flex',
+        whiteSpace: 'nowrap',
+        position: 'relative',
+    });
+
+    innerSlider.innerHTML += innerSlider.innerHTML; 
+
+    var position = 0;
+
+    function animateSlider() {
+        if (!isPaused) {
+            position -= 1; 
+
+            if (Math.abs(position) >= sliderWidth) {
+                position = 0;
+            }
+
+            innerSlider.style.transform = `translateX(${position}px)`;
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
+    }
+
+    var speed = customSpeed || 16;
+    var sliderInterval = setInterval(animateSlider, speed);
+
+    slider.addEventListener('mouseenter', function () {
+        isPaused = true;
+    });
+
+    slider.addEventListener('mouseleave', function () {
+        isPaused = false;
+    });
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            clearInterval(sliderInterval); 
+        } else {
+            sliderInterval = setInterval(animateSlider, speed); 
         }
-      }
-    ]
-  });
+    });
+}
+
+initTextSlider(30);
