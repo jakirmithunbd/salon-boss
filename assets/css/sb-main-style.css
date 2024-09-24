@@ -794,11 +794,20 @@ section:after {
   max-width: 606px;
 }
 
-.sb-service-slider ul {
+.sb-service-slider {
   background: #6FF2D8;
   padding: 22px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
-.sb-service-slider ul li {
+.sb-service-slider .inner-slider {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  white-space: nowrap;
+}
+.sb-service-slider p {
   background: #ffffff;
   color: #000000;
   font-size: 17px;
@@ -807,13 +816,7 @@ section:after {
   text-transform: uppercase;
   padding: 6px 10px;
   text-align: center;
-}
-.sb-service-slider ul .slick-track .slick-slide {
-  width: -webkit-fit-content !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  min-width: 60px;
-  margin: 0 11px;
+  margin: 0 22px 0 0;
 }
 
 .sb-service-policy-section {

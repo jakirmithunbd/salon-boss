@@ -84,31 +84,26 @@
 
 // Service slider style 
 .sb-service-slider {
+    background: $primary;
+    padding: 22px 0;
+    width: 100%;
+    overflow: hidden; 
+    position: relative; 
 
-    ul {
-        background: $primary;
-        padding: 22px 0;
+    .inner-slider {
+        display: inline-flex;
+        white-space: nowrap;
+    }
 
-        li {
-            background: $white;
-            color: $black;
-            @include font(17, 29);
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 6px 10px;
-            text-align: center;
-        }
-
-        .slick-track {
-            // display: flex;
-            // gap: 22px;
-            
-            .slick-slide {
-                width: fit-content !important;
-                min-width: 60px;
-                margin: 0 11px;
-            }
-        }
+    p {
+        background: $white;
+        color: $black;
+        @include font(17, 29);
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 6px 10px;
+        text-align: center;
+        margin: 0 22px 0 0;
     }
 }
 
