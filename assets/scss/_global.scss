@@ -24,11 +24,17 @@ body {
     @include font(17, 31);
     font-family: $pop;
     color: $text;
-    background: #181818;
+    background: #171717;
 
     @include breakpoint(768) {
         @include font(16, 30);
     }
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
 }
 
 // admin style start
@@ -159,8 +165,9 @@ body {
         justify-content: center;
     }
 }
-
-.hide
+p {
+    margin-bottom: 20px;
+}
 
 h1,
 h2,
@@ -170,6 +177,7 @@ h5,
 h6 {
     font-family: $pop;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 h1,
@@ -218,6 +226,21 @@ h4 {
     }
 }
 
+section {
+    @extend .relative;
+
+    &:after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        background-image: linear-gradient(transparent, #2C2C31, transparent);
+        z-index: -1;
+    }
+}
 .container {
     width: 100%;
     max-width: 1475px;
@@ -231,7 +254,200 @@ h4 {
     background-repeat: no-repeat;
 }
 .sb-header-gutter {
-    .container{
-        padding-top: var(--header-height);
+    padding-top: var(--header-height);
+}
+
+.sb-hero-content {
+
+    p {
+        @include font(18, 34);
+
+        @include breakpoint(768) {
+            @include font(16, 30);
+        }
     }
+}
+
+.sb-button {
+    width: fit-content;
+    height: 56px;
+    @include font(18, 20);
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 15px;
+    color: #070825;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 100px;
+    @extend .transition, .relative, .d-flex, .align-center;
+
+    @include breakpoint(575) {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    &.button-icon-phone {
+        &::after {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            top: calc(50% - 19px);
+            content: url(../images/vectors/phone-icon.svg);
+        }
+    }
+        
+    &.button-icon-scissor {
+        &::after {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            top: calc(50% - 19px);
+            content: url(../images/vectors/scissor-icon.svg);
+        }
+    }
+    &.icon-position-right {
+        padding-right: 64px;
+
+        @include breakpoint(575) {
+            padding: 15px;
+        }
+
+        &::after {
+            right: 15px;
+
+            @include breakpoint(575) {
+                position: inherit;
+                top: inherit;
+                right: inherit;
+            }
+        }
+    }
+    &.button-bg-green {
+        background: $primary;
+        
+        &:hover {
+            background: #FBDCD1;
+        }
+    }
+    &.button-bg-pink {
+        background: #FBDCD1;
+        
+        &:hover {
+            background: $primary;
+        }
+    }
+}
+
+
+.image-box {
+    @extend .d-flex, .space-between;
+    gap: 20px;
+
+    @include breakpoint(575) {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .image-box-image {
+        width: 25%;
+
+        @include breakpoint(575) {
+            width: 50%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .image-box-content{
+        width: 50%;
+        flex-grow: 1;
+
+        @include breakpoint(575) {
+            width: 100%;
+            text-align: center;
+        }
+
+        h4 {
+            @include font(24, 36);
+            font-weight: 600;
+            color: $white;
+
+            @include breakpoint(768) {
+                @include font(20, 32);
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .image-box-btn {
+            @include font(18, 27);
+            font-weight: 700;
+            color: $primary;
+            @extend .relative;
+            padding-right: 22px;
+            
+            &:after {
+                position: absolute;
+                content: "";
+                width: 17px;
+                height: 12px;
+                mask: url(../images/vectors/right-arrow.svg);
+                mask-size: cover;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                background-color: $primary;
+                right: 0;
+                top: calc(50% - 5px);
+                @extend .transition;
+            }
+
+            &:hover {
+                &::after {
+                    right: -10px;
+                }
+            }
+        }
+    }
+    &.image-position-right {
+        flex-direction: row-reverse;
+
+        @include breakpoint(575) {
+            flex-direction: column;
+        }
+
+        .image-box-content {
+            @extend .text-end;
+
+            @include breakpoint(575) {
+                text-align: center !important;
+            }
+        }
+
+        .image-box-btn {
+            padding-right: inherit;
+            padding-left: 22px;
+
+            &::after {
+                right: inherit;
+                left: 0;
+                transform: rotate(180deg);
+            }
+
+            &:hover {
+                &::after {
+                   left: -10px;
+                }
+            }
+        }
+    }
+    &.image-position-top {
+        flex-direction: column;
+        align-items: center;
+
+        .image-box-content {
+            text-align: center;
+        }
+    }
+
 }
