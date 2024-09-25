@@ -154,12 +154,12 @@ svg {
   cursor: pointer;
 }
 
-.transition, .sb-header .sb-main-header .menu-site ul li.sb-book-btn a, .sb-header .sb-main-header .menu-site ul li a, .sb-simple-btn:after, .sb-button {
+.transition, .sb-header .sb-main-header .menu-site ul li.sb-book-btn a, .sb-header .sb-main-header .menu-site ul li a, .sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.relative, .sb-simple-btn, .sb-button, section {
+.relative, .sb-card .sb-card-contents-wrapper, .sb-simple-btn, .sb-button, section {
   position: relative;
 }
 
@@ -570,6 +570,104 @@ section:after {
   }
 }
 
+.sb-card {
+  width: 510px;
+  padding-left: 70px;
+}
+@media only screen and (max-width: 575px) {
+  .sb-card {
+    padding-left: inherit;
+    padding-top: 70px;
+  }
+}
+.sb-card .sb-card-contents-wrapper {
+  padding: 10px 20px;
+  padding-bottom: 33px;
+  background-image: url(../images/Salon-Boss-card-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  gap: 25px;
+}
+@media only screen and (max-width: 575px) {
+  .sb-card .sb-card-contents-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+}
+.sb-card .sb-card-contents-wrapper .sb-card-image {
+  width: 100%;
+  max-width: 150px;
+  margin-left: -90px;
+}
+@media only screen and (max-width: 575px) {
+  .sb-card .sb-card-contents-wrapper .sb-card-image {
+    margin-left: inherit;
+    margin-top: -70px;
+  }
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media only screen and (max-width: 575px) {
+  .sb-card .sb-card-contents-wrapper .sb-card-content {
+    width: 100%;
+  }
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content h4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(61.02%, #171717), color-stop(76.61%, #2C2C31), color-stop(96.03%, #1B1B1C));
+  background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content h4 span {
+  font-size: 13px;
+  line-height: 20px;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content p {
+  font-size: 14px;
+  line-height: 25px;
+  color: #000000;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 5px;
+  text-align: center;
+}
+@media only screen and (max-width: 575px) {
+  .sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn {
+    bottom: 10px;
+  }
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn a {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn a:hover {
+  color: #6FF2D8;
+}
+
 .sb-header {
   overflow-x: clip;
   position: fixed;
@@ -860,10 +958,12 @@ section:after {
   padding: 6px 10px;
   text-align: center;
   margin: 0 22px 0 0;
+  border-radius: 5px;
+  min-width: 60px;
 }
 
 .sb-who-we-help {
-  margin-top: 200px;
+  margin: 200px 0 40px;
 }
 @media only screen and (max-width: 1024px) {
   .sb-who-we-help {
@@ -932,7 +1032,11 @@ section:after {
 }
 
 .services-overview {
-  margin-top: 200px;
+  background-image: url(../images/Salon-Boss-section-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 200px 0 40px;
 }
 @media only screen and (max-width: 1280px) {
   .services-overview {
@@ -949,8 +1053,30 @@ section:after {
     margin-top: 60px;
   }
 }
-.services-overview .sb-section-title {
+.services-overview .container {
+  max-width: 1680px;
+}
+.services-overview .container .sb-section-title {
   width: 100%;
   max-width: 840px;
   margin: 0 auto;
+}
+.services-overview .container .overview-card-wrapper {
+  margin-top: 90px;
+  -webkit-column-gap: 35px;
+     -moz-column-gap: 35px;
+          column-gap: 35px;
+  row-gap: 65px;
+}
+@media only screen and (max-width: 1024px) {
+  .services-overview .container .overview-card-wrapper {
+    row-gap: 40px;
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .services-overview .container .overview-card-wrapper {
+    row-gap: 25px;
+    margin-top: 30px;
+  }
 }

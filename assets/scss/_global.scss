@@ -488,3 +488,91 @@ section {
         }
     }
 }
+
+.sb-card {
+    width: 510px;
+    padding-left: 70px;
+
+    @include breakpoint(575) {
+        padding-left: inherit;
+        padding-top: 70px;
+    }
+
+    .sb-card-contents-wrapper {
+        padding: 10px 20px;
+        padding-bottom: 33px;
+        background-image: url(../images/Salon-Boss-card-bg.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+        gap: 25px;
+        @extend .relative;
+
+        @include breakpoint(575) {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 40px;
+        }
+
+        .sb-card-image {
+            width: 100%;
+            max-width: 150px;
+            margin-left: -90px;
+
+            @include breakpoint(575) {
+                margin-left: inherit;
+                margin-top: -70px;
+            }
+        }
+        .sb-card-content {
+            width: 50%;
+            flex-grow: 1;
+
+            @include breakpoint(575) {
+                width: 100%;
+            }
+
+            h4 {
+                @include font(20, 30);
+                font-weight: 700;
+                background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                span {
+                    @include font(13, 20);
+                }
+            }
+            p {
+                @include font(14, 25);
+                color: $black;
+            }
+            .sb-card-btn {
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom: 5px;
+                text-align: center;
+
+                @include breakpoint(575) {
+                    bottom: 10px;
+                }
+
+                a{
+                    @include font(16, 20);
+                    font-weight: 700;
+                    color: $white;
+                    text-align: center;
+                    text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+                    @extend .transition;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

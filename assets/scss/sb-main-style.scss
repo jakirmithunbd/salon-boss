@@ -106,12 +106,14 @@
         padding: 6px 10px;
         text-align: center;
         margin: 0 22px 0 0;
+        border-radius: 5px;
+        min-width: 60px;
     }
 }
 
 // Who We Help style 
 .sb-who-we-help {
-    margin-top: 200px;
+    margin: 200px 0 40px;
 
     @include breakpoint(1024) {
         margin-top: 100px;
@@ -174,8 +176,12 @@
 
 // Services Overview Style 
 .services-overview {
-    margin-top: 200px;
-
+    background-image: url(../images/Salon-Boss-section-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 200px 0 40px;
+    
     @include breakpoint(1280) {
         margin-top: 100px;
     }
@@ -186,10 +192,28 @@
         margin-top: 60px;
     }
 
-    .sb-section-title {
-        width: 100%;
-        max-width: 840px;
-        margin: 0 auto;
+    .container {
+        max-width: 1680px;
+
+        .sb-section-title {
+            width: 100%;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+        .overview-card-wrapper {
+            margin-top: 90px;
+            column-gap: 35px;
+            row-gap: 65px;
+
+            @include breakpoint(1024) {
+                row-gap: 40px;
+                margin-top: 50px;
+            }
+            @include breakpoint(575) {
+                row-gap: 25px;
+                margin-top: 30px;
+            }
+        }
     }
 
 }
