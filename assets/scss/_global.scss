@@ -96,6 +96,10 @@ svg {
 .flex-nowrap {
     flex-wrap: nowrap;
 }
+.row {
+    display: flex;
+    justify-content: space-between;
+}
 
 .unstyle {
     padding: 0;
@@ -507,6 +511,7 @@ section {
         background-repeat: no-repeat;
         border-radius: 30px;
         gap: 25px;
+        border: 1px solid $primary;
         @extend .relative;
 
         @include breakpoint(575) {
