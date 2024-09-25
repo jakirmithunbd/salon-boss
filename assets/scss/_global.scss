@@ -504,8 +504,8 @@ section {
 
     .sb-card-contents-wrapper {
         padding: 10px 20px;
-        padding-bottom: 33px;
-        background-image: url(../images/Salon-Boss-card-bg.png);
+        padding-bottom: var(--sb-card-btn-height);
+        background-image: url(../images/Salon-Boss-card-bg.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -513,13 +513,26 @@ section {
         gap: 25px;
         border: 1px solid $primary;
         @extend .relative;
+        z-index: 1;
 
         @include breakpoint(575) {
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            padding-bottom: 40px;
         }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: var(--sb-card-btn-height);
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(103.74deg, #7970E9 61.34%, #A08DF3 73.28%);
+            border-radius: 0 0 30px 30px;
+            z-index: -1;
+        }
+
 
         .sb-card-image {
             width: 100%;
@@ -558,12 +571,9 @@ section {
                 position: absolute;
                 width: 100%;
                 right: 0;
-                bottom: 5px;
+                bottom: 2px;
                 text-align: center;
-
-                @include breakpoint(575) {
-                    bottom: 10px;
-                }
+                padding: 0 30px;
 
                 a{
                     @include font(16, 20);
@@ -575,6 +585,83 @@ section {
 
                     &:hover {
                         color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.sb-card-large {
+        width: 100%;
+        max-width: 1145px;
+        margin: 0 auto;
+        padding-left: 130px;
+
+        @include breakpoint(768) {
+            padding-left: 0;
+            padding-top: 100px;
+        }
+
+        .sb-card-contents-wrapper {
+            background-image: url(../images/Salon-Boss-card-large-bg.png);
+            border: 1px solid $secondary;
+
+            @include breakpoint(768) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sb-card-image {
+                max-width: 280px;
+                margin-left: -140px;
+
+                @include breakpoint(768) {
+                    margin-left: 0;
+                    margin-top: -100px;
+                }
+
+            }
+            .sb-card-content {
+                width: 100%;
+                max-width: 610px;
+
+                h2 {
+                    margin: 5px;
+                }
+                h5 {
+                    @include font(16, 24);
+                    font-weight: 600;
+                    color: #fff;
+                }
+                p {
+                    color: #fff;
+                }
+                ul {
+                    gap: 10px;
+                    margin-bottom: 20px;
+
+                    li {
+                        a {
+                            background: $primary;
+                            color: #070825;
+                            padding: 5px;
+                            @include font(12, 18);
+                            font-weight: 600;
+                            border-radius: 100px;
+                            @extend .transition;
+
+                            &:hover {
+                                color: #fff;
+                                background: $secondary;
+                            }
+                        }
+
+                        &.active {
+                            a {
+                                color: #fff;
+                                background: $secondary;
+                            }
+                        }
                     }
                 }
             }

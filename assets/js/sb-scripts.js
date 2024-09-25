@@ -25,7 +25,7 @@ if(common_header) {
 };
 
 
-// Service Slider (Custom) 
+// Service Slider (Custom) start
 function initTextSlider(customSpeed) {
     var slider = document.querySelector('.sb-service-slider'); 
     var items = slider.getElementsByTagName('p'); 
@@ -83,5 +83,16 @@ function initTextSlider(customSpeed) {
         }
     });
 }
-
 initTextSlider(30);
+// Service Slider (Custom) end
+
+// Dynamic Sb Card height 
+const sb_cards = document.querySelectorAll('.sb-card');
+sb_cards.forEach(card => {
+    const sb_card_btn = card.querySelector('.sb-card-btn');
+
+    if (sb_card_btn) {
+        const sb_card_btn_height = sb_card_btn.clientHeight;
+        card.style.setProperty('--sb-card-btn-height', sb_card_btn_height + 10 + 'px');
+    }
+});
