@@ -1,0 +1,40 @@
+
+.sb-footer {
+    padding: 100px 0;
+
+    .sb-footer-top {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #102919;
+
+        .sb-row {
+
+            @include breakpoint(768) {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            .sb-footer-logo {
+
+                a {
+                    img {
+                        width: 100%;
+                        max-width: 112px;
+                    }
+                }
+            }
+            .ready-get-start {
+                gap: 50px;
+    
+                @include breakpoint(575) {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

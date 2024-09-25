@@ -168,7 +168,7 @@ svg {
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, .sb-card .sb-card-contents-wrapper, .sb-simple-btn, .sb-button, section {
+.relative, .sb-about .sb-row .sb-media, .sb-card .sb-card-contents-wrapper, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
   position: relative;
 }
 
@@ -414,6 +414,34 @@ section:after {
 }
 .sb-button.button-bg-pink:hover {
   background: #6FF2D8;
+}
+.sb-button.icon-position-left {
+  padding-left: 64px;
+}
+@media only screen and (max-width: 575px) {
+  .sb-button.icon-position-left {
+    padding-left: inherit;
+  }
+}
+.sb-button.icon-position-left:before {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: calc(50% - 19px);
+  left: 15px;
+  content: url(../images/vectors/phone-icon.svg);
+}
+@media only screen and (max-width: 575px) {
+  .sb-button.icon-position-left:before {
+    padding: 15px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-button.icon-position-left:before {
+    position: inherit;
+    top: inherit;
+    right: inherit;
+  }
 }
 
 .sb-simple-btn {
@@ -930,6 +958,48 @@ section:after {
   .sb-header.sb-mobile-menu-active .sb-main-header .menu-site {
     left: 25px;
   }
+}
+
+.sb-footer {
+  padding: 100px 0;
+}
+.sb-footer .sb-footer-top {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #102919;
+}
+@media only screen and (max-width: 768px) {
+  .sb-footer .sb-footer-top .sb-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+}
+.sb-footer .sb-footer-top .sb-row .sb-footer-logo a img {
+  width: 100%;
+  max-width: 112px;
+}
+.sb-footer .sb-footer-top .sb-row .ready-get-start {
+  gap: 50px;
+}
+@media only screen and (max-width: 575px) {
+  .sb-footer .sb-footer-top .sb-row .ready-get-start {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+}
+.sb-footer .sb-footer-top .sb-row .ready-get-start h4 {
+  margin: 0;
 }
 
 .hero-home {
