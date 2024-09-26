@@ -233,7 +233,9 @@ h4 {
         @include font(18, 30);
     }
 }
-
+.width-fit {
+    width: fit-content;
+}
 section {
     @extend .relative;
 
