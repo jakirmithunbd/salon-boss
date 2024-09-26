@@ -7,7 +7,7 @@
 // Home Hero Style 
 
 .hero-home {
-    margin-top: 90px;
+    margin-top: var(--header-height);
 
     @include breakpoint(1024) {
         margin-top: 60px;
