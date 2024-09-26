@@ -171,7 +171,7 @@ svg {
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, .sb-card .sb-card-contents-wrapper, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
+.relative, .sb-about .sb-row .sb-media, .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2, .sb-card .sb-card-contents-wrapper, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
   position: relative;
 }
 
@@ -764,6 +764,52 @@ section:after {
 }
 .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2 {
   margin: 5px;
+  padding-right: 70px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2 {
+    padding-right: 56px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2 {
+    padding-right: 43px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2 {
+    font-size: 26px;
+    line-height: 36px;
+    padding-right: 36px;
+  }
+}
+.sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2:after {
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: 70px;
+  background-image: url(../images/Salon-Boss-star-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2:after {
+    width: 56px;
+    height: 56px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2:after {
+    width: 43px;
+    height: 43px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h2:after {
+    width: 36px;
+    height: 36px;
+  }
 }
 .sb-card.sb-card-large .sb-card-contents-wrapper .sb-card-content h5 {
   font-size: 16px;

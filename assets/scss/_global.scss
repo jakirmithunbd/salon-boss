@@ -656,6 +656,43 @@ section {
 
                 h2 {
                     margin: 5px;
+                    padding-right: 70px;
+                    @extend .relative;
+
+                    @include breakpoint(1024) {
+                        padding-right: 56px;
+                    }
+                    @include breakpoint(768) {
+                        padding-right: 43px;
+                    }
+                    @include breakpoint(575) {
+                        @include  font(26, 36);
+                        padding-right: 36px;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        width: 70px;
+                        height: 70px;
+                        background-image: url(../images/Salon-Boss-star-icon.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+
+                        @include breakpoint(1024) {
+                            width: 56px;
+                            height: 56px;
+                        }
+                        @include breakpoint(768) {
+                            width: 43px;
+                            height: 43px;
+                        }
+                        @include breakpoint(575) {
+                            width: 36px;
+                            height: 36px;
+                        }
+                    }
                 }
                 h5 {
                     @include font(16, 24);
