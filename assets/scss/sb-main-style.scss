@@ -211,6 +211,9 @@
             column-gap: 35px;
             row-gap: 65px;
 
+            @include breakpoint(1420) {
+                column-gap: 20px;
+            }
             @include breakpoint(1024) {
                 row-gap: 40px;
                 margin-top: 50px;
@@ -218,6 +221,17 @@
             @include breakpoint(575) {
                 row-gap: 25px;
                 margin-top: 30px;
+            }
+            .sb-card {
+                width: 26%;
+                flex-grow: 1;
+
+                @include breakpoint(1280) {
+                    width: 40%;
+                }
+                @include breakpoint(880) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -377,6 +391,10 @@
     @include breakpoint(768) {
         margin-top: 60px;
     }
+
+    .sb-card {
+        max-width: 1020px;
+    }
 }
 
 
@@ -465,7 +483,7 @@
 
 // Single service content style 
 .sb-single-service-content {
-    margin-top: 90px;
+    margin: 90px 0 40px;
 
     @include breakpoint(1024) {
         margin-top: 60px;
@@ -497,15 +515,11 @@
 
         @include breakpoint(1024) {
             margin-top: 50px;
+            row-gap: 50px;
         }
         @include breakpoint(768) {
             margin-top: 40px;
         }
-
-        @include breakpoint(1024) {
-            row-gap: 50px;
-        }
-
         .sb-image-box {
             width: 40%;
             flex-grow: 1;
@@ -526,6 +540,64 @@
         }
         @include breakpoint(768) {
             margin-top: 40px;
+        }
+    }
+}
+
+
+// Case Studies style 
+.sb-case-studies {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .container {
+        max-width: 1680px;
+
+        .sb-section-title {
+            width: 100%;
+            max-width: 920px;
+            margin: 0 auto;
+    
+            p {
+                @include font(16, 30);
+                color: #DCCCF6;
+    
+                strong {
+                    color: #fff;
+                }
+            }
+        }
+    
+        .sb-case-studies-card-list  {
+            margin-top: 80px;
+            column-gap: 20px;
+            row-gap: 50px;
+
+            @include breakpoint(1024) {
+                margin-top: 50px;
+                row-gap: 30px;
+            }
+            @include breakpoint(768) {
+                margin-top: 30px;
+            }
+    
+            .sb-case-sudies-item {
+                width: 26%;
+                flex-grow: 1;
+
+                @include breakpoint(1024) {
+                    width: 40%;
+                }
+                @include breakpoint(768) {
+                    width: 100%;
+                }
+            }
         }
     }
 }

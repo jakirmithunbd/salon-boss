@@ -525,44 +525,45 @@ section {
 
 // Card style 
 .sb-card {
-    width: 510px;
-    padding-left: 70px;
+    width: 100%;
+    margin-left: 70px;
+    padding: 10px 20px;
+    padding-bottom: var(--sb-card-btn-height);
+    background-image: url(../images/Salon-Boss-card-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    border: 1px solid $primary;
+    @extend .relative;
+    z-index: 1;
+    
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: var(--sb-card-btn-height);
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(103.74deg, #7970E9 61.34%, #A08DF3 73.28%);
+        border-radius: 0 0 30px 30px;
+        z-index: -1;
+    }
 
     @include breakpoint(575) {
-        padding-left: inherit;
-        padding-top: 70px;
+        margin-left: 0;
+        margin-top: 70px;
     }
 
     .sb-card-contents-wrapper {
-        padding: 10px 20px;
-        padding-bottom: var(--sb-card-btn-height);
-        background-image: url(../images/Salon-Boss-card-bg.jpg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 30px;
         gap: 25px;
-        border: 1px solid $primary;
-        @extend .relative;
-        z-index: 1;
-
+        
         @include breakpoint(575) {
             flex-direction: column;
             align-items: center;
             gap: 10px;
         }
 
-        &::after {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: var(--sb-card-btn-height);
-            left: 0;
-            bottom: 0;
-            background: linear-gradient(103.74deg, #7970E9 61.34%, #A08DF3 73.28%);
-            border-radius: 0 0 30px 30px;
-            z-index: -1;
-        }
 
 
         .sb-card-image {
@@ -626,12 +627,12 @@ section {
     }
 
     &.image-position-right {
-        padding-left: inherit;
-        padding-right: 70px;
+        margin: 0;
+        margin-right: 70px;
 
         @include breakpoint(575) {
-            padding-right: inherit;
-            padding-top: 70px;
+            margin: 0;
+            margin-top: 70px;
         }
 
         .sb-card-contents-wrapper {
@@ -662,9 +663,9 @@ section {
         }
     }
     &.image-position-top {
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: 70px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 70px;
 
         .sb-card-contents-wrapper {
             flex-direction: column;
@@ -687,9 +688,9 @@ section {
         }
     }
     &.image-position-top-left {
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: 70px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 70px;
 
         .sb-card-contents-wrapper {
             flex-direction: column;
@@ -717,9 +718,9 @@ section {
         }
     }
     &.image-position-top-right {
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: 70px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 70px;
 
         .sb-card-contents-wrapper {
             flex-direction: column;
@@ -749,18 +750,16 @@ section {
 
     &.sb-card-filled-bg {
         width: 100%;
-        max-width: 1145px;
-        margin: 0 auto;
-        padding-left: 130px;
+        margin-left: 130px;
+        border: 1px solid $secondary;
+        background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
 
         @include breakpoint(768) {
-            padding-left: 0;
-            padding-top: 100px;
+            margin-left: 0;
+            margin-top: 100px;
         }
 
         .sb-card-contents-wrapper {
-            background-image: url(../images/Salon-Boss-card-large-bg.png);
-            border: 1px solid $secondary;
 
             @include breakpoint(768) {
                 flex-direction: column;
@@ -825,13 +824,13 @@ section {
         }
 
         &.image-position-right {
-            padding-left: inherit;
-            padding-right: 130px;
+            margin-left: 0;
+            margin-right: 130px;
 
             @include breakpoint(768) {
-                padding-left: 0;
-                padding-right: 0;
-                padding-top: 100px;
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 100px;
             }
 
             .sb-card-contents-wrapper {
@@ -851,8 +850,8 @@ section {
             }
         }
         &.image-position-top {
-            padding-right: 0;
-            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
 
             .sb-card-contents-wrapper {
 
@@ -868,8 +867,8 @@ section {
 
         }
         &.image-position-top-left {
-            padding-right: 0;
-            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
             
             .sb-card-contents-wrapper {
 
@@ -900,8 +899,8 @@ section {
 
         }
         &.image-position-top-right {
-            padding-right: 0;
-            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
             
             .sb-card-contents-wrapper {
 
@@ -933,4 +932,48 @@ section {
         }
     }
 
+    // Case studies item style 
+    &.sb-case-sudies-item {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 !important;
+        
+        .sb-card-contents-wrapper {
+            padding: 0;
+
+            .sb-card-image {
+                padding: 25px 40px;
+                max-width: 100%;
+                margin: 0 !important;
+                background-image: url(../images/Salon-Boss-card-bg.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border-radius: 30px 30px 0 0;
+
+                @include breakpoint(1024) {
+                    padding: 20px;
+                }
+            }
+            .sb-card-content {
+                max-width: 100%;
+                padding: 25px 30px 35px;
+                text-align: start;
+
+                @include breakpoint(1024) {
+                    padding: 20px;
+                }
+                @include breakpoint(575) {
+                    padding: 20px 10px;
+                }
+
+                h3 {
+                    @include font(18, 22);
+                    font-weight: 700;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
