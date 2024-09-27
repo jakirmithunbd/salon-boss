@@ -16,12 +16,12 @@
         margin-top: 40px;
     }
 
-    .container {
+    .sb-row {
         gap: 80px;
 
         @include breakpoint(1024) {
             flex-wrap: wrap;
-            grid-area: 50px;
+            gap: 50px;
         }
 
         .sb-hero-content {
@@ -33,7 +33,11 @@
             }
             
             h1 {
-                -webkit-text-fill-color: $white;
+                color: $white;
+
+                span {
+                    -webkit-text-fill-color: $primary;
+                }
             }
 
             .sb-buttons {
@@ -243,7 +247,7 @@
         }
 
         .sb-section-title{
-            width: 51%;
+            width: 53%;
             flex-grow: 1;
 
             @include breakpoint(1024) {
@@ -294,7 +298,7 @@
             }
         }
         .sb-media{
-            width: 44%;
+            width: 42%;
             flex-grow: 1;
             margin-top: 80px;
             margin-left: 50px;

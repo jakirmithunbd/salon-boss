@@ -190,13 +190,12 @@ h6 {
 
 h1,
 h2,
-h3 {
-    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+h3,
+h4 {
     span {
-        -webkit-text-fill-color: $primary;
+        background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 
@@ -278,6 +277,7 @@ section {
     }
 }
 
+// Button style 
 .sb-button {
     width: fit-content;
     height: 56px;
@@ -404,7 +404,7 @@ section {
     }
 }
 
-
+// Image Box style 
 .sb-image-box {
     @extend .d-flex, .space-between;
     gap: 20px;
@@ -491,7 +491,7 @@ section {
 
 }
 
-
+// Section title style 
 .sb-section-title {
 
     h5 {
@@ -522,6 +522,7 @@ section {
     }
 }
 
+// Card style 
 .sb-card {
     width: 510px;
     padding-left: 70px;
@@ -590,6 +591,9 @@ section {
 
                 span {
                     @include font(13, 20);
+                    background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
             }
             p {
@@ -620,7 +624,129 @@ section {
         }
     }
 
-    &.sb-card-large {
+    &.image-position-right {
+        padding-left: inherit;
+        padding-right: 70px;
+
+        @include breakpoint(575) {
+            padding-right: inherit;
+            padding-top: 70px;
+        }
+
+        .sb-card-contents-wrapper {
+            flex-direction: row-reverse;
+
+            @include breakpoint(575) {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .sb-card-image {
+                margin-left: inherit;
+                margin-right: -90px;
+
+                @include breakpoint(575) {
+                    margin-right: inherit;
+                    margin-top: -70px;
+                }
+            }
+            .sb-card-content {
+                text-align: end;
+
+                @include breakpoint(575) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &.image-position-top {
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: 70px;
+
+        .sb-card-contents-wrapper {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            @include breakpoint(575) {
+                gap: 10px;
+            }
+
+            .sb-card-image {
+                margin-left: inherit;
+                margin-right: inherit;
+                margin-top: -70px;
+            }
+            .sb-card-content {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    &.image-position-top-left {
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: 70px;
+
+        .sb-card-contents-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+
+            @include breakpoint(575) {
+                gap: 10px;
+                align-items: center;
+            }
+
+            .sb-card-image {
+                margin-left: inherit;
+                margin-right: inherit;
+                margin-top: -70px;
+            }
+            .sb-card-content {
+                width: 100%;
+                text-align: start;
+                
+                @include breakpoint(575) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &.image-position-top-right {
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: 70px;
+
+        .sb-card-contents-wrapper {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+
+            @include breakpoint(575) {
+                gap: 10px;
+                align-items: center;
+            }
+
+            .sb-card-image {
+                margin-left: inherit;
+                margin-right: inherit;
+                margin-top: -70px;
+            }
+            .sb-card-content {
+                width: 100%;
+                text-align: end;
+                
+                @include breakpoint(575) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &.sb-card-filled-bg {
         width: 100%;
         max-width: 1145px;
         margin: 0 auto;
@@ -656,43 +782,7 @@ section {
 
                 h2 {
                     margin: 5px;
-                    padding-right: 70px;
-                    @extend .relative;
-
-                    @include breakpoint(1024) {
-                        padding-right: 56px;
-                    }
-                    @include breakpoint(768) {
-                        padding-right: 43px;
-                    }
-                    @include breakpoint(575) {
-                        @include  font(26, 36);
-                        padding-right: 36px;
-                    }
-
-                    &:after {
-                        position: absolute;
-                        content: "";
-                        width: 70px;
-                        height: 70px;
-                        background-image: url(../images/Salon-Boss-star-icon.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-
-                        @include breakpoint(1024) {
-                            width: 56px;
-                            height: 56px;
-                        }
-                        @include breakpoint(768) {
-                            width: 43px;
-                            height: 43px;
-                        }
-                        @include breakpoint(575) {
-                            width: 36px;
-                            height: 36px;
-                        }
-                    }
+                    color: $primary;
                 }
                 h5 {
                     @include font(16, 24);
@@ -732,5 +822,114 @@ section {
                 }
             }
         }
+
+        &.image-position-right {
+            padding-left: inherit;
+            padding-right: 130px;
+
+            @include breakpoint(768) {
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 100px;
+            }
+
+            .sb-card-contents-wrapper {
+
+                .sb-card-image {
+                    margin-left: inherit;
+                    margin-right: -140px;
+
+                    @include breakpoint(768) {
+                        margin-right: inherit;
+                    }
+                }
+
+                .sb-card-content {
+                    text-align: center;
+                }
+            }
+        }
+        &.image-position-top {
+            padding-right: 0;
+            padding-left: 0;
+
+            .sb-card-contents-wrapper {
+
+                .sb-card-image {
+                    margin-right: inherit;
+                    margin-left: inherit;
+                    margin-top: -80px;
+                }
+                .sb-card-content {
+                    max-width: 100%;
+                }
+            }
+
+        }
+        &.image-position-top-left {
+            padding-right: 0;
+            padding-left: 0;
+            
+            .sb-card-contents-wrapper {
+
+                @include minbreakpoint(769) {
+                    align-items: flex-start;
+                }
+                .sb-card-image {
+                    margin-right: inherit;
+                    margin-left: inherit;
+                    margin-top: -80px;
+                }
+                .sb-card-content {
+                    max-width: 100%;
+
+                    @include breakpoint(768) {
+                        text-align: center;
+                    }
+
+                    ul {
+                        justify-content: start;
+
+                        @include breakpoint(768) {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+        }
+        &.image-position-top-right {
+            padding-right: 0;
+            padding-left: 0;
+            
+            .sb-card-contents-wrapper {
+
+                @include minbreakpoint(769) {
+                    align-items: flex-end;
+                }
+                .sb-card-image {
+                    margin-right: inherit;
+                    margin-left: inherit;
+                    margin-top: -80px;
+                }
+                .sb-card-content {
+                    max-width: 100%;
+
+                    @include breakpoint(768) {
+                        text-align: center;
+                    }
+
+                    ul {
+                        justify-content: flex-end;
+
+                        @include breakpoint(768) {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+        }
     }
+
 }
