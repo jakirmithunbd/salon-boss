@@ -4,17 +4,10 @@
 @import './footer';
 
 
+// ********** Home Page Style *********** //
 // Home Hero Style 
-
 .hero-home {
-    margin-top: var(--header-height);
-
-    @include breakpoint(1024) {
-        margin-top: 60px;
-    }
-    @include breakpoint(768) {
-        margin-top: 40px;
-    }
+    margin-top: 30px;
 
     .sb-row {
         gap: 80px;
@@ -34,6 +27,15 @@
             
             h1 {
                 color: $white;
+                @include font(65, 84);
+
+                @include breakpoint (1024) {
+                    @include font(50, 62);
+                }
+
+                @include breakpoint (768) {
+                    @include font(40, 52);
+                }
 
                 span {
                     -webkit-text-fill-color: $primary;
@@ -362,6 +364,7 @@
     }
 }
 
+// Resource Center style 
 .resource-center-section {
     margin: 200px 0 40px;
 
@@ -373,5 +376,156 @@
     }
     @include breakpoint(768) {
         margin-top: 60px;
+    }
+}
+
+
+
+// ********** Single Service Page Style *********** //
+
+// Single service Hero Style 
+.hero-single-service {
+    margin-top: 150px;
+    padding-bottom: 100px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .sb-row {
+        gap: 50px;
+
+        @include breakpoint(1024) {
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+
+        .sb-hero-content {
+
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1200) {
+                width: 48%;
+            }
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            h1 {
+                color: $white;
+                @include font(60, 72);
+
+                @include breakpoint (1024) {
+                    @include font(50, 62);
+                }
+
+                @include breakpoint (768) {
+                    @include font(40, 52);
+                }
+            }
+            .sb-buttons {
+                gap: 18px;
+
+                @include breakpoint(768) {
+                    flex-direction: column;
+                }
+            }
+        }
+        .hero-image {
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1200) {
+                width: 30%;
+            }
+
+            @include breakpoint(1024) {
+                width: 100%;
+                padding-bottom: 20px;
+            }
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Single service content style 
+.sb-single-service-content {
+    margin-top: 90px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .single-service-section-title {
+        width: 100%;
+        max-width: 910px;
+        margin: 0 auto;
+
+        h2 {
+            background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            @include font(16, 30);
+            color: #fff;
+        }
+    }
+    .single-service-img-box-list {
+        margin-top: 85px;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        row-gap: 30px;
+
+        @include breakpoint(1024) {
+            margin-top: 50px;
+        }
+        @include breakpoint(768) {
+            margin-top: 40px;
+        }
+
+        @include breakpoint(1024) {
+            row-gap: 50px;
+        }
+
+        .sb-image-box {
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+    }
+    .sb-buttons {
+        margin-top: 70px;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 20px;
+
+        @include breakpoint(1024) {
+            margin-top: 50px;
+        }
+        @include breakpoint(768) {
+            margin-top: 40px;
+        }
     }
 }
