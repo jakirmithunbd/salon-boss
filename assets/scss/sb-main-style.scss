@@ -380,7 +380,7 @@
 
 // Resource Center style 
 .resource-center-section {
-    margin: 200px 0 40px;
+    margin: 150px 0 40px;
 
     @include breakpoint(1280) {
         margin-top: 100px;
@@ -451,6 +451,11 @@
 
                 @include breakpoint (768) {
                     @include font(40, 52);
+                }
+                span {
+                    &:first-child {
+                        -webkit-text-fill-color: $primary;
+                    }
                 }
             }
             .sb-buttons {
@@ -563,6 +568,10 @@
             width: 100%;
             max-width: 920px;
             margin: 0 auto;
+
+            h2 {
+                color: $primary;
+            }
     
             p {
                 @include font(16, 30);
@@ -596,6 +605,112 @@
                 }
                 @include breakpoint(768) {
                     width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Free Audits style 
+.sb-free-seo-audit {
+    margin: 155px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+    }
+
+    .sb-card {
+        max-width: 1020px;
+    }
+}
+
+// SB Frist Step style
+.sb-first-step {
+    margin: 140px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+    }
+
+    .container {
+        max-width: 1040px;
+
+        .sb-row {
+            gap: 25px;
+
+            @include breakpoint(1240) {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .sb-first-step-card {
+                background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                border: 1px solid $secondary;
+                border-radius: 30px;
+                padding: 30px 25px;
+
+                @include breakpoint(575) {
+                    padding: 20px 10px;
+                }
+                img {
+                    width: 100%;
+                    max-width: 230px;
+                    margin: 0 auto;
+                }
+                h3 {
+                    @include font(34, 51);
+                    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @include breakpoint(1024) {
+                        @include font(26, 38);
+                    }
+
+                    @include breakpoint(768) {
+                        @include font(22, 34);
+                    }
+                }
+                p {
+                    @include font(16, 25);
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+                .sb-button {
+                    width: 100%;
+                    max-width: 380px;
+                    margin: 0 auto;
+                    @extend .flex-center;
+                    gap: 6px;
+
+                    &::before {
+                        position: inherit;
+                        top: inherit;
+                        left: inherit;
+                    }
+                }
+            }
+            .sb-first-step-right-side-casrd-list {
+                gap: 45px;
+
+                @include breakpoint(1240) {
+                    flex-wrap: nowrap;
+                    gap: 20px;
+                }
+                @include breakpoint(880) {
+                    flex-wrap: wrap;
                 }
             }
         }
