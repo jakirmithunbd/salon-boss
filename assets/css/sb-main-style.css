@@ -54,7 +54,7 @@ svg {
   display: none !important;
 }
 
-.d-flex, .sb-about .sb-row .sb-media, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list, .sb-who-we-help .sb-row .sb-section-title .sb-media, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form, .sb-header .sb-main-header .sb-menu-side ul, .sb-header .sb-main-header .hamburger-menu, .sb-header .sb-main-header .sb-logo-side .sb-logo, .sb-image-box {
+.d-flex, .sb-about .sb-row .sb-media, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list, .sb-who-we-help .sb-row .sb-section-title .sb-media, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form, .sb-header .sb-main-header .sb-menu-side ul, .sb-header .sb-main-header .hamburger-menu, .sb-header .sb-main-header .sb-logo-side .sb-logo, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price, .sb-image-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +65,7 @@ svg {
   display: grid;
 }
 
-.text-center {
+.text-center, .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item {
   text-align: center;
 }
 
@@ -81,6 +81,18 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.align-start, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.align-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .space-between, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form, .sb-image-box {
@@ -114,7 +126,7 @@ svg {
           justify-content: center;
 }
 
-.flex-col, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list {
+.flex-col, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -165,8 +177,8 @@ svg {
   cursor: pointer;
 }
 
-.transition, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
-.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a, .sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn a, .sb-simple-btn:after, .sb-button {
+.transition, .sb-package .container .package-include p a, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
+.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a, .sb-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -254,7 +266,7 @@ h4 span {
 h1,
 h2 {
   font-size: 50px;
-  line-height: 62px;
+  line-height: 66px;
 }
 @media only screen and (max-width: 1024px) {
   h1,
@@ -609,6 +621,9 @@ section:after {
     line-height: 28px;
   }
 }
+.sb-section-title p strong {
+  color: #fff;
+}
 
 .sb-card {
   width: 100%;
@@ -620,7 +635,7 @@ section:after {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 30px;
-  border: 1px solid #6FF2D8;
+  border: 0.5px solid #6FF2D8;
   z-index: 1;
 }
 .sb-card::after {
@@ -873,7 +888,7 @@ section:after {
 .sb-card.sb-card-filled-bg {
   width: 100%;
   margin-left: 130px;
-  border: 1px solid #766EE8;
+  border: 0.5px solid #766EE8;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(61.02%, #171717), color-stop(76.61%, #2C2C31), color-stop(96.03%, #1B1B1C));
   background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
 }
@@ -1049,6 +1064,107 @@ section:after {
             justify-content: center;
   }
 }
+.sb-card.sb-service-card::after {
+  background: transparent !important;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-image {
+  max-width: 200px;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h2 {
+  font-size: 34px;
+  line-height: 50px;
+  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h2 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h3 {
+  font-size: 24px;
+  line-height: 36px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(61.02%, #171717), color-stop(76.61%, #2C2C31), color-stop(96.03%, #1B1B1C));
+  background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h3 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h3 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content p {
+  font-size: 16px;
+  line-height: 25px;
+  color: #000;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn {
+  padding: 5px 30px 15px;
+  padding-left: 120px;
+}
+@media only screen and (max-width: 1200px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn {
+    padding-left: 30px;
+  }
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price h5 {
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+  margin: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price h5 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price h5 span {
+  color: #766EE8;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price .sb-setup-fee {
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn {
+  color: #fff;
+  background: #000;
+  padding: 6px 20px;
+  border-radius: 30px;
+}
+.sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn:hover {
+  background: #766EE8;
+}
+.sb-card.sb-service-card.image-position-top .sb-card-contents-wrapper .sb-card-content .sb-card-btn, .sb-card.sb-service-card.image-position-top-left .sb-card-contents-wrapper .sb-card-content .sb-card-btn, .sb-card.sb-service-card.image-position-top-right .sb-card-contents-wrapper .sb-card-content .sb-card-btn, .sb-card.sb-service-card.image-position-right .sb-card-contents-wrapper .sb-card-content .sb-card-btn {
+  padding-left: 30px;
+}
 .sb-card.sb-case-sudies-item {
   padding-top: 0;
   padding-left: 0;
@@ -1201,6 +1317,43 @@ section:after {
 }
 .common-hero .sb-row .hero-image img {
   width: 100%;
+}
+
+.sb-faq {
+  margin: 150px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-faq {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-faq {
+    margin-top: 40px;
+  }
+}
+.sb-faq .sb-faq-section-title h2 {
+  font-size: 45px;
+  line-height: 60px;
+  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-faq .sb-faq-section-title h2 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-faq .sb-faq-section-title h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+  display: none;
 }
 
 .sb-header {
@@ -2272,21 +2425,16 @@ section:after {
 .sb-case-studies .container {
   max-width: 1680px;
 }
-.sb-case-studies .container .sb-section-title {
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-}
 .sb-case-studies .container .sb-section-title h2 {
   color: #6FF2D8;
 }
 .sb-case-studies .container .sb-section-title p {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
   font-size: 16px;
   line-height: 30px;
   color: #DCCCF6;
-}
-.sb-case-studies .container .sb-section-title p strong {
-  color: #fff;
 }
 .sb-case-studies .container .sb-case-studies-card-list {
   margin-top: 80px;
@@ -2457,5 +2605,195 @@ section:after {
 @media only screen and (max-width: 1024px) {
   .hero-reviews .sb-row {
     gap: 50px;
+  }
+}
+
+.sb-reputation-solutions {
+  margin: 90px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-reputation-solutions {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-reputation-solutions {
+    margin-top: 40px;
+  }
+}
+.sb-reputation-solutions .container {
+  max-width: 1680px;
+}
+.sb-reputation-solutions .container .sb-section-title {
+  width: 100%;
+  max-width: 1005px;
+  margin: 0 auto;
+}
+.sb-reputation-solutions .container .sb-section-title h2 {
+  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sb-reputation-solutions .container .sb-section-title p {
+  font-size: 16px;
+  line-height: 30px;
+}
+.sb-reputation-solutions .container .sb-reputation-review-list {
+  padding-top: 50px;
+  gap: 26px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-reputation-solutions .container .sb-reputation-review-list {
+    padding-top: 30px;
+    gap: 15px;
+  }
+}
+.sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item {
+  padding: 35px 20px 0;
+  border: 1px solid #6FF2D8;
+  border-radius: 30px;
+  width: 26%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item {
+    padding: 25px 20px 0;
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item {
+    padding: 25px 10px 0;
+  }
+}
+.sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item img {
+  width: 100%;
+  max-width: 250px;
+}
+.sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item h3 {
+  margin: 10px 0 15px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item h3 {
+    margin: 5px 10px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+.sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item p {
+  color: #fff;
+}
+
+.sb-package {
+  margin: 150px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-package {
+    margin-top: 80px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-package {
+    margin-top: 50px;
+  }
+}
+.sb-package .container {
+  max-width: 1640px;
+}
+.sb-package .container .sb-package-list {
+  -webkit-column-gap: 70px;
+     -moz-column-gap: 70px;
+          column-gap: 70px;
+  row-gap: 40px;
+}
+@media only screen and (max-width: 1280px) {
+  .sb-package .container .sb-package-list {
+    -webkit-column-gap: 40px;
+       -moz-column-gap: 40px;
+            column-gap: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-package .container .sb-package-list {
+    row-gap: 30px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-package .container .sb-package-list {
+    row-gap: 20px;
+  }
+}
+.sb-package .container .sb-package-list .sb-service-card {
+  width: 40%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-package .container .sb-package-list .sb-service-card {
+    width: 100%;
+  }
+}
+.sb-package .container .package-include {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding-top: 85px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-package .container .package-include {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-package .container .package-include {
+    padding-top: 30px;
+  }
+}
+.sb-package .container .package-include h4 {
+  font-size: 24px;
+  line-height: 36px;
+  color: #6FF2D8;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-package .container .package-include h4 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+.sb-package .container .package-include p {
+  font-size: 16px;
+  line-height: 30px;
+}
+.sb-package .container .package-include p a {
+  color: #766EE8;
+  text-decoration: underline;
+}
+.sb-package .container .package-include p a:hover {
+  color: #6FF2D8;
+}
+.sb-package .container .package-include .sb-buttons {
+  padding-top: 30px;
+  gap: 18px;
+}
+@media only screen and (max-width: 768px) {
+  .sb-package .container .package-include .sb-buttons {
+    padding-top: 15px;
   }
 }

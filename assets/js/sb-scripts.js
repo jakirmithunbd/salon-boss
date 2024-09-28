@@ -96,3 +96,51 @@ sb_cards.forEach(card => {
         card.style.setProperty('--sb-card-btn-height', sb_card_btn_height + 'px');
     }
 });
+
+
+
+
+// Faq start 
+(function ($) {
+    $(document).ready(function () {
+        function sbFaqToggle() {
+            const frequentlyQs = document.querySelectorAll(".sb-faq-item");
+
+            const questionTitle = document.querySelectorAll(".sb-faq-question");
+
+            const answerTitle = document.querySelectorAll(".sb-faq-answer");
+
+            if (frequentlyQs) {
+                $(frequentlyQs[0]).addClass("open-answer");
+                $(answerTitle[0]).show();
+
+                frequentlyQs.forEach((item, i) => {
+                    $(questionTitle[i]).click(function () {
+                        answerTitle.forEach((answer, index) => {
+                            if (i !== index && $(answer).is(":visible")) {
+                                $(answer).slideUp(300);
+                                $(frequentlyQs[index]).removeClass(
+                                    "open-answer"
+                                );
+                            }
+                        });
+
+                        if ($(answerTitle[i]).is(":hidden")) {
+                            $(answerTitle[i]).slideDown(300);
+                            $(item).addClass("open-answer");
+                        } else {
+                            $(answerTitle[i]).slideUp(300);
+                            $(item).removeClass("open-answer");
+                        }
+                    });
+                });
+            }
+        }
+
+        function sbFaqOnLoad() {
+            sbFaqToggle();
+        }
+
+        window.addEventListener("load", sbFaqOnLoad);
+    });
+})(jQuery);

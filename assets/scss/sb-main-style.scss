@@ -526,21 +526,17 @@
         max-width: 1680px;
 
         .sb-section-title {
-            width: 100%;
-            max-width: 920px;
-            margin: 0 auto;
-
+            
             h2 {
                 color: $primary;
             }
-    
+            
             p {
+                width: 100%;
+                max-width: 920px;
+                margin: 0 auto;
                 @include font(16, 30);
                 color: #DCCCF6;
-    
-                strong {
-                    color: #fff;
-                }
             }
         }
     
@@ -688,6 +684,173 @@
 
         @include breakpoint(1024) {
             gap: 50px;
+        }
+    }
+}
+
+// Reputation Solution 
+
+.sb-reputation-solutions {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .container {
+        max-width: 1680px;
+
+        .sb-section-title {
+            width: 100%;
+            max-width: 1005px;
+            margin: 0 auto;
+    
+            h2 {
+                background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            p {
+                @include font(16, 30);
+            }
+        }
+        .sb-reputation-review-list {
+            padding-top: 50px;
+            gap: 26px;
+    
+            @include breakpoint(1024) {
+                padding-top: 30px;
+                gap: 15px;
+            }
+    
+            .sb-reputation-review-item {
+                padding: 35px 20px 0;
+                border: 1px solid $primary;
+                border-radius: 30px;
+                @extend .text-center;
+                width: 26%;
+                flex-grow: 1;
+    
+                @include breakpoint(1024) {
+                    padding: 25px 20px 0;
+                    width: 40%;
+                }
+                @include breakpoint(768) {
+                    width: 100%;
+                }
+                @include breakpoint(575) {
+                    padding: 25px 10px 0;
+                }
+    
+                img {
+                    width: 100%;
+                    max-width: 250px;
+                }
+                h3 {
+                    margin: 10px 0 15px;
+                    @include font(24, 36);
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+    
+                    @include breakpoint(1024) {
+                       margin: 5px 10px;
+                       @include font(20, 32);
+                    }
+                }
+                p {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// Sb Package style 
+.sb-package {
+    margin: 150px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 80px;
+    }
+    @include breakpoint(768) {
+        margin-top: 50px;
+    }
+
+    .container {
+        max-width: 1640px;
+
+        .sb-package-list {
+            column-gap: 70px;
+            row-gap: 40px;
+
+            @include breakpoint(1280) {
+                column-gap: 40px;
+            }
+            @include breakpoint(768) {
+                row-gap: 30px;
+            }
+            @include breakpoint(575) {
+                row-gap: 20px;
+            }
+
+            .sb-service-card {
+                width: 40%;
+                flex-grow: 1;
+
+                @include breakpoint(1024) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .package-include {
+            width: 100%;
+            max-width: 1060px;
+            margin: 0 auto;
+            padding-top: 85px;
+
+            @include breakpoint(1024) {
+                padding-top: 50px;
+            }
+            @include breakpoint(768) {
+                padding-top: 30px;
+            }
+
+            h4 {
+                @include font(24, 36);
+                color: $primary;
+
+                @include breakpoint(1024) {
+                    @include font(20, 32);
+                }
+            }
+            p {
+                @include font(16, 30);
+
+                a {
+                    color: $secondary;
+                    text-decoration: underline;
+                    @extend .transition;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+            .sb-buttons {
+                padding-top: 30px;
+                gap: 18px;
+
+                @include breakpoint(768) {
+                    padding-top: 15px;
+                }
+            }
         }
     }
 }

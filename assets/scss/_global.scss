@@ -69,6 +69,12 @@ svg {
 .align-center {
     align-items: center;
 }
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
 .space-between {
     justify-content: space-between;
     gap: 10px;
@@ -201,7 +207,7 @@ h4 {
 
 h1,
 h2 {
-    @include font(50, 62);
+    @include font(50, 66);
 
     @include breakpoint(1024) {
         @include font(40, 52);
@@ -519,6 +525,10 @@ section {
         @include breakpoint(768) {
             @include font(16, 28);
         }
+
+        strong {
+            color: #fff;
+        }
     }
 }
 
@@ -533,7 +543,7 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 30px;
-    border: 1px solid $primary;
+    border: 0.5px solid $primary;
     @extend .relative;
     z-index: 1;
     
@@ -751,7 +761,7 @@ section {
     &.sb-card-filled-bg {
         width: 100%;
         margin-left: 130px;
-        border: 1px solid $secondary;
+        border: 0.5px solid $secondary;
         background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
 
         @include breakpoint(768) {
@@ -932,6 +942,110 @@ section {
         }
     }
 
+    &.sb-service-card {
+
+        &::after {
+            background: transparent !important;
+        }
+
+        .sb-card-contents-wrapper {
+            .sb-card-image {
+                max-width: 200px;
+            }
+            .sb-card-content {
+                h2 {
+                    @include font(34, 50);
+                    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-bottom: 0;
+
+                    @include breakpoint(1024) {
+                        @include font(28, 42);
+                    }
+                    @include breakpoint(768) {
+                        @include font(24, 36);
+                    }
+                }
+                h3 {
+                    @include font(24, 36);
+                    background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-bottom: 5px;
+
+                    @include breakpoint(1024) {
+                        @include font(20, 32);
+                    }
+                    @include breakpoint(768) {
+                        @include font(18, 30);
+                    }
+                }
+
+                p {
+                    @include font(16, 25);
+                    color: #000;
+                }
+                .sb-card-btn {
+                    padding: 5px 30px 15px;
+                    padding-left: 120px;
+
+                    @include breakpoint(1200) {
+                        padding-left: 30px;
+                    }
+                    .sb-service-price {
+                        @extend .d-flex, .flex-col, .align-start;
+                        h5 {
+                            @include font(24, 36);
+                            color: $black;
+                            margin: 0;
+
+                            @include breakpoint(1024) {
+                                @include font(20, 30);
+                            }
+                            @include breakpoint(575) {
+                                @include font(18, 28);
+                            }
+
+                            span {
+                                color: $secondary
+                            }
+                        }
+                        .sb-setup-fee {
+                            @include font(12, 18);
+                            color: $black;
+                        }
+                    }
+                    .sb-service-card-btn {
+                        color: #fff;
+                        background: #000;
+                        padding: 6px 20px;
+                        border-radius: 30px;
+                        @extend .transition;
+
+                        &:hover {
+                            background: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.image-position-top,
+        &.image-position-top-left,
+        &.image-position-top-right,
+        &.image-position-right {
+            .sb-card-contents-wrapper {
+                .sb-card-content {
+                    .sb-card-btn {
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+
     // Case studies item style 
     &.sb-case-sudies-item {
         padding-top: 0;
@@ -1062,6 +1176,44 @@ section {
     
             img {
                 width: 100%;
+            }
+        }
+    }
+}
+
+// FAQ Style 
+.sb-faq {
+    margin: 150px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+    
+    .sb-faq-section-title {
+
+        h2 {
+            @include font(45, 60);
+            background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+    
+            @include breakpoint(1024) {
+                @include font(36, 50);
+            }
+            @include breakpoint(768) {
+                @include font(28, 40);
+            }
+        }
+    }
+    .sb-questions-wrapper {
+
+        .sb-faq-item {
+
+            .sb-faq-answer {
+                display: none;
             }
         }
     }
