@@ -1,10 +1,22 @@
 
 .sb-footer {
-    padding: 100px 0;
+    margin-top: 200px;
+    background-color: transparent;
+    background-image: linear-gradient(#21212400, #7A71EA);
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+    }
 
     .sb-footer-top {
         padding-bottom: 30px;
-        border-bottom: 1px solid #102919;
+        border-bottom: 1px solid #000;
 
         .sb-row {
 
@@ -29,10 +41,225 @@
                     flex-direction: column;
                     align-items: center;
                     gap: 20px;
+                    width: 100%;
                 }
 
                 h4 {
                     margin: 0;
+                }
+            }
+        }
+    }
+    .sb-main-footer {
+        padding: 40px 0 30px;
+
+        @include breakpoint(1200) {
+            padding: 30px 0;
+        }
+
+        .sb-row {
+            gap: 20px;
+
+            @include breakpoint(1200) {
+                flex-wrap: wrap;
+            }
+
+            .sb-footer-about,
+            .sb-footer-Company,
+            .sb-footer-Services,
+            .sb-footer-subscribe-follow {
+                width: 20%;
+                flex-grow: 1;
+
+                @include breakpoint(768) {
+                    width: 40%;
+                }
+                @include breakpoint(575) {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                h4 {
+                    @include font(16, 24);
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    color: #fff;
+                    margin-bottom: 17px;
+
+                    @include breakpoint(575) {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .sb-footer-about {
+
+                @include breakpoint(1200) {
+                    width: 100%;
+                }
+
+                p {
+                    @include font(13, 20);
+                    font-weight: 400;
+                    color: #C8C8C8;
+                }
+            }
+            .sb-footer-Company,
+            .sb-footer-Services {
+
+                @include breakpoint(1200) {
+                    justify-content: flex-start;
+                }
+                @include breakpoint(768) {
+                    justify-content: center;
+                }
+
+                ul {
+                    @extend .unstyle;
+
+                    li {
+                        a {
+                            @include font(16, 30);
+                            font-weight: 400;
+                            color: #C8C8C8;
+                            @extend .transition;
+
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+            .sb-footer-subscribe-follow {
+                width: 30%;
+
+                @include breakpoint(1200) {
+                    width: 40%;
+                }
+                @include breakpoint(768) {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 25px;
+                }
+                @include breakpoint(575) {
+                    margin-top: 0;
+                }
+
+                p {
+                    @include font(16, 34);
+                    color: #C8C8C8;
+                    margin-bottom: 10px;
+                }
+                form {
+                    background: #EDEDED;
+                    border: 2px solid #EDEDED;
+                    border-radius: 100px;
+                    @extend .d-flex, .space-between;
+
+                    input {
+                        @include font(16, 34);
+                        font-weight: 400;
+                        color: #979797;
+                        padding: 6px 10px 6px 30px;
+                        background: #EDEDED;
+                        border-radius: 100px 0 0 100px;
+                        width: 50%;
+                        flex-grow: 1;
+                    }
+
+                    .submit-button {
+                        @include font(18, 27);
+                        font-weight: 600;
+                        color: #fff;
+                        background: $secondary;
+                        width: 100%;
+                        max-width: 144px;
+                        min-width: 110px;
+                        height: 50px;
+                        border-radius: 100px;
+                        cursor: pointer;
+                        @extend .flex-center, .transition;
+
+                        &:hover {
+                            background: $black;
+                        }
+                    }
+                }
+                .sb-social-icons {
+                    margin-top: 25px;
+
+                    ul {
+                        gap: 10px;
+
+                        @include breakpoint(768) {
+                            justify-content: center;
+                        }
+
+                        li {
+
+                            a {
+                                width: 36px;
+                                height: 36px;
+                                background: #F3F3F31C;
+                                border-radius: 50%;
+                                @extend .flex-center, .transition;
+
+                                &:hover {
+                                    background: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .sb-footer-bottom {
+        background: #03040580;
+        padding: 12px 0;
+
+        .sb-row {
+            gap: 20px;
+
+            @include breakpoint(1024) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .copy-right-text {
+
+                p {
+                    margin: 0;
+                    @include font(15, 22);
+                    font-family: "Mulish", sans-serif;
+                    font-weight: 500;
+                    color: #fff;
+                }
+            }
+            .sb-footer-menu-bottom {
+                ul {
+                    gap: 23px;
+
+                    @include breakpoint(1024) {
+                        justify-content: center
+                    }
+                    @include breakpoint(575) {
+                        gap: 12px;
+                    }
+    
+                    li {
+                        a {
+                            @extend .d-flex, .transition;
+                            @include font(14, 21);
+                            font-weight: 500;
+                            color: #fff;
+    
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
                 }
             }
         }

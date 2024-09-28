@@ -18,7 +18,7 @@
             padding: 20px 0;
         }
 
-        .logo-site {
+        .sb-logo-side {
             .sb-logo {
                 @extend .d-flex;
                 img {
@@ -42,7 +42,7 @@
             }
             
         }
-        .menu-site {
+        .sb-menu-side {
 
             @include breakpoint(1024) {
                 position: absolute;
@@ -51,6 +51,7 @@
                 left: 200%;
                 top: var(--header-height);
                 padding: 50px;
+                border-radius: 0 0 20px 20px;
 
                 @include breakpoint(768) {
                     padding: 35px;
@@ -146,7 +147,7 @@
                 padding: 10px 0;
             }
 
-            .menu-site {
+            .sb-menu-side {
                 margin-top: -20px;
             }
         }
@@ -175,7 +176,7 @@
             }
             
             .sb-main-header {
-                .menu-site {
+                .sb-menu-side {
                     left: 25px;
                 }
             }

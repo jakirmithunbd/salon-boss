@@ -4,24 +4,17 @@
 @import './footer';
 
 
+// ********** Home Page Style *********** //
 // Home Hero Style 
-
 .hero-home {
-    margin-top: var(--header-height);
+    margin-top: 30px;
 
-    @include breakpoint(1024) {
-        margin-top: 60px;
-    }
-    @include breakpoint(768) {
-        margin-top: 40px;
-    }
-
-    .container {
+    .sb-row {
         gap: 80px;
 
         @include breakpoint(1024) {
             flex-wrap: wrap;
-            grid-area: 50px;
+            gap: 50px;
         }
 
         .sb-hero-content {
@@ -33,7 +26,20 @@
             }
             
             h1 {
-                -webkit-text-fill-color: $white;
+                color: $white;
+                @include font(65, 84);
+
+                @include breakpoint (1024) {
+                    @include font(50, 62);
+                }
+
+                @include breakpoint (768) {
+                    @include font(40, 52);
+                }
+
+                span {
+                    -webkit-text-fill-color: $primary;
+                }
             }
 
             .sb-buttons {
@@ -205,6 +211,9 @@
             column-gap: 35px;
             row-gap: 65px;
 
+            @include breakpoint(1420) {
+                column-gap: 20px;
+            }
             @include breakpoint(1024) {
                 row-gap: 40px;
                 margin-top: 50px;
@@ -212,6 +221,17 @@
             @include breakpoint(575) {
                 row-gap: 25px;
                 margin-top: 30px;
+            }
+            .sb-card {
+                width: 26%;
+                flex-grow: 1;
+
+                @include breakpoint(1280) {
+                    width: 40%;
+                }
+                @include breakpoint(880) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -243,7 +263,7 @@
         }
 
         .sb-section-title{
-            width: 51%;
+            width: 53%;
             flex-grow: 1;
 
             @include breakpoint(1024) {
@@ -294,7 +314,7 @@
             }
         }
         .sb-media{
-            width: 44%;
+            width: 42%;
             flex-grow: 1;
             margin-top: 80px;
             margin-left: 50px;
@@ -358,20 +378,341 @@
     }
 }
 
+// Resource Center style 
 .resource-center-section {
-    margin: 200px 0 40px;
-    padding-bottom: 200px;
+    margin: 150px 0 40px;
 
     @include breakpoint(1280) {
         margin-top: 100px;
-        padding-bottom: 100px;
     }
     @include breakpoint(1024) {
         margin-top: 70px;
-        padding-bottom: 70px;
     }
     @include breakpoint(768) {
         margin-top: 60px;
+    }
+
+    .sb-card {
+        max-width: 1020px;
+    }
+}
+
+
+
+// ********** Single Service Page Style *********** //
+
+// Single service Hero Style 
+.hero-single-service {
+    margin-top: 150px;
+    padding-bottom: 100px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
         padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .sb-row {
+        gap: 50px;
+
+        @include breakpoint(1024) {
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+
+        .sb-hero-content {
+
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1200) {
+                width: 48%;
+            }
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            h1 {
+                color: $white;
+                @include font(60, 72);
+
+                @include breakpoint (1024) {
+                    @include font(50, 62);
+                }
+
+                @include breakpoint (768) {
+                    @include font(40, 52);
+                }
+                span {
+                    &:first-child {
+                        -webkit-text-fill-color: $primary;
+                    }
+                }
+            }
+            .sb-buttons {
+                gap: 18px;
+
+                @include breakpoint(768) {
+                    flex-direction: column;
+                }
+            }
+        }
+        .hero-image {
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1200) {
+                width: 30%;
+            }
+
+            @include breakpoint(1024) {
+                width: 100%;
+                padding-bottom: 20px;
+            }
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Single service content style 
+.sb-single-service-content {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .single-service-section-title {
+        width: 100%;
+        max-width: 910px;
+        margin: 0 auto;
+
+        h2 {
+            background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            @include font(16, 30);
+            color: #fff;
+        }
+    }
+    .single-service-img-box-list {
+        margin-top: 85px;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        row-gap: 30px;
+
+        @include breakpoint(1024) {
+            margin-top: 50px;
+            row-gap: 50px;
+        }
+        @include breakpoint(768) {
+            margin-top: 40px;
+        }
+        .sb-image-box {
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+    }
+    .sb-buttons {
+        margin-top: 70px;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 20px;
+
+        @include breakpoint(1024) {
+            margin-top: 50px;
+        }
+        @include breakpoint(768) {
+            margin-top: 40px;
+        }
+    }
+}
+
+
+// Case Studies style 
+.sb-case-studies {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .container {
+        max-width: 1680px;
+
+        .sb-section-title {
+            width: 100%;
+            max-width: 920px;
+            margin: 0 auto;
+
+            h2 {
+                color: $primary;
+            }
+    
+            p {
+                @include font(16, 30);
+                color: #DCCCF6;
+    
+                strong {
+                    color: #fff;
+                }
+            }
+        }
+    
+        .sb-case-studies-card-list  {
+            margin-top: 80px;
+            column-gap: 20px;
+            row-gap: 50px;
+
+            @include breakpoint(1024) {
+                margin-top: 50px;
+                row-gap: 30px;
+            }
+            @include breakpoint(768) {
+                margin-top: 30px;
+            }
+    
+            .sb-case-sudies-item {
+                width: 26%;
+                flex-grow: 1;
+
+                @include breakpoint(1024) {
+                    width: 40%;
+                }
+                @include breakpoint(768) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Free Audits style 
+.sb-free-seo-audit {
+    margin: 155px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+    }
+
+    .sb-card {
+        max-width: 1020px;
+    }
+}
+
+// SB Frist Step style
+.sb-first-step {
+    margin: 140px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 60px;
+    }
+
+    .container {
+        max-width: 1040px;
+
+        .sb-row {
+            gap: 25px;
+
+            @include breakpoint(1240) {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .sb-first-step-card {
+                background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                border: 1px solid $secondary;
+                border-radius: 30px;
+                padding: 30px 25px;
+
+                @include breakpoint(575) {
+                    padding: 20px 10px;
+                }
+                img {
+                    width: 100%;
+                    max-width: 230px;
+                    margin: 0 auto;
+                }
+                h3 {
+                    @include font(34, 51);
+                    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @include breakpoint(1024) {
+                        @include font(26, 38);
+                    }
+
+                    @include breakpoint(768) {
+                        @include font(22, 34);
+                    }
+                }
+                p {
+                    @include font(16, 25);
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+                .sb-button {
+                    width: 100%;
+                    max-width: 380px;
+                    margin: 0 auto;
+                    @extend .flex-center;
+                    gap: 6px;
+
+                    &::before {
+                        position: inherit;
+                        top: inherit;
+                        left: inherit;
+                    }
+                }
+            }
+            .sb-first-step-right-side-casrd-list {
+                gap: 45px;
+
+                @include breakpoint(1240) {
+                    flex-wrap: nowrap;
+                    gap: 20px;
+                }
+                @include breakpoint(880) {
+                    flex-wrap: wrap;
+                }
+            }
+        }
     }
 }
