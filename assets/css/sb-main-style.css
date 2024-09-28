@@ -1003,7 +1003,7 @@ section:after {
 }
 
 .hero-home {
-  margin-top: 90px;
+  margin-top: var(--header-height);
 }
 @media only screen and (max-width: 1024px) {
   .hero-home {
