@@ -11,10 +11,13 @@
 
     .sb-row {
         gap: 80px;
+        align-items: center;
+        padding-bottom: 50px;
 
         @include breakpoint(1024) {
             flex-wrap: wrap;
             gap: 50px;
+            padding-bottom: 40px;
         }
 
         .sb-hero-content {
@@ -39,6 +42,14 @@
 
                 span {
                     -webkit-text-fill-color: $primary;
+                }
+            }
+            h4 {
+                color: #fff;
+            }
+            p {
+                strong {
+                    color: #fff;
                 }
             }
 
@@ -69,17 +80,18 @@
                     @include breakpoint(1024) {
                         gap: 20px;
                     }
+                    @include breakpoint(575) {
+                        justify-content: center;
+                    }
                 }
             }
         }
         .hero-image {
             width: 40%;
             flex-grow: 1;
-            padding-bottom: 70px;
 
             @include breakpoint(1024) {
                 width: 100%;
-                padding-bottom: 40px;
             }
     
             img {
@@ -93,7 +105,7 @@
 // Service slider style 
 .sb-service-slider {
     background: $primary;
-    padding: 22px 0;
+    padding: 19px 0;
     width: 100%;
     overflow: hidden; 
     position: relative; 
@@ -114,6 +126,7 @@
         margin: 0 22px 0 0;
         border-radius: 5px;
         min-width: 60px;
+        box-shadow: 2px 2px 19px 0 rgb(0 0 0 / 35%);
     }
 }
 
@@ -165,16 +178,25 @@
             }
         }
 
-        .sb-service-list {
+        .sb-help-wrapper {
             width: 40%;
             flex-grow: 1;
-            @extend .d-flex, .flex-col;
-            gap: 55px;
-
-
+            
             @include breakpoint(1024) {
                 width: 100%;
                 gap: 40px;
+            }
+
+            .sb-service-list {
+                gap: 55px;
+                @extend .d-flex, .flex-col;
+    
+                @include breakpoint(1024) {
+                    gap: 40px;
+                }
+            }
+            .sb-button {
+                margin-top: 25px;
             }
         }
     }
@@ -238,6 +260,7 @@
 
 }
 
+// About section style 
 .sb-about {
     margin: 180px 0 80px;
 
@@ -303,6 +326,7 @@
             }
             .sb-buttons {
                 gap: 18px;
+                align-items: center;
 
                 @include breakpoint(575) {
                     flex-wrap: wrap;
@@ -310,6 +334,7 @@
 
                 .more-about-btn {
                     min-width: 216px;
+                    height: 64px;
                 }
             }
         }
@@ -341,12 +366,12 @@
                 margin-top: -85px;
             }
             .sb-media-badge {
-                padding: 16px 11px;
+                padding: 17px 23px;
                 background: #fff;
                 box-shadow: 0px 3.69px 7.39px 0px #00000026;
                 border-radius: 15px;
                 position: absolute;
-                left: -50px;
+                left: -51px;
                 bottom: 40px;
 
                 @include breakpoint(575) {
@@ -366,6 +391,7 @@
                     a {
                         color: $secondary;
                         font-size: 22px;
+                        font-weight: 700;
                         @extend .transition;
 
                         &:hover {
@@ -403,55 +429,10 @@
 
 // Single service Hero Style 
 .hero-single-service {
-    margin-top: 150px;
-    padding-bottom: 100px;
-
-    @include breakpoint(1280) {
-        margin-top: 100px;
-        padding-bottom: 80px;
-    }
-    @include breakpoint(1024) {
-        margin-top: 70px;
-        padding-bottom: 60px;
-    }
-    @include breakpoint(768) {
-        margin-top: 60px;
-        padding-bottom: 40px;
-    }
-
     .sb-row {
-        gap: 50px;
-
-        @include breakpoint(1024) {
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-
         .sb-hero-content {
-
-            width: 40%;
-            flex-grow: 1;
-
-            @include breakpoint(1200) {
-                width: 48%;
-            }
-
-            @include breakpoint(1024) {
-                width: 100%;
-            }
-
             h1 {
                 color: $white;
-                @include font(60, 72);
-
-                @include breakpoint (1024) {
-                    @include font(50, 62);
-                }
-
-                @include breakpoint (768) {
-                    @include font(40, 52);
-                }
                 span {
                     &:first-child {
                         -webkit-text-fill-color: $primary;
@@ -459,28 +440,8 @@
                 }
             }
             .sb-buttons {
-                gap: 18px;
+                margin-top: 5px;
 
-                @include breakpoint(768) {
-                    flex-direction: column;
-                }
-            }
-        }
-        .hero-image {
-            width: 40%;
-            flex-grow: 1;
-
-            @include breakpoint(1200) {
-                width: 30%;
-            }
-
-            @include breakpoint(1024) {
-                width: 100%;
-                padding-bottom: 20px;
-            }
-    
-            img {
-                width: 100%;
             }
         }
     }
@@ -713,6 +674,20 @@
                     flex-wrap: wrap;
                 }
             }
+        }
+    }
+}
+
+
+
+// ********** Reviews Page Style *********** //
+.hero-reviews {
+
+    .sb-row {
+        gap: 110px;
+
+        @include breakpoint(1024) {
+            gap: 50px;
         }
     }
 }

@@ -93,6 +93,6 @@ sb_cards.forEach(card => {
 
     if (sb_card_btn) {
         const sb_card_btn_height = sb_card_btn.clientHeight;
-        card.style.setProperty('--sb-card-btn-height', sb_card_btn_height + 10 + 'px');
+        card.style.setProperty('--sb-card-btn-height', sb_card_btn_height + 'px');
     }
 });
