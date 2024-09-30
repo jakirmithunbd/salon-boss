@@ -685,6 +685,16 @@
         @include breakpoint(1024) {
             gap: 50px;
         }
+
+        .sb-hero-content {
+            .sb-buttons {
+
+                .sb-button {
+                    width: 100%;
+                    max-width: 216px;
+                }
+            }
+        }
     }
 }
 
@@ -847,10 +857,31 @@
                 padding-top: 30px;
                 gap: 18px;
 
+                .sb-button {
+                    width: 100%;
+                    max-width: 216px;
+                }
+
                 @include breakpoint(768) {
                     padding-top: 15px;
                 }
             }
+        }
+    }
+}
+
+
+// Faq style 
+
+.sb-faq {
+
+    .sb-button {
+        width: 100%;
+        max-width: 352px;
+        margin: 0 auto;
+
+        @include breakpoint(1024) {
+            margin: 30px auto 0;
         }
     }
 }
