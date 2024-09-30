@@ -86,7 +86,7 @@
                 }
             }
         }
-        .hero-image {
+        .sb-hero-image {
             width: 40%;
             flex-grow: 1;
 
@@ -448,7 +448,7 @@
 }
 
 // Single service content style 
-.sb-single-service-content {
+.sb-single-service {
     margin: 90px 0 40px;
 
     @include breakpoint(1024) {
@@ -674,30 +674,6 @@
     }
 }
 
-
-
-// ********** Reviews Page Style *********** //
-.hero-reviews {
-
-    .sb-row {
-        gap: 110px;
-
-        @include breakpoint(1024) {
-            gap: 50px;
-        }
-
-        .sb-hero-content {
-            .sb-buttons {
-
-                .sb-button {
-                    width: 100%;
-                    max-width: 216px;
-                }
-            }
-        }
-    }
-}
-
 // Reputation Solution 
 
 .sb-reputation-solutions {
@@ -781,8 +757,8 @@
     }
 }
 
-// Sb Package style 
-.sb-package {
+// Marketing Services style 
+.sb-marketing-service {
     margin: 150px 0 40px;
 
     @include breakpoint(1024) {
@@ -795,15 +771,34 @@
     .container {
         max-width: 1640px;
 
-        .sb-package-list {
+        .sb-section-title {
+
+            h2 {
+                background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            p {
+                @include font(16, 30);
+                width: 100%;
+                max-width: 1035px;
+                margin: 0 auto;
+            }
+        }
+
+        .sb-marketing-service-list {
             column-gap: 70px;
             row-gap: 40px;
+            padding-top: 80px;
 
             @include breakpoint(1280) {
                 column-gap: 40px;
+                padding-top: 60px;
             }
             @include breakpoint(768) {
                 row-gap: 30px;
+                padding-top: 30px;
             }
             @include breakpoint(575) {
                 row-gap: 20px;

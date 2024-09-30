@@ -98,6 +98,32 @@ sb_cards.forEach(card => {
 });
 
 
+// Video popup
+const sb_videos = document.querySelectorAll('.sb-video');
+
+if (sb_videos.length) {
+    sb_videos.forEach(video => {
+        const sb_video_play_button = video.querySelector('.sb-video-play-btn');
+        const sb_video_close_button = video.querySelector('.sb-video-close-btn');
+        
+        
+        // Add your event listeners or logic here for play and close buttons
+        if (sb_video_play_button) {
+            sb_video_play_button.addEventListener('click', () => {
+                video.classList.add('video-active-active');  // Add the 'active' class
+                console.log('Play button clicked, class added');
+            });
+        }
+
+        if (sb_video_close_button) {
+            sb_video_close_button.addEventListener('click', () => {
+                video.classList.remove('video-active-active');  // Remove the 'active' class
+                console.log('Close button clicked, class removed');
+            });
+        }
+    });
+}
+
 
 
 // Faq start 
