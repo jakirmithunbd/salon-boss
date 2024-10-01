@@ -3543,6 +3543,17 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
     margin-top: 50px;
   }
 }
+.sb-booking-form .sb-section-title {
+  padding-bottom: 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-booking-form .sb-section-title {
+    padding-bottom: 20px;
+  }
+}
+.sb-booking-form .sb-section-title h2 {
+  color: #6FF2D8;
+}
 .sb-booking-form .sb-booking-form-wrapper {
   width: 100%;
   max-width: 905px;

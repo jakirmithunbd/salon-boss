@@ -1225,6 +1225,16 @@
         margin-top: 50px;
     }
 
+    .sb-section-title {
+        padding-bottom: 40px;
+
+        @include breakpoint(1024) {
+            padding-bottom: 20px;
+        }
+        h2 {
+            color: $primary;
+        }
+    }
     .sb-booking-form-wrapper {
         width: 100%;
         max-width: 905px;
