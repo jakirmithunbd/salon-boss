@@ -865,9 +865,7 @@
     }
 }
 
-
 // Faq style 
-
 .sb-faq {
 
     .sb-button {
@@ -877,6 +875,138 @@
 
         @include breakpoint(1024) {
             margin: 30px auto 0;
+        }
+    }
+}
+
+// Why choose sb style
+
+.why-choose-sb {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 50px;
+    }
+
+    .sb-row {
+        gap: 100px;
+
+        @include breakpoint(1280) {
+            gap: 50px;
+        }
+
+        @include breakpoint(1024) {
+            flex-wrap: wrap;
+        }
+        @include breakpoint(768) {
+            gap: 30px;
+        }
+
+        .sb-section-title {
+            width: 50%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            h2 {
+                color: $primary;
+            }
+        }
+        .sb-review-video {
+            width: 33%;
+            border: 1px solid $primary;
+            border-radius: 30px;
+
+            @include breakpoint(1280) {
+                width: 40%;
+            }
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            .sb-video {
+                min-height: 246px;
+
+                @include breakpoint(1024) {
+                    min-height: 400px;
+                }
+                @include breakpoint(768) {
+                    min-height: 270px;
+                }
+                @include breakpoint(575) {
+                    min-height: 200px;
+                }
+            }
+
+            .review-video-customer-info {
+                padding: 20px;
+
+                .review-video-customer-bio-wrapper {
+
+                    @include breakpoint(575) {
+                        flex-wrap: wrap
+                    }
+
+                    .review-video-customer-bio {
+
+                        @include breakpoint(575) {
+                            width: 100%;
+                        }
+
+                        .sb-customer-name {
+                            @include font(16, 28);
+                            color: $white;
+                            margin: 0;
+                        }
+                        .sb-customer-title {
+                            @include font(16, 28);
+                            font-weight: 400;
+                            color: $white;
+                            margin: 0;
+                        }
+                        .sb-customer-company-name {
+                            @include font(16, 28);
+                            font-weight: 400;
+                            color: #C5B7DD;
+                            margin: 0;
+                        }
+                    }
+                    .sb-customer-ratting {
+                        gap: 10px;
+
+                        @include breakpoint(1280) {
+                            gap: 5px;
+                        }
+
+                        @include breakpoint(575) {
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
+                }
+                .sb-customer-quote {
+                    padding-top: 20px;
+
+                    @include breakpoint(575) {
+                        padding-top: 10px;
+                    }
+                    p {
+                        @include font(16, 24);
+                        font-weight: 700;
+                        color: $white;
+                        margin: 0;
+
+                        span {
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
         }
     }
 }

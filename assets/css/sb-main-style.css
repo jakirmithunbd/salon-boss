@@ -54,7 +54,7 @@ svg {
   display: none !important;
 }
 
-.d-flex, .sb-about .sb-row .sb-media, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list, .sb-who-we-help .sb-row .sb-section-title .sb-media, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form, .sb-header .sb-main-header .sb-menu-side ul, .sb-header .sb-main-header .hamburger-menu, .sb-header .sb-main-header .sb-logo-side .sb-logo, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price, .sb-image-box {
+.d-flex, .sb-about .sb-row .sb-media, .sb-who-we-help .sb-row .sb-help-wrapper .sb-service-list, .sb-who-we-help .sb-row .sb-section-title .sb-media, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form, .sb-header .sb-main-header .sb-menu-side ul, .sb-header .sb-main-header .hamburger-menu, .sb-header .sb-main-header .sb-logo-side .sb-logo, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn, .sb-video .sb-video-frame .sb-video-wrapper, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-price, .sb-image-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,21 +173,21 @@ svg {
   margin-bottom: 0 !important;
 }
 
-.cursor-pointer, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
+.cursor-pointer, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
   cursor: pointer;
 }
 
 .transition, .sb-marketing-service .container .package-include p a, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
-.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-play-btn, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a, .sb-card .sb-card-btn a, .sb-simple-btn:after, .sb-button {
+.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a, .sb-card .sb-card-btn a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
+.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
   position: relative;
 }
 
-.absolute, .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
+.absolute, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
   position: absolute;
 }
 
@@ -369,6 +369,7 @@ section:after {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  min-width: 216px;
   height: 56px;
   font-size: 18px;
   line-height: 20px;
@@ -1309,9 +1310,6 @@ section:after {
     margin-top: 20px;
   }
 }
-.common-hero .sb-row .sb-hero-content .sb-buttons .sb-button {
-  min-width: 216px;
-}
 .common-hero .sb-row .sb-hero-image,
 .common-hero .sb-row .sb-hero-video {
   width: 40%;
@@ -1347,113 +1345,6 @@ section:after {
 .common-hero .sb-row .sb-hero-video .sb-card .sb-video {
   width: 100%;
   min-height: 340px;
-  border-radius: 30px 30px 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-play-btn {
-  width: 88px;
-  height: 88px;
-  background-color: #000;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-play-btn::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: calc(50% - 44px);
-  top: calc(50% - 44px);
-  -webkit-mask: url(../images/vectors/video-play-icon.svg);
-          mask: url(../images/vectors/video-play-icon.svg);
-  -webkit-mask-position: center;
-          mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-          mask-size: cover;
-  background-color: #6FF2D8;
-  border-radius: 50%;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-play-btn:hover {
-  -webkit-box-shadow: 0 0 10px 4px #6FF2D8;
-          box-shadow: 0 0 10px 4px #6FF2D8;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  bottom: 200%;
-  background: rgba(118, 110, 232, 0.9);
-  z-index: 99999;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper {
-  width: 70%;
-  background: #6FF2D8;
-  border-radius: 16px;
-  padding: 10px;
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 10%;
-}
-@media only screen and (max-width: 1024px) {
-  .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper {
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper {
-    width: 90%;
-    top: 15%;
-    padding: 5px;
-  }
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper iframe {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  aspect-ratio: 16/9;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
-  width: 30px;
-  height: 23px;
-  background: transparent;
-  top: 0;
-  right: -40px;
-}
-@media only screen and (max-width: 768px) {
-  .common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
-    right: 0;
-    top: -40px;
-  }
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span {
-  width: 100%;
-  height: 4px;
-  display: block;
-  background: #ffffff;
-  position: absolute;
-  left: 0;
-  top: 10px;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span:first-child {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span:last-child {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn:hover span {
-  background: red;
-}
-.common-hero .sb-row .sb-hero-video .sb-card .sb-video.video-active-active .sb-video-frame {
-  bottom: 0;
 }
 .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button {
   display: block;
@@ -1473,6 +1364,128 @@ section:after {
 }
 .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button.btn-link-availabl:hover {
   color: #6FF2D8;
+}
+
+.sb-video {
+  border-radius: 30px 30px 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sb-video .sb-video-play-btn {
+  width: 88px;
+  height: 88px;
+  background-color: var(--play-button-icon-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 575px) {
+  .sb-video .sb-video-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+.sb-video .sb-video-play-btn::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: calc(50% - 44px);
+  top: calc(50% - 44px);
+  -webkit-mask: url(../images/vectors/video-play-icon.svg);
+          mask: url(../images/vectors/video-play-icon.svg);
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  background-color: var(--paly-button-color);
+  border-radius: 50%;
+}
+@media only screen and (max-width: 575px) {
+  .sb-video .sb-video-play-btn::after {
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+  }
+}
+.sb-video .sb-video-play-btn:hover {
+  -webkit-box-shadow: 0 0 10px 4px var(--paly-button-color);
+          box-shadow: 0 0 10px 4px var(--paly-button-color);
+}
+.sb-video .sb-video-frame {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  bottom: 200%;
+  background: rgba(118, 110, 232, 0.9);
+  z-index: 99999;
+}
+.sb-video .sb-video-frame .sb-video-wrapper {
+  width: 70%;
+  background: #6FF2D8;
+  border-radius: 16px;
+  padding: 10px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 10%;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-video .sb-video-frame .sb-video-wrapper {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-video .sb-video-frame .sb-video-wrapper {
+    width: 90%;
+    top: 15%;
+    padding: 5px;
+  }
+}
+.sb-video .sb-video-frame .sb-video-wrapper iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  aspect-ratio: 16/9;
+}
+.sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
+  width: 30px;
+  height: 23px;
+  background: transparent;
+  top: 0;
+  right: -40px;
+}
+@media only screen and (max-width: 768px) {
+  .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn {
+    right: 0;
+    top: -40px;
+  }
+}
+.sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span {
+  width: 100%;
+  height: 4px;
+  display: block;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+.sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn:hover span {
+  background: red;
+}
+.sb-video.video-active-active .sb-video-frame {
+  bottom: 0;
 }
 
 .sb-faq {
@@ -3093,4 +3106,152 @@ section:after {
   .sb-faq .sb-button {
     margin: 30px auto 0;
   }
+}
+
+.why-choose-sb {
+  margin: 90px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .why-choose-sb {
+    margin-top: 70px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .why-choose-sb {
+    margin-top: 50px;
+  }
+}
+.why-choose-sb .sb-row {
+  gap: 100px;
+}
+@media only screen and (max-width: 1280px) {
+  .why-choose-sb .sb-row {
+    gap: 50px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .why-choose-sb .sb-row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .why-choose-sb .sb-row {
+    gap: 30px;
+  }
+}
+.why-choose-sb .sb-row .sb-section-title {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .why-choose-sb .sb-row .sb-section-title {
+    width: 100%;
+  }
+}
+.why-choose-sb .sb-row .sb-section-title h2 {
+  color: #6FF2D8;
+}
+.why-choose-sb .sb-row .sb-review-video {
+  width: 33%;
+  border: 1px solid #6FF2D8;
+  border-radius: 30px;
+}
+@media only screen and (max-width: 1280px) {
+  .why-choose-sb .sb-row .sb-review-video {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .why-choose-sb .sb-row .sb-review-video {
+    width: 100%;
+  }
+}
+.why-choose-sb .sb-row .sb-review-video .sb-video {
+  min-height: 246px;
+}
+@media only screen and (max-width: 1024px) {
+  .why-choose-sb .sb-row .sb-review-video .sb-video {
+    min-height: 400px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .why-choose-sb .sb-row .sb-review-video .sb-video {
+    min-height: 270px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .why-choose-sb .sb-row .sb-review-video .sb-video {
+    min-height: 200px;
+  }
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info {
+  padding: 20px;
+}
+@media only screen and (max-width: 575px) {
+  .why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .review-video-customer-bio {
+    width: 100%;
+  }
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .review-video-customer-bio .sb-customer-name {
+  font-size: 16px;
+  line-height: 28px;
+  color: #ffffff;
+  margin: 0;
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .review-video-customer-bio .sb-customer-title {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .review-video-customer-bio .sb-customer-company-name {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #C5B7DD;
+  margin: 0;
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .sb-customer-ratting {
+  gap: 10px;
+}
+@media only screen and (max-width: 1280px) {
+  .why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .sb-customer-ratting {
+    gap: 5px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .why-choose-sb .sb-row .sb-review-video .review-video-customer-info .review-video-customer-bio-wrapper .sb-customer-ratting {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .sb-customer-quote {
+  padding-top: 20px;
+}
+@media only screen and (max-width: 575px) {
+  .why-choose-sb .sb-row .sb-review-video .review-video-customer-info .sb-customer-quote {
+    padding-top: 10px;
+  }
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .sb-customer-quote p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+.why-choose-sb .sb-row .sb-review-video .review-video-customer-info .sb-customer-quote p span {
+  color: #766EE8;
 }
