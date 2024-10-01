@@ -9,6 +9,15 @@
 .hero-home {
     margin-top: 30px;
 
+
+    &::before {
+        top: 230px;
+        background-image: url(../images/Salon-Boss-hreo-home-bg.png);
+        
+        @include minbreakpoint(1441) {
+            height: 575px;
+        }
+    }
     .sb-row {
         gap: 80px;
         align-items: center;

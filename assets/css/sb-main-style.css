@@ -183,7 +183,7 @@ svg {
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, section {
+.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, .hero-bg, section {
   position: relative;
 }
 
@@ -333,7 +333,7 @@ section:after {
   background-color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(#2C2C31), to(transparent));
   background-image: linear-gradient(transparent, #2C2C31, transparent);
-  z-index: -1;
+  z-index: -2;
 }
 
 .container {
@@ -344,10 +344,26 @@ section:after {
 }
 
 .hero-bg {
+  overflow: hidden;
+  z-index: 1;
+}
+.hero-bg::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 560px;
+  left: 0;
+  top: 0;
   background-image: url(../images/Salon-Boss-hreo-bg.png);
-  background-position: bottom center;
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
+  z-index: -1;
+}
+@media only screen and (min-width: 1441px) {
+  .hero-bg::before {
+    height: 740px;
+  }
 }
 
 .sb-header-gutter {
@@ -2135,6 +2151,15 @@ section:after {
 
 .hero-home {
   margin-top: 30px;
+}
+.hero-home::before {
+  top: 230px;
+  background-image: url(../images/Salon-Boss-hreo-home-bg.png);
+}
+@media only screen and (min-width: 1441px) {
+  .hero-home::before {
+    height: 575px;
+  }
 }
 .hero-home .sb-row {
   gap: 80px;
