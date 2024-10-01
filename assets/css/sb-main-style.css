@@ -178,12 +178,12 @@ svg {
 }
 
 .transition, .sb-marketing-service .container .package-include p a, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
-.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card .sb-card-btn a, .sb-card .sb-card-contents-wrapper .sb-card-content ul li a, .sb-simple-btn:after, .sb-button {
+.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card .sb-card-btn a, .sb-card .sb-card-contents-wrapper .sb-card-content ul li a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, .hero-bg, section {
+.relative, .sb-about .sb-row .sb-media, sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, .hero-bg, section {
   position: relative;
 }
 
@@ -1368,7 +1368,6 @@ section:after {
   padding-left: 0;
   padding-right: 0;
   border: 0;
-  z-index: 999;
 }
 .common-hero .sb-row .sb-hero-video .sb-card .sb-video {
   width: 100%;
@@ -1394,11 +1393,40 @@ section:after {
   color: #6FF2D8;
 }
 
+.hero-badge {
+  gap: 10px;
+  padding-bottom: 5px;
+}
+@media only screen and (max-width: 575px) {
+  .hero-badge {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.hero-badge span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #766EE8;
+  padding: 10px;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 575px) {
+  .hero-badge span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 .sb-video {
   border-radius: 30px 30px 0 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #2F2F2F;
 }
 .sb-video .sb-video-play-btn {
   width: 88px;
@@ -1446,7 +1474,7 @@ section:after {
   width: 100vw;
   height: 100vh;
   left: 0;
-  bottom: 200%;
+  bottom: 600%;
   background: rgba(118, 110, 232, 0.9);
   z-index: 99999;
 }
@@ -1512,24 +1540,29 @@ section:after {
 .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn:hover span {
   background: red;
 }
-.sb-video.video-active-active .sb-video-frame {
+.sb-video.video-popup-active .sb-video-frame {
   bottom: 0;
 }
 
-.sb-faq {
+section:has(.sb-video.video-popup-active),
+.sb-card:has(.sb-video.video-popup-active) {
+  z-index: 999;
+}
+
+sb .sb-faq {
   margin: 150px 0 40px;
 }
 @media only screen and (max-width: 1024px) {
-  .sb-faq {
+  sb .sb-faq {
     margin-top: 60px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .sb-faq {
+  sb .sb-faq {
     margin-top: 40px;
   }
 }
-.sb-faq .sb-faq-section-title h2 {
+sb .sb-faq .sb-faq-section-title h2 {
   font-size: 45px;
   line-height: 60px;
   background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
@@ -1538,23 +1571,23 @@ section:after {
   -webkit-text-fill-color: transparent;
 }
 @media only screen and (max-width: 1024px) {
-  .sb-faq .sb-faq-section-title h2 {
+  sb .sb-faq .sb-faq-section-title h2 {
     font-size: 36px;
     line-height: 50px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .sb-faq .sb-faq-section-title h2 {
+  sb .sb-faq .sb-faq-section-title h2 {
     font-size: 28px;
     line-height: 40px;
   }
 }
-.sb-faq .sb-questions-wrapper {
+sb .sb-faq .sb-questions-wrapper {
   row-gap: 20px;
   padding-top: 25px;
 }
 @media only screen and (min-width: 1025px) {
-  .sb-faq .sb-questions-wrapper {
+  sb .sb-faq .sb-questions-wrapper {
     display: block;
     -webkit-column-count: 2;
        -moz-column-count: 2;
@@ -1563,7 +1596,7 @@ section:after {
     padding-top: 50px;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item {
   width: 100%;
   padding-bottom: 40px;
   border-top: 1px solid #6FF2D8;
@@ -1571,38 +1604,38 @@ section:after {
   text-align: start;
 }
 @media only screen and (min-width: 1025px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
     display: inline-block;
     width: 98%;
     margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
     padding-bottom: 16px;
     border-radius: 20px 20px 0 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
     padding-bottom: 10px;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
   cursor: pointer;
   padding: 40px 40px 0;
 }
 @media only screen and (max-width: 768px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
     padding: 16px 20px 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
     padding: 10px 10px 0;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
@@ -1611,12 +1644,12 @@ section:after {
   padding-right: 30px;
 }
 @media only screen and (max-width: 575px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
     font-size: 16px;
     line-height: 26px;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::before {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::before {
   position: absolute;
   content: "";
   width: 28px;
@@ -1628,7 +1661,7 @@ section:after {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after {
   position: absolute;
   content: "";
   width: 10px;
@@ -1640,33 +1673,33 @@ section:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
   display: none;
   padding: 16px 40px 0;
 }
 @media only screen and (max-width: 768px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
     padding: 10px 20px 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
     padding: 10px 10px 0;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
   font-size: 16px;
   line-height: 30px;
   color: #ffffff;
   margin: 0;
 }
 @media only screen and (max-width: 575px) {
-  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
+  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
     font-size: 14px;
     line-height: 24px;
   }
 }
-.sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::after {
+sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::after {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   top: 11px;
@@ -3478,4 +3511,54 @@ section:after {
   max-width: 685px;
   margin: 0 auto;
   padding-bottom: 16px;
+}
+
+.hero-book-dicovery .sb-row .sb-hero-content h1 {
+  font-size: 50px;
+  line-height: 66px;
+}
+@media only screen and (max-width: 1024px) {
+  .hero-book-dicovery .sb-row .sb-hero-content h1 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-book-dicovery .sb-row .sb-hero-content h1 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+.sb-booking-form {
+  margin: 150px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-booking-form {
+    margin-top: 70px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-booking-form {
+    margin-top: 50px;
+  }
+}
+.sb-booking-form .sb-booking-form-wrapper {
+  width: 100%;
+  max-width: 905px;
+  margin: 0 auto;
+  padding: 48px 35px 35px;
+  border: 0.5px solid #6FF2D8;
+  border-radius: 30px;
+  background: #fff;
+  background-image: url(../images/Salon-Boss-form-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sb-booking-form .sb-booking-form-wrapper .sb-form-condition-text {
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+  margin-bottom: 5px;
 }

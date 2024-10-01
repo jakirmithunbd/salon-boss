@@ -1190,3 +1190,58 @@
         }
     }
 }
+
+
+
+// ********** Book A Discovery Call Page Style *********** //
+.hero-book-dicovery {
+
+    .sb-row {
+
+        .sb-hero-content {
+            h1 {
+                @include font(50, 66);
+
+                @include breakpoint(1024) {
+                    @include font(40, 52);
+                }
+
+                @include breakpoint(768) {
+                    @include font(32, 44);
+                }
+            }
+        }
+    }
+}
+
+// Booking form section style 
+.sb-booking-form {
+    margin: 150px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 50px;
+    }
+
+    .sb-booking-form-wrapper {
+        width: 100%;
+        max-width: 905px;
+        margin: 0 auto;
+        padding: 48px 35px 35px;
+        border: 0.5px solid $primary;
+        border-radius: 30px;
+        background: #fff;
+        background-image: url(../images/Salon-Boss-form-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .sb-form-condition-text {
+            @include font(14, 21);
+            color: $black;
+            margin-bottom: 5px;
+        }
+    }
+}

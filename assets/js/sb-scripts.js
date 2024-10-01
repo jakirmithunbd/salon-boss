@@ -115,14 +115,14 @@ if (sb_videos.length) {
         // Add your event listeners or logic here for play and close buttons
         if (sb_video_play_button) {
             sb_video_play_button.addEventListener('click', () => {
-                video.classList.add('video-active-active');  // Add the 'active' class
+                video.classList.add('video-popup-active');  // Add the 'active' class
                 console.log('Play button clicked, class added');
             });
         }
 
         if (sb_video_close_button) {
             sb_video_close_button.addEventListener('click', () => {
-                video.classList.remove('video-active-active');  // Remove the 'active' class
+                video.classList.remove('video-popup-active');  // Remove the 'active' class
                 console.log('Close button clicked, class removed');
             });
         }
