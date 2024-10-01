@@ -178,7 +178,7 @@ svg {
 }
 
 .transition, .sb-marketing-service .container .package-include p a, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
-.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a, .sb-card .sb-card-btn a, .sb-simple-btn:after, .sb-button {
+.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card .sb-card-btn a, .sb-card .sb-card-contents-wrapper .sb-card-content ul li a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -720,6 +720,27 @@ section:after {
   line-height: 25px;
   color: #000000;
 }
+.sb-card .sb-card-contents-wrapper .sb-card-content ul {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content ul li a {
+  background: #766EE8;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  border-radius: 100px;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content ul li a:hover {
+  color: #070825;
+  background: #6FF2D8;
+}
+.sb-card .sb-card-contents-wrapper .sb-card-content ul li.active a {
+  color: #070825;
+  background: #6FF2D8;
+}
 .sb-card .sb-card-btn {
   position: absolute;
   width: 100%;
@@ -944,18 +965,9 @@ section:after {
 .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content p {
   color: #fff;
 }
-.sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul {
-  gap: 10px;
-  margin-bottom: 20px;
-}
 .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a {
   background: #6FF2D8;
   color: #070825;
-  padding: 5px;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 600;
-  border-radius: 100px;
 }
 .sb-card.sb-card-filled-bg .sb-card-contents-wrapper .sb-card-content ul li a:hover {
   color: #fff;
@@ -3331,4 +3343,114 @@ section:after {
   .sb-service .container .sb-service-list .sb-card {
     width: 100%;
   }
+}
+.sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h3 {
+  font-size: 40px;
+  line-height: 60px;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h3 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h3 {
+    font-size: 26px;
+    line-height: 38px;
+  }
+}
+.sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h5 {
+  font-size: 22px;
+  line-height: 36px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h5 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content h5 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content ul {
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-service .container .sb-service-list .sb-card .sb-card-contents-wrapper .sb-card-content ul {
+    margin-bottom: 20px;
+  }
+}
+
+.sb-our-service {
+  margin: 110px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-our-service {
+    margin-top: 70px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-our-service {
+    margin-top: 50px;
+  }
+}
+.sb-our-service .sb-card {
+  max-width: 1020px;
+  margin-left: 140px;
+  border: 1px solid #766EE8;
+}
+@media only screen and (max-width: 768px) {
+  .sb-our-service .sb-card {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-our-service .sb-card .sb-card-contents-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-image {
+  max-width: 280px;
+  margin-left: -140px;
+}
+@media only screen and (max-width: 768px) {
+  .sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-image {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-content {
+    width: 100%;
+  }
+}
+.sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-content h2 {
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1019607843);
+}
+.sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-content h5 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1019607843);
+}
+.sb-our-service .sb-card .sb-card-contents-wrapper .sb-card-content p {
+  width: 100%;
+  max-width: 685px;
+  margin: 0 auto;
+  padding-bottom: 16px;
 }

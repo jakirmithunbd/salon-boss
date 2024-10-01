@@ -618,6 +618,34 @@ section {
                 @include font(14, 25);
                 color: $black;
             }
+            ul {
+                gap: 10px;
+                margin-bottom: 20px;
+
+                li {
+                    a {
+                        background: $secondary;
+                        color: #fff;
+                        padding: 5px;
+                        @include font(12, 18);
+                        font-weight: 600;
+                        border-radius: 100px;
+                        @extend .transition;
+                        
+                        &:hover {
+                            color: #070825;
+                            background: $primary;
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            color: #070825;
+                            background: $primary;
+                        }
+                    }
+                }
+            }
         }
     }
     .sb-card-btn {
@@ -812,18 +840,11 @@ section {
                     color: #fff;
                 }
                 ul {
-                    gap: 10px;
-                    margin-bottom: 20px;
 
                     li {
                         a {
                             background: $primary;
                             color: #070825;
-                            padding: 5px;
-                            @include font(12, 18);
-                            font-weight: 600;
-                            border-radius: 100px;
-                            @extend .transition;
 
                             &:hover {
                                 color: #fff;
