@@ -1602,3 +1602,94 @@ section:has(.sb-video.video-popup-active),
         }
     }
 }
+
+
+
+// Author Card style 
+.sb-author-card {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    @include breakpoint(1024) {
+        padding-top: 70px;
+    }
+    @include breakpoint(768) {
+        padding-top: 50px;
+    }
+    
+    .sb-author-card-content-wrapper {
+        gap: 20px;
+        background: #fff;
+        background-image: url(../images/Salon-Boss-card-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid $primary;
+        border-radius: 30px;
+        padding: 35px 20px 20px;
+        margin-left: 130px;
+
+        @include breakpoint(1024) {
+            margin-left: 0;
+            margin-top: 100px;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sb-author-card-image {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #FBD79A 0%, #E6B7D4 56.5%, #FFEAB3 100%);
+            padding: 15px;
+            margin-bottom: 16px;
+            margin-left: -130px;
+
+            @include breakpoint(1024) {
+                margin-left: 0;
+                margin-top: -100px;
+            }
+
+            .sb-author-card-badge {
+                position: absolute;
+                bottom: 0;
+                background: #fff;
+                border-radius: 15px;
+                padding: 7px 23px;
+
+                h5 {
+                    @include font(12, 18);
+                    font-weight: 500;
+                    color: #000;
+                    margin: 0;
+                }
+                h6 {
+                    @include font(12, 18);
+                    font-weight: 700;
+                    color: $secondary;
+                    margin: 0;
+                }
+            }
+        }
+
+        .sb-author-card-content {
+            width: 50%;
+            max-width: 505px;
+            margin: 0 auto;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            p {
+                @include font(16, 30);
+                font-weight: 700;
+                color: #000;            
+            }
+        }
+    }
+}
