@@ -26,64 +26,69 @@ if(common_header) {
 
 
 // Service Slider (Custom) start
-function initTextSlider(customSpeed) {
-    var slider = document.querySelector('.sb-service-slider'); 
-    var items = slider.getElementsByTagName('p'); 
-    var isPaused = false; 
-    var itemWidth = items[0].offsetWidth + 20; 
-    var sliderWidth = itemWidth * items.length; 
 
-    var innerSlider = document.createElement('div');
-    innerSlider.classList.add('inner-slider');
+const sb_custom_slider = document.querySelector('.sb-service-slider');
+if(sb_custom_slider) {
 
-    while (items.length) {
-        innerSlider.appendChild(items[0]);
-    }
-
-    slider.appendChild(innerSlider);
-
-    Object.assign(innerSlider.style, {
-        display: 'inline-flex',
-        whiteSpace: 'nowrap',
-        position: 'relative',
-    });
-
-    innerSlider.innerHTML += innerSlider.innerHTML; 
-
-    var position = 0;
-
-    function animateSlider() {
-        if (!isPaused) {
-            position -= 1; 
-
-            if (Math.abs(position) >= sliderWidth) {
-                position = 0;
+    function initTextSlider(customSpeed) {
+        var slider = document.querySelector('.sb-service-slider'); 
+        var items = slider.getElementsByTagName('p'); 
+        var isPaused = false; 
+        var itemWidth = items[0].offsetWidth + 20; 
+        var sliderWidth = itemWidth * items.length; 
+    
+        var innerSlider = document.createElement('div');
+        innerSlider.classList.add('inner-slider');
+    
+        while (items.length) {
+            innerSlider.appendChild(items[0]);
+        }
+    
+        slider.appendChild(innerSlider);
+    
+        Object.assign(innerSlider.style, {
+            display: 'inline-flex',
+            whiteSpace: 'nowrap',
+            position: 'relative',
+        });
+    
+        innerSlider.innerHTML += innerSlider.innerHTML; 
+    
+        var position = 0;
+    
+        function animateSlider() {
+            if (!isPaused) {
+                position -= 1; 
+    
+                if (Math.abs(position) >= sliderWidth) {
+                    position = 0;
+                }
+    
+                innerSlider.style.transform = `translateX(${position}px)`;
             }
-
-            innerSlider.style.transform = `translateX(${position}px)`;
         }
+    
+        var speed = customSpeed || 16;
+        var sliderInterval = setInterval(animateSlider, speed);
+    
+        slider.addEventListener('mouseenter', function () {
+            isPaused = true;
+        });
+    
+        slider.addEventListener('mouseleave', function () {
+            isPaused = false;
+        });
+    
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                clearInterval(sliderInterval); 
+            } else {
+                sliderInterval = setInterval(animateSlider, speed); 
+            }
+        });
     }
-
-    var speed = customSpeed || 16;
-    var sliderInterval = setInterval(animateSlider, speed);
-
-    slider.addEventListener('mouseenter', function () {
-        isPaused = true;
-    });
-
-    slider.addEventListener('mouseleave', function () {
-        isPaused = false;
-    });
-
-    document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-            clearInterval(sliderInterval); 
-        } else {
-            sliderInterval = setInterval(animateSlider, speed); 
-        }
-    });
-}
-initTextSlider(30);
+    initTextSlider(30);
+};
 // Service Slider (Custom) end
 
 // Dynamic Sb Card height 
@@ -110,14 +115,14 @@ if (sb_videos.length) {
         // Add your event listeners or logic here for play and close buttons
         if (sb_video_play_button) {
             sb_video_play_button.addEventListener('click', () => {
-                video.classList.add('video-active-active');  // Add the 'active' class
+                video.classList.add('video-popup-active');  // Add the 'active' class
                 console.log('Play button clicked, class added');
             });
         }
 
         if (sb_video_close_button) {
             sb_video_close_button.addEventListener('click', () => {
-                video.classList.remove('video-active-active');  // Remove the 'active' class
+                video.classList.remove('video-popup-active');  // Remove the 'active' class
                 console.log('Close button clicked, class removed');
             });
         }
