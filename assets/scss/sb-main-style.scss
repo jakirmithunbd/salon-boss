@@ -1508,93 +1508,7 @@
 
         }
     }
-    .dis-confirmation-card {
-        width: 100%;
-        max-width: 970px;
-        margin: 0 auto;
-        padding-top: 100px;
 
-        @include breakpoint(1024) {
-            padding-top: 70px;
-        }
-        @include breakpoint(768) {
-            padding-top: 50px;
-        }
-        
-        .confirmation-card-content-wrapper {
-            gap: 20px;
-            background: #fff;
-            background-image: url(../images/Salon-Boss-card-bg.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border: 1px solid $primary;
-            border-radius: 30px;
-            padding: 35px 20px 20px;
-            margin-left: 130px;
-
-            @include breakpoint(1024) {
-                margin-left: 0;
-                margin-top: 100px;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .dis-confirmation-card-image {
-                width: 210px;
-                height: 210px;
-                border-radius: 50%;
-                background: linear-gradient(180deg, #FBD79A 0%, #E6B7D4 56.5%, #FFEAB3 100%);
-                padding: 15px;
-                margin-bottom: 16px;
-                margin-left: -130px;
-
-                @include breakpoint(1024) {
-                    margin-left: 0;
-                    margin-top: -100px;
-                }
-    
-                .dis-confirmation-card-badge {
-                    position: absolute;
-                    bottom: 0;
-                    background: #fff;
-                    border-radius: 15px;
-                    padding: 7px 23px;
-    
-                    h5 {
-                        @include font(12, 18);
-                        font-weight: 500;
-                        color: #000;
-                        margin: 0;
-                    }
-                    h6 {
-                        @include font(12, 18);
-                        font-weight: 700;
-                        color: $secondary;
-                        margin: 0;
-                    }
-                }
-            }
-    
-            .dis-confirmation-card-content {
-                width: 50%;
-                max-width: 505px;
-                margin: 0 auto;
-                flex-grow: 1;
-
-                @include breakpoint(1024) {
-                    width: 100%;
-                }
-    
-                p {
-                    @include font(16, 30);
-                    font-weight: 700;
-                    color: #000;            
-                }
-            }
-        }
-    }
 }
 
 // ********** Blog Page Style *********** //
@@ -1762,6 +1676,7 @@
 
                 .sb-card-image {
                     padding: 0;
+                    background-image: none;
                     
                     a {
                         @extend .d-flex;
@@ -1803,5 +1718,100 @@
                 }
             }
         }
+    }
+}
+
+// ********** Single Blog Page Style *********** //
+// Single Blog hero style 
+.hero-single-blog  {
+    margin-top: 130px;
+    padding-bottom: 120px;
+
+    @include minbreakpoint(1025) {
+        overflow: visible;
+        overflow-x: clip;
+    }
+    
+    @include breakpoint(1280) {
+        margin-top: 100px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 60px;
+
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+    }
+
+    .blog-hero-content {
+
+        h1 {
+            @include font(40, 60);
+            color: $white;
+
+            @include breakpoint(1024) {
+                @include font(32, 44);
+            }
+            @include breakpoint(768) {
+                @include font(26, 38);
+            }
+        }
+        p {
+            @include font(16, 24);
+            color: $white;
+        }
+        .sb-post-meta {
+            gap: 18px;
+            @include font(16, 24);
+            color: $white;
+
+            @include breakpoint(428) {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            span {
+                &:not(:first-child) {
+                    @extend .relative;
+                    
+                    @include minbreakpoint(429) {
+                        padding-left: 32px;
+
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            top: calc(50% - 8px);
+                            left: 0;
+                            background: linear-gradient(90deg, #7970E9 -9.38%, #A08DF3 115.62%);
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+
+        }
+        .sb-blog-feature {
+            width: 100%;
+            max-width: 570px;
+            margin: 0 auto;
+            padding-top: 30px;
+            
+            img {
+                width: 100%;
+                border-radius: 30px;
+            }
+        }
+    }
+}
+
+// Single Blog Content 
+.sb-single-blog-contents {
+    background: #ffffff;
+
+    .container {
+        min-width: 1420px;
     }
 }
