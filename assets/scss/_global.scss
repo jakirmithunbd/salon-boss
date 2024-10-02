@@ -374,6 +374,13 @@ section {
             background: $primary;
         }
     }
+    &.button-bg-violet {
+        background: $secondary;
+        
+        &:hover {
+            background: #FBDCD1;
+        }
+    }
     &.icon-position-left {
         padding-left: 64px;
         @extend .relative;
@@ -398,6 +405,12 @@ section {
                 position: inherit;
                 top: inherit;
                 right: inherit;
+            }
+        }
+
+        &.button-icon-sboss {
+            &::before {
+                content: url(../images/vectors/salon-boss.svg)
             }
         }
     }
@@ -1100,8 +1113,8 @@ section {
         }
     }
 
-    // Case studies item style 
-    &.sb-case-sudies-item {
+    // post card style 
+    &.sb-post-card {
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
@@ -1141,6 +1154,11 @@ section {
                     font-weight: 700;
                     color: #fff;
                 }
+                .sb-blog-date {
+                    @include font(12, 22);
+                    font-weight: 400;
+                    color: #fff;
+                }
             }
         }
     }
@@ -1157,11 +1175,11 @@ section {
         padding-bottom: 80px;
     }
     @include breakpoint(1024) {
-        margin-top: 70px;
+        margin-top: 60px;
         padding-bottom: 60px;
     }
     @include breakpoint(768) {
-        margin-top: 60px;
+        margin-top: 30px;
         padding-bottom: 40px;
     }
 
@@ -1248,6 +1266,10 @@ section {
                 .sb-video {
                     width: 100%;
                     min-height: 340px;
+
+                    @include breakpoint(575) {
+                        min-height: 220px;
+                    }
                 }
     
                .sb-card-btn {
