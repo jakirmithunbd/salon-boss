@@ -178,12 +178,12 @@ svg {
 }
 
 .transition, .sb-marketing-service .container .package-include p a, .sb-about .sb-row .sb-media .sb-media-badge h4 a, .sb-footer .sb-footer-bottom .sb-row .sb-footer-menu-bottom ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow .sb-social-icons ul li a, .sb-footer .sb-main-footer .sb-row .sb-footer-subscribe-follow form .submit-button, .sb-footer .sb-main-footer .sb-row .sb-footer-Company ul li a,
-.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card .sb-card-btn a, .sb-card .sb-card-contents-wrapper .sb-card-content ul li a, .sb-simple-btn:after, .sb-button {
+.sb-footer .sb-main-footer .sb-row .sb-footer-Services ul li a, .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a, .sb-header .sb-main-header .sb-menu-side ul li a, .sb-header .sb-main-header .sb-logo-side .sb-logo img, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after, .sb-video .sb-video-frame .sb-video-wrapper .sb-video-close-btn span, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .common-hero .sb-row .sb-hero-video .sb-card .sb-card-btn button, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content .sb-card-btn .sb-service-card-btn, .sb-card .sb-card-btn a, .sb-card .sb-card-contents-wrapper .sb-card-content ul li a, .sb-simple-btn:after, .sb-button {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.relative, .sb-about .sb-row .sb-media, sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, .hero-bg, section {
+.relative, .sb-about .sb-row .sb-media, .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4, .sb-video .sb-video-frame, .sb-video .sb-video-play-btn, .sb-card, .sb-simple-btn, .sb-button.icon-position-left, .sb-button, .hero-bg, section {
   position: relative;
 }
 
@@ -257,6 +257,13 @@ h1 span,
 h2 span,
 h3 span,
 h4 span {
+  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sb-multy-color, .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h4, .sb-expectation .container .sb-section-title h2, .sb-marketing-service .container .sb-section-title h2, .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item h3, .sb-reputation-solutions .container .sb-section-title h2, .sb-first-step .container .sb-row .sb-first-step-card h3, .sb-single-service .single-service-section-title h2, .sb-faq .sb-faq-section-title h2, .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h2 {
   background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
   -webkit-background-clip: text;
           background-clip: text;
@@ -1109,10 +1116,6 @@ section:after {
 .sb-card.sb-service-card .sb-card-contents-wrapper .sb-card-content h2 {
   font-size: 34px;
   line-height: 50px;
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 0;
 }
 @media only screen and (max-width: 1024px) {
@@ -1549,45 +1552,41 @@ section:has(.sb-video.video-popup-active),
   z-index: 999;
 }
 
-sb .sb-faq {
+.sb-faq {
   margin: 150px 0 40px;
 }
 @media only screen and (max-width: 1024px) {
-  sb .sb-faq {
+  .sb-faq {
     margin-top: 60px;
   }
 }
 @media only screen and (max-width: 768px) {
-  sb .sb-faq {
+  .sb-faq {
     margin-top: 40px;
   }
 }
-sb .sb-faq .sb-faq-section-title h2 {
+.sb-faq .sb-faq-section-title h2 {
   font-size: 45px;
   line-height: 60px;
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 @media only screen and (max-width: 1024px) {
-  sb .sb-faq .sb-faq-section-title h2 {
+  .sb-faq .sb-faq-section-title h2 {
     font-size: 36px;
     line-height: 50px;
   }
 }
 @media only screen and (max-width: 768px) {
-  sb .sb-faq .sb-faq-section-title h2 {
+  .sb-faq .sb-faq-section-title h2 {
     font-size: 28px;
     line-height: 40px;
   }
 }
-sb .sb-faq .sb-questions-wrapper {
+.sb-faq .sb-questions-wrapper {
   row-gap: 20px;
   padding-top: 25px;
 }
 @media only screen and (min-width: 1025px) {
-  sb .sb-faq .sb-questions-wrapper {
+  .sb-faq .sb-questions-wrapper {
     display: block;
     -webkit-column-count: 2;
        -moz-column-count: 2;
@@ -1596,7 +1595,7 @@ sb .sb-faq .sb-questions-wrapper {
     padding-top: 50px;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item {
+.sb-faq .sb-questions-wrapper .sb-faq-item {
   width: 100%;
   padding-bottom: 40px;
   border-top: 1px solid #6FF2D8;
@@ -1604,38 +1603,38 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item {
   text-align: start;
 }
 @media only screen and (min-width: 1025px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
+  .sb-faq .sb-questions-wrapper .sb-faq-item {
     display: inline-block;
     width: 98%;
     margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 768px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
+  .sb-faq .sb-questions-wrapper .sb-faq-item {
     padding-bottom: 16px;
     border-radius: 20px 20px 0 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item {
+  .sb-faq .sb-questions-wrapper .sb-faq-item {
     padding-bottom: 10px;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
   cursor: pointer;
   padding: 40px 40px 0;
 }
 @media only screen and (max-width: 768px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
     padding: 16px 20px 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question {
     padding: 10px 10px 0;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
@@ -1644,12 +1643,12 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
   padding-right: 30px;
 }
 @media only screen and (max-width: 575px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4 {
     font-size: 16px;
     line-height: 26px;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::before {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::before {
   position: absolute;
   content: "";
   width: 28px;
@@ -1661,7 +1660,7 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::before {
   background-repeat: no-repeat;
   background-size: cover;
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after {
   position: absolute;
   content: "";
   width: 10px;
@@ -1673,33 +1672,33 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-question h4::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
   display: none;
   padding: 16px 40px 0;
 }
 @media only screen and (max-width: 768px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
     padding: 10px 20px 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer {
     padding: 10px 10px 0;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
+.sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
   font-size: 16px;
   line-height: 30px;
   color: #ffffff;
   margin: 0;
 }
 @media only screen and (max-width: 575px) {
-  sb .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
+  .sb-faq .sb-questions-wrapper .sb-faq-item .sb-faq-answer p {
     font-size: 14px;
     line-height: 24px;
   }
 }
-sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::after {
+.sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::after {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   top: 11px;
@@ -2705,12 +2704,6 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
   max-width: 910px;
   margin: 0 auto;
 }
-.sb-single-service .single-service-section-title h2 {
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .sb-single-service .single-service-section-title p {
   font-size: 16px;
   line-height: 30px;
@@ -2906,10 +2899,6 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
 .sb-first-step .container .sb-row .sb-first-step-card h3 {
   font-size: 34px;
   line-height: 51px;
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 @media only screen and (max-width: 1024px) {
   .sb-first-step .container .sb-row .sb-first-step-card h3 {
@@ -2978,12 +2967,6 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
   max-width: 1005px;
   margin: 0 auto;
 }
-.sb-reputation-solutions .container .sb-section-title h2 {
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .sb-reputation-solutions .container .sb-section-title p {
   font-size: 16px;
   line-height: 30px;
@@ -3033,10 +3016,6 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
   line-height: 36px;
   font-weight: 600;
   text-transform: uppercase;
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 @media only screen and (max-width: 1024px) {
   .sb-reputation-solutions .container .sb-reputation-review-list .sb-reputation-review-item h3 {
@@ -3064,12 +3043,6 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
 }
 .sb-marketing-service .container {
   max-width: 1640px;
-}
-.sb-marketing-service .container .sb-section-title h2 {
-  background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .sb-marketing-service .container .sb-section-title p {
   font-size: 16px;
@@ -3567,9 +3540,141 @@ sb .sb-faq .sb-questions-wrapper .sb-faq-item.open-answer .sb-faq-question h4::a
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (max-width: 1024px) {
+  .sb-booking-form .sb-booking-form-wrapper {
+    padding: 25px 20px 20px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-booking-form .sb-booking-form-wrapper {
+    padding: 20px 10px;
+  }
+}
 .sb-booking-form .sb-booking-form-wrapper .sb-form-condition-text {
   font-size: 14px;
   line-height: 21px;
   color: #000000;
   margin-bottom: 5px;
+}
+
+.sb-expectation {
+  margin: 70px 0 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-expectation {
+    margin-top: 40px;
+  }
+}
+.sb-expectation .container {
+  max-width: 1680px;
+}
+.sb-expectation .container .sb-section-title h2 {
+  font-size: 45px;
+  line-height: 60px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation .container .sb-section-title h2 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-expectation .container .sb-section-title h2 {
+    font-size: 26px;
+    line-height: 38px;
+  }
+}
+.sb-expectation .container .sb-section-title h4 {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1019607843);
+}
+.sb-expectation .container .sb-section-title p {
+  font-size: 16px;
+  line-height: 30px;
+  width: 100%;
+  max-width: 695px;
+  margin: 0 auto;
+}
+.sb-expectation .container .sb-consultation-steps {
+  gap: 26px;
+  padding-top: 65px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation .container .sb-consultation-steps {
+    padding-top: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-expectation .container .sb-consultation-steps {
+    padding-top: 30px;
+  }
+}
+.sb-expectation .container .sb-consultation-steps .sb-consultation-step-item {
+  padding: 45px 20px 25px;
+  width: 26%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 1px solid #6FF2D8;
+  border-radius: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item {
+    width: 100%;
+    padding: 20px 10px;
+  }
+}
+.sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h3 {
+  font-size: 156px;
+  line-height: 140px;
+  font-weight: 900;
+  color: #6FF2D8;
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h3 {
+    font-size: 100px;
+    line-height: 80px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h3 {
+    font-size: 80px;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+}
+.sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h4 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h4 {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item h4 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+.sb-expectation .container .sb-consultation-steps .sb-consultation-step-item p {
+  color: #fff;
+  margin: 0;
 }

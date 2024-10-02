@@ -204,6 +204,11 @@ h4 {
         -webkit-text-fill-color: transparent;
     }
 }
+.sb-multy-color {
+    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 h1,
 h2 {
@@ -1002,9 +1007,7 @@ section {
             .sb-card-content {
                 h2 {
                     @include font(34, 50);
-                    background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    @extend .sb-multy-color;
                     margin-bottom: 0;
 
                     @include breakpoint(1024) {
@@ -1431,7 +1434,6 @@ section:has(.sb-video.video-popup-active),
 .sb-card:has(.sb-video.video-popup-active) {
     z-index: 999;
 }
-sb
 
 
 // FAQ Style 
@@ -1449,9 +1451,7 @@ sb
 
         h2 {
             @include font(45, 60);
-            background: linear-gradient(99.23deg, #7970E9 39.51%, #A08DF3 47.5%);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @extend .sb-multy-color;
     
             @include breakpoint(1024) {
                 @include font(36, 50);
