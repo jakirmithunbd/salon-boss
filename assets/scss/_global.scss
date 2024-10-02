@@ -1174,6 +1174,9 @@ section {
             flex-direction: column-reverse;
             gap: 40px;
         }
+        @include breakpoint(575) {
+            gap: 30px;
+        }
 
 
         .sb-hero-content {

@@ -1293,6 +1293,11 @@ section:after {
     gap: 40px;
   }
 }
+@media only screen and (max-width: 575px) {
+  .common-hero .sb-row {
+    gap: 30px;
+  }
+}
 .common-hero .sb-row .sb-hero-content {
   width: 40%;
   -webkit-box-flex: 1;
@@ -3677,4 +3682,40 @@ section:has(.sb-video.video-popup-active),
 .sb-expectation .container .sb-consultation-steps .sb-consultation-step-item p {
   color: #fff;
   margin: 0;
+}
+
+.hero-discovery-appointment {
+  margin-top: 120px;
+  padding-bottom: 75px;
+}
+@media only screen and (max-width: 1280px) {
+  .hero-discovery-appointment {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .hero-discovery-appointment {
+    margin-top: 70px;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-discovery-appointment {
+    margin-top: 50px;
+    padding-bottom: 40px;
+  }
+}
+.hero-discovery-appointment .sb-row {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.hero-discovery-appointment .sb-row .sb-hero-image {
+  width: 100%;
+  max-width: 460px;
+}
+.hero-discovery-appointment .sb-row .sb-hero-content {
+  width: 100%;
+  max-width: 825px;
 }
