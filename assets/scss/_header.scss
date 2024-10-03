@@ -126,9 +126,15 @@
                                 content: url(../images/vectors/phone-icon.svg);
                                 width: 38px;
                                 height: 38px;
+                                @extend .transition;
                             }
                             &:hover {
-                                background: $primary;
+                                background: $secondary;
+                                color: #fff;
+
+                                &::before {
+                                    filter: invert(1);
+                                }
                             }
 
                         }
