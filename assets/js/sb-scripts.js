@@ -25,69 +25,70 @@ if(common_header) {
 };
 
 
-// Service Slider (Custom) start
-
 const sb_custom_slider = document.querySelector('.sb-service-slider');
 if(sb_custom_slider) {
 
     function initTextSlider(customSpeed) {
-        var slider = document.querySelector('.sb-service-slider'); 
-        var items = slider.getElementsByTagName('p'); 
-        var isPaused = false; 
-        var itemWidth = items[0].offsetWidth + 20; 
-        var sliderWidth = itemWidth * items.length; 
-    
+        var slider = document.querySelector('.sb-service-slider');
+        var items = slider.getElementsByTagName('p');
+        var isPaused = false;
+        var itemWidth = items[0].offsetWidth + 20;
+        var sliderWidth = itemWidth * items.length;
+
         var innerSlider = document.createElement('div');
         innerSlider.classList.add('inner-slider');
-    
+
+        // Clone the items to simulate an infinite scroll
         while (items.length) {
             innerSlider.appendChild(items[0]);
         }
-    
+        innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
+
         slider.appendChild(innerSlider);
-    
+
         Object.assign(innerSlider.style, {
             display: 'inline-flex',
             whiteSpace: 'nowrap',
             position: 'relative',
         });
-    
-        innerSlider.innerHTML += innerSlider.innerHTML; 
-    
+
         var position = 0;
-    
+
         function animateSlider() {
             if (!isPaused) {
-                position -= 1; 
-    
+                position -= customSpeed / 20; // Adjust speed based on customSpeed
+
+                // Seamless transition when end of original content is reached
                 if (Math.abs(position) >= sliderWidth) {
                     position = 0;
                 }
-    
+
                 innerSlider.style.transform = `translateX(${position}px)`;
             }
+            requestAnimationFrame(animateSlider); // Smooth animation
         }
-    
-        var speed = customSpeed || 16;
-        var sliderInterval = setInterval(animateSlider, speed);
-    
+
+        requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
+
         slider.addEventListener('mouseenter', function () {
             isPaused = true;
         });
-    
+
         slider.addEventListener('mouseleave', function () {
             isPaused = false;
         });
-    
+
         document.addEventListener('visibilitychange', function () {
             if (document.hidden) {
-                clearInterval(sliderInterval); 
+                isPaused = true; // Pause animation when tab is inactive
             } else {
-                sliderInterval = setInterval(animateSlider, speed); 
+                isPaused = false; // Resume animation when tab is active
             }
         });
     }
-    initTextSlider(30);
+
+    // You can pass the speed value here; higher value = slower speed, lower = faster
+    initTextSlider(5); // Example: 5 for slower, you can adjust this value
 };
 // Service Slider (Custom) end
 
