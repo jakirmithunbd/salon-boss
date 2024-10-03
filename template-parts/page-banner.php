@@ -58,9 +58,8 @@
                         <?php $buttons = $content['buttons']; ?>
                         <div class="sb-buttons d-flex">
                             <?php if ($buttons): foreach ($buttons as $button):
-                                $btn_position = $button['icon'] === true ? $button['icon_position'] : 'left';
-                                ?>
-                                <a href="<?php echo esc_url($button['link']['url']); ?>" class="sb-button button-bg-green button-icon-phone icon-position-<?php echo $btn_position['value']; ?>">
+                                $btn_position = ($button['icon'] === true && $button['icon_position']['value'] === 'left') ? 'icon-position-left' : 'button-icon-phone icon-position-' . esc_attr($button['icon_position']['value']); ?>
+                                <a href="<?php echo esc_url($button['link']['url']); ?>" class="sb-button button-bg-green <?php echo $btn_position; ?>">
                                     <?php echo esc_html($button['link']['title']); ?>
                                 </a>
                             <?php endforeach; endif; ?>
