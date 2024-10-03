@@ -3,17 +3,21 @@
         <div class="sb-footer-top">
             <div class="sb-row">
                 <div class="sb-footer-logo">
-                    <a href="/html/index.html" class="d-flex">
-                        <img src="../assets/images/Salon-Boss-logo.png" alt="">
+                    <a class="d-flex" href="<?php echo esc_url(site_url()); ?>">
+                        <?php
+                        $logo = get_field('logo', 'options');
+                        $logourl = !empty($logo['url']) ? esc_url($logo['url']) : esc_url(get_theme_file_uri('/assets/images/Salon-Boss-logo.png'));
+                        ?>
+                        <img src="<?php echo $logourl; ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
                     </a>
                 </div>
+
+                <?php $call_to_action = get_field('call_to_action', 'options'); ?>
                 <div class="ready-get-start d-flex align-center justify-end">
-                    <h4>Ready To Get Started</h4>
-                    <a
-                        href="#"
-                        class="sb-button button-bg-green icon-position-left"
-                    >book discovery call</a
-                    >
+                    <h4><?php echo esc_html($call_to_action['title']); ?></h4>
+                    <a href="<?php echo esc_url($call_to_action['button']['url']); ?>" target="<?php echo esc_attr($call_to_action['button']['target']); ?>" class="sb-button button-bg-green icon-position-left">
+                        <?php echo esc_html($call_to_action['button']['title']); ?>
+                    </a>
                 </div>
             </div>
         </div>
@@ -21,38 +25,19 @@
             <div class="sb-row">
 
                 <div class="sb-footer-about">
-                    <h4>About Us</h4>
-                    <p>At Salon Boss, our mission is to empower and elevate the hair and beauty industry
-                        through innovative and tailored digital marketing solutions. We are passionate
-                        about helping salons, salon suites, brands, and beauty professionals flourish,
-                        creating lasting impressions and fostering genuine connections with their clientele.
-                        Our expertise lies in curating unique brand stories, igniting growth, and generating
-                        lasting success for our partners. Together, we'll co-create the future of beauty,
-                        one exceptional experience at a time.
-                    </p>
+                    <?php echo wp_kses_post(get_field('about_salon_boss', 'options')); ?>
                 </div>
 
-                <div class="sb-footer-Company d-flex  justify-center">
+                <div class="sb-footer-Company d-flex justify-center">
                     <div class="d-flex flex-col width-fit">
                         <h4>Company</h4>
                         <div class="footer-Company-menu">
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Who We Service</a>
-                                </li>
-                                <li>
-                                    <a href="#">Resource Center</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Careers</a>
-                                </li>
-                            </ul>
+                            <?php wp_nav_menu([
+                                'theme_location' => 'company-menu',
+                                'menu_class' => 'main-header-menu',
+                                'container' => false,
+                                'walker' => new CCWalkernav(),
+                            ]); ?>
                         </div>
                     </div>
                 </div>
@@ -61,45 +46,26 @@
                     <div class="d-flex flex-col width-fit">
                         <h4>Services</h4>
                         <div class="footer-Services-menu">
-                            <ul>
-                                <li>
-                                    <a href="#">SEO</a>
-                                </li>
-                                <li>
-                                    <a href="#">Websites</a>
-                                </li>
-                                <li>
-                                    <a href="#">Advertising</a>
-                                </li>
-                                <li>
-                                    <a href="#">Social Media</a>
-                                </li>
-                                <li>
-                                    <a href="#">Design & Branding</a>
-                                </li>
-                            </ul>
+                            <?php wp_nav_menu([
+                                'theme_location' => 'service-menu',
+                                'menu_class' => 'main-header-menu',
+                                'container' => false,
+                                'walker' => new CCWalkernav(),
+                            ]); ?>
                         </div>
                     </div>
                 </div>
 
                 <div class="sb-footer-subscribe-follow">
-                    <h4>SubscribE & follow</h4>
+                    <h4>Subscribe & Follow</h4>
                     <p>Receive Marketing Tips Straight in Your Inbox</p>
 
-                    <form id="" name="" data-name="" action="" class="">
-                        <input class="" placeholder="Enter Email Address" type="email">
-                        <input type="submit" class="submit-button w-button" value="subscribe">
+                    <form action="" method="post" class="">
+                        <input placeholder="Enter Email Address" type="email" name="email" required>
+                        <input type="submit" class="submit-button w-button" value="Subscribe">
                     </form>
 
-                    <div class="sb-social-icons">
-                        <ul class="unstyle d-flex align-center">
-                            <li><a href="#"><img src="../assets/images/vectors/facebook-icon.svg"></a></li>
-                            <li><a href="#"><img src="../assets/images/vectors/instagram-icon.svg"></a></li>
-                            <li><a href="#"><img src="../assets/images/vectors/linkedin-icon.svg"></a></li>
-                            <li><a href="#"><img src="../assets/images/vectors/twitter-icon.svg"></a></li>
-                            <li><a href="#"><img src="../assets/images/vectors/youtube-icon.svg"></a></li>
-                        </ul>
-                    </div>
+                    <?php get_template_part('template-parts/social-media'); ?>
                 </div>
 
             </div>
@@ -109,13 +75,18 @@
         <div class="container">
             <div class="sb-row align-center">
                 <div class="copy-right-text text-center-mobile">
-                    <p>Salon Boss, LLC - All rights reserved - Copyright  © 2017 - 2024</p>
+                    <p><?php echo wp_kses_post(get_field('copyright_text', 'options')); ?></p>
                 </div>
                 <div class="sb-footer-menu-bottom">
                     <ul class="unstyle d-flex align-center justify-end">
-                        <li><a href="#"><img src="../assets/images/salon-Boss-Googlr-partner.png" alt=""></a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-Boss-Googlr-partner.png')); ?>" alt="Google Partner"></a></li>
+
+                        <?php $page_links = get_field('page_link_item', 'options');
+                        if ($page_links) :
+                            foreach ($page_links as $link) : ?>
+                                <li><a href="<?php echo esc_url(get_permalink($link->ID)); ?>"><?php echo esc_html(get_the_title($link->ID)); ?></a></li>
+                            <?php endforeach;
+                        endif; ?>
                     </ul>
                 </div>
             </div>

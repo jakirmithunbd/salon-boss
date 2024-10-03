@@ -10,3 +10,4 @@ require_once 'inc/salon-hooks.php';
 require_once 'inc/salon-shortcodes.php';
 require_once 'inc/salon-acf-localization.php';
 require_once 'inc/salon-acf-options.php';
+require_once 'inc/nav-walker.php';

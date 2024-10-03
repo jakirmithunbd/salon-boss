@@ -10,10 +10,8 @@ function salon_theme_setup()
     register_nav_menus(
         array(
             'header-menu' => __('Header Menu', 'sb'),
-            'resources-menu' => __('Resources Menu', 'sb'),
             'company-menu' => __('Company Menu', 'sb'),
-            'dusky-menu' => __('Dusky Menu', 'sb'),
-            'dropbox-menu' => __('Dropbox Menu', 'sb'),
+            'service-menu' => __('Service Menu', 'sb'),
         )
     );
 
