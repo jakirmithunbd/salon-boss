@@ -10,3 +10,8 @@ require_once 'inc/salon-hooks.php';
 require_once 'inc/salon-shortcodes.php';
 require_once 'inc/salon-acf-localization.php';
 require_once 'inc/salon-acf-options.php';
+
+function salon_acf_json_save_point( $path ) {
+    return get_theme_file_path('/acf-fields');
+}
+add_filter( 'acf/settings/save_json', 'salon_acf_json_save_point' );
