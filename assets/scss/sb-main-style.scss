@@ -120,6 +120,7 @@
     .inner-slider {
         display: inline-flex;
         white-space: nowrap;
+        z-index: 2;
     }
 
     p {
@@ -194,7 +195,7 @@
                 gap: 40px;
             }
 
-            .sb-service-list {
+            .sb-help-service-list {
                 gap: 55px;
                 @extend .d-flex, .flex-col;
     
@@ -1013,22 +1014,22 @@
 // service hero style 
 .hero-service {
     margin-top: 160px;
-    padding-bottom: 150px;
+    padding-bottom: 70px;
     min-height: 540px;
     
     @include breakpoint(1280) {
         margin-top: 100px;
-        padding-bottom: 120px;
+        padding-bottom: 50px;
+        min-height: 450px;
     }
     @include breakpoint(1024) {
         margin-top: 60px;
-        min-height: 450px;
-        padding-bottom: 100px;
+        padding-bottom: 40px;
     }
     @include breakpoint(768) {
         margin-top: 30px;
         min-height: 400px;
-        padding-bottom: 80px;
+        padding-bottom: 30px;
     }
 
     .service-hero-content {
@@ -1044,14 +1045,15 @@
     }
 }
 
-// Sb Service style 
-.sb-service {
-    margin-top: -80px;
+// Sb Service style & Sb Resource style
+.sb-service,
+.sb-resource {
 
     .container {
         max-width: 1525px;
 
-        .sb-service-list {
+        .sb-service-list,
+        .sb-resource-list {
             column-gap: 20px;
             row-gap: 80px;
 
@@ -1096,6 +1098,7 @@
 
                         .sb-service-title {
                             h3 {
+                                display: inline-block;
                                 @include font(40, 60);
                                 margin-bottom: 15px;
                                 color: $white;
@@ -1112,6 +1115,25 @@
                             &:hover {
                                 h3 {
                                     color: $secondary;
+                                }
+                            }
+                        }
+                        .sb-resource-title {
+
+                            h2 {
+                                display: inline-block;
+                                margin-bottom: 20px;
+
+                                span {
+                                    @extend .transition;
+                                }
+                            }
+                            &:hover {
+                                h2 {
+                                    color: #ffffff;
+                                    span {
+                                        -webkit-text-fill-color: #ffffff;
+                                    }
                                 }
                             }
                         }
@@ -1517,11 +1539,6 @@
     margin-top: 160px;
     padding-bottom: 150px;
     min-height: 540px;
-
-    @include minbreakpoint(1025) {
-        overflow: visible;
-        overflow-x: clip;
-    }
     
     @include breakpoint(1280) {
         margin-top: 100px;
@@ -1648,6 +1665,7 @@
             }
         }
     }
+
     .sb-blog-list {
         column-gap: 20px;
         row-gap: 50px;
@@ -1726,11 +1744,6 @@
 .hero-single-blog  {
     margin-top: 130px;
     padding-bottom: 120px;
-
-    @include minbreakpoint(1025) {
-        overflow: visible;
-        overflow-x: clip;
-    }
     
     @include breakpoint(1280) {
         margin-top: 100px;
@@ -2044,6 +2057,7 @@
     }
 }
 
+// Single Blog Author style 
 .sb-single-blog-author {
     background: #ffffff;
     padding-bottom: 80px;
@@ -2094,5 +2108,230 @@
                 }
             }
         }
+    }
+}
+
+// Relates Post style 
+
+.sb-related-post {
+    margin: 80px 0 100px;
+
+    @include breakpoint(1024) {
+        margin-top: 50px;
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+    }
+
+    .sb-section-title {
+        padding-bottom: 80px;
+
+        @include breakpoint(1024) {
+            padding-bottom: 50px;
+        }
+        @include breakpoint(768) {
+            padding-bottom: 30px;
+        }
+
+        h2 {
+            color: $primary;
+        }
+    }
+    .sb-related-post-list {
+
+        .related-post-item {
+            @include minbreakpoint(769) {
+                padding: 0 10px;
+            }
+
+
+            .sb-post-card {
+                .sb-card-contents-wrapper {
+    
+                    .sb-card-image {
+                        padding: 0;
+                        background-image: none;
+                        
+                        a {
+                            @extend .d-flex;
+                            overflow: hidden;
+                            border-radius: 30px 30px 0 0;
+                            
+                            img {
+                                @extend .transition;
+                            }
+                            &:hover {
+        
+                                img {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+                    }
+                    .sb-card-content {
+                        padding: 50px 30px 20px;
+    
+                        @include breakpoint(1024) {
+                            padding: 30px 20px 15px;
+                        }
+                        @include breakpoint(575) {
+                            padding: 20px 10px 10px;
+                        }
+    
+                        .sb-blog-title {
+                            h3 {
+                                @extend .transition;
+                            }
+                            &:hover {
+                                h3 {
+                                    color: $secondary;
+                                }
+                            }
+                        }
+    
+                    }
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: -45px;
+            li {
+                button {
+                    &::before {
+                        font-size: 0;
+                        background: $secondary;
+                        border: 1px solid $primary;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ********** Resources Page Style *********** //
+// Sb Content Resource style 
+.sb-content-resource {
+    margin: 95px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+    }
+
+    .sb-content-resource-list {
+        gap: 22px;
+
+        .sb-content-reource-item {
+            width: 40%;
+            flex-grow: 1;
+            @extend .d-flex, .flex-col, .align-start;
+            padding: 25px 25px 25px 50px;
+            border: 1px solid $primary;
+            border-radius: 30px;
+            background-image: url(../images/Salon-Boss-card-bg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            @include breakpoint(1280) {
+                padding: 25px;
+            }
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+            @include breakpoint(575) {
+                padding: 20px 10px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .sb-content-resource-title {
+                display: inline-block;
+
+                h3 {
+                    @extend .sb-multy-color;
+                }
+                &:hover {
+
+                    h3 {
+                        -webkit-text-fill-color: #000;
+                    }
+                }
+            }
+            p {
+                @include font(16, 25);
+                color: #000;
+            }
+            ul {
+                @extend .unstyle, .d-flex, .flex-wrap;
+                gap: 10px;
+                padding-bottom: 20px;
+
+                @include breakpoint(575) {
+                    justify-content: center;
+                }
+
+                li {
+
+                    a {
+                        @include font(12, 18);
+                        font-weight: 600;
+                        color: #fff;
+                        background: $secondary;
+                        padding: 5px 10px;
+                        border-radius: 100px;
+                        @extend .transition;
+                        display: inline-block;
+
+                        &:hover {
+                            background: #000
+                        }
+                    }
+                }
+            }
+            .sb-content-reource-item-foot {
+                width: 100%;
+
+                a {
+                    @include font(16, 24);
+                    font-weight: 600;
+                    color: #fff;
+                    background: #000;
+                    width: 100%;
+                    max-width: 144px;
+                    height: 36px;
+                    border-radius: 100px;
+                    @extend .flex-center, .transition;
+                    margin-right: 0;
+                    margin-left: auto;
+
+                    @include breakpoint(575) {
+                        margin-right: auto;
+                    }
+
+                    &:hover {
+                        background-color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.sb-internal-resource{
+    margin: 150px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 80px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
     }
 }

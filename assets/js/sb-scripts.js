@@ -174,4 +174,49 @@ if (sb_videos.length) {
 
         window.addEventListener("load", sbFaqOnLoad);
     });
+
+
+
+
+
+
+
+    $('.sb-related-post-list').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }
+        ]
+      });
+
+
 })(jQuery);
+
+

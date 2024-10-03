@@ -271,6 +271,11 @@ section {
     @extend .relative;
     overflow: hidden;
     z-index: 1;
+
+    @include minbreakpoint(1025) {
+        overflow: visible;
+        overflow-x: clip;
+    }
     
     &::before {
         position: absolute;
