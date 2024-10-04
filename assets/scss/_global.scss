@@ -1664,9 +1664,15 @@ section:has(.sb-video.video-popup-active),
             height: 210px;
             border-radius: 50%;
             background: linear-gradient(180deg, #FBD79A 0%, #E6B7D4 56.5%, #FFEAB3 100%);
-            padding: 15px;
             margin-bottom: 16px;
             margin-left: -130px;
+            padding: 20px 0 0;
+            overflow: hidden;
+            
+            &:has(.sb-author-card-badge) {
+                padding: 15px;
+                overflow: visible;
+            }
 
             @include breakpoint(1024) {
                 margin-left: 0;
@@ -1705,6 +1711,17 @@ section:has(.sb-video.video-popup-active),
                 width: 100%;
             }
 
+            .sb-author-name {
+                @extend .sb-multy-color;
+                margin: 0;
+            }
+            .sb-suthor-title {
+                @include font(13, 19);
+                font-weight: 600;
+                background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
             p {
                 @include font(16, 30);
                 font-weight: 700;

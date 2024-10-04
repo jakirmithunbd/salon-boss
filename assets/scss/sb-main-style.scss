@@ -2324,7 +2324,7 @@
     }
 }
 
-
+// internal resource style 
 .sb-internal-resource{
     margin: 150px 0 40px;
 
@@ -2333,5 +2333,178 @@
     }
     @include breakpoint(768) {
         margin-top: 40px;
+    }
+}
+
+
+// ********** About Us Page Style *********** //
+
+.hero-about-us {
+    margin-top: 120px;
+    padding-bottom: 90px;
+
+    @include breakpoint(1280) {
+        margin-top: 80px;
+        padding-bottom: 70px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .sb-row {
+        flex-direction: column-reverse;
+
+        .sb-hero-video {
+            width: 100%;
+            max-width: 855px;
+
+            .sb-card {
+                .sb-video {
+                    min-height: 510px;
+                    @include breakpoint(1024) {
+                        min-height: 400px;
+                    }
+                    @include breakpoint(768) {
+                        min-height: 300px;
+                    }
+                    @include breakpoint(575) {
+                        min-height: 220px;
+                    }
+                }
+            }
+        }
+        .sb-hero-content {
+            width: 100%;
+            max-width: 825px;
+        }
+    }
+}
+
+// About Us section style 
+.sb-about-us {
+    .container {
+        max-width: 1290px;
+
+        .sb-about-list {
+            gap: 20px;
+            
+            .sb-card {
+                padding: 20px 65px 20px 20px;
+
+                @include breakpoint(1024) {
+                    padding: 20px;
+                }
+
+                @include breakpoint(575) {
+                    padding: 20px 10px;
+                }
+    
+                .sb-card-contents-wrapper {
+                    gap: 50px;
+
+                    @include breakpoint(1024) {
+                        gap: 20px;
+                    }
+    
+                    .sb-card-image {
+                        max-width: 210px;
+                    }
+                    .sb-card-content {
+                        max-width: 100%;
+
+                        @include breakpoint(768) {
+                            text-align: center;
+                        }
+
+                        p {
+                            @include font(16, 24);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sb-experts {
+    margin: 110px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 80px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 50px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .container {
+        max-width: 1230px;
+
+        .sb-section-title {
+
+            h2 {
+                color: $primary;
+            }
+            p {
+                @include font(16, 24);
+                color: #fff;
+                width: 100%;
+                max-width: 805px;
+                margin: 0 auto;
+            }
+        }
+        .sb-expert-list {
+            gap: 100px;
+
+            @include breakpoint(1024) {
+                gap: 50px;
+            }
+            @include breakpoint(820) {
+                gap: 0;
+            }
+
+            .sb-author-card {
+                width: 40%;
+                flex-grow: 1;
+
+                @include breakpoint(820) {
+                    width: 100%;
+                }
+                
+                .sb-author-card-content-wrapper {
+                    margin-left: 0;
+                    margin-top: 100px;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 30px 35px;
+                    gap: 5px;
+
+                    @include breakpoint(1024) {
+                        padding: 20px 10px;
+                    }
+
+                    .sb-author-card-image {
+                        margin-left: 0;
+                        margin-top: -100px;
+                    }
+                    .sb-author-card-content {
+                        width: 100%;
+
+                        p {
+                            @include font(16, 24);
+                            font-weight: 400;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
