@@ -2624,3 +2624,117 @@
         }
     }
 }
+
+
+// ********** Contact Page Style *********** //
+// Contact hero style 
+.hero-contact-us {
+    margin-top: 160px;
+    padding-bottom: 110px;
+    min-height: 340px;
+    
+    @include breakpoint(1280) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+        min-height: 300px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+        min-height: 250px;
+        padding-bottom: 30px;
+    }
+
+    .service-hero-content {
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+
+        h1 {
+            color: $primary;
+        }
+    }
+}
+
+// Contact type style 
+.sb-contact-type {
+
+    .sb-contact-type-list {
+        column-gap: 80px;
+        row-gap: 30px;
+
+        @include breakpoint(1280) {
+            column-gap: 30px;
+        }
+
+        .sb-card {
+            width: 35%;
+            flex-grow: 1;
+            padding: 55px 25px;
+            background: #262626;
+            border-color: $primary;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+            @include breakpoint(575) {
+                padding: 25px 10px;
+            }
+
+            .sb-card-contents-wrapper {
+                gap: 30px;
+
+                @include breakpoint(768) {
+                    gap: 20px;
+                }
+
+                .sb-card-image {
+                    max-width: 180px;
+                }
+                .sb-card-content {
+
+                    @include breakpoint(768) {
+                        text-align: center;
+                    }
+
+                    h2 {
+                        @include font(30, 38);
+
+                        @include breakpoint(768) {
+                            @include font(24, 32);
+                        }
+
+                        @include breakpoint(575) {
+                            @include font(20, 28);
+                        }
+                    }
+                    p {
+                        @include font(16, 30);
+                    }
+                    a {
+                        @include font(18, 27);
+                        font-weight: 600;
+                        color: #fff;
+                        display: inline-block;
+                        padding: 6px 25px;
+                        background: transparent;
+                        border: 1px solid #fff;
+                        border-radius: 100px;
+                        @extend .transition;
+
+                        @include breakpoint(768) {
+                            @include font(16, 24);
+                        }
+
+                        &:hover {
+                            background: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
