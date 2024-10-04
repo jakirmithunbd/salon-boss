@@ -2508,3 +2508,65 @@
         }
     }
 }
+
+// ********** SEO Audit Page Style *********** //
+
+.hero-seo-audit {
+    margin-top: 120px;
+    padding-bottom: 75px;
+
+    @include breakpoint(1280) {
+        margin-top: 80px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .sb-row {
+        flex-direction: column;
+
+        .sb-hero-image {
+            width: 100%;
+            max-width: 460px;
+        }
+        .sb-hero-content {
+            width: 100%;
+            max-width: 825px;
+
+            ul {
+                gap: 8px;
+                padding-top: 10px;
+                
+                li {
+                    a {
+                        @include font(12, 18);
+                        font-weight: 600;
+                        color: $black;
+                        background: $primary;
+                        padding: 5px;
+                        border-radius: 100px;
+                        @extend .transition;
+
+                        &:hover {
+                            color: #fff;
+                            background: $secondary;
+                        }
+                    }
+
+                    &.sb-active {
+
+                        a {
+                            color: #fff;
+                            background: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
