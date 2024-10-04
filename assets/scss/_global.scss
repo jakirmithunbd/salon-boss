@@ -1739,3 +1739,29 @@ section:has(.sb-video.video-popup-active),
         }
     }
 }
+
+// Form style 
+
+.sb-form {
+    padding: 48px 35px 35px;
+    border: 0.5px solid $primary;
+    border-radius: 30px;
+    background: #fff;
+    background-image: url(../images/Salon-Boss-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include breakpoint(1024) {
+        padding: 25px 20px 20px;
+    }
+    @include breakpoint(575) {
+        padding: 20px 10px;
+    }
+    
+    .sb-form-condition-text {
+        @include font(14, 21);
+        color: $black;
+        margin-bottom: 5px;
+    }
+}
