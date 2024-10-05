@@ -2851,8 +2851,8 @@
 }
 
 
-// ********** Free Resource Page Style *********** //
-.hero-free-resource {
+// ********** Common Template Style *********** //
+.hero-sb-common-template {
     padding-bottom: 45px;
 
     @include breakpoint(768) {
@@ -2886,17 +2886,21 @@
     }
 }
 // Free Resource Form section style 
-.sb-free-resource-form {
+.sb-common-template-form {
 
-    .sb-free-resource-form-discover {
+    .sb-common-template-form-sidebox {
         gap: 50px;
 
         @include breakpoint(1280) {
             gap: 30px;
         }
 
+        @include breakpoint(1024) {
+            gap: 50px;
+        }
+
         .sb-form,
-        .sb-free-resource-discover {
+        .sb-common-template-sidebox {
             width: 35%;
             flex-grow: 1;
 
@@ -2939,7 +2943,7 @@
                 }
             }
         }
-        .sb-free-resource-discover {
+        .sb-common-template-sidebox {
             h3 {
                 @include font(34, 48);
                 color: $primary;
@@ -2952,7 +2956,7 @@
                     @include font(22, 34);
                 }
             }
-            .sb-free-resource-discover-list {
+            .sb-common-template-sidebox-list {
                 padding: 40px 0 0 50px;
 
                 @include breakpoint(1280) {
