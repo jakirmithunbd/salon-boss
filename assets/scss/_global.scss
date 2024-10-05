@@ -1362,22 +1362,22 @@ section {
 
     .sb-video-play-btn {
         @extend .relative, .transition;
-        width: 88px;
-        height: 88px;
+        width: 78px;
+        height: 78px;
         background-color: var(--play-button-icon-color);
         border-radius: 50%;
         cursor: pointer;
 
         @include breakpoint(575) {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
         }
         
         &::after {
             position: absolute;
             content: "";
-            width: 100%;
-            height: 100%;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
             left: calc(50% - 44px);
             top: calc(50% - 44px);
             mask: url(../images/vectors/video-play-icon.svg);
@@ -1394,7 +1394,7 @@ section {
         }
 
         &:hover {
-            box-shadow: 0 0 10px 4px var(--paly-button-color);
+            box-shadow: 0 0 16px 8px var(--paly-button-color);
         }
     }
 
@@ -1763,5 +1763,44 @@ section:has(.sb-video.video-popup-active),
         @include font(14, 21);
         color: $black;
         margin-bottom: 5px;
+    }
+}
+
+// Icon Box Style 
+
+.sb-icon-box {
+    gap: 20px;
+
+    @include breakpoint(575) {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .sb-icon-box-icon {
+        width: 55px;
+        
+        img {
+            width: 100%;
+        }
+    }
+    .sb-icon-box-content {
+        width: 50%;
+        flex-grow: 1;
+
+        @include breakpoint(575) {
+            width: 100%;
+        }
+
+        h4 {
+            @include font(20, 30);
+            font-weight: 600;
+            margin-bottom: 5px;
+            @extend .sb-multy-color;
+        }
+        p {
+            @include font(16, 20);
+            color: #fff;
+        }
     }
 }
