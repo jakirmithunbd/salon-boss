@@ -2738,3 +2738,114 @@
         }
     }
 }
+
+// Contact section style 
+.sb-contact {
+    margin: 50px 0 40px;
+
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .sb-contact-wrapper {
+        gap: 55px;
+
+        @include breakpoint(1280) {
+            gap: 30px;
+        }
+        @include breakpoint(1024) {
+            gap: 40px;
+        }
+        
+        .sb-email-phone-contact, 
+        .sb-contact-form {
+            width: 35%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+        .sb-email-phone-contact {
+            gap: 85px;
+
+            @include breakpoint(1024) {
+                gap: 30px;
+            }
+
+            .sb-card {
+                padding: 20px 10px;
+
+                @include minbreakpoint(576) {
+                    margin-left: 90px;
+                    padding: 30px;
+                }
+
+                .sb-card-contents-wrapper {
+
+                    @include minbreakpoint(576) {
+                        gap: 40px;
+                    }
+
+                    .sb-card-image {
+                        @include minbreakpoint(576) {
+                            margin-left: -120px;
+                            gap: 40px;
+                        }
+                    }
+                    .sb-card-content {
+                        h4 {
+                            @include font(34, 50);
+                            @extend .sb-multy-color;
+
+                            @include breakpoint(1024) {
+                                @include font(28, 40);
+                            }
+                            @include breakpoint(768) {
+                                @include font(24, 36);
+                            }
+                        }
+                        a {
+                            @include font(18, 27);
+                            font-weight: 700;
+                            color: #171717;
+                            @extend .transition;
+
+                            @include breakpoint (768) {
+                                @include font(16, 24);
+                            }
+
+                            &:hover {
+                                color: $secondary;
+                            }
+                        }
+                        .sb-card-contact-btn-wrapper {
+                            padding-top: 15px;
+                            gap: 8px;
+
+                            @include breakpoint(575) {
+                                justify-content: center;
+                            }
+
+                            .sb-card-contact-btn {
+                                display: inline-block;
+                                @include font(16, 24);
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                color: #fff;
+                                background: #000;
+                                padding: 6px 10px;
+                                border-radius: 100px;
+                                @extend .transition;
+
+                                &:hover {
+                                    background: $secondary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
