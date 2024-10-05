@@ -513,6 +513,10 @@ section {
 
         .sb-image-box-media {
             width: 15%;
+
+            @include breakpoint(575) {
+                width: 50%;
+            }
         }
     }
 
@@ -568,6 +572,10 @@ section {
         font-weight: 700;
         letter-spacing: 0.16px;
         margin-bottom: 17px;
+
+        @include breakpoint(575) {
+            margin-bottom: 5px;
+        }
     }
     h3 {
         @include font(48, 62);
@@ -1515,123 +1523,126 @@ section:has(.sb-video.video-popup-active),
             }
         }
     }
-    .sb-questions-wrapper {
-        row-gap: 20px;
-        padding-top: 25px;
-        
-        @include minbreakpoint(1025) {
-            display: block;
-            column-count: 2;
-            text-align: center;
-            padding-top: 50px;
+}
+
+// Accordian Style 
+.sb-accordians-wrapper {
+    row-gap: 20px;
+    padding-top: 25px;
+    
+    @include minbreakpoint(1025) {
+        display: block;
+        column-count: 2;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .sb-accordian-item {
+        width: 100%;
+        padding-bottom: 40px;
+        border-top: 1px solid $primary;
+        border-radius: 30px 30px 0 0;
+        text-align: start;
+        background: #17171733;
+
+    
+        @include minbreakpoint(1025)  {
+            display: inline-block;
+            width: 98%;
+            margin-bottom: 20px;
         }
-
-        .sb-faq-item {
-            width: 100%;
-            padding-bottom: 40px;
-            border-top: 1px solid $primary;
-            border-radius: 30px 30px 0 0;
-            text-align: start;
-
-            @include minbreakpoint(1025)  {
-                display: inline-block;
-                width: 98%;
-                margin-bottom: 20px;
-            }
+        @include breakpoint(768) {
+            padding-bottom: 16px;
+            border-radius: 20px 20px 0 0;
+        }
+        @include breakpoint(575) {
+            padding-bottom: 10px;
+        }
+        
+        .sb-accordian-header {
+            cursor: pointer;
+            padding: 40px 40px 0;
+    
             @include breakpoint(768) {
-                padding-bottom: 16px;
-                border-radius: 20px 20px 0 0;
+                padding: 16px 20px 0;
             }
             @include breakpoint(575) {
-                padding-bottom: 10px;
+                padding: 10px 10px 0;
             }
-            
-            .sb-faq-question {
-                cursor: pointer;
-                padding: 40px 40px 0;
-
-                @include breakpoint(768) {
-                    padding: 16px 20px 0;
-                }
+    
+            h4 {
+                @include font(20, 30);
+                color: $white;
+                margin: 0;
+                @extend .relative;
+                padding-left: 38px;
+                padding-right: 30px;
+    
                 @include breakpoint(575) {
-                    padding: 10px 10px 0;
+                    @include font(16, 26);
                 }
-
+    
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 28px;
+                    height: 26px;
+                    top: 2px;
+                    left: 0;
+                    background-image: url(../images/vectors/faq-icon.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    top: 4px;
+                    right: 2px;
+                    border-left: 4px solid currentColor;
+                    border-bottom: 4px solid currentColor;
+                    transform: rotate(-45deg);
+                    @extend .transition;
+                }
+            }
+        }
+    
+        .sb-accordian-body {
+            display: none;
+            padding: 16px 40px 0;
+    
+            @include breakpoint(768) {
+                padding: 10px 20px 0;
+            }
+            @include breakpoint(575) {
+                padding: 10px 10px 0;
+            }
+    
+            p {
+                @include font(16, 30);
+                color: $white;
+                margin: 0;
+    
+                @include breakpoint(575) {
+                    @include font(14, 24);
+                }
+            }
+        }
+    
+        &.sb-accordian-active {
+            .sb-accordian-header {
                 h4 {
-                    @include font(20, 30);
-                    color: $white;
-                    margin: 0;
-                    @extend .relative;
-                    padding-left: 38px;
-                    padding-right: 30px;
-
-                    @include breakpoint(575) {
-                        @include font(16, 26);
-                    }
-
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        width: 28px;
-                        height: 26px;
-                        top: 2px;
-                        left: 0;
-                        background-image: url(../images/vectors/faq-icon.svg);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                    }
                     &::after {
-                        position: absolute;
-                        content: "";
-                        width: 10px;
-                        height: 10px;
-                        top: 4px;
-                        right: 2px;
-                        border-left: 4px solid currentColor;
-                        border-bottom: 4px solid currentColor;
-                        transform: rotate(-45deg);
-                        @extend .transition;
-                    }
-                }
-            }
-
-            .sb-faq-answer {
-                display: none;
-                padding: 16px 40px 0;
-
-                @include breakpoint(768) {
-                    padding: 10px 20px 0;
-                }
-                @include breakpoint(575) {
-                    padding: 10px 10px 0;
-                }
-
-                p {
-                    @include font(16, 30);
-                    color: $white;
-                    margin: 0;
-
-                    @include breakpoint(575) {
-                        @include font(14, 24);
-                    }
-                }
-            }
-
-            &.open-answer {
-                .sb-faq-question {
-                    h4 {
-                        &::after {
-                            transform: rotate(135deg);
-                            top: 11px;
-                        }
+                        transform: rotate(135deg);
+                        top: 11px;
                     }
                 }
             }
         }
     }
 }
-
 
 
 // Author Card style 
@@ -1734,7 +1745,82 @@ section:has(.sb-video.video-popup-active),
             p {
                 @include font(16, 30);
                 font-weight: 700;
-                color: #000;            
+                color: #000;
+
+                @include breakpoint(575) {
+                    @include font(14, 24);
+                }         
+            }
+        }
+    }
+    &.image-position-top {
+
+        .sb-author-card-content-wrapper  {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 130px;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+
+            @include breakpoint(1024) {
+                margin-top: 100px;
+            }
+
+            .sb-author-card-image {
+                margin-top: -160px;
+                margin-right: 0;
+                margin-left: 0;
+
+                @include breakpoint(1024) {
+                    margin-top: -100px;
+                }
+            }
+            .sb-author-card-content {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &.image-position-right {
+
+        .sb-author-card-content-wrapper  {
+            flex-direction: row-reverse;
+            margin-left: 0;
+            margin-top: 0;
+            margin-right: 130px;
+
+            @include breakpoint(1024) {
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 100px;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .sb-author-card-image {
+                margin-left: 0;
+                margin-top: 0;
+                margin-right: -130px;
+
+                @include breakpoint(1024) {
+                    margin-top: -100px;
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
+            .sb-author-card-content {
+                text-align: end;
+                align-items: flex-end;
+
+                @include breakpoint(1024) {
+                    width: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
             }
         }
     }

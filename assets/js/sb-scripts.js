@@ -132,50 +132,56 @@ if (sb_videos.length) {
 
 
 
-// Faq start 
 (function ($) {
-
+    
+    // Accordian start 
     $(document).ready(function () {
-        function sbFaqToggle() {
-            const frequentlyQs = document.querySelectorAll(".sb-faq-item");
-
-            const questionTitle = document.querySelectorAll(".sb-faq-question");
-
-            const answerTitle = document.querySelectorAll(".sb-faq-answer");
-
-            if (frequentlyQs) {
-                $(frequentlyQs[0]).addClass("open-answer");
-                $(answerTitle[0]).show();
-
-                frequentlyQs.forEach((item, i) => {
-                    $(questionTitle[i]).click(function () {
-                        answerTitle.forEach((answer, index) => {
-                            if (i !== index && $(answer).is(":visible")) {
-                                $(answer).slideUp(300);
-                                $(frequentlyQs[index]).removeClass(
-                                    "open-answer"
-                                );
+        function sbAccordianToggle() {
+            // Select all accordion wrappers
+            const sbAccordians = document.querySelectorAll(".sb-accordians-wrapper");
+    
+            sbAccordians.forEach((sbAccordian) => {
+                const frequentlyQs = sbAccordian.querySelectorAll(".sb-accordian-item");
+                const questionTitle = sbAccordian.querySelectorAll(".sb-accordian-header");
+                const answerTitle = sbAccordian.querySelectorAll(".sb-accordian-body");
+    
+                if (frequentlyQs.length) {
+                    // Open the first accordion item by default
+                    $(frequentlyQs[0]).addClass("sb-accordian-active");
+                    $(answerTitle[0]).show();
+    
+                    // Loop through each accordion header and set click event
+                    frequentlyQs.forEach((item, i) => {
+                        $(questionTitle[i]).click(function () {
+                            answerTitle.forEach((answer, index) => {
+                                if (i !== index && $(answer).is(":visible")) {
+                                    $(answer).slideUp(300);
+                                    $(frequentlyQs[index]).removeClass("sb-accordian-active");
+                                }
+                            });
+    
+                            if ($(answerTitle[i]).is(":hidden")) {
+                                $(answerTitle[i]).slideDown(300);
+                                $(item).addClass("sb-accordian-active");
+                            } else {
+                                $(answerTitle[i]).slideUp(300);
+                                $(item).removeClass("sb-accordian-active");
                             }
                         });
-
-                        if ($(answerTitle[i]).is(":hidden")) {
-                            $(answerTitle[i]).slideDown(300);
-                            $(item).addClass("open-answer");
-                        } else {
-                            $(answerTitle[i]).slideUp(300);
-                            $(item).removeClass("open-answer");
-                        }
                     });
-                });
-            }
+                }
+            });
         }
-
-        function sbFaqOnLoad() {
-            sbFaqToggle();
+    
+        function sbAccordianOnLoad() {
+            sbAccordianToggle();
         }
-
-        window.addEventListener("load", sbFaqOnLoad);
+    
+        window.addEventListener("load", sbAccordianOnLoad);
     });
+    
+    // Accordian end 
+
 
 
     // Related post slider 

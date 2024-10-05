@@ -2459,24 +2459,7 @@
                 }
                 
                 .sb-author-card-content-wrapper {
-                    margin-left: 0;
-                    margin-top: 100px;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 30px 35px;
-                    gap: 5px;
-
-                    @include breakpoint(1024) {
-                        padding: 20px 10px;
-                    }
-
-                    .sb-author-card-image {
-                        margin-left: 0;
-                        margin-top: -100px;
-                    }
                     .sb-author-card-content {
-                        width: 100%;
-
                         p {
                             @include font(16, 24);
                             font-weight: 400;
@@ -2607,6 +2590,10 @@
             }
             .sb-image-box-media {
                 width: 17%;
+
+                @include breakpoint(575) {
+                    width: 50%;
+                }
             }
             .sb-image-box-content {
 
@@ -2885,7 +2872,7 @@
         }
     }
 }
-// Free Resource Form section style 
+// common Template Form section style 
 .sb-common-template-form {
 
     .sb-common-template-form-sidebox {
@@ -2923,6 +2910,9 @@
                     padding-bottom: 20px;
                 }
 
+                h2 {
+                    @extend .sb-multy-color;
+                }
                 h3 {
                     @include font(35, 50);
                     @extend .sb-multy-color;
@@ -2932,6 +2922,14 @@
                     }
                     @include breakpoint(768) {
                         @include font(20, 32);
+                    }
+                }
+                h4 {
+                    @include font(22, 34);
+                    color: #000;
+
+                    @include breakpoint(768) {
+                        @include font(18, 30);
                     }
                 }
                 h5 {
@@ -2974,7 +2972,261 @@
                     }
                 }
             }
+
+            .sb-webinar-feature-list {
+                gap: 16px;
+
+                .sb-webinar-feature-item {
+                    width: 100%;
+                    background: linear-gradient(180deg, #171717 61.02%, #2C2C31 76.61%, #1B1B1C 96.03%);
+                    padding: 22px 35px;
+                    border: 1px solid $secondary;
+                    border-radius: 30px;
+
+                    h3 {
+                        @include font(32, 44);
+                        color: $primary;
+                        text-transform: uppercase;
+                        
+                        @include breakpoint(1024) {
+                            @include font(28, 40);
+                        }
+                        @include breakpoint(768) {
+                            @include font(22, 34);
+                        }
+                    }
+                    h4 {
+                        @include font(30, 42);
+                        color: #fff;
+                        
+                        @include breakpoint(1024) {
+                            @include font(26, 38);
+                        }
+                        @include breakpoint(768) {
+                            @include font(20, 32);
+                        }
+                    }
+                    h5 {
+                        @include font(22, 34);
+                        color: $primary;
+                        
+                        @include breakpoint(1024) {
+                            @include font(20, 32);
+                        }
+                        @include breakpoint(768) {
+                            @include font(18, 30);
+                        }
+                    }
+                    ul {
+                        @extend .d-flex, .flex-wrap;
+                        gap: 10px;
+
+                        @include breakpoint(575) {
+                            justify-content: center;
+                        }
+
+                        li {
+                            list-style: none;
+                            @include font(12, 18);
+                            font-weight: 600;
+                            color: #fff;
+                            background: $secondary;
+                            padding: 5px;
+                            border-radius: 100px;
+                        }
+                    }
+                    p {
+                        @include font(16, 24);
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
 
+}
+
+
+
+// ********** webinar Template Style *********** //
+.sb-webinar-topics {
+    margin: 70px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .sb-section-title {
+        h2 {
+            color: $primary;
+        }
+        h4 {
+            color: #fff;
+        }
+    }
+    .sb-accordians-wrapper {
+
+        .sb-accordian-item {
+            .sb-accordian-header {
+                h4 {
+                    min-height: 60px;
+                    padding-left: 60px;
+
+                    @include breakpoint(575) {
+                        padding-left: 40px;
+                    }
+                    &::before {
+                        width: 40px;
+                        height: 50px;
+                        background-image: url(../images/vectors/sb-fire-icon.svg);
+
+                        @include breakpoint(575) {
+                            width: 25px;
+                            height: 30px;
+                        }
+                    }
+                    &::after {
+                        top: 8px;
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
+            &.sb-accordian-active {
+                h4 {
+                    &::after {
+                        top: 5px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sb-webinar-key {
+    margin: 120px 0 40px;
+
+    @include breakpoint(1280) {
+        margin-top: 80px;
+    }
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .sb-section-title {
+        h2 {
+            color: $primary;
+        }
+        p {
+            @include font(16, 24);
+            color: #fff;
+            width: 100%;
+            max-width: 1117px;
+            margin: 0 auto;
+        }
+    }
+    .sb-key-list {
+        column-gap: 100px;
+        row-gap: 50px;
+        padding-top: 80px;
+
+        @include breakpoint(1280) {
+            column-gap: 50px;
+            row-gap: 30px;
+        }
+        @include breakpoint(1024) {
+            column-gap: 30px;
+            padding-top: 50px;
+        }
+        @include breakpoint(768) {
+            padding-top: 30px;
+        }
+
+        .sb-image-box {
+            width: 35%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+            .sb-image-box-content {
+
+                h4 {
+                    @include font(20, 30);
+                }
+                p {
+                    @include font(16, 20);
+                }
+            }
+        }
+    }
+}
+
+.sb-webinar-meet-expert {
+    margin: 90px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 60px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+    .sb-webinar-meet-expert-wrapper {
+        gap: 65px;
+
+        @include breakpoint(1280) {
+            gap: 40px;
+        }
+
+        .sb-author-card,
+        .sb-section-title {
+            width: 35%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+
+        .sb-author-card {
+            padding-top: 0;
+        }
+
+        .sb-section-title {
+            h2 {
+                color: $primary;
+            }
+            p {
+                @include font(16, 24);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.sb-webinar-resource-center {
+
+    .sb-webinar-salon-suites {
+        gap: 17px;
+
+        @include breakpoint(1024) {
+            gap: 30px;
+        }
+
+        .sb-card {
+            width: 40%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+    }
 }
