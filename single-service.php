@@ -17,11 +17,7 @@ get_header(); ?>
                         grow and maintain their salon suite businesses. Don't just take our word for it,
                         hear from some of our amazing clients!
                     </p>
-                    <a
-                        href="#"
-                        class="sb-button button-bg-green"
-                    >Book A Call</a
-                    >
+                    <a href="#" class="sb-button button-bg-green">Book A Call</a>
                 </div>
                 <div class="sb-review-video">
                     <div class="sb-video flex-center" style="background-image: url(../assets/images/Salon-Boss-why-choose-video-thumbnail.png);">
