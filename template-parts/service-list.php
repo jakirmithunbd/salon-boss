@@ -44,13 +44,28 @@ $buttons = get_sub_field('button_group');
             <div class="sb-buttons d-flex justify-center">
 
                 <?php foreach ($buttons as $button):
-                    $icon_position = ($button['icon'] === true && $button['icon_alignment']['value'] === 'left') ? 'icon-position-left' : 'button-icon-phone icon-position-' . esc_attr($button['icon_position']['value']); ?>
-                    <a href="<?php echo esc_url($button['link']['url']); ?>" target="<?php echo esc_attr($button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_position); ?>">
-                        <?php echo esc_html($button['link']['title']); ?>
-                    </a>
+
+                    if (!empty($button['enable_icon'])) {
+                        $icon_type = !empty($button['button_type']) ? 'button-icon-phone' : 'button-icon-scissor';
+                        $icon_position = (!empty($button['icon_alignment']) && $button['icon_alignment'] === 'right')
+                            ? 'icon-position-right'
+                            : 'icon-position-left';
+                    }
+                    ?>
+
+                    <?php printf(
+                    '<a href="%s" target="%s" class="sb-button button-bg-green %s %s">%s</a>',
+                        esc_url($button['link']['url']),
+                        esc_attr($button['link']['target']),
+                        esc_attr($icon_type),
+                        esc_attr($icon_position),
+                        esc_html($button['link']['title'])
+                ); ?>
                 <?php endforeach; ?>
 
             </div>
+
+
         <?php endif; ?>
     </div>
 </section><!-- Service Content  -->
