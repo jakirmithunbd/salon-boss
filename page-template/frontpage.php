@@ -24,7 +24,7 @@ get_header(); ?>
                 </div>
 
                 <div class="sb-help-wrapper">
-                    <div class="sb-service-list">
+                    <div class="sb-help-service-list">
                         <div class="sb-image-box"><!-- image-position-right / image-position-top -->
                             <div class="sb-image-box-media">
                                 <img

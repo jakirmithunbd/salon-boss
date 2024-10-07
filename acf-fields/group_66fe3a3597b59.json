@@ -410,8 +410,8 @@
                         },
                         {
                             "key": "field_670285f4fb6b9",
-                            "label": "Buttons",
-                            "name": "buttons",
+                            "label": "Button Group",
+                            "name": "button_group",
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
@@ -423,7 +423,6 @@
                                 "id": ""
                             },
                             "layout": "table",
-                            "pagination": 0,
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
@@ -449,14 +448,44 @@
                                     "parent_repeater": "field_670285f4fb6b9"
                                 },
                                 {
-                                    "key": "field_670285f5fb6bb",
-                                    "label": "Icon",
-                                    "name": "icon",
+                                    "key": "field_6703c894f8fa8",
+                                    "label": "Enable Icon",
+                                    "name": "enable_icon",
                                     "aria-label": "",
                                     "type": "true_false",
-                                    "instructions": "Enable to right side",
+                                    "instructions": "Enable to display Icon",
                                     "required": 0,
                                     "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "parent_repeater": "field_670285f4fb6b9"
+                                },
+                                {
+                                    "key": "field_670285f5fb6bb",
+                                    "label": "Icon Alignment",
+                                    "name": "icon_alignment",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Enable to right | Default: Left",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_6703c894f8fa8",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -467,6 +496,28 @@
                                     "allow_in_bindings": 0,
                                     "ui_on_text": "Right",
                                     "ui_off_text": "Left",
+                                    "ui": 1,
+                                    "parent_repeater": "field_670285f4fb6b9"
+                                },
+                                {
+                                    "key": "field_6703c7ff1f4ae",
+                                    "label": "Button Type",
+                                    "name": "button_type",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Call Button | Enable to show service button",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui_on_text": "Service",
+                                    "ui_off_text": "Call",
                                     "ui": 1,
                                     "parent_repeater": "field_670285f4fb6b9"
                                 }
@@ -1393,5 +1444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728226630
+    "modified": 1728302053
 }

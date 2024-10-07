@@ -4,6 +4,29 @@ get_header(); ?>
 <?php get_template_part('template-parts/page-banner'); ?>
 <?php get_template_part('template-parts/logo-slider'); ?>
 
+<?php
+
+    if( have_rows('single_service') ):
+
+
+        while ( have_rows('single_service') ) : the_row();
+
+
+            if( get_row_layout() == 'service_list_layout' ):
+                get_template_part('template-parts/service-list');
+
+
+            elseif( get_row_layout() == 'download' ):
+                $file = get_sub_field('file');
+
+            endif;
+        endwhile;
+    else :
+        printf('<h4>Please add section!</h4>');
+    endif;
+
+?>
+
     <section class="why-choose-sb">
         <div class="container">
             <div class="sb-row align-center">
@@ -60,154 +83,7 @@ get_header(); ?>
         </div>
     </section><!-- Why Choose Us -->
 
-    <section class="sb-single-service">
-        <div class="container">
-            <div class="single-service-section-title text-center">
-                <h2>Salon Website Services</h2>
-                <p>Our <strong>salon website services</strong> are specifically designed for the
-                    <strong>hair and beauty industry</strong>. We make it simple to <strong>create and manage</strong>
-                    your brand's website, ensuring that it's not just visually stunning but also <strong>cutting-edge</strong>
-                    and fully <strong>optimized to convert</strong> visitors into loyal, paying customers.</p>
-            </div>
 
-            <div class="single-service-img-box-list d-flex justify-center">
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-Mobile-Friendly-Responsive.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>Mobile Friendly & Responsive</h4>
-                        <p>
-                            Elevate your online presence with a sleek, user-friendly website optimized for all devices, ensuring an enjoyable browsing experience for your clients.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-ONE-OF-A-KIND-DESIGNS.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>ONE-OF-A-KIND DESIGNS</h4>
-                        <p>
-                            Stand out from the competition with our unique, bespoke website designs that reflect your salon's personality and charm. We never use templates or take shortcuts.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-E-COMMERCE-STORES.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>E-COMMERCE STORES</h4>
-                        <p>
-                            Streamline your sales process with a fully integrated e-commerce platform, making your products available to your customers 24/7.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-SEO-OPTIMIZATION.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>SEO OPTIMIZATION</h4>
-                        <p>
-                            With our SEO services, your website will rise to the top of search results, driving more traffic and potential clients your way.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-DOMAIN-SERVICES.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>DOMAIN SERVICES</h4>
-                        <p>
-                            Secure your brand's digital real estate with our hassle-free domain services, establishing a strong online identity.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-ANALYTICS.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>ANALYTICS</h4>
-                        <p>
-                            Understand your website's performance with our detailed analytics, guiding your strategy and optimizing your customer's journey.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-BUY-NOW-PAY-LATER.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>BUY NOW, PAY LATER</h4>
-                        <p>
-                            Increase conversions and average spend with flexible payment options, making your products and services more accessible to your customers.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-                <div class="sb-image-box"><!-- image-size-small image-position-right / image-position-top -->
-                    <div class="sb-image-box-media">
-                        <img
-                            src="../assets/images/Salon-Boss-INTEGRATIONS.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="sb-image-box-content">
-                        <h4>INTEGRATIONS</h4>
-                        <p>
-                            Seamlessly integrate appointment scheduling, email marketing, and more to your site, creating a convenient and cohesive experience for your customers.
-                        </p>
-                    </div>
-                </div><!-- / Image Box  -->
-
-            </div>
-            <div class="sb-buttons d-flex justify-center">
-                <a
-                    href="#"
-                    class="sb-button button-bg-green button-icon-phone icon-position-right"
-                >book discovery call</a
-                >
-                <a
-                    href="#"
-                    class="sb-button button-bg-pink button-icon-scissor icon-position-right"
-                >Text Us (385) 469-6068</a
-                >
-            </div>
-        </div>
-    </section><!-- Service Content  -->
 
     <section class="sb-reputation-solutions">
         <div class="container">
