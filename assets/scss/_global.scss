@@ -361,13 +361,6 @@ section {
 
         &:after {
             left: 15px;
-
-            //@include breakpoint(575) {
-            //    position: inherit;
-            //    top: inherit;
-            //    right: inherit;
-            //    padding-left: 15px;
-            //}
         }
 
         &.button-icon-sboss {
@@ -386,12 +379,6 @@ section {
 
         &::after {
             right: 15px;
-
-            //@include breakpoint(575) {
-            //    position: inherit;
-            //    top: inherit;
-            //    right: inherit;
-            //}
         }
     }
     &.button-bg-green {
