@@ -328,14 +328,15 @@ section {
         gap: 10px;
     }
 
-    &.button-icon-phone, &.button-icon-scissor {
+    @include minbreakpoint(576) {
+        &.button-icon-phone, &.button-icon-scissor {
 
-        &:after {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            top: calc(50% - 19px);
-            @extend .transition;
+            &:after {
+                position: absolute;
+                width: 38px;
+                height: 38px;
+                top: calc(50% - 19px);
+            }
         }
     }
     
