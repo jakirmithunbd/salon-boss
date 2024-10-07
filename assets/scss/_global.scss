@@ -607,7 +607,7 @@ section {
     width: 100%;
     margin-left: 70px;
     padding: 10px 20px;
-    padding-bottom: var(--sb-card-btn-height);
+    padding-bottom: calc(var(--sb-card-btn-height) - 1px);
     background-image: url(../images/Salon-Boss-card-bg.jpg);
     background-position: center;
     background-size: cover;
@@ -662,7 +662,18 @@ section {
             @include breakpoint(575) {
                 width: 100%;
             }
+            
+            h3 {
+                @include font(28, 34);
+                color: #000;
 
+                @include breakpoint(1024){
+                    @include font(24, 32);
+                }
+                @include breakpoint(768){
+                    @include font(22, 30);
+                }
+            }
             h4 {
                 @include font(20, 30);
                 font-weight: 700;
