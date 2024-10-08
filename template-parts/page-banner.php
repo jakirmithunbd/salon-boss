@@ -1,18 +1,21 @@
 <?php $hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 
-if(!empty( $hero)) : ?>
-<section class="common-hero hero-bg">
+if(!empty( $hero)) :
+    $sec_class = empty($media['image']) ? 'hero-without-image' : '';
+    ?>
+<section class="common-hero hero-bg <?php echo esc_attr( $sec_class );?>">
     <div class="container">
         <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
             <?php if ( !$media['is_video'] ) :
-                $image = !empty($media['image']['url']) ? $media['image']['url'] : get_theme_file_uri('/assets/images/Salon-Boss-service-website.png');
                 $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
             ?>
 
             <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
-                <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $media['image']['title'] ); ?>"/>
+                <?php if($media['image']) {
+                    printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr( $media['image']['title']));
+                } ?>
 
                 <?php if( $media['title'] ) : ?>
                 <div class="sb-hero-image-title">
