@@ -1,6 +1,6 @@
 <?php
 $section_title = get_sub_field('solutions_section_title');
-//$cases = get_sub_field('select_case_study');
+$solution_list = get_sub_field('solution_list');
 ?>
 
 <section class="sb-reputation-solutions">
@@ -16,34 +16,20 @@ $section_title = get_sub_field('solutions_section_title');
         </div>
         <div class="sb-reputation-review-list d-flex flex-wrap">
 
-            <div class="sb-reputation-review-item">
-                <img src="../assets/images/Salon-Boss-reputation-review.png" alt="">
-                <h3>Monitor your online reviews</h3>
-                <p>
-                    Monitor your salon's online reviews across over 100+ review sites
-                    using an easy to use dashboard and with customizable email & sms notifications.
-                </p>
-            </div>
+            <?php if (!empty($solution_list)) : foreach ($solution_list as $list) :
+                $image = $list['image']['url']
+                    ?? $list['image']['url']
+                    ?? esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
+                ?>
 
             <div class="sb-reputation-review-item">
-                <img src="../assets/images/Salon-Boss-reputation-review.png" alt="">
-                <h3>skyrocket the number of reviews</h3>
+                <img src="<?php echo $image; ?>>" alt="">
+                <h3><?php echo $list['title'];?></h3>
                 <p>
-                    skyrocket the number of reviews Increase the number of
-                    reviews your beauty business has and rise above your
-                    competition using our automated software we've tailored
-                    for the beauty industry.
+                    <?php echo $list['description'];?>
                 </p>
             </div>
-
-            <div class="sb-reputation-review-item">
-                <img src="../assets/images/Salon-Boss-reputation-review.png" alt="">
-                <h3>respond to all reviews</h3>
-                <p>
-                    Monitor your salon's online reviews across over 100+ review sites
-                    using an easy to use dashboard and with customizable email & sms notifications.
-                </p>
-            </div>
+            <?php endforeach; endif; ?>
 
         </div>
     </div>
