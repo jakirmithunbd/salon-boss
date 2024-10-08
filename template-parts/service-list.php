@@ -7,11 +7,11 @@
     <div class="container">
         <div class="single-service-section-title text-center">
             <?php if (!empty($section_title['title'])): ?>
-                <h2><?php echo esc_html($section_title['title']); ?></h2>
+                <h2><?php echo wp_kses_post($section_title['title']); ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($section_title['description'])): ?>
-                <p><?php echo esc_html($section_title['description']); ?></p>
+                <p><?php echo wp_kses_post($section_title['description']); ?></p>
             <?php endif; ?>
         </div>
 
@@ -27,11 +27,11 @@
                         </div>
                         <div class="sb-image-box-content">
                             <?php if (!empty($list['title'])): ?>
-                                <h4><?php echo esc_html($list['title']); ?></h4>
+                                <h4><?php echo wp_kses_post($list['title']); ?></h4>
                             <?php endif; ?>
 
                             <?php if (!empty($list['description'])): ?>
-                                <p><?php echo esc_html($list['description']); ?></p>
+                                <p><?php echo wp_kses_post($list['description']); ?></p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         esc_attr($button['link']['target']),
                         esc_attr($icon_type),
                         esc_attr($icon_position),
-                        esc_html($button['link']['title'])
+                        wp_kses_post($button['link']['title'])
                 ); ?>
                 <?php endforeach; ?>
 
