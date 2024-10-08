@@ -1,8 +1,7 @@
 <?php
-
-$section_title = get_sub_field('section_title');
-$service_list = get_sub_field('service_list');
-$buttons = get_sub_field('button_group');
+    $section_title = get_sub_field('section_title');
+    $service_list = get_sub_field('service_list');
+    $buttons = get_sub_field('button_group');
 ?>
 <section class="sb-single-service">
     <div class="container">
