@@ -15,7 +15,7 @@
                 <?php $call_to_action = get_field('call_to_action', 'options'); ?>
                 <div class="ready-get-start d-flex align-center justify-end">
                     <h4><?php echo esc_html($call_to_action['title']); ?></h4>
-                    <a href="<?php echo esc_url($call_to_action['button']['url']); ?>" target="<?php echo esc_attr($call_to_action['button']['target']); ?>" class="sb-button button-bg-green button-icon-call icon-position-left">
+                    <a href="<?php echo esc_url($call_to_action['button']['url']); ?>" target="<?php echo esc_attr($call_to_action['button']['target']); ?>" class="sb-button button-bg-green button-icon-phone icon-position-left">
                         <?php echo esc_html($call_to_action['button']['title']); ?>
                     </a>
                 </div>
