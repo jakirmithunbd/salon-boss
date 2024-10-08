@@ -732,6 +732,66 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6704a05f2fc62",
+                            "label": "Section Title",
+                            "name": "case-study_section_title",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6704a05f2fc63",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "Enter your text",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6704a05f2fc65",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "rows": 5,
+                                    "placeholder": "",
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_670287bb39f38",
                             "label": "Select Case Study",
                             "name": "select_case_study",
@@ -795,7 +855,7 @@
                         {
                             "key": "field_67029ae7b6574",
                             "label": "Button",
-                            "name": "button",
+                            "name": "faqs_discover_button",
                             "aria-label": "",
                             "type": "link",
                             "instructions": "",
@@ -1444,5 +1504,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728302053
+    "modified": 1728356698
 }

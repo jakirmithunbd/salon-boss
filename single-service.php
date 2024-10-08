@@ -15,6 +15,15 @@ get_header(); ?>
             if( get_row_layout() == 'service_list_layout' ):
                 get_template_part('template-parts/service-list');
 
+            elseif( get_row_layout() == 'faqs_layout' ):
+                get_template_part('template-parts/service-faqs');
+
+            elseif( get_row_layout() == 'case_study_layout' ):
+                get_template_part('template-parts/service-case-study');
+
+            elseif( get_row_layout() == 'case_study_layout' ):
+                get_template_part('template-parts/service-popular-solution');
+
 
             elseif( get_row_layout() == 'download' ):
                 $file = get_sub_field('file');
