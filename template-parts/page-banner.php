@@ -55,12 +55,23 @@
                         <?php printf('<h4>%s</h4>', esc_html($content['sub_title'])); ?>
                         <?php printf('<p>%s</p>', esc_html($content['description'])); ?>
 
-                        <?php $buttons = $content['buttons']; ?>
+                        <?php $buttons = $content['buttons_group']; ?>
+
                         <div class="sb-buttons d-flex">
-                            <?php if ($buttons): foreach ($buttons as $button):
-                                $btn_position = ($button['icon'] === true && $button['icon_position']['value'] === 'left') ? 'icon-position-left' : 'button-icon-phone icon-position-' . esc_attr($button['icon_position']['value']); ?>
-                                <a href="<?php echo esc_url($button['link']['url']); ?>" class="sb-button button-bg-green <?php echo $btn_position; ?>">
-                                    <?php echo esc_html($button['link']['title']); ?>
+                            <?php if ($buttons): foreach ($buttons as $f_button):
+                            $icon_type = '';
+                            $icon_position = '';
+
+                            if (!empty($f_button['enable_icon'])) {
+                                $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                                $icon_position = !empty($f_button['icon_alignment'])
+                                    ? 'icon-position-right'
+                                    : 'icon-position-left';
+                            }
+                            ?>
+
+                                <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                                    <?php echo esc_html($f_button['link']['title']); ?>
                                 </a>
                             <?php endforeach; endif; ?>
                         </div>
