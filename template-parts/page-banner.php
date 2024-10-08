@@ -5,17 +5,23 @@
             <?php if ($hero): ?>
                 <?php $media = $hero['media']; ?>
 
-                <?php if (!empty($media) && true !== $media['is_video']): ?>
+                <?php
+                if ( !$media['is_video']): ?>
                     <?php
                     $image = !empty($media['image']['url']) ? esc_url($media['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Salon-Boss-service-website.png'));
                     ?>
                     <div class="sb-hero-image flex-center">
+                        <div class="sb-card">
                         <img src="<?php echo $image; ?>" alt="<?php echo esc_attr($media['image']['title'] ?? ''); ?>" />
-                        <?php $title = !empty($media['title']) ? esc_html($media['title']) : 'Watch This Video'; ?>
-                        <div class="sb-card-btn">
-                            <button class="btn-link-availabl">
-                                <?php echo $title; ?>
-                            </button>
+
+                        <?php if($media['title']) : ?>
+                            <div class="sb-card-btn">
+                                <button class="Available">
+                                    <?php echo wp_kses_post($media['title']); ?>
+                                </button>
+                            </div>
+                        <?php endif; ?>
+
                         </div>
                     </div>
                 <?php else:
@@ -37,12 +43,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php $title = !empty($media['title']) ? esc_html($media['title']) : 'Watch This Video'; ?>
+
+                            <?php if($media['title'] ) : ?>
                             <div class="sb-card-btn">
-                                <button class="btn-link-availabl">
-                                    <?php echo $title; ?>
+                                <button class="btn-link-Available">
+                                    <?php echo wp_kses_post($media['title']); ?>
                                 </button>
                             </div>
+                            <?php endif;?>
+
                         </div><!-- Sb Card  -->
                     </div>
                 <?php endif; ?>
@@ -51,9 +60,9 @@
                 $content = $hero['content'];
                 if (!empty($content)): ?>
                     <div class="sb-hero-content text-center-mobile">
-                        <?php printf('<h1>%s</h1>', esc_html($content['title'])); ?>
-                        <?php printf('<h4>%s</h4>', esc_html($content['sub_title'])); ?>
-                        <?php printf('<p>%s</p>', esc_html($content['description'])); ?>
+                        <?php printf('<h1>%s</h1>', wp_kses_post($content['title'])); ?>
+                        <?php printf('<h4>%s</h4>', wp_kses_post($content['sub_title'])); ?>
+                        <?php printf('<p>%s</p>', wp_kses_post($content['description'])); ?>
 
                         <?php $buttons = $content['buttons_group']; ?>
 
