@@ -1,5 +1,5 @@
 <?php
-$section_title = get_sub_field('case-solutions_section_title');
+$section_title = get_sub_field('solutions_section_title');
 //$cases = get_sub_field('select_case_study');
 ?>
 
