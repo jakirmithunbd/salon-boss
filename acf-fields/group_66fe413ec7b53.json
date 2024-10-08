@@ -254,7 +254,7 @@
                         },
                         {
                             "key": "field_66fe3c6e0ed14",
-                            "label": "Is Video",
+                            "label": "Media Field",
                             "name": "is_video",
                             "aria-label": "",
                             "type": "true_false",
@@ -267,10 +267,9 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
+                            "default_value": 1,
+                            "ui_on_text": "Video",
+                            "ui_off_text": "Image",
                             "ui": 1
                         },
                         {
@@ -288,8 +287,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
+                            "default_value": 1,
                             "ui_on_text": "",
                             "ui_off_text": "",
                             "ui": 1
@@ -325,7 +323,6 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "allow_in_bindings": 0,
                             "preview_size": "medium"
                         },
                         {
@@ -359,7 +356,6 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "allow_in_bindings": 0,
                             "preview_size": "medium"
                         },
                         {
@@ -385,8 +381,7 @@
                                 "id": ""
                             },
                             "width": "",
-                            "height": "",
-                            "allow_in_bindings": 0
+                            "height": ""
                         }
                     ]
                 }
@@ -420,5 +415,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728370736
+    "modified": 1728374989
 }

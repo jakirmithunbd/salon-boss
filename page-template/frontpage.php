@@ -4,7 +4,6 @@
  * */
 get_header(); ?>
 
-
 <section class="hero-home hero-bg">
     <div class="container">
         <div class="sb-row">
@@ -99,272 +98,268 @@ get_header(); ?>
                 <div class="sb-hero-image flex-center">
                     <?php
 
-                    $hero_banner_media_alignment = $hero_banner_media['media_alignment'];
+                    $hero_banner_image = $hero_banner_media['image'];
 
-                    if ($hero_banner_media_alignment):
-                        $hero_banner_image = $hero_banner_media['image'];
+                    ; ?>
+                    <img src="<?php echo esc_url($hero_banner_image['url'] ?? ''); ?>"
+                        alt="<?php echo esc_attr($hero_banner_image['alt'] ?? ''); ?>" />
 
-                        ; ?>
-                        <img src="<?php echo esc_url($hero_banner_image['url'] ?? ''); ?>"
-                            alt="<?php echo esc_attr($hero_banner_image['alt'] ?? ''); ?>" />
-                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>
     </div>
 </section>
-<!-- Hero Home  -->
 
+<!-- Hero Home  -->
 <?php get_template_part('template-parts/logo-slider'); ?>
 
 <section class="sb-who-we-help">
     <div class="container">
-        <div class="sb-row">
-            <div class="sb-section-title text-center-mobile">
-                <h5>Who We Help</h5>
-                <h3>Built to Serve the<br> Beauty Industry</h3>
-                <p>
-                    We specialize in helping Beauty Professionals, Salons,
-                    Salon Suites, and Beauty Beauty Brands. We work with
-                    business owners just like you to solve problems, create
-                    strategies & promote growth
-                </p>
-                <div class="sb-media">
-                    <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-help.png') ?>" alt="" />
+
+        <?php
+        $who_we_help_section = get_field('who_we_help_section');
+        if ($who_we_help_section):
+
+            $who_we_help_section_titles = $who_we_help_section['content_area'] ?? '';
+            $who_we_help_section_titles_image = $who_we_help_section['title_image'] ?? '';
+
+            ; ?>
+
+            <div class="sb-row">
+                <div class="sb-section-title text-center-mobile">
+                    <?php
+                    $section_title = $who_we_help_section_titles['title'];
+                    $section_sub_title = $who_we_help_section_titles['sub_title'];
+                    $section_description = $who_we_help_section_titles['description'];
+                    ; ?>
+                    <h5><?php echo esc_html($section_sub_title ?? ''); ?></h5>
+                    <h3><?php echo wp_kses_post($section_title ?? ''); ?></h3>
+                    <p><?php echo esc_attr($section_description ?? ''); ?></p>
+                    <div class="sb-media">
+                        <img src="<?php echo esc_url($who_we_help_section_titles_image['url'] ?? ''); ?>"
+                            alt="<?php echo esc_attr($who_we_help_section_titles_image['alt'] ?? ''); ?>" />
+                    </div>
+                </div>
+
+                <div class="sb-help-wrapper">
+                    <?php
+                    $who_we_help_services = $who_we_help_section['who_we_help_services'];
+                    ; ?>
+                    <div class="sb-service-list">
+                        <?php
+                        if ($who_we_help_services):
+                            foreach ($who_we_help_services as $who_we_help_service):
+                                $who_we_help_service_title = $who_we_help_service['title'];
+                                $who_we_help_service_description = $who_we_help_service['description'];
+                                $who_we_help_service_explor = $who_we_help_service['explor_button'];
+                                $who_we_help_service_image = $who_we_help_service['image'];
+                                $image_position_class = $who_we_help_service['image_position'] ?? '';
+                                ; ?>
+
+                                <div class="sb-image-box <?php echo $image_position_class; ?>">
+                                    <!-- image-position-right / image-position-top -->
+                                    <div class="sb-image-box-media">
+                                        <img src="<?php echo esc_url($who_we_help_service_image['url'] ?? ''); ?>"
+                                            alt="<?php echo esc_attr($who_we_help_service_image['alt'] ?? ''); ?>" />
+                                    </div>
+                                    <div class="sb-image-box-content">
+                                        <h4><?php echo esc_html($who_we_help_service_title ?? ''); ?></h4>
+                                        <p><?php echo esc_attr($who_we_help_service_description ?? ''); ?></p>
+                                        <a href="<?php echo esc_url($who_we_help_service_explor['url'] ?? site_url()); ?>"
+                                            class="sb-simple-btn"><?php echo esc_attr($who_we_help_service_explor['title'] ?? ''); ?></a>
+                                    </div>
+                                </div>
+                                <!-- / Image Box  -->
+                                <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </div>
+
+                    <?php
+                    $explor_service_button = $who_we_help_section['explore_service'];
+                    if ($explor_service_button):
+
+                        ; ?>
+                        <a href="<?php echo esc_url($explor_service_button['url'] ?? site_url()); ?>"
+                            class="sb-button button-bg-green button-icon-scissor icon-position-right">
+                            <?php echo esc_attr(!empty($explor_service_button['title']) ? $explor_service_button['title'] : 'Explore our services'); ?>
+                        </a>
+
+                    <?php endif; ?>
                 </div>
             </div>
-
-            <div class="sb-help-wrapper">
-                <div class="sb-service-list">
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-hair-stylists.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Hair Stylists & Solo Beauty Professionals</h4>
-                            <p>
-                                Salon Boss has worked with countless independent
-                                beauty professionals who are looking to take
-                                their business to the next level by marketing
-                                themselves.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Solo Pro Services</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-hair-salons.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Hair Salons</h4>
-                            <p>
-                                Salon Boss is the ultimate partner for salon success.
-                                Our strategic marketing strategies are tailored to help
-                                your salon be found online and increase your bookings.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Hair Salon Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-salon-suits.png') ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Salon Suites</h4>
-                            <p>
-                                Salon Boss specializes in helping salon suite owners
-                                generate leads, fill vacant suites, systematize sales,
-                                and increase tenant retention.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Salon Suite Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-beauty-brands.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Beauty Brands</h4>
-                            <p>
-                                Salon Boss can help take your beauty brand to new heights.
-                                We offer complete marketing packages for
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Beauty Brand Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                </div>
-                <a href="#" class="sb-button button-bg-green button-icon-scissor icon-position-right">Explore our
-                    services</a>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section><!-- Who we Help -->
 
 <section class="services-overview">
     <div class="container">
-        <div class="sb-section-title text-center">
-            <h5>What We Do</h5>
-            <h3>Services Backed By Real Results</h3>
-            <p>
-                We've hand crafted our hair salon marketing services to be tailored for the hair & beauty industry. We
-                understand your business, your ideal clients and how to market to them.
-            </p>
-        </div>
-        <div class="overview-card-list d-flex flex-wrap justify-center">
+        <?php
+        $what_we_do_section = get_field('what_we_do_section');
+        if ($what_we_do_section):
+            $what_we_do_section_title = $what_we_do_section['title'];
+            $what_we_do_section_sub_title = $what_we_do_section['sub_title'];
+            $what_we_do_section_description = $what_we_do_section['description'];
+            ?>
 
-            <div class="sb-card">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-SEO.png'); ?>" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>SEO <span>(Search Engine Optimization)</span></h4>
-                        <p>We have proven strategies to improve your salon's search engine rankings and online
-                            visability.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About SEO ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+            <div class="sb-section-title text-center">
+                <h5><?php echo esc_html($what_we_do_section_sub_title ?? ''); ?></h5>
+                <h3><?php echo wp_kses_post($what_we_do_section_title ?? ''); ?></h3>
+                <p><?php echo wp_kses_post($what_we_do_section_description ?? ''); ?></p>
+            </div>
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-advertising.png'); ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Advertising</h4>
-                        <p>We specialize in running successful advertising campaign for salons & beauty brands.</p>
-                        <div class="sb-card-btn">
-                            <a href="#"> Learn More About Advertising ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+            <div class="overview-card-list d-flex flex-wrap justify-center">
+                <?php
+                $what_we_do_services = $what_we_do_section['service'] ?? [];
+                if (is_array($what_we_do_services) && !empty($what_we_do_services)):
+                    foreach ($what_we_do_services as $what_we_do_service):
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-website-development.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Website Development</h4>
-                        <p>We are experts at designing and developing custom crafted and state-of-the-art websites for
-                            the hair and beauty industry.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Website Development ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        $what_we_do_service_image = $what_we_do_service['what_we_do_service_image'];
+                        $what_we_do_content = $what_we_do_service['what_we_do_content'];
+                        $what_we_do_service_title = $what_we_do_content['title'];
+                        $what_we_do_service_discription = $what_we_do_content['discription'];
+                        $what_we_do_service_button = $what_we_do_content['button'];
+                        $service_image_position = $what_we_do_content['image_position'];
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-social-media-management.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Social Media Management</h4>
-                        <p>Let us manage your social media accounts for a hands-off experience that increases your
-                            social presence.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Social Media Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        ?>
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-design-branding.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Design & Branding</h4>
-                        <p>We are industry design and branding experts. Here to help make your brand recognizable and
-                            outshine your competition.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Design & Branding ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        <div class="sb-card <?php echo esc_attr($service_image_position); ?>">
+                            <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                            <div class="sb-card-contents-wrapper d-flex align-center">
+                                <?php
+                                if ($what_we_do_service_image):
+                                    ; ?>
+                                    <div class="sb-card-image d-flex">
+                                        <img src="<?php echo esc_url($what_we_do_service_image['url']); ?>"
+                                            alt="<?php echo esc_attr($what_we_do_service_image['alt']); ?>">
+                                    </div>
+                                <?php endif; ?>
+                                <div class="sb-card-content text-center-mobile">
+                                    <h4><?php echo wp_kses_post($what_we_do_service_title ?? ''); ?></h4>
+                                    <p><?php echo esc_attr($what_we_do_service_discription ?? ''); ?></p>
+                                    <div class="sb-card-btn">
+                                        <a href="<?php echo esc_url($what_we_do_service_button['url'] ?? site_url()); ?>">
+                                            <?php echo esc_attr($what_we_do_service_button['title'] ?? '' . '>'); ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Sb Card  -->
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-SEO.png'); ?>" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Reputation Management</h4>
-                        <p>Automate, manage and increase your reviews so that your business can continue to attract
-                            clients and rise above your competition.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Reputation Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
 
-        </div>
+                    <?php endforeach;
+                endif; ?>
+            </div>
+
+        <?php endif; ?>
     </div>
 </section><!-- Services Overview  -->
 
+
 <section class="sb-about">
     <div class="container">
-        <div class="sb-row align-center">
-            <div class="sb-section-title text-center-mobile">
-                <h5>About Us</h5>
-                <h3>Empowering hair and beauty businesses since 2017</h3>
-                <p>
-                    Salon Boss is a pioneering hair <strong>salon marketing agency</strong>
-                    exclusively serving the <strong>hair and beauty sector</strong>.
-                    Founded by <strong>Matthew Peters-Mejia</strong>, we're dedicated to helping your
-                    business navigate the <strong>digital landscape and achieve growth</strong>.
-                </p>
-                <div class="sb-row">
-                    <div class="sb-simple-card text-center-mobile">
-                        <h5>Dedicated to Your success</h5>
-                        <p>We treat every business we work with as if it were our own</p>
+        <?php
+        $about_us_section = get_field('about_us_section');
+        if ($about_us_section):
+            $about_us_title_area = $about_us_section['title_area'];
+            $about_us_image_area = $about_us_section['image_area'];
+            $about_service = $about_us_section['about_services'];
+
+            $title_area_title = $about_us_title_area['title'];
+            $title_area_sub_title = $about_us_title_area['sub_title'];
+            $title_area_description = $about_us_title_area['description'];
+
+            ?>
+            <div class="sb-row align-center">
+                <div class="sb-section-title text-center-mobile">
+                    <h5><?php echo esc_html($title_area_sub_title ?? ''); ?></h5>
+                    <h3><?php echo wp_kses_post($title_area_title ?? ''); ?></h3>
+                    <p>
+                        <?php echo wp_kses_post($title_area_description ?? ''); ?>
+                    </p>
+                    <div class="sb-row">
+                        <?php if ($about_service):
+                            foreach ($about_service as $service):
+                                $service_title = $service['title'];
+                                $service_description = $service['description'];
+                                ?>
+                                <div class="sb-simple-card text-center-mobile">
+                                    <h5><?php echo esc_html($service_title ?? ''); ?></h5>
+                                    <!-- Fixed to echo instead of esc_html_e -->
+                                    <p><?php echo wp_kses_post($service_description ?? ''); ?></p>
+                                </div>
+                                <?php
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
-                    <div class="sb-simple-card text-center-mobile">
-                        <h5>Dedicated to Your success</h5>
-                        <p>We treat every business we work with as if it were our own</p>
+                    <div class="sb-buttons d-flex">
+                        <?php
+                        $about_service_buttons = $about_us_section['button_group'];
+
+                        foreach ($about_service_buttons as $button):
+                            $button_link = $button['button_link'] ?? '';
+                            $button_icon = $button['icon'] ?? '';
+                            $button_type = $button['button_type'] ?? '';
+                            $button_type_class = '';
+                            $button_icon_class = '';
+                            $position_class = '';
+
+                            // Determine button type class
+                            if ($button_type === false) {
+                                $button_type_class = 'button-bg-green';
+                            } elseif ($button_type === true) {
+                                $button_type_class = 'button-bg-pink';
+                            }
+
+                            // Determine button icon class and position
+                            if ($button_icon) {
+                                $button_icon_position = $button['icon_position'] ?? null; // Fixed the variable name
+                    
+                                if ($button_icon_position === false) {
+                                    $position_class = 'icon-position-left';
+                                } elseif ($button_icon_position === true) {
+                                    $position_class = 'icon-position-right';
+                                }
+
+                                if ($button_type === false) {
+                                    $button_icon_class = 'button-icon-phone';
+                                } elseif ($button_type === true) {
+                                    $button_icon_class = 'button-icon-scissor';
+                                }
+                            }
+                            ?>
+
+                            <a href="<?php echo esc_url($button_link['url']); ?>"
+                                class="sb-button <?php echo esc_attr($button_type_class . ' ' . $button_icon_class . ' ' . $position_class); ?>">
+                                <?php echo esc_html($button_link['title'] ?? ''); ?>
+                            </a>
+
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="sb-buttons d-flex">
-                    <a href="#" class="sb-button button-bg-green more-about-btn">More About Us</a>
-                    <a href="#" class="sb-button button-bg-pink button-icon-scissor icon-position-right">Explore our
-                        services</a>
+                <div class="sb-media">
+                    <?php
+                    $about_image = $about_us_image_area['image'] ?? null;
+                    $about_image_button = $about_us_image_area['image_url'] ?? null;
+
+                    if ($about_image): ?>
+                        <img src="<?php echo esc_url($about_image['url']); ?>"
+                            alt="<?php echo esc_attr($about_image['alt']); ?>">
+                    <?php endif; ?>
+
+                    <?php if ($about_image_button): ?>
+                        <div class="sb-media-badge">
+                            <h4>Become a <a href="<?php echo esc_url($about_image_button['url']); ?>">Salon Boss!</a></h4>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
-            <div class="sb-media">
-                <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-salonboss-matt.png') ?>" alt="">
-                <div class="sb-media-badge">
-                    <h4>Become a <a href="#">Salon Boss!</a></h4>
-                </div>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
-</section><!-- About section  -->
+</section><!-- About section -->
+
 
 <section class="resource-center-section">
     <div class="container">
