@@ -21,7 +21,7 @@ $website_link = isset($seo_audits_cta['website_link']) ? $seo_audits_cta['websit
                     </div>
                     <div class="sb-card-content text-center">
 
-                        <h2><?php echo esc_html($seo_title); ?> <span>SEO Audits</span> 🔎</h2>
+                        <h2><?php echo esc_html($seo_title); ?> </h2>
                         <h5><?php echo esc_html($seo_sub_title); ?></h5>
                         <p><?php echo esc_html($seo_sub_description); ?></p>
 

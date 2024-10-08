@@ -33,8 +33,11 @@ get_header(); ?>
             elseif( get_row_layout() == 'service_seo_audits' ):
                 get_template_part('template-parts/service-seo-audits');
 
-            elseif( get_row_layout() == 'why_choose_us' ):
-                get_template_part('template-parts/service-customer-review');
+            elseif( get_row_layout() == 'service_resource_center' ):
+                get_template_part('template-parts/service-resource-center');
+
+            elseif( get_row_layout() == 'service_booking_cta' ):
+                get_template_part('template-parts/service-booking-cta');
 
             endif;
         endwhile;

@@ -417,7 +417,7 @@
                     "label": "Service Links",
                     "name": "service_links",
                     "aria-label": "",
-                    "type": "page_link",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -429,10 +429,13 @@
                     "post_type": "",
                     "post_status": "",
                     "taxonomy": "",
-                    "allow_archives": 1,
+                    "return_format": "object",
                     "multiple": 1,
                     "allow_null": 0,
-                    "allow_in_bindings": 0
+                    "allow_in_bindings": 1,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
                 },
                 {
                     "key": "field_67029573f5557",
@@ -455,7 +458,7 @@
         },
         {
             "key": "field_67029616f7411",
-            "label": "Service CTA",
+            "label": "Service Booking CTA",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -474,7 +477,7 @@
         {
             "key": "field_67029619f7412",
             "label": "",
-            "name": "service_cta",
+            "name": "service_booking_cta",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -838,5 +841,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728360776
+    "modified": 1728363912
 }

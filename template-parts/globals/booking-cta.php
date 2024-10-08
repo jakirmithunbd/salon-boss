@@ -1,3 +1,5 @@
+<?php $sb_cta = get_field('service_booking_cta', 'options')?>
+
 <section class="sb-first-step">
     <div class="container">
         <div class="sb-row align-center">
