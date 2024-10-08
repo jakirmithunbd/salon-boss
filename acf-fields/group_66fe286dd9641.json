@@ -222,7 +222,7 @@
                     "label": "Service Links",
                     "name": "service_links",
                     "aria-label": "",
-                    "type": "page_link",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -234,10 +234,13 @@
                     "post_type": "",
                     "post_status": "",
                     "taxonomy": "",
-                    "allow_archives": 1,
+                    "return_format": "object",
                     "multiple": 1,
                     "allow_null": 0,
-                    "allow_in_bindings": 0
+                    "allow_in_bindings": 1,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
                 },
                 {
                     "key": "field_6702943e6a80c",
@@ -835,5 +838,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728223657
+    "modified": 1728360776
 }

@@ -27,9 +27,14 @@ get_header(); ?>
             elseif( get_row_layout() == 'package_layout' ):
                 get_template_part('template-parts/service-package');
 
+            elseif( get_row_layout() == 'why_choose_us' ):
+                get_template_part('template-parts/service-customer-review');
 
-            elseif( get_row_layout() == 'download' ):
-                $file = get_sub_field('file');
+            elseif( get_row_layout() == 'service_seo_audits' ):
+                get_template_part('template-parts/service-seo-audits');
+
+            elseif( get_row_layout() == 'why_choose_us' ):
+                get_template_part('template-parts/service-customer-review');
 
             endif;
         endwhile;

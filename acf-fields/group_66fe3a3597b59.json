@@ -1477,6 +1477,37 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_6704af123fb50": {
+                    "key": "layout_6704af123fb50",
+                    "name": "service_seo_audits",
+                    "label": "SEO Audits",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6704b8a070121",
+                            "label": "",
+                            "name": "not_user",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Please update the information from Theme Settings > SEO Audits CTA",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 1,
+                            "ui_on_text": "Enable",
+                            "ui_off_text": "Disable",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1504,5 +1535,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728356698
+    "modified": 1728362778
 }
