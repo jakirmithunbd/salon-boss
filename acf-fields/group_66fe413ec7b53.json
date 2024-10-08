@@ -288,8 +288,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
+                            "default_value": 1,
                             "ui_on_text": "",
                             "ui_off_text": "",
                             "ui": 1
@@ -304,6 +303,11 @@
                             "required": 0,
                             "conditional_logic": [
                                 [
+                                    {
+                                        "field": "field_66fe3d900b329",
+                                        "operator": "==",
+                                        "value": "1"
+                                    },
                                     {
                                         "field": "field_66fe3c6e0ed14",
                                         "operator": "!=",
@@ -325,7 +329,6 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "allow_in_bindings": 0,
                             "preview_size": "medium"
                         },
                         {
@@ -341,6 +344,11 @@
                                     {
                                         "field": "field_66fe3c6e0ed14",
                                         "operator": "==",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "field": "field_66fe3d900b329",
+                                        "operator": "!=",
                                         "value": "1"
                                     }
                                 ]
@@ -359,7 +367,6 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "allow_in_bindings": 0,
                             "preview_size": "medium"
                         },
                         {
@@ -376,6 +383,11 @@
                                         "field": "field_66fe3c6e0ed14",
                                         "operator": "==",
                                         "value": "1"
+                                    },
+                                    {
+                                        "field": "field_66fe3d900b329",
+                                        "operator": "!=",
+                                        "value": "1"
                                     }
                                 ]
                             ],
@@ -385,8 +397,7 @@
                                 "id": ""
                             },
                             "width": "",
-                            "height": "",
-                            "allow_in_bindings": 0
+                            "height": ""
                         }
                     ]
                 }
@@ -414,9 +425,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": ["the_content"],
     "active": true,
     "description": "",
     "show_in_rest": 0,

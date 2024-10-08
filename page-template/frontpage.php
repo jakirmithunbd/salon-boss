@@ -4,7 +4,6 @@
  * */
 get_header(); ?>
 
-
 <section class="hero-home hero-bg">
     <div class="container">
         <div class="sb-row">
@@ -119,96 +118,81 @@ get_header(); ?>
 
 <section class="sb-who-we-help">
     <div class="container">
-        <div class="sb-row">
-            <div class="sb-section-title text-center-mobile">
-                <h5>Who We Help</h5>
-                <h3>Built to Serve the<br> Beauty Industry</h3>
-                <p>
-                    We specialize in helping Beauty Professionals, Salons,
-                    Salon Suites, and Beauty Beauty Brands. We work with
-                    business owners just like you to solve problems, create
-                    strategies & promote growth
-                </p>
-                <div class="sb-media">
-                    <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-help.png') ?>" alt="" />
+
+        <?php
+        $who_we_help_section = get_field('who_we_help_section');
+        if ($who_we_help_section):
+
+            $who_we_help_section_titles = $who_we_help_section['content_area'] ?? '';
+            $who_we_help_section_titles_image = $who_we_help_section['title_image'] ?? '';
+
+            ; ?>
+
+            <div class="sb-row">
+                <div class="sb-section-title text-center-mobile">
+                    <?php
+                    $section_title = $who_we_help_section_titles['title'];
+                    $section_sub_title = $who_we_help_section_titles['sub_title'];
+                    $section_description = $who_we_help_section_titles['description'];
+                    ; ?>
+                    <h5><?php echo esc_html($section_sub_title ?? ''); ?></h5>
+                    <h3><?php echo wp_kses_post($section_title ?? ''); ?></h3>
+                    <p><?php echo esc_attr($section_description ?? ''); ?></p>
+                    <div class="sb-media">
+                        <img src="<?php echo esc_url($who_we_help_section_titles_image['url'] ?? ''); ?>"
+                            alt="<?php echo esc_attr($who_we_help_section_titles_image['alt'] ?? ''); ?>" />
+                    </div>
+                </div>
+
+                <div class="sb-help-wrapper">
+                    <?php
+                    $who_we_help_services = $who_we_help_section['who_we_help_services'];
+                    ; ?>
+                    <div class="sb-service-list">
+                        <?php
+                        if ($who_we_help_services):
+                            foreach ($who_we_help_services as $who_we_help_service):
+                                $who_we_help_service_title = $who_we_help_service['title'];
+                                $who_we_help_service_description = $who_we_help_service['description'];
+                                $who_we_help_service_explor = $who_we_help_service['explor_button'];
+                                $who_we_help_service_image = $who_we_help_service['image'];
+                                $image_position_class = $who_we_help_service['image_position'] ?? '';
+                                ; ?>
+
+                                <div class="sb-image-box <?php echo $image_position_class; ?>">
+                                    <!-- image-position-right / image-position-top -->
+                                    <div class="sb-image-box-media">
+                                        <img src="<?php echo esc_url($who_we_help_service_image['url'] ?? ''); ?>"
+                                            alt="<?php echo esc_attr($who_we_help_service_image['alt'] ?? ''); ?>" />
+                                    </div>
+                                    <div class="sb-image-box-content">
+                                        <h4><?php echo esc_html($who_we_help_service_title ?? ''); ?></h4>
+                                        <p><?php echo esc_attr($who_we_help_service_description ?? ''); ?></p>
+                                        <a href="<?php echo esc_url($who_we_help_service_explor['url'] ?? site_url()); ?>"
+                                            class="sb-simple-btn"><?php echo esc_attr($who_we_help_service_explor['title'] ?? ''); ?></a>
+                                    </div>
+                                </div>
+                                <!-- / Image Box  -->
+                                <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </div>
+
+                    <?php
+                    $explor_service_button = $who_we_help_section['explore_service'];
+                    if ($explor_service_button):
+
+                        ; ?>
+                        <a href="<?php echo esc_url($explor_service_button['url'] ?? site_url()); ?>"
+                            class="sb-button button-bg-green button-icon-scissor icon-position-right">
+                            <?php echo esc_attr(!empty($explor_service_button['title']) ? $explor_service_button['title'] : 'Explore our services'); ?>
+                        </a>
+
+                    <?php endif; ?>
                 </div>
             </div>
-
-            <div class="sb-help-wrapper">
-                <div class="sb-service-list">
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-hair-stylists.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Hair Stylists & Solo Beauty Professionals</h4>
-                            <p>
-                                Salon Boss has worked with countless independent
-                                beauty professionals who are looking to take
-                                their business to the next level by marketing
-                                themselves.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Solo Pro Services</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-hair-salons.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Hair Salons</h4>
-                            <p>
-                                Salon Boss is the ultimate partner for salon success.
-                                Our strategic marketing strategies are tailored to help
-                                your salon be found online and increase your bookings.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Hair Salon Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-salon-suits.png') ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Salon Suites</h4>
-                            <p>
-                                Salon Boss specializes in helping salon suite owners
-                                generate leads, fill vacant suites, systematize sales,
-                                and increase tenant retention.
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Salon Suite Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                    <div class="sb-image-box"><!-- image-position-right / image-position-top -->
-                        <div class="sb-image-box-media">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-beauty-brands.png'); ?>"
-                                alt="" />
-                        </div>
-                        <div class="sb-image-box-content">
-                            <h4>Beauty Brands</h4>
-                            <p>
-                                Salon Boss can help take your beauty brand to new heights.
-                                We offer complete marketing packages for
-                            </p>
-                            <a href="#" class="sb-simple-btn">Explore Beauty Brand Marketing</a>
-                        </div>
-                    </div>
-                    <!-- / Image Box  -->
-
-                </div>
-                <a href="#" class="sb-button button-bg-green button-icon-scissor icon-position-right">Explore our
-                    services</a>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section><!-- Who we Help -->
 
