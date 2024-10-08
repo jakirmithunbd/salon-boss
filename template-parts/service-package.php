@@ -1,122 +1,100 @@
+<?php
+$section_title = get_sub_field('package_section_title');
+$package_list = get_sub_field('package_list');
+$package_info = get_sub_field('package_info');
+$buttons = get_sub_field('buttons_group');
+?>
+
 <section class="sb-marketing-service">
     <div class="container">
 
         <div class="sb-section-title text-center">
-            <h2>Salon Suite Marketing Services</h2>
-            <h4>Tailored Solutions for this Unique Industry</h4>
-            <p>
-                We specialize in crafting up specialized solutions that fit your salon suite marketing needs,
-                goals and budget. Take a look at some of those services below and consider booking a free
-                discovery call to uncover the salon suite marketing strategy fit for you!
-            </p>
+            <?php if (!empty($section_title['title'])): ?>
+            <h2><?php echo esc_html($section_title['title']); ?></h2>
+            <?php endif; ?>
+
+            <?php if (!empty($section_title['sub_title'])): ?>
+            <h2><?php echo esc_html($section_title['sub_title']); ?></h2>
+            <?php endif; ?>
+
+            <?php if (!empty($section_title['description'])): ?>
+                <p><?php echo esc_html($section_title['description']); ?></p>
+            <?php endif; ?>
         </div>
-        <div class="sb-marketing-service-list d-flex flex-wrap">
 
-            <div class="sb-card sb-service-card" style="--sb-card-btn-height: 74px;"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="../assets/images/Salon-Boss-service-solo-boss.png" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h2>Solo Boss</h2>
-                        <h3>Review Manager</h3>
-                        <p>
-                            For the individual beauty professional who wants to boost and manage their online reviews
-                        </p>
-                        <div class="sb-card-btn d-flex align-center space-between">
-                            <div class="sb-service-price">
-                                <h5>$100/<span>month</span></h5>
-                                <span class="sb-setup-fee">+$100 Setup Fee</span>
+
+        <?php if ($package_list): ?>
+            <div class="sb-marketing-service-list d-flex flex-wrap">
+                <?php foreach ($package_list as $list): ?>
+
+
+
+                    <div class="sb-card sb-service-card <?php echo esc_attr($list['image_alignment']['value']); ?>" style="--sb-card-btn-height: 74px;"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                        <div class="sb-card-contents-wrapper d-flex align-center">
+                            <div class="sb-card-image d-flex">
+                                <?php $sb_list_image = $list['image']['url'] ? esc_url($list['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg')); ?>
+                                <img src="<?php echo $sb_list_image; ?>" alt="<?php echo esc_attr($list['image']['title']); ?>" />
                             </div>
-                            <a href="#" class="sb-service-card-btn">Sign Up</a>
+                            <div class="sb-card-content text-center-mobile">
+                                <?php if (!empty($list['title'])): ?>
+                                    <h2><?php echo esc_html($list['title']); ?></h2>
+                                <?php endif; ?>
+
+
+                                <?php if (!empty($list['sub_title'])): ?>
+                                    <h3><?php echo esc_html($list['sub_title']); ?></h3>
+                                <?php endif; ?>
+
+                                <?php if (!empty($list['description'])): ?>
+                                    <p><?php echo esc_html($list['description']); ?></p>
+                                <?php endif; ?>
+
+                                <div class="sb-card-btn d-flex align-center space-between">
+                                    <div class="sb-service-price">
+                                        <?php if (!empty($list['price'])): ?>
+                                            <h5><?php echo esc_html($list['price']); ?></h5>
+                                        <?php endif; ?>
+
+                                        <?php if (!empty($list['setup_fee'])): ?>
+                                            <span class="sb-setup-fee"><?php echo esc_html($list['setup_fee']); ?></span>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if(!empty($list['sign_up_link'])) {
+                                        printf('<a href="%s" target="%s" class="sb-service-card-btn">%s</a>', $list['sign_up_link']['url'], $list['sign_up_link']['target'], $list['sign_up_link']['title']);
+                                    } ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- Sb service Card  -->
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-            <div class="sb-card sb-service-card" style="--sb-card-btn-height: 74px;"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="../assets/images/Salon-Boss-service-multi-location.png" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h2>Multi-Location</h2>
-                        <h3>Review Manager</h3>
-                        <p>
-                            For the individual beauty professional who wants to boost and manage their online reviews
-                        </p>
-                        <div class="sb-card-btn d-flex align-center space-between">
-                            <div class="sb-service-price">
-                                <h5>$200/<span>month</span></h5>
-                                <span class="sb-setup-fee">+$250 Setup Fee</span>
-                            </div>
-                            <a href="#" class="sb-service-card-btn">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb service Card  -->
 
-            <div class="sb-card sb-service-card" style="--sb-card-btn-height: 74px;"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="../assets/images/Salon-Boss-service-single-location.png" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h2>Single Location</h2>
-                        <h3>Review Manager</h3>
-                        <p>
-                            For the individual beauty professional who wants to boost and manage their online reviews
-                        </p>
-                        <div class="sb-card-btn d-flex align-center space-between">
-                            <div class="sb-service-price">
-                                <h5>$150/<span>month</span></h5>
-                                <span class="sb-setup-fee">+$200 Setup Fee</span>
-                            </div>
-                            <a href="#" class="sb-service-card-btn">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb service Card  -->
-
-            <div class="sb-card sb-service-card" style="--sb-card-btn-height: 74px;"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="../assets/images/Salon-Boss-service-five-location.png" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h2>5+ Locations</h2>
-                        <h3>Review Manager</h3>
-                        <p>
-                            For the Salon Boss who is looking to manage all their location's reviews &amp; save big
-                        </p>
-                        <div class="sb-card-btn d-flex align-center space-between">
-                            <div class="sb-service-price">
-                                <h5>Contact <span>Us</span></h5>
-                                <span class="sb-setup-fee">For Special Pricing</span>
-                            </div>
-                            <a href="#" class="sb-service-card-btn">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb service Card  -->
-
-        </div>
         <div class="sb-section-title text-center package-include">
-            <h4>All Packages Include:</h4>
-            <p>
-                Collecting Reviews • Automated Review Requests • Custom Email &amp; SMS Campaigns
-                • Custom Dashboard • Realtime Updates • Reports • Widgets • QR Codes
-                • Response Creator • Auto Responder • Review Alerts • Mobile Kiosk
-                • Multiple Users • HIPPA Compliant
-            </p>
-            <p>
-                <strong>Looking to Bundle?</strong> All of our <a href="#">Salon SEO Packages</a> Include Reputation Management.
-            </p>
+            <?php echo $package_info; ?>
 
             <div class="sb-buttons flex-center flex-wrap">
-                <a href="#" class="sb-button button-bg-green">Book A Call</a>
-                <a href="#" class="sb-button button-bg-pink">Book A Call</a>
+                <?php if ($buttons): foreach ($buttons as $f_button):
+                    $icon_type = '';
+                    $icon_position = '';
+                    $color = '';
+
+                    if (!empty($f_button['enable_icon'])) {
+                        $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                        $color = !empty($f_button['color']) ? 'pink' : 'green';
+                        $icon_position = !empty($f_button['icon_alignment'])
+                            ? 'icon-position-right'
+                            : 'icon-position-left';
+                    }
+                    ?>
+
+                    <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                        <?php echo esc_html($f_button['link']['title']); ?>
+                    </a>
+                <?php endforeach; endif; ?>
             </div>
+
         </div>
     </div>
 </section>

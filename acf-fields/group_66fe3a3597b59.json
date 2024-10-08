@@ -947,6 +947,87 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6704d30f39962",
+                            "label": "Package Section Title",
+                            "name": "package_section_title",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6704d30f39963",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "Enter your text",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6704d30f39964",
+                                    "label": "Sub Title",
+                                    "name": "sub_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "Enter your text",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6704d30f39965",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "rows": 5,
+                                    "placeholder": "",
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_67029ed421feb",
                             "label": "Package List",
                             "name": "package_list",
@@ -1143,6 +1224,164 @@
                                     "return_format": "array",
                                     "allow_in_bindings": 0,
                                     "parent_repeater": "field_67029ed421feb"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_6704d7b159447",
+                            "label": "Package Info",
+                            "name": "package_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_6704d82f7b751",
+                            "label": "Buttons Group",
+                            "name": "buttons_group",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add New button",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6704d82f7b752",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "allow_in_bindings": 0,
+                                    "parent_repeater": "field_6704d82f7b751"
+                                },
+                                {
+                                    "key": "field_6704d82f7b753",
+                                    "label": "Enable Icon",
+                                    "name": "enable_icon",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Enable to display Icon",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "allow_in_bindings": 1,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "parent_repeater": "field_6704d82f7b751"
+                                },
+                                {
+                                    "key": "field_6704d82f7b754",
+                                    "label": "Icon Alignment",
+                                    "name": "icon_alignment",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Enable to right | Default: Left",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fe3e748b31f",
+                                                "operator": "=="
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui_on_text": "Right",
+                                    "ui_off_text": "Left",
+                                    "ui": 1,
+                                    "parent_repeater": "field_6704d82f7b751"
+                                },
+                                {
+                                    "key": "field_6704d82f7b755",
+                                    "label": "Button Type",
+                                    "name": "button_type",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Call Button | Enable to show service button",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "allow_in_bindings": 1,
+                                    "ui_on_text": "Service",
+                                    "ui_off_text": "Call",
+                                    "ui": 1,
+                                    "parent_repeater": "field_6704d82f7b751"
+                                },
+                                {
+                                    "key": "field_6704d8d23fc17",
+                                    "label": "Color",
+                                    "name": "color",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Green | Enable to pink",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui_on_text": "Pink",
+                                    "ui_off_text": "Green",
+                                    "ui": 1,
+                                    "parent_repeater": "field_6704d82f7b751"
                                 }
                             ]
                         }
@@ -1344,7 +1583,7 @@
                         {
                             "key": "field_6702a318c8ff2",
                             "label": "Video",
-                            "name": "video",
+                            "name": "customer_video_review",
                             "aria-label": "",
                             "type": "oembed",
                             "instructions": "",
@@ -1477,6 +1716,99 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_6704af123fb50": {
+                    "key": "layout_6704af123fb50",
+                    "name": "service_seo_audits",
+                    "label": "SEO Audits",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6704b8a070121",
+                            "label": "",
+                            "name": "not_user",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Please update the information from Theme Settings > SEO Audits CTA",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 1,
+                            "ui_on_text": "Enable",
+                            "ui_off_text": "Disable",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6704bbbc75b58": {
+                    "key": "layout_6704bbbc75b58",
+                    "name": "service_resource_center",
+                    "label": "Resource Center",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6704bbbc75b59",
+                            "label": "",
+                            "name": "not_user",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Please update the information from Theme Settings > Resource Center",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 1,
+                            "ui_on_text": "Enable",
+                            "ui_off_text": "Disable",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6704c0dacfafd": {
+                    "key": "layout_6704c0dacfafd",
+                    "name": "service_booking_cta",
+                    "label": "Service Booking CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6704c0dacfafe",
+                            "label": "",
+                            "name": "not_user",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Please update the information from Theme Settings > Resource Center",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 1,
+                            "ui_on_text": "Enable",
+                            "ui_off_text": "Disable",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1504,5 +1836,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728356698
+    "modified": 1728374335
 }
