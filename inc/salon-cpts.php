@@ -77,7 +77,7 @@ function sb_custom_post_type_case_study()
         'label' => __('Case Study', 'sb'),
         'description' => __('Case Study documentation', 'sb'),
         'labels' => $labels,
-        'supports' => array('title', 'editor', 'thumbnail'), // No comments support
+        'supports' => array('title', 'excerpt', 'thumbnail'), // No comments support
         'public' => true,
         'menu_icon' => 'dashicons-portfolio',
         'has_archive' => true,

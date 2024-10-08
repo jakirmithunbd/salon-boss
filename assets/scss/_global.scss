@@ -96,6 +96,15 @@ svg {
 .flex-row {
     flex-direction: row;
 }
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
 .flex-wrap {
     flex-wrap: wrap;
 }
@@ -1206,6 +1215,18 @@ section {
     .sb-row {
         gap: 50px;
         align-items: center;
+
+        &.media_top {
+            flex-direction: column;
+
+            .sb-hero-content {
+                @extend .text-center;
+            }
+        }
+
+        &.media_right {
+            flex-direction: row-reverse;
+        }
 
         @include breakpoint(1024) {
             flex-wrap: wrap;

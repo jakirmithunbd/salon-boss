@@ -210,6 +210,28 @@
                                     "ui_off_text": "Call",
                                     "ui": 1,
                                     "parent_repeater": "field_66fe3ed78b322"
+                                },
+                                {
+                                    "key": "field_67052d6accbc3",
+                                    "label": "Color",
+                                    "name": "color",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Green | Enable to pink",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui_on_text": "Pink",
+                                    "ui_off_text": "Green",
+                                    "ui": 1,
+                                    "parent_repeater": "field_66fe3ed78b322"
                                 }
                             ]
                         }
@@ -277,7 +299,7 @@
                             "label": "Media Alignment",
                             "name": "media_alignment",
                             "aria-label": "",
-                            "type": "true_false",
+                            "type": "select",
                             "instructions": "If enabled, Image or Video will be placed to right. (Default Possition:  Left)",
                             "required": 0,
                             "conditional_logic": 0,
@@ -286,11 +308,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "ui": 1
+                            "choices": {
+                                "media_left": "Left",
+                                "media_right": "Right",
+                                "media_top": "Top"
+                            },
+                            "default_value": "media_left",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_66fe3c130ed11",
@@ -402,6 +432,13 @@
                 "operator": "==",
                 "value": "service"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-study"
+            }
         ]
     ],
     "menu_order": 0,
@@ -415,5 +452,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728374989
+    "modified": 1728394092
 }
