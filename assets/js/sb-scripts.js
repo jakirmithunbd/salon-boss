@@ -130,6 +130,56 @@ if (sb_videos.length) {
     });
 }
 
+// Counter 
+const sb_counter = document.querySelectorAll(".sb-counter-list");
+
+if(sb_counter){
+
+    const sb_counter_item = document.querySelectorAll(".sb-counter-amount");
+    
+    const startCounter = (item) => {
+      const target = parseFloat(item.getAttribute("data-target")); 
+      let current = 0; 
+    
+      const increment = target / 100; 
+    
+      const updateCounter = () => {
+        current += increment; 
+    
+        if (current < target) {
+          if (Number.isInteger(current)) {
+            item.innerText = Math.floor(current); 
+          } else {
+            item.innerText = current.toFixed(1); 
+          }
+          setTimeout(updateCounter, 10); 
+        } else {
+          if (Number.isInteger(target)) {
+            item.innerText = Math.floor(target);
+          } else {
+            item.innerText = target.toFixed(1); 
+          }
+        }
+      };
+    
+      updateCounter(); 
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounter(entry.target);
+          observer.unobserve(entry.target); 
+        }
+      });
+    });
+    
+    sb_counter_item.forEach(item => {
+      observer.observe(item);
+    });
+}
+
+
 
 
 (function ($) {
@@ -223,5 +273,8 @@ if (sb_videos.length) {
 
 
 })(jQuery);
+
+
+
 
 
