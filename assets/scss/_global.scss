@@ -692,30 +692,6 @@ section {
             }
         }
     }
-    .sb-card-btn {
-        position: absolute;
-        width: 100%;
-        right: 0;
-        bottom: 0;
-        text-align: center;
-        padding: 4px 30px;
-
-        a {
-            display: block;
-            @include font(16, 24);
-            font-weight: 600;
-            background: transparent;
-            color: $white;
-            width: fit-content;
-            margin: 0 auto;
-            text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
-            @extend .transition;
-
-            &:hover {
-                color: $primary;
-            }
-        }
-    }
 
     &.image-position-right {
         margin: 0;
@@ -1249,6 +1225,7 @@ section {
         .sb-hero-video {
             width: 40%;
             flex-grow: 1;
+            position: relative;
 
             @include breakpoint(1200) {
                 width: 30%;
@@ -1263,6 +1240,52 @@ section {
                 width: 100%;
             }
         }
+
+        .sb-card-btn {
+            position: absolute;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            padding: 4px 30px;
+
+            a {
+                display: block;
+                @include font(16, 24);
+                font-weight: 600;
+                background: transparent;
+                color: $white;
+                width: fit-content;
+                margin: 0 auto;
+                text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+                @extend .transition;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+            button {
+                display: block;
+                width: fit-content;
+                margin: 0 auto;
+                @include font(16, 24);
+                font-weight: 600;
+                background: transparent;
+                color: $white;
+                text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+                @extend .transition;
+
+                &.Available {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+            }
+        }
+
         .sb-hero-video {
 
             .sb-card {
@@ -1278,30 +1301,6 @@ section {
 
                     @include breakpoint(575) {
                         min-height: 220px;
-                    }
-                }
-    
-               .sb-card-btn {
-    
-                    button {
-                        display: block;
-                        width: fit-content;
-                        margin: 0 auto;
-                        @include font(16, 24);
-                        font-weight: 600;
-                        background: transparent;
-                        color: $white;
-                        text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
-                        @extend .transition;
-    
-                        &.Available {
-                            cursor: pointer;
-    
-                            &:hover {
-                                color: $primary;
-                            }
-                        }
-                        
                     }
                 }
             }
