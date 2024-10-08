@@ -312,59 +312,74 @@ section {
 
 // Button style 
 .sb-button {
-    width: fit-content;
     min-width: 216px;
-    height: 56px;
-    @include font(18, 20);
+    @include font(18, 24);
     font-weight: 600;
     text-transform: capitalize;
     padding: 15px;
     color: #070825;
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 100px;
+    display: inline-flex;
     @extend .transition, .relative, .flex-center;
 
     @include breakpoint(575) {
         width: 100%;
         gap: 10px;
     }
+
+    @include minbreakpoint(576) {
+        &.button-icon-phone, &.button-icon-scissor {
+
+            &:after {
+                position: absolute;
+                width: 38px;
+                height: 38px;
+                top: calc(50% - 19px);
+            }
+        }
+    }
     
     &.button-icon-phone {
         &::after {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            top: calc(50% - 19px);
-            @extend .transition;
             content: url(../images/vectors/phone-icon.svg);
         }
     }
         
     &.button-icon-scissor {
         &::after {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            top: calc(50% - 19px);
-            @extend .transition;
             content: url(../images/vectors/scissor-icon.svg);
         }
     }
+
+    &.icon-position-left {
+        padding-left: 64px;
+        @extend .relative;
+
+        @include breakpoint(575) {
+            padding-left: inherit;
+        }
+
+        &:after {
+            left: 15px;
+        }
+
+        &.button-icon-sboss {
+            &::before {
+                content: url(../images/vectors/salon-boss.svg)
+            }
+        }
+    }
+
     &.icon-position-right {
         padding-right: 64px;
 
         @include breakpoint(575) {
-            padding: 15px;
+            padding-right: 15px;
         }
 
         &::after {
             right: 15px;
-
-            @include breakpoint(575) {
-                position: inherit;
-                top: inherit;
-                right: inherit;
-            }
         }
     }
     &.button-bg-green {
@@ -398,40 +413,6 @@ section {
         
         &:hover {
             background: #FBDCD1;
-        }
-    }
-    &.icon-position-left {
-        padding-left: 64px;
-        @extend .relative;
-
-        @include breakpoint(575) {
-            padding-left: inherit;
-        }
-
-        &:before {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            top: calc(50% - 19px);
-            left: 15px;
-            @extend .transition;
-            content: url(../images/vectors/phone-icon.svg);
-            
-            @include breakpoint(575) {
-                padding: 15px;
-            }
-            
-            @include breakpoint(575) {
-                position: inherit;
-                top: inherit;
-                right: inherit;
-            }
-        }
-
-        &.button-icon-sboss {
-            &::before {
-                content: url(../images/vectors/salon-boss.svg)
-            }
         }
     }
 }
@@ -729,6 +710,10 @@ section {
         bottom: 0;
         text-align: center;
         padding: 4px 30px;
+
+        @include breakpoint(575) {
+            padding: 4px 20px;
+        }
 
         a {
             display: block;
@@ -1858,11 +1843,71 @@ section:has(.sb-video.video-popup-active),
     @include breakpoint(575) {
         padding: 20px 10px;
     }
+
+    .gform_required_legend {
+        display: none
+    }
+    form {
+        .gform_fields {
+           grid-gap: 42px 22px !important;
+
+           @include breakpoint(639) {
+                grid-gap: 25px 22px !important;
+           }
+        }
+        .gfield_label {
+            @include font(24, 36);
+            font-weight: 600 !important;
+            color: #000 !important;
+
+            @include breakpoint(768) {
+                @include font(20, 32);
+            }
+            @include breakpoint(575) {
+                @include font(18, 30);
+            }
+
+            .gfield_required {
+                color: #000 !important;
+                font-size: 24px !important;
+            }
+        }
+        input,
+        select,
+        textarea {
+            background: #28282C !important;
+            border-radius: 20px !important;
+            padding: 20px 16px !important;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            font-weight: 600 !important;
+            color: #7E7E7E !important;
+            min-height: 68px !important;
+        }
+        .gform_footer {
+            .gform_button {
+                font-size: 26px !important;
+                line-height: 39px !important;
+                font-weight: 600 !important;
+                color: #fff !important;
+                background: linear-gradient(180deg, #7970E9 -15.57%, #A08DF3 114.75%) !important;
+                border-radius: 100px !important;
+                width: 100% !important;
+                min-height: 60px !important;
+                padding: 10px !important;
+                transition: all .3s ease !important;
+
+                &:hover {
+                    background: linear-gradient(180deg, #A08DF3 114.75%, #7970E9 -15.57%) !important;
+                }
+            }
+        }
+    }
     
     .sb-form-condition-text {
         @include font(14, 21);
         color: $black;
-        margin-bottom: 5px;
+        margin: 20px 0 5px;
     }
 }
 

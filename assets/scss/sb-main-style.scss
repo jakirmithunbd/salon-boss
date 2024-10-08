@@ -561,6 +561,7 @@
     
             .sb-post-card {
                 width: 26%;
+                max-width: 820px;
                 flex-grow: 1;
 
                 @include breakpoint(1024) {
@@ -569,7 +570,25 @@
                 @include breakpoint(768) {
                     width: 100%;
                 }
+
+                .sb-card-btn {
+                    padding: 10px 30px;
+
+                    @include breakpoint(575) {
+                        padding: 10px 20px;
+                    }
+
+                    a {
+                        @include font(22, 32);
+
+                        @include breakpoint(575) {
+                            @include font(18, 30);
+                        }
+                    }
+                }
             }
+
+
         }
     }
 }
