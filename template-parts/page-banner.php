@@ -22,7 +22,6 @@ if(!empty( $hero)) :
                     <button class="link-available"><?php echo esc_html( $media['title'] );?></button>
                 </div>
                 <?php endif;?>
-
             </div>
 
             <?php else :
