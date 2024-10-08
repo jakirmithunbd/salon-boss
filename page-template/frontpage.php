@@ -37,49 +37,28 @@ get_header(); ?>
                         ; ?>
                     </p>
 
+
                     <?php if (!empty($hero_banner_buttons)): ?>
                         <div class="sb-buttons d-flex">
-                            <?php foreach ($hero_banner_buttons as $hero_banner_button): ?>
-                                <?php
-                                // Ensure necessary values are set
-                                $button_link = $hero_banner_button['link'] ?? null;
-                                $button_icon = $hero_banner_button['icon'] ?? null;
-                                $button_type = $hero_banner_button['button_type'] ?? null;
-                                $button_type_class = '';
-                                $button_icon_class = '';
-                                $position_class = '';
 
-                                // Determine button type class
-                                if ($button_type === false) {
-                                    $button_type_class = 'button-bg-green';
-                                } elseif ($button_type === true) {
-                                    $button_type_class = 'button-bg-pink';
-                                }
 
-                                // Determine button icon class and position
-                                if ($button_icon) {
-                                    $button_icon_position = $hero_banner_button['icon_position'] ?? null;
+                            <?php if ($hero_banner_buttons): foreach ($hero_banner_buttons as $f_button):
+                                $icon_type = '';
+                                $icon_position = '';
 
-                                    if ($button_icon_position["value"] === 'left') {
-                                        $position_class = 'icon-position-left';
-                                    } elseif ($button_icon_position["value"] === 'right') {
-                                        $position_class = 'icon-position-right';
-                                    }
-
-                                    if ($button_type === false) {
-                                        $button_icon_class = 'button-icon-phone';
-                                    } elseif ($button_type === true) {
-                                        $button_icon_class = 'button-icon-scissor';
-                                    }
+                                if (!empty($f_button['enable_icon'])) {
+                                    $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                                    $icon_position = !empty($f_button['icon_alignment'])
+                                        ? 'icon-position-right'
+                                        : 'icon-position-left';
                                 }
                                 ?>
 
-                                <a href="<?php echo esc_url($button_link['url'] ?? site_url()); ?>"
-                                    class="sb-button <?php echo esc_attr($button_type_class . ' ' . $button_icon_class . ' ' . $position_class); ?>">
-                                    <?php echo esc_html($button_link['title'] ?? ''); ?>
+                                <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                                    <?php echo esc_html($f_button['link']['title']); ?>
                                 </a>
+                            <?php endforeach; endif; ?>
 
-                            <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
 

@@ -42,25 +42,22 @@
         <?php if ($buttons): ?>
             <div class="sb-buttons d-flex justify-center">
 
-                <?php foreach ($buttons as $button):
+                <?php if ($buttons): foreach ($buttons as $f_button):
+                    $icon_type = '';
+                    $icon_position = '';
 
-                    if (!empty($button['enable_icon'])) {
-                        $icon_type = !empty($button['button_type']) ? 'button-icon-phone' : 'button-icon-scissor';
-                        $icon_position = (!empty($button['icon_alignment']) && $button['icon_alignment'] === 'right')
+                    if (!empty($f_button['enable_icon'])) {
+                        $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                        $icon_position = !empty($f_button['icon_alignment'])
                             ? 'icon-position-right'
                             : 'icon-position-left';
                     }
                     ?>
 
-                    <?php printf(
-                    '<a href="%s" target="%s" class="sb-button button-bg-green %s %s">%s</a>',
-                        esc_url($button['link']['url']),
-                        esc_attr($button['link']['target']),
-                        esc_attr($icon_type),
-                        esc_attr($icon_position),
-                        wp_kses_post($button['link']['title'])
-                ); ?>
-                <?php endforeach; ?>
+                    <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                        <?php echo esc_html($f_button['link']['title']); ?>
+                    </a>
+                <?php endforeach; endif; ?>
 
             </div>
 
