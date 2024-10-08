@@ -1583,7 +1583,7 @@
                         {
                             "key": "field_6702a318c8ff2",
                             "label": "Video",
-                            "name": "video",
+                            "name": "customer_video_review",
                             "aria-label": "",
                             "type": "oembed",
                             "instructions": "",
@@ -1836,5 +1836,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728371092
+    "modified": 1728374335
 }

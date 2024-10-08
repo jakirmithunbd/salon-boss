@@ -1,24 +1,32 @@
+<?php
+$salon_boss_expertise_content = get_sub_field('salon_boss_expertise_content');
+$customer_video = get_sub_field('customer_video_review');
+$vide_thumb = get_sub_field('video_thumbnail') ?? get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
+$client_name = get_sub_field('client_name');
+$client_title = get_sub_field('client_position');
+$website_link = get_sub_field('website_link');
+$quote = get_sub_field('quote');
+?>
+
 <section class="why-choose-sb">
     <div class="container">
         <div class="sb-row align-center">
 
             <div class="sb-section-title text-center-mobile">
-                <h2>The Salon Boss <span>Difference</span></h2>
-                <h4>We are the salon suite marketing experts</h4>
-                <p>
-                    We have years of experience working with salon suites
-                    owners who are looking to implement real technical strategies to fix,
-                    grow and maintain their salon suite businesses. Don't just take our word for it,
-                    hear from some of our amazing clients!
-                </p>
-                <a href="#" class="sb-button button-bg-green">Book A Call</a>
+                <?php if (!empty($salon_boss_expertise_content)): ?>
+                    <?php echo wp_kses_post($salon_boss_expertise_content); ?>
+                <?php endif; ?>
             </div>
+
             <div class="sb-review-video">
-                <div class="sb-video flex-center" style="background-image: url(../assets/images/Salon-Boss-why-choose-video-thumbnail.png);">
+                <div class="sb-video flex-center" style="background-image: url(<?php echo $vide_thumb['url']; ?>);">
                     <div class="sb-video-play-btn" style="--paly-button-color: #766EE8; --play-button-icon-color: #fff;"></div>
                     <div class="sb-video-frame">
                         <div class="sb-video-wrapper relative">
-                            <iframe src="https://www.youtube.com/embed/5Ee-sQ9p7kA?si=hZUFILs9kH0VJtOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                            <?php
+                            if (!empty($customer_video)): ?>
+                                <?php echo $customer_video; ?>
+                            <?php endif; ?>
                             <button class="sb-video-close-btn">
                                 <span></span>
                                 <span></span>
@@ -26,26 +34,34 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="review-video-customer-info">
                     <div class="review-video-customer-bio-wrapper d-flex space-between align-start">
                         <div class="review-video-customer-bio text-center-mobile">
-                            <h4 class="sb-customer-name">Shauna Name</h4>
-                            <h6 class="sb-customer-title">Co-Owner at The Suites Spot</h6>
-                            <h6 class="sb-customer-company-name">Salon Suites</h6>
+                            <?php if (!empty($client_name)): ?>
+                                <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($client_title)): ?>
+                                <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
+                            <?php endif; ?>
+                            <?php if (!empty($client_company)): ?>
+                            <?php printf('<a href="%s" target="%s" class="sb-customer-company-name">%s</a>', $client_company['url'], $client_company['target'], $client_company['title']);?>
+
+
+                            <?php endif; ?>
                         </div>
-                        <div class="sb-customer-ratting d-flex justify-end">
-                            <span><img src="../assets/images/vectors/ratting-star.svg"></span>
-                            <span><img src="../assets/images/vectors/ratting-star.svg"></span>
-                            <span><img src="../assets/images/vectors/ratting-star.svg"></span>
-                            <span><img src="../assets/images/vectors/ratting-star.svg"></span>
-                            <span><img src="../assets/images/vectors/ratting-star.svg"></span>
+                        <div class="sb-customer-rating d-flex justify-end">
+                                <?php for ($i = 0; $i < 6; $i++): ?>
+                                    <span><img src="<?php echo get_theme_file_uri('/assets/images/vectors/rating-star.svg')?>" alt="Star"></span>
+                                <?php endfor; ?>
                         </div>
                     </div>
                     <div class="sb-customer-quote text-center-mobile">
-                        <p>
-                            “<span>SalonBoss changed everything for us!</span> They helped with our SEO and website,
-                            targeting the right people and helping our business really grow.”
-                        </p>
+                        <?php if (!empty($quote)): ?>
+                            <p>
+                                “<span><?php echo esc_html($quote); ?></span>”
+                            </p>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
