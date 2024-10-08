@@ -98,15 +98,12 @@ get_header(); ?>
                 <div class="sb-hero-image flex-center">
                     <?php
 
-                    $hero_banner_media_alignment = $hero_banner_media['media_alignment'];
+                    $hero_banner_image = $hero_banner_media['image'];
 
-                    if ($hero_banner_media_alignment):
-                        $hero_banner_image = $hero_banner_media['image'];
+                    ; ?>
+                    <img src="<?php echo esc_url($hero_banner_image['url'] ?? ''); ?>"
+                        alt="<?php echo esc_attr($hero_banner_image['alt'] ?? ''); ?>" />
 
-                        ; ?>
-                        <img src="<?php echo esc_url($hero_banner_image['url'] ?? ''); ?>"
-                            alt="<?php echo esc_attr($hero_banner_image['alt'] ?? ''); ?>" />
-                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -198,119 +195,65 @@ get_header(); ?>
 
 <section class="services-overview">
     <div class="container">
-        <div class="sb-section-title text-center">
-            <h5>What We Do</h5>
-            <h3>Services Backed By Real Results</h3>
-            <p>
-                We've hand crafted our hair salon marketing services to be tailored for the hair & beauty industry. We
-                understand your business, your ideal clients and how to market to them.
-            </p>
-        </div>
-        <div class="overview-card-list d-flex flex-wrap justify-center">
+        <?php
+        $what_we_do_section = get_field('what_we_do_section');
+        if ($what_we_do_section):
+            $what_we_do_section_title = $what_we_do_section['title'];
+            $what_we_do_section_sub_title = $what_we_do_section['sub_title'];
+            $what_we_do_section_description = $what_we_do_section['description'];
+            ?>
 
-            <div class="sb-card">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-SEO.png'); ?>" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>SEO <span>(Search Engine Optimization)</span></h4>
-                        <p>We have proven strategies to improve your salon's search engine rankings and online
-                            visability.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About SEO ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+            <div class="sb-section-title text-center">
+                <h5><?php echo esc_html($what_we_do_section_sub_title ?? ''); ?></h5>
+                <h3><?php echo wp_kses_post($what_we_do_section_title ?? ''); ?></h3>
+                <p><?php echo wp_kses_post($what_we_do_section_description ?? ''); ?></p>
+            </div>
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-advertising.png'); ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Advertising</h4>
-                        <p>We specialize in running successful advertising campaign for salons & beauty brands.</p>
-                        <div class="sb-card-btn">
-                            <a href="#"> Learn More About Advertising ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+            <div class="overview-card-list d-flex flex-wrap justify-center">
+                <?php
+                $what_we_do_services = $what_we_do_section['service'] ?? [];
+                if (is_array($what_we_do_services) && !empty($what_we_do_services)):
+                    foreach ($what_we_do_services as $what_we_do_service):
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-website-development.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Website Development</h4>
-                        <p>We are experts at designing and developing custom crafted and state-of-the-art websites for
-                            the hair and beauty industry.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Website Development ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        $what_we_do_service_image = $what_we_do_service['what_we_do_service_image'];
+                        $what_we_do_content = $what_we_do_service['what_we_do_content'];
+                        $what_we_do_service_title = $what_we_do_content['title'] ?? '';
+                        $what_we_do_service_discription = $what_we_do_content['discription'] ?? '';
+                        $what_we_do_service_button = $what_we_do_content['button'] ?? [];
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-social-media-management.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Social Media Management</h4>
-                        <p>Let us manage your social media accounts for a hands-off experience that increases your
-                            social presence.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Social Media Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        ?>
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-design-branding.png') ?>"
-                            alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Design & Branding</h4>
-                        <p>We are industry design and branding experts. Here to help make your brand recognizable and
-                            outshine your competition.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Design & Branding ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                        <div class="sb-card">
+                            <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                            <div class="sb-card-contents-wrapper d-flex align-center">
+                                <?php
+                                if ($what_we_do_service_image):
+                                    ; ?>
+                                    <div class="sb-card-image d-flex">
+                                        <img src="<?php echo esc_url($what_we_do_service_image['url']); ?>"
+                                            alt="<?php echo esc_attr($what_we_do_service_image['alt']); ?>">
+                                    </div>
+                                <?php endif; ?>
+                                <div class="sb-card-content text-center-mobile">
+                                    <h4><?php echo wp_kses_post($what_we_do_service_title); ?></h4>
+                                    <p><?php echo esc_attr($what_we_do_service_discription); ?></p>
+                                    <div class="sb-card-btn">
+                                        <a href="<?php echo esc_url($what_we_do_service_button['url'] ?? site_url()); ?>">
+                                            <?php echo esc_attr($what_we_do_service_button['title'] ?? ''); ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Sb Card  -->
 
-            <div class="sb-card">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-SEO.png'); ?>" alt="">
-                    </div>
-                    <div class="sb-card-content text-center-mobile">
-                        <h4>Reputation Management</h4>
-                        <p>Automate, manage and increase your reviews so that your business can continue to attract
-                            clients and rise above your competition.</p>
-                        <div class="sb-card-btn">
-                            <a href="#">Learn More About Reputation Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                    <?php endforeach;
+                endif; ?>
+            </div>
 
-        </div>
+        <?php endif; ?>
     </div>
 </section><!-- Services Overview  -->
+
 
 <section class="sb-about">
     <div class="container">
