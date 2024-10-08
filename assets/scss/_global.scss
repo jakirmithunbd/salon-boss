@@ -276,7 +276,7 @@ section {
         overflow: visible;
         overflow-x: clip;
     }
-    
+
     &::before {
         position: absolute;
         content: "";
@@ -339,13 +339,13 @@ section {
             }
         }
     }
-    
+
     &.button-icon-phone {
         &::after {
             content: url(../images/vectors/phone-icon.svg);
         }
     }
-        
+
     &.button-icon-scissor {
         &::after {
             content: url(../images/vectors/scissor-icon.svg);
@@ -384,7 +384,7 @@ section {
     }
     &.button-bg-green {
         background: $primary;
-        
+
         &:hover {
             background: $secondary;
             color: #fff;
@@ -397,7 +397,7 @@ section {
     }
     &.button-bg-pink {
         background: #FBDCD1;
-        
+
         &:hover {
             background: $secondary;
             color: #fff;
@@ -410,7 +410,7 @@ section {
     }
     &.button-bg-violet {
         background: $secondary;
-        
+
         &:hover {
             background: #FBDCD1;
         }
@@ -423,7 +423,7 @@ section {
     color: $primary;
     @extend .relative;
     padding-right: 22px;
-    
+
     &:after {
         position: absolute;
         content: "";
@@ -528,7 +528,7 @@ section {
 
             &:hover {
                 &::after {
-                   left: -10px;
+                    left: -10px;
                 }
             }
         }
@@ -589,15 +589,15 @@ section {
     margin-left: 70px;
     padding: 10px 20px;
     padding-bottom: var(--sb-card-btn-height);
-    //background-image: url(../images/Salon-Boss-card-bg.jpg);
+    background-image: url(../images/Salon-Boss-card-bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 30px;
-    //border: 0.5px solid $primary;
+    border: 0.5px solid $primary;
     @extend .relative;
     z-index: 1;
-    
+
     &::after {
         position: absolute;
         content: "";
@@ -617,7 +617,7 @@ section {
 
     .sb-card-contents-wrapper {
         gap: 15px;
-        
+
         @include breakpoint(575) {
             flex-direction: column;
             align-items: center;
@@ -686,7 +686,7 @@ section {
                         font-weight: 600;
                         border-radius: 100px;
                         @extend .transition;
-                        
+
                         &:hover {
                             color: #070825;
                             background: $primary;
@@ -700,6 +700,30 @@ section {
                         }
                     }
                 }
+            }
+        }
+    }
+    .sb-card-btn {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 4px 30px;
+
+        a {
+            display: block;
+            @include font(16, 24);
+            font-weight: 600;
+            background: transparent;
+            color: $white;
+            width: fit-content;
+            margin: 0 auto;
+            text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+            @extend .transition;
+
+            &:hover {
+                color: $primary;
             }
         }
     }
@@ -788,7 +812,7 @@ section {
             .sb-card-content {
                 width: 100%;
                 text-align: start;
-                
+
                 @include breakpoint(575) {
                     text-align: center;
                 }
@@ -818,7 +842,7 @@ section {
             .sb-card-content {
                 width: 100%;
                 text-align: end;
-                
+
                 @include breakpoint(575) {
                     text-align: center;
                 }
@@ -940,7 +964,7 @@ section {
         &.image-position-top-left {
             margin-right: 0;
             margin-left: 0;
-            
+
             .sb-card-contents-wrapper {
 
                 @include minbreakpoint(769) {
@@ -972,7 +996,7 @@ section {
         &.image-position-top-right {
             margin-right: 0;
             margin-left: 0;
-            
+
             .sb-card-contents-wrapper {
 
                 @include minbreakpoint(769) {
@@ -1109,13 +1133,13 @@ section {
         }
     }
 
-    // post card style 
+    // post card style
     &.sb-post-card {
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
         margin: 0 !important;
-        
+
         .sb-card-contents-wrapper {
             padding: 0;
 
@@ -1160,7 +1184,7 @@ section {
     }
 }
 
-// Common Hero style 
+// Common Hero style
 
 .common-hero {
     margin-top: 150px;
@@ -1236,7 +1260,6 @@ section {
         .sb-hero-video {
             width: 40%;
             flex-grow: 1;
-            position: relative;
 
             @include breakpoint(1200) {
                 width: 30%;
@@ -1244,78 +1267,63 @@ section {
 
             @include breakpoint(1024) {
                 width: 100%;
-                padding-bottom: 20px;
             }
-    
+            .sb-hero-video-title,
+            .sb-hero-image-title {
+                width: 100%;
+                background: linear-gradient(103.74deg, #7970E9 61.34%, #A08DF3 73.28%);
+                border-radius: 0 0 30px 30px;
+                padding: 8px 20px;
+                @extend .text-center;
+
+
+                button {
+                    display: inline-block;
+                    @include font(22, 34);
+                    font-weight: 700;
+                    background: transparent;
+                    color: #fff;
+                    text-shadow: 0px 4px 4px #0000001A;
+
+                    @include breakpoint(768) {
+                        @include font(20, 32);
+                    }
+                    @include breakpoint(575) {
+                        @include font(18, 30);
+                    }
+
+                    &.link-available {
+                        cursor: pointer;
+                        @extend .transition;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+        .sb-hero-image {
+
             img {
                 width: 100%;
             }
-        }
-
-        .sb-card-btn {
-            position: absolute;
-            width: 100%;
-            right: 0;
-            bottom: 0;
-            text-align: center;
-            padding: 4px 30px;
-
-            a {
-                display: block;
-                @include font(16, 24);
-                font-weight: 600;
-                background: transparent;
-                color: $white;
-                width: fit-content;
-                margin: 0 auto;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
-                @extend .transition;
-
-                &:hover {
-                    color: $primary;
-                }
-            }
-            button {
-                display: block;
-                width: fit-content;
-                margin: 0 auto;
-                @include font(16, 24);
-                font-weight: 600;
-                background: transparent;
-                color: $white;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
-                @extend .transition;
-
-                &.Available {
-                    cursor: pointer;
-
-                    &:hover {
-                        color: $primary;
-                    }
-                }
-
-            }
-        }
-
-        .sb-hero-video {
-
-            .sb-card {
-                margin: 0;
-                padding-top: 0;
-                padding-left: 0;
-                padding-right: 0;
-                border: 0;
-
+            
+            &.sb-image-title-available {
                 img {
+                    width: 100%;
                     border-radius: 30px 30px 0 0;
                 }
-                .sb-video {
-                    width: 100%;
-                    min-height: 340px;
+            }
+        }
+        .sb-hero-video {
 
-                    @include breakpoint(575) {
-                        min-height: 220px;
-                    }
+            .sb-video {
+                width: 100%;
+                min-height: 340px;
+
+                @include breakpoint(575) {
+                    min-height: 220px;
                 }
             }
         }
@@ -1374,7 +1382,7 @@ section {
             width: 50px;
             height: 50px;
         }
-        
+
         &::after {
             position: absolute;
             content: "";
@@ -1422,7 +1430,7 @@ section {
             right: 0;
             top: 10%;
 
-            
+
             @include breakpoint(1024) {
                 width: 80%;
             }
@@ -1431,7 +1439,7 @@ section {
                 top: 15%;
                 padding: 5px;
             }
-            
+
             iframe {
                 width: 100%;
                 height: auto;
@@ -1502,13 +1510,13 @@ section:has(.sb-video.video-popup-active),
     @include breakpoint(768) {
         margin-top: 40px;
     }
-    
+
     .sb-faq-section-title {
 
         h2 {
             @include font(45, 60);
             @extend .sb-multy-color;
-    
+
             @include breakpoint(1024) {
                 @include font(36, 50);
             }
@@ -1523,7 +1531,7 @@ section:has(.sb-video.video-popup-active),
 .sb-accordians-wrapper {
     row-gap: 20px;
     padding-top: 25px;
-    
+
     @include minbreakpoint(1025) {
         display: block;
         column-count: 2;
@@ -1539,7 +1547,7 @@ section:has(.sb-video.video-popup-active),
         text-align: start;
         background: #17171733;
 
-    
+
         @include minbreakpoint(1025)  {
             display: inline-block;
             width: 98%;
@@ -1552,18 +1560,18 @@ section:has(.sb-video.video-popup-active),
         @include breakpoint(575) {
             padding-bottom: 10px;
         }
-        
+
         .sb-accordian-header {
             cursor: pointer;
             padding: 40px 40px 0;
-    
+
             @include breakpoint(768) {
                 padding: 16px 20px 0;
             }
             @include breakpoint(575) {
                 padding: 10px 10px 0;
             }
-    
+
             h4 {
                 @include font(20, 30);
                 color: $white;
@@ -1571,11 +1579,11 @@ section:has(.sb-video.video-popup-active),
                 @extend .relative;
                 padding-left: 38px;
                 padding-right: 30px;
-    
+
                 @include breakpoint(575) {
                     @include font(16, 26);
                 }
-    
+
                 &::before {
                     position: absolute;
                     content: "";
@@ -1602,29 +1610,29 @@ section:has(.sb-video.video-popup-active),
                 }
             }
         }
-    
+
         .sb-accordian-body {
             display: none;
             padding: 16px 40px 0;
-    
+
             @include breakpoint(768) {
                 padding: 10px 20px 0;
             }
             @include breakpoint(575) {
                 padding: 10px 10px 0;
             }
-    
+
             p {
                 @include font(16, 30);
                 color: $white;
                 margin: 0;
-    
+
                 @include breakpoint(575) {
                     @include font(14, 24);
                 }
             }
         }
-    
+
         &.sb-accordian-active {
             .sb-accordian-header {
                 h4 {
@@ -1652,7 +1660,7 @@ section:has(.sb-video.video-popup-active),
     @include breakpoint(768) {
         padding-top: 50px;
     }
-    
+
     .sb-author-card-content-wrapper {
         gap: 20px;
         background: #fff;
@@ -1672,7 +1680,7 @@ section:has(.sb-video.video-popup-active),
             align-items: center;
             gap: 10px;
         }
-        
+
         .sb-author-card-image {
             width: 210px;
             height: 210px;
@@ -1682,7 +1690,7 @@ section:has(.sb-video.video-popup-active),
             margin-left: -130px;
             padding: 20px 0 0;
             overflow: hidden;
-            
+
             &:has(.sb-author-card-badge) {
                 padding: 15px;
                 overflow: visible;
@@ -1743,7 +1751,7 @@ section:has(.sb-video.video-popup-active),
 
                 @include breakpoint(575) {
                     @include font(14, 24);
-                }         
+                }
             }
         }
     }
@@ -1831,7 +1839,7 @@ section:has(.sb-video.video-popup-active),
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
     @include breakpoint(1024) {
         padding: 25px 20px 20px;
     }
@@ -1839,66 +1847,6 @@ section:has(.sb-video.video-popup-active),
         padding: 20px 10px;
     }
 
-    .gform_required_legend {
-        display: none
-    }
-    form {
-        .gform_fields {
-           grid-gap: 42px 22px !important;
-
-           @include breakpoint(639) {
-                grid-gap: 25px 22px !important;
-           }
-        }
-        .gfield_label {
-            @include font(24, 36);
-            font-weight: 600 !important;
-            color: #000 !important;
-
-            @include breakpoint(768) {
-                @include font(20, 32);
-            }
-            @include breakpoint(575) {
-                @include font(18, 30);
-            }
-
-            .gfield_required {
-                color: #000 !important;
-                font-size: 24px !important;
-            }
-        }
-        input,
-        select,
-        textarea {
-            background: #28282C !important;
-            border-radius: 20px !important;
-            padding: 20px 16px !important;
-            font-size: 16px !important;
-            line-height: 24px !important;
-            font-weight: 600 !important;
-            color: #7E7E7E !important;
-            min-height: 68px !important;
-        }
-        .gform_footer {
-            .gform_button {
-                font-size: 26px !important;
-                line-height: 39px !important;
-                font-weight: 600 !important;
-                color: #fff !important;
-                background: linear-gradient(180deg, #7970E9 -15.57%, #A08DF3 114.75%) !important;
-                border-radius: 100px !important;
-                width: 100% !important;
-                min-height: 60px !important;
-                padding: 10px !important;
-                transition: all .3s ease !important;
-
-                &:hover {
-                    background: linear-gradient(180deg, #A08DF3 114.75%, #7970E9 -15.57%) !important;
-                }
-            }
-        }
-    }
-    
     .sb-form-condition-text {
         @include font(14, 21);
         color: $black;
@@ -1919,7 +1867,7 @@ section:has(.sb-video.video-popup-active),
 
     .sb-icon-box-icon {
         width: 55px;
-        
+
         img {
             width: 100%;
         }
