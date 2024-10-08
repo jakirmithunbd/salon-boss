@@ -3263,6 +3263,12 @@
 
     .sb-row {
 
+        .sb-hero-image,
+        .sb-hero-video {
+            width: 100%;
+            max-width: 660px;
+        }
+
         .sb-hero-content {
             width: 100%;
             max-width: 955px;

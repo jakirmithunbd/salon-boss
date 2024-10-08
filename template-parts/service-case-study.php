@@ -8,11 +8,11 @@
 
         <div class="sb-section-title text-center">
             <?php if (!empty($section_title['title'])): ?>
-                <h2><?php echo esc_html($section_title['title']); ?></h2>
+                <h2><?php echo wp_kses_post($section_title['title']); ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($section_title['description'])): ?>
-                <p><?php echo esc_html($section_title['description']); ?></p>
+                <p><?php echo wp_kses_post($section_title['description']); ?></p>
             <?php endif; ?>
         </div>
 
@@ -42,13 +42,13 @@
                                     <?php foreach ($case_categories as $category) : ?>
                                         <li>
                                             <a href="<?php echo esc_url(get_term_link($category)); ?>">
-                                                <?php echo esc_html($category->name); ?>
+                                                <?php echo wp_kses_post($category->name); ?>
                                             </a>
                                         </li>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </ul>
-                            <h3><?php echo esc_html($case_title); ?></h3>
+                            <h3><?php echo wp_kses_post($case_title); ?></h3>
                             <div class="sb-card-btn">
                                 <a href="<?php echo esc_url($case_permalink); ?>">View Case Study ></a>
                             </div>
