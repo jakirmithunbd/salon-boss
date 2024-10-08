@@ -109,8 +109,8 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<!-- Hero Home  -->
 
+<!-- Hero Home  -->
 <?php get_template_part('template-parts/logo-slider'); ?>
 
 <section class="sb-who-we-help">
@@ -217,13 +217,14 @@ get_header(); ?>
 
                         $what_we_do_service_image = $what_we_do_service['what_we_do_service_image'];
                         $what_we_do_content = $what_we_do_service['what_we_do_content'];
-                        $what_we_do_service_title = $what_we_do_content['title'] ?? '';
-                        $what_we_do_service_discription = $what_we_do_content['discription'] ?? '';
-                        $what_we_do_service_button = $what_we_do_content['button'] ?? [];
+                        $what_we_do_service_title = $what_we_do_content['title'];
+                        $what_we_do_service_discription = $what_we_do_content['discription'];
+                        $what_we_do_service_button = $what_we_do_content['button'];
+                        $service_image_position = $what_we_do_content['image_position'];
 
                         ?>
 
-                        <div class="sb-card">
+                        <div class="sb-card <?php echo esc_attr($service_image_position); ?>">
                             <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
                             <div class="sb-card-contents-wrapper d-flex align-center">
                                 <?php
@@ -235,16 +236,17 @@ get_header(); ?>
                                     </div>
                                 <?php endif; ?>
                                 <div class="sb-card-content text-center-mobile">
-                                    <h4><?php echo wp_kses_post($what_we_do_service_title); ?></h4>
-                                    <p><?php echo esc_attr($what_we_do_service_discription); ?></p>
+                                    <h4><?php echo wp_kses_post($what_we_do_service_title ?? ''); ?></h4>
+                                    <p><?php echo esc_attr($what_we_do_service_discription ?? ''); ?></p>
                                     <div class="sb-card-btn">
                                         <a href="<?php echo esc_url($what_we_do_service_button['url'] ?? site_url()); ?>">
-                                            <?php echo esc_attr($what_we_do_service_button['title'] ?? ''); ?>
+                                            <?php echo esc_attr($what_we_do_service_button['title'] ?? '' . '>'); ?>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- Sb Card  -->
+
 
                     <?php endforeach;
                 endif; ?>
@@ -257,41 +259,107 @@ get_header(); ?>
 
 <section class="sb-about">
     <div class="container">
-        <div class="sb-row align-center">
-            <div class="sb-section-title text-center-mobile">
-                <h5>About Us</h5>
-                <h3>Empowering hair and beauty businesses since 2017</h3>
-                <p>
-                    Salon Boss is a pioneering hair <strong>salon marketing agency</strong>
-                    exclusively serving the <strong>hair and beauty sector</strong>.
-                    Founded by <strong>Matthew Peters-Mejia</strong>, we're dedicated to helping your
-                    business navigate the <strong>digital landscape and achieve growth</strong>.
-                </p>
-                <div class="sb-row">
-                    <div class="sb-simple-card text-center-mobile">
-                        <h5>Dedicated to Your success</h5>
-                        <p>We treat every business we work with as if it were our own</p>
+        <?php
+        $about_us_section = get_field('about_us_section');
+        if ($about_us_section):
+            $about_us_title_area = $about_us_section['title_area'];
+            $about_us_image_area = $about_us_section['image_area'];
+            $about_service = $about_us_section['about_services'];
+
+            $title_area_title = $about_us_title_area['title'];
+            $title_area_sub_title = $about_us_title_area['sub_title'];
+            $title_area_description = $about_us_title_area['description'];
+
+            ?>
+            <div class="sb-row align-center">
+                <div class="sb-section-title text-center-mobile">
+                    <h5><?php echo esc_html($title_area_sub_title ?? ''); ?></h5>
+                    <h3><?php echo wp_kses_post($title_area_title ?? ''); ?></h3>
+                    <p>
+                        <?php echo wp_kses_post($title_area_description ?? ''); ?>
+                    </p>
+                    <div class="sb-row">
+                        <?php if ($about_service):
+                            foreach ($about_service as $service):
+                                $service_title = $service['title'];
+                                $service_description = $service['description'];
+                                ?>
+                                <div class="sb-simple-card text-center-mobile">
+                                    <h5><?php echo esc_html($service_title ?? ''); ?></h5>
+                                    <!-- Fixed to echo instead of esc_html_e -->
+                                    <p><?php echo wp_kses_post($service_description ?? ''); ?></p>
+                                </div>
+                                <?php
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
-                    <div class="sb-simple-card text-center-mobile">
-                        <h5>Dedicated to Your success</h5>
-                        <p>We treat every business we work with as if it were our own</p>
+                    <div class="sb-buttons d-flex">
+                        <?php
+                        $about_service_buttons = $about_us_section['button_group'];
+
+                        foreach ($about_service_buttons as $button):
+                            $button_link = $button['button_link'] ?? '';
+                            $button_icon = $button['icon'] ?? '';
+                            $button_type = $button['button_type'] ?? '';
+                            $button_type_class = '';
+                            $button_icon_class = '';
+                            $position_class = '';
+
+                            // Determine button type class
+                            if ($button_type === false) {
+                                $button_type_class = 'button-bg-green';
+                            } elseif ($button_type === true) {
+                                $button_type_class = 'button-bg-pink';
+                            }
+
+                            // Determine button icon class and position
+                            if ($button_icon) {
+                                $button_icon_position = $button['icon_position'] ?? null; // Fixed the variable name
+                    
+                                if ($button_icon_position === false) {
+                                    $position_class = 'icon-position-left';
+                                } elseif ($button_icon_position === true) {
+                                    $position_class = 'icon-position-right';
+                                }
+
+                                if ($button_type === false) {
+                                    $button_icon_class = 'button-icon-phone';
+                                } elseif ($button_type === true) {
+                                    $button_icon_class = 'button-icon-scissor';
+                                }
+                            }
+                            ?>
+
+                            <a href="<?php echo esc_url($button_link['url']); ?>"
+                                class="sb-button <?php echo esc_attr($button_type_class . ' ' . $button_icon_class . ' ' . $position_class); ?>">
+                                <?php echo esc_html($button_link['title'] ?? ''); ?>
+                            </a>
+
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="sb-buttons d-flex">
-                    <a href="#" class="sb-button button-bg-green more-about-btn">More About Us</a>
-                    <a href="#" class="sb-button button-bg-pink button-icon-scissor icon-position-right">Explore our
-                        services</a>
+                <div class="sb-media">
+                    <?php
+                    $about_image = $about_us_image_area['image'] ?? null;
+                    $about_image_button = $about_us_image_area['image_url'] ?? null;
+
+                    if ($about_image): ?>
+                        <img src="<?php echo esc_url($about_image['url']); ?>"
+                            alt="<?php echo esc_attr($about_image['alt']); ?>">
+                    <?php endif; ?>
+
+                    <?php if ($about_image_button): ?>
+                        <div class="sb-media-badge">
+                            <h4>Become a <a href="<?php echo esc_url($about_image_button['url']); ?>">Salon Boss!</a></h4>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
-            <div class="sb-media">
-                <img src="<?php echo get_theme_file_uri('/assets/images/Salon-Boss-salonboss-matt.png') ?>" alt="">
-                <div class="sb-media-badge">
-                    <h4>Become a <a href="#">Salon Boss!</a></h4>
-                </div>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
-</section><!-- About section  -->
+</section><!-- About section -->
+
 
 <section class="resource-center-section">
     <div class="container">
