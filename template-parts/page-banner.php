@@ -6,7 +6,7 @@
                 <?php $media = $hero['media']; ?>
 
                 <?php
-                if ( $media['is_video']): ?>
+                if ( !$media['is_video']): ?>
                     <?php
                     $image = !empty($media['image']['url']) ? esc_url($media['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Salon-Boss-service-website.png'));
                     ?>
