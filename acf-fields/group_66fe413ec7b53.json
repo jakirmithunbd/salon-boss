@@ -311,7 +311,8 @@
                             "choices": {
                                 "media_left": "Left",
                                 "media_right": "Right",
-                                "media_top": "Top"
+                                "media_top": "Top",
+                                "media_bottom": "Bottom"
                             },
                             "default_value": "media_left",
                             "return_format": "value",
@@ -445,5 +446,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728436928
+    "modified": 1728457762
 }
