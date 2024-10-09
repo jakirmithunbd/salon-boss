@@ -734,31 +734,55 @@
                         },
                         {
                             "key": "field_67055dd3adcf2",
-                            "label": "Gallery",
-                            "name": "image_result_gallery",
+                            "label": "Image One",
+                            "name": "image_one",
                             "aria-label": "",
-                            "type": "gallery",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "return_format": "array",
                             "library": "all",
-                            "min": "",
-                            "max": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
-                            "max_width": 2,
+                            "max_width": "",
                             "max_height": "",
                             "max_size": "",
                             "mime_types": "",
-                            "insert": "append",
-                            "preview_size": "thumbnail"
+                            "allow_in_bindings": 1,
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_6706150c65a05",
+                            "label": "Image One Two",
+                            "name": "image_one_two",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 1,
+                            "preview_size": "medium"
                         }
                     ],
                     "min": "",
@@ -977,5 +1001,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728446365
+    "modified": 1728451866
 }
