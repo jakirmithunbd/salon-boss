@@ -10,6 +10,10 @@
                 <h2><?php echo wp_kses_post($section_title['title']); ?></h2>
             <?php endif; ?>
 
+            <?php if (!empty($section_title['sub_title'])): ?>
+            <h4><?php echo wp_kses_post($section_title['sub_title']); ?></h4>
+            <?php endif; ?>
+
             <?php if (!empty($section_title['description'])): ?>
                 <p><?php echo wp_kses_post($section_title['description']); ?></p>
             <?php endif; ?>

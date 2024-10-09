@@ -271,6 +271,43 @@ if(sb_counter){
         ]
       });
 
+    // Initialize an empty array to store selected category slugs
+    let cats = '';
+
+    const data = {
+        cats
+    }
+
+    $('.sb-blog-tab-buttons .sb-button').on('click', function () {
+        $(this).toggleClass('active');
+
+        cats = $(this).data('slug');
+
+        sb_filter_posts(data);
+    });
+
+    function sb_filter_posts( data = {} ) {
+        // let nonce = document.querySelector('.filter-nonce')?.dataset.nonce;
+
+        $('#sb-blog-list').html(
+            `<div class='preloader'><img src="${ajax.preloader}"/></div>`
+        );
+
+        wp.ajax
+            .post('sb_filter_posts', { data })
+            .done((res) => {
+                if (res) {
+                    $('#sb-blog-list').html(res.page);
+                    console.log(res)
+                }
+            })
+            .fail((err) => {
+                console.log(err);
+            });
+    }
+
+    sb_filter_posts(data);
+
 
 })(jQuery);
 

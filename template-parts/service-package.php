@@ -78,11 +78,11 @@ $buttons = get_sub_field('buttons_group');
                 <?php if ($buttons): foreach ($buttons as $f_button):
                     $icon_type = '';
                     $icon_position = '';
-                    $color = '';
+                    $color = !empty($f_button['color']) ? 'pink' : 'green';
 
                     if (!empty($f_button['enable_icon'])) {
                         $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
-                        $color = !empty($f_button['color']) ? 'pink' : 'green';
+
                         $icon_position = !empty($f_button['icon_alignment'])
                             ? 'icon-position-right'
                             : 'icon-position-left';

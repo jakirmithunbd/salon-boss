@@ -27,19 +27,20 @@ if(!empty( $hero)) :$sec_class = empty($media['image']) ? 'hero-without-image' :
 
                 <?php else :
                     $video = $media['video'];
-                    $video_thumb = $media['video_thumbnail']['url'] ? $media['video_thumbnail']['url'] : get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
-
                     $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
                     ?>
 
                 <div class="sb-hero-video d-flex flex-wrap">
-                    <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>" style="background-image: url(<?php echo esc_url( $video_thumb ); ?>);">
+                    <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>" style="background-image: url(<?php echo esc_url( $media['video_thumbnail']['url'] ); ?>);">
 
-                        <div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>
+                        <?php if(!empty($video)) {
+                            printf('<div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>');
+                        } ?>
 
                         <div class="sb-video-frame">
                             <div class="sb-video-wrapper relative">
                                 <?php echo $video; ?>
+
                                 <button class="sb-video-close-btn">
                                     <span></span>
                                     <span></span>

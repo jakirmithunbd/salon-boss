@@ -251,7 +251,28 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "Enter your text",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6706595b05f92",
+                                    "label": "Sub Title",
+                                    "name": "sub_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1713,7 +1734,29 @@
                     "name": "client_logos",
                     "label": "Client Logos",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_6706573d66129",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Logos are coming from Theme Settings",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -1836,5 +1879,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728392556
+    "modified": 1728469366
 }
