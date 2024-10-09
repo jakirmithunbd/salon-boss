@@ -70,6 +70,27 @@
             "selected": 0
         },
         {
+            "key": "field_670647cdf7562",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Service area inheirted from Theme Settings > Resource Center",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Enable",
+            "ui_off_text": "Disable",
+            "ui": 1
+        },
+        {
             "key": "field_670632e19ecbd",
             "label": "Resource Center",
             "name": "",
@@ -283,5 +304,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728460436
+    "modified": 1728465076
 }
