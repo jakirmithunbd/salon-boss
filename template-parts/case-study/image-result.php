@@ -1,7 +1,8 @@
 <?php
 
 $image_result_text = get_sub_field('result_image_text') ;
-$image_result_gallery = get_sub_field('image_result_gallery') ;
+$image_one = get_sub_field('image_one') ;
+$image_two = get_sub_field('image_two') ;
 
 ?>
 
@@ -9,10 +10,12 @@ $image_result_gallery = get_sub_field('image_result_gallery') ;
     <div class="container">
         <div class="case-study-result-image-card">
             <div class="case-study-result-image-box d-flex flex-wrap">
-                <?php if( $image_result_gallery ): ?>
-                    <?php foreach( $image_result_gallery as $image ): ?>
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                    <?php endforeach; ?>
+                <?php if ( $image_one ): ?>
+                    <img src="<?php echo esc_url($image_one['url']); ?>" alt="<?php echo esc_attr($image_one['alt']); ?>">
+                <?php endif; ?>
+
+                <?php if ( $image_two ): ?>
+                    <img src="<?php echo esc_url($image_two['url']); ?>" alt="<?php echo esc_attr($image_two['alt']); ?>">
                 <?php endif; ?>
             </div>
             <div class="case-study-result-image-foot text-center">
