@@ -20,16 +20,16 @@ $website_link = isset($resource_center['website_link']) ? $resource_center['webs
                         <img src="<?php echo $service_img; ?>" alt="<?php echo $service_img_title; ?>">
                     </div>
                     <div class="sb-card-content text-center">
-                        <h2><?php echo esc_html($resource_center_title); ?> </h2>
-                        <h5><?php echo esc_html($resource_center_sub_title); ?></h5>
-                        <p><?php echo esc_html($resource_center_sub_description); ?></p>
+                        <h2><?php echo wp_kses_post($resource_center_title); ?> </h2>
+                        <h5><?php echo wp_kses_post($resource_center_sub_title); ?></h5>
+                        <p><?php echo wp_kses_post($resource_center_sub_description); ?></p>
 
                         <?php if (!empty($service_links)) : ?>
                             <ul class="unstyle flex-center flex-wrap">
                                 <?php foreach ($service_links as $link) : ?>
                                     <li class="active">
                                         <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
-                                            <?php echo esc_html(get_the_title($link->ID)); ?>
+                                            <?php echo wp_kses_post(get_the_title($link->ID)); ?>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -38,7 +38,7 @@ $website_link = isset($resource_center['website_link']) ? $resource_center['webs
                         <?php if (!empty($website_link)) : ?>
                             <div class="sb-card-btn">
                                 <a target="<?php echo esc_attr($website_link['target']); ?>" href="<?php echo esc_url($website_link['url']); ?>">
-                                    <?php echo esc_html($website_link['title']); ?>
+                                    <?php echo wp_kses_post($website_link['title']); ?>
                                 </a>
                             </div>
                         <?php endif; ?>
