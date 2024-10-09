@@ -92,7 +92,7 @@ if(sb_custom_slider) {
 };
 // Service Slider (Custom) end
 
-// Dynamic Sb Card height 
+// Dynamic Sb Card height
 const sb_cards = document.querySelectorAll('.sb-card');
 sb_cards.forEach(card => {
     const sb_card_btn = card.querySelector('.sb-card-btn');
@@ -283,7 +283,7 @@ if(sb_counter){
 
         cats = $(this).data('slug');
 
-        sb_filter_posts(data);
+        sb_filter_posts(cats);
     });
 
     function sb_filter_posts( data = {} ) {
@@ -306,7 +306,7 @@ if(sb_counter){
             });
     }
 
-    sb_filter_posts(data);
+    sb_filter_posts();
 
 
 })(jQuery);

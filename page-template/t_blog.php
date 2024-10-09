@@ -9,15 +9,9 @@ get_template_part('template-parts/page-banner');
 <section class="sb-blog">
     <div class="container">
         <div class="sb-blog-search text-center">
-            <h2>Search by Categories</h2>
+            <h2><?php echo __('Search by Categories', 'sb'); ?></h2>
             <div class="sb-blog-seach-form">
-                <form role="search" method="get" class="search-form" action="">
-                    <label>
-                        <span class="screen-reader-text">Search for:</span>
-                        <input type="search" class="search-field" placeholder="Search Posts" value="" name="">
-                    </label>
-                    <input type="submit" class="search-submit" value="Search">
-                </form>
+                <?php echo get_search_form();?>
             </div>
         </div>
         <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile">
@@ -57,7 +51,7 @@ get_template_part('template-parts/page-banner');
             </select>
         </div>
 
-        <div class="sb-blog-list d-flex flex-wrap justify-center" id="sb-blog-list"></div>
+        <div class="sb-blog-list d-flex flex-wrap" id="sb-blog-list"></div>
     </div>
 </section><!-- Blog  -->
 
