@@ -286,6 +286,10 @@ if(sb_counter){
         sb_filter_posts(cats);
     });
 
+    $('#sb-post-filter-onchange').on('change', function (){
+        sb_filter_posts($(this).val());
+    })
+
     function sb_filter_posts( data = {} ) {
         // let nonce = document.querySelector('.filter-nonce')?.dataset.nonce;
 

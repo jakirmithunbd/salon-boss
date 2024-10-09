@@ -35,19 +35,23 @@ get_template_part('template-parts/page-banner');
 
         </div>
         <div class="sb-blog-tab-select hide-desktop hide-tab text-center">
-            <select name="" id="">
-                <option value="">Websites</option>
-                <option value="">Search Engine Optimization</option>
-                <option value="">Social Media</option>
-                <option value="">Advertising</option>
-                <option value="">Design & Branding</option>
-                <option value="">Marketing</option>
-                <option value="">General Ideas</option>
-                <option value="">Salon Suites</option>
-                <option value="">Hair Salons</option>
-                <option value="">Solo Hair Stylists</option>
-                <option value="">Solo Beauty Pros</option>
-                <option value="">Beauty Brands</option>
+            <select name="" id="sb-post-filter-onchange">
+            <?php
+            $categories = get_categories([
+                'taxonomy' => 'category',
+                'hide_empty' => false,
+            ]);
+
+            if (!empty($categories)) {
+                foreach ($categories as $category) {
+                    printf(
+                        '<option value="%s">%s</option>>',
+                        esc_attr($category->slug),
+                        esc_html($category->name)
+                    );
+                }
+            }
+            ?>
             </select>
         </div>
 
