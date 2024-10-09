@@ -2,65 +2,66 @@
 $hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 
-if(!empty( $hero)) :
-    $sec_class = empty($media['image']) ? 'hero-without-image' : '';
-    ?>
+if(!empty( $hero)) :$sec_class = empty($media['image']) ? 'hero-without-image' : ''; ?>
 <section class="common-hero hero-bg <?php echo esc_attr( $sec_class );?>">
     <div class="container">
         <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
-            <?php if ( !$media['is_video'] ) :
-                $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
-            ?>
+            <?php
+            if($media['image']) :
 
-            <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
-                <?php if($media['image']) {
-                    printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr( $media['image']['title']));
-                } ?>
-
-                <?php if( $media['title'] ) : ?>
-                <div class="sb-hero-image-title">
-                    <button class="link-available"><?php echo esc_html( $media['title'] );?></button>
-                </div>
-                <?php endif;?>
-            </div>
-
-            <?php else :
-                $video = $media['video'];
-                $video_thumb = $media['video_thumbnail']['url'] ? $media['video_thumbnail']['url'] : get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
-
-                $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
+                if ( !$media['is_video'] ) : $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
                 ?>
 
-            <div class="sb-hero-video d-flex flex-wrap">
-                <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>" style="background-image: url(<?php echo esc_url( $video_thumb ); ?>);">
+                <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
+                    <?php if($media['image']) {
+                        printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr( $media['image']['title']));
+                    } ?>
 
-                    <div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>
-
-                    <div class="sb-video-frame">
-                        <div class="sb-video-wrapper relative">
-                            <?php echo $video; ?>
-                            <button class="sb-video-close-btn">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <?php if( $media['title'] ) : ?>
-                    <div class="sb-hero-video-title">
+                    <?php if( $media['title'] ) : ?>
+                    <div class="sb-hero-image-title">
                         <button class="link-available"><?php echo esc_html( $media['title'] );?></button>
                     </div>
-                <?php endif;?>
-            </div>
+                    <?php endif;?>
+                </div>
 
-            <?php endif;?>
+                <?php else :
+                    $video = $media['video'];
+                    $video_thumb = $media['video_thumbnail']['url'] ? $media['video_thumbnail']['url'] : get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
+
+                    $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
+                    ?>
+
+                <div class="sb-hero-video d-flex flex-wrap">
+                    <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>" style="background-image: url(<?php echo esc_url( $video_thumb ); ?>);">
+
+                        <div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>
+
+                        <div class="sb-video-frame">
+                            <div class="sb-video-wrapper relative">
+                                <?php echo $video; ?>
+                                <button class="sb-video-close-btn">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php if( $media['title'] ) : ?>
+                        <div class="sb-hero-video-title">
+                            <button class="link-available"><?php echo esc_html( $media['title'] );?></button>
+                        </div>
+                    <?php endif;?>
+                </div>
+
+                <?php endif; endif;?>
 
             <?php
+            $text_center = !$media['image'] ? 'text-center' : '';
             $content = $hero['content'];
             if (!empty($content)): ?>
-                <div class="sb-hero-content text-center-mobile">
+                <div class="sb-hero-content text-center-mobile <?php echo esc_attr( $text_center ); ?>">
                     <?php $bages = $content['hero_bages']; if(!empty($bages)) : ?>
                     <div class="hero-badge d-flex flex-wrap">
                         <?php foreach ($bages as $bage) {
