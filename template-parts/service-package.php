@@ -10,15 +10,15 @@ $buttons = get_sub_field('buttons_group');
 
         <div class="sb-section-title text-center">
             <?php if (!empty($section_title['title'])): ?>
-            <h2><?php echo esc_html($section_title['title']); ?></h2>
+            <h2><?php echo wp_kses_post($section_title['title']); ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($section_title['sub_title'])): ?>
-            <h2><?php echo esc_html($section_title['sub_title']); ?></h2>
+            <h2><?php echo wp_kses_post($section_title['sub_title']); ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($section_title['description'])): ?>
-                <p><?php echo esc_html($section_title['description']); ?></p>
+                <p><?php echo wp_kses_post($section_title['description']); ?></p>
             <?php endif; ?>
         </div>
 
@@ -37,26 +37,26 @@ $buttons = get_sub_field('buttons_group');
                             </div>
                             <div class="sb-card-content text-center-mobile">
                                 <?php if (!empty($list['title'])): ?>
-                                    <h2><?php echo esc_html($list['title']); ?></h2>
+                                    <h2><?php echo wp_kses_post($list['title']); ?></h2>
                                 <?php endif; ?>
 
 
                                 <?php if (!empty($list['sub_title'])): ?>
-                                    <h3><?php echo esc_html($list['sub_title']); ?></h3>
+                                    <h3><?php echo wp_kses_post($list['sub_title']); ?></h3>
                                 <?php endif; ?>
 
                                 <?php if (!empty($list['description'])): ?>
-                                    <p><?php echo esc_html($list['description']); ?></p>
+                                    <p><?php echo wp_kses_post($list['description']); ?></p>
                                 <?php endif; ?>
 
                                 <div class="sb-card-btn d-flex align-center space-between">
                                     <div class="sb-service-price">
                                         <?php if (!empty($list['price'])): ?>
-                                            <h5><?php echo esc_html($list['price']); ?></h5>
+                                            <h5><?php echo wp_kses_post($list['price']); ?></h5>
                                         <?php endif; ?>
 
                                         <?php if (!empty($list['setup_fee'])): ?>
-                                            <span class="sb-setup-fee"><?php echo esc_html($list['setup_fee']); ?></span>
+                                            <span class="sb-setup-fee"><?php echo wp_kses_post($list['setup_fee']); ?></span>
                                         <?php endif; ?>
                                     </div>
                                     <?php if(!empty($list['sign_up_link'])) {
@@ -90,7 +90,7 @@ $buttons = get_sub_field('buttons_group');
                     ?>
 
                     <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
-                        <?php echo esc_html($f_button['link']['title']); ?>
+                        <?php echo wp_kses_post($f_button['link']['title']); ?>
                     </a>
                 <?php endforeach; endif; ?>
             </div>
