@@ -760,8 +760,8 @@
                         },
                         {
                             "key": "field_6706150c65a05",
-                            "label": "Image One Two",
-                            "name": "image_one_two",
+                            "label": "Image Two",
+                            "name": "image_two",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -1001,5 +1001,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728451866
+    "modified": 1728454803
 }
