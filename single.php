@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <section class="hero-single-blog hero-bg sb-header-gutter">
+    <section class="hero-single-blog hero-bg">
         <div class="container">
             <div class="blog-hero-content text-center">
 
