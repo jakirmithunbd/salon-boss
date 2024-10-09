@@ -27,10 +27,12 @@ if(!empty( $hero)) :
             <?php else :
                 $video = $media['video'];
                 $video_thumb = $media['video_thumbnail']['url'] ? $media['video_thumbnail']['url'] : get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
+
+                $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
                 ?>
 
             <div class="sb-hero-video d-flex flex-wrap">
-                <div class="sb-video flex-center" style="background-image: url(<?php echo esc_url( $video_thumb ); ?>);">
+                <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>" style="background-image: url(<?php echo esc_url( $video_thumb ); ?>);">
 
                     <div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>
 

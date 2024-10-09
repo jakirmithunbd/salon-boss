@@ -8,66 +8,8 @@
 get_header(); ?>
 
 
-<section class="hero-book-dicovery common-hero hero-bg">
-    <div class="container">
-        <div class="sb-row">
-            
-            <div class="sb-hero-video d-flex">
-                <div class="sb-card">
-                    <div class="sb-video flex-center" style="background-image: url(../assets/images/Salon-Boss-Encore-Salon-Suites);">
-                        <div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>
-
-                        <div class="sb-video-frame">
-                            <div class="sb-video-wrapper relative">
-                                <iframe src="https://www.youtube.com/embed/5Ee-sQ9p7kA?si=hZUFILs9kH0VJtOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                                <button class="sb-video-close-btn">
-                                    <span></span>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sb-card-btn">
-                        <button class="Available"> <!-- Available -->
-                            What is a discovery call?
-                        </button>
-                    </div>
-                 </div><!-- Sb Card  -->
-            </div>
-            <div class="sb-hero-content text-center-mobile">
-                <div class="hero-badge d-flex flex-wrap">
-                    <span>Completely free & no obligation</span>
-                </div>
-                <h1>
-                    Book A <span>Discovery Call</span> ☎️
-                </h1>
-                <h4>Take the first step to elevating your beauty business 🚀</h4>
-                <p>
-                    <strong>Unlock your business potential.</strong> Speak directly with our experts specializing in the hair and beauty industry and discover how we can drive your growth.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Book Discovery  -->
-
-<section class="sb-service-slider">
-    <p>websites</p>
-    <p>seo</p>
-    <p>advertising</p>
-    <p>social media</p>
-    <p>branding & design</p>
-    <p>reputation management</p>
-    <p>blog writing</p>
-    <p>automation</p>
-    <p>ai</p>
-    <p>email marketing</p>
-    <p>lead nurturing</p>
-    <p>tenant retention</p>
-    <p>cro</p>
-    <p>marketing education</p>
-    <p>e-commercelead generation</p>
-</section><!-- Sb Service Slider  -->
+<?php get_template_part('template-parts/page-banner'); ?>
+<?php get_template_part('template-parts/logo-slider'); ?>
 
 <section class="sb-booking-form">
     <div class="container">
