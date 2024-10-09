@@ -92,7 +92,7 @@ if(sb_custom_slider) {
 };
 // Service Slider (Custom) end
 
-// Dynamic Sb Card height
+// Dynamic Sb Card height 
 const sb_cards = document.querySelectorAll('.sb-card');
 sb_cards.forEach(card => {
     const sb_card_btn = card.querySelector('.sb-card-btn');
@@ -234,8 +234,7 @@ if(sb_counter){
 
 
 
-    // Related post slider 
-
+    // Related post slider
     $('.sb-related-post-list').slick({
         dots: true,
         arrows: false,
@@ -270,6 +269,42 @@ if(sb_counter){
           }
         ]
       });
+
+       // trusted-customer-logo slider
+    $('.trusted-customer-logo').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    });
 
     // Initialize an empty array to store selected category slugs
     let cats = '';
