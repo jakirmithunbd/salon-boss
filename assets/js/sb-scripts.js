@@ -235,7 +235,6 @@ if(sb_counter){
 
 
     // Related post slider 
-
     $('.sb-related-post-list').slick({
         dots: true,
         arrows: false,
@@ -270,6 +269,42 @@ if(sb_counter){
           }
         ]
       });
+
+       // trusted-customer-logo slider
+    $('.trusted-customer-logo').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    });
 
 
 })(jQuery);

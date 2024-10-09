@@ -81,14 +81,13 @@
                     letter-spacing: 0.16px;
                 }
                 .trusted-customer-logo {
-                    gap: 40px;
-                    flex-wrap: wrap;
+                    a {
+                        display: inline-flex;
+                        padding: 0 20px;
 
-                    @include breakpoint(1024) {
-                        gap: 20px;
-                    }
-                    @include breakpoint(575) {
-                        justify-content: center;
+                        @include breakpoint(575) {
+                            padding: 0 10px;
+                        }
                     }
                 }
             }

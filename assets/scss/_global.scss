@@ -1228,13 +1228,23 @@ section {
 
             .sb-hero-content {
                 @extend .text-center;
+                width: 100%;
+                max-width: 1160px;
+            }
+            .hero-badge {
+                justify-content: center;
             }
         }
         &.media_bottom {
             flex-direction: column-reverse;
-            
+
             .sb-hero-content {
                 @extend .text-center;
+                width: 100%;
+                max-width: 1160px;
+            }
+            .hero-badge {
+                justify-content: center;
             }
         }
 
@@ -1378,6 +1388,19 @@ section {
         @include breakpoint(768) {
             min-height: 350px;
         }
+
+        .sb-row  {
+            justify-content: center !important;
+            
+            .sb-hero-content {
+                width: 100%;
+                max-width: 1160px;
+                .hero-badge {
+                    justify-content: center;
+                }
+            }
+        }
+
     }
 }
 
