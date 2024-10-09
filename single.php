@@ -4,20 +4,31 @@
         <div class="blog-hero-content text-center">
 
             <div class="hero-badge d-flex flex-wrap justify-center">
-                <span>BLOG ARTICLE</span>
-                <span>SALON SUITES</span>
+
+                <?php
+                $categories = get_the_category();
+                if (!empty($categories)):
+                    foreach ($categories as $index => $category):
+                        ?>
+                        <a
+                            href="<?php echo esc_url(get_category_link($category->term_id)); ?>"><span><?php esc_html_e($category->name); ?></span></a>
+                    <?php endforeach; endif; ?>
             </div>
             <h1><?php the_title(); ?></h1>
-            <p>
-                Learn how to optimize your hair salon's google business profile to help increase your seo rankings
-            </p>
+            <p><?php echo get_the_excerpt(); ?></p>
+
             <div class="sb-post-meta flex-center">
-                <span class="sb-post-date">September 18, 2024</span>
-                <span class="sb-post-author">Matthew Peters</span>
+                <span class="sb-post-date"><?php echo get_the_date('F j, Y'); ?></span>
+                <span
+                    class="sb-post-author"><?php echo get_the_author_meta('display_name', get_current_blog_id()); ?></span>
             </div>
-            <div class="sb-blog-feature">
-                <img src="../assets/images/Salon-Boss-blog-Sapphire-Hair-Website-Launch.png" alt="">
-            </div>
+            <?php if (has_post_thumbnail()):
+                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
+                <div class="sb-blog-feature">
+                    <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                </div>
+            <?php endif; ?>
+
         </div>
     </div>
 </section>
