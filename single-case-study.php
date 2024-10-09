@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('template-parts/page-banner'); ?>
-<?php get_template_part('template-parts/logo-slider'); ?>
 
 <?php
 
@@ -10,6 +8,9 @@ if( have_rows('single_case_study') ):
     while ( have_rows('single_case_study') ) : the_row();
 
         if( get_row_layout() == 'case_study_intro' ):
+            get_template_part('template-parts/case-study/intro');
+
+        elseif( get_row_layout() == 'success_counter' ):
             get_template_part('template-parts/case-study/counter');
 
         elseif( get_row_layout() == 'the_challenge' ):

@@ -1,38 +1,47 @@
+<?php
+    $resource_center = get_sub_field('explore_services_group', );
+
+    $resource_center_title = isset($resource_center['title']) ? esc_html($resource_center['title']) : 'Section Title';
+    $resource_center_sub_title = isset($resource_center['sub_title']) ? esc_html($resource_center['sub_title']) : 'Sub Title';
+    $resource_center_sub_description = isset($resource_center['description']) ? esc_html($resource_center['description']) : 'Section Description';
+    $service_links = isset($resource_center['service_links']) ? $resource_center['service_links'] : site_url('/');
+    $service_img = isset($resource_center['image']['url']) ? esc_url($resource_center['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
+    $service_img_title = isset($resource_center['image']['title']) ? esc_attr($resource_center['image']['title']) : 'Salon Boss Image';
+    $image_alignment = isset($resource_center['image_alignment']['value']) ? esc_attr($resource_center['image_alignment']['value']) : '';
+    $website_link = isset($resource_center['website_link']) ? $resource_center['website_link'] : site_url();
+?>
+
 <section class="sb-our-service">
     <div class="container">
         <div class="flex-center">
-            <div class="sb-card"><!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+            <div class="sb-card <?php echo $image_alignment; ?>">
                 <div class="sb-card-contents-wrapper d-flex align-center">
                     <div class="sb-card-image d-flex">
-                        <img src="../assets/images/Salon-Boss-our-servicce.png" alt="">
+                        <img src="<?php echo $service_img; ?>" alt="<?php echo $service_img_title; ?>">
                     </div>
                     <div class="sb-card-content text-center">
-                        <h3>Ready to see how Salon Boss Can Take Your Business to the Next Level? 🚀</h3>
-                        <h5>We Specialize in Serving The Hair & Beauty Industry</h5>
-                        <p>
-                            We are a full service salon marketing agency that specializes in the hair and beauty industry.
-                            Take a look at our specialized services tailored for business owners just like you!
-                        </p>
-                        <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
-                                <a href="#">Advertising</a>
-                            </li>
-                            <li>
-                                <a href="#">Search Engine Optimization</a>
-                            </li>
-                            <li>
-                                <a href="#">Websites</a>
-                            </li>
-                            <li>
-                                <a href="#">Social Media</a>
-                            </li>
-                            <li>
-                                <a href="#">Reviews</a>
-                            </li>
-                        </ul>
-                        <div class="sb-card-btn">
-                            <a href="#">Explore Our Services 🚀️</a>
-                        </div>
+                        <h2><?php echo esc_html($resource_center_title); ?> </h2>
+                        <h5><?php echo esc_html($resource_center_sub_title); ?></h5>
+                        <p><?php echo esc_html($resource_center_sub_description); ?></p>
+
+                        <?php if (!empty($service_links)) : ?>
+                            <ul class="unstyle flex-center flex-wrap">
+                                <?php foreach ($service_links as $link) : ?>
+                                    <li class="active">
+                                        <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
+                                            <?php echo esc_html(get_the_title($link->ID)); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                        <?php if (!empty($website_link)) : ?>
+                            <div class="sb-card-btn">
+                                <a target="<?php echo esc_attr($website_link['target']); ?>" href="<?php echo esc_url($website_link['url']); ?>">
+                                    <?php echo esc_html($website_link['title']); ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div><!-- Sb Card  -->
