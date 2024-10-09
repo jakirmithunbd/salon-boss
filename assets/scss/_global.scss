@@ -1230,6 +1230,13 @@ section {
                 @extend .text-center;
             }
         }
+        &.media_bottom {
+            flex-direction: column-reverse;
+            
+            .sb-hero-content {
+                @extend .text-center;
+            }
+        }
 
         &.media_right {
             flex-direction: row-reverse;
@@ -1538,8 +1545,7 @@ section {
 
     }
 }
-section:has(.sb-video.video-popup-active),
-.sb-card:has(.sb-video.video-popup-active) {
+section:has(.sb-video.video-popup-active) {
     z-index: 999;
 }
 
