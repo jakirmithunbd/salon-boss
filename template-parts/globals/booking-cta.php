@@ -41,7 +41,7 @@ $sb_cta_first_img_title = isset($sb_cta_first['image']['title']) ? esc_html($sb_
                         ?>
 
                         <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
-                            <?php echo esc_html($f_button['link']['title']); ?>
+                            <?php echo wp_kses_post($f_button['link']['title']); ?>
                         </a>
                     </div>
                 <?php endif; ?>
@@ -57,10 +57,10 @@ $sb_cta_first_img_title = isset($sb_cta_first['image']['title']) ? esc_html($sb_
                             </div>
                             <div class="sb-card-content text-center-mobile">
                                 <?php if (!empty($explore_services['title'])): ?>
-                                    <h4><?php echo esc_html($explore_services['title']); ?></h4>
+                                    <h4><?php echo wp_kses_post($explore_services['title']); ?></h4>
                                 <?php endif; ?>
                                 <?php if (!empty($explore_services['description'])): ?>
-                                    <p><?php echo esc_html($explore_services['description']); ?></p>
+                                    <p><?php echo wp_kses_post($explore_services['description']); ?></p>
                                 <?php endif; ?>
                                 <?php if (!empty($explore_services['explore_services_button'])): ?>
                                     <div class="sb-card-btn">
@@ -82,10 +82,10 @@ $sb_cta_first_img_title = isset($sb_cta_first['image']['title']) ? esc_html($sb_
                             </div>
                             <div class="sb-card-content text-center-mobile">
                                 <?php if (!empty($who_we_help['title'])): ?>
-                                    <h4><?php echo esc_html($who_we_help['title']); ?></h4>
+                                    <h4><?php echo wp_kses_post($who_we_help['title']); ?></h4>
                                 <?php endif; ?>
                                 <?php if (!empty($who_we_help['description'])): ?>
-                                    <p><?php echo esc_html($who_we_help['description']); ?></p>
+                                    <p><?php echo wp_kses_post($who_we_help['description']); ?></p>
                                 <?php endif; ?>
                                 <?php if (!empty($who_we_help['who_we_help_button'])): ?>
                                     <div class="sb-card-btn">

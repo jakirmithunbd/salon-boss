@@ -32,7 +32,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "row",
+                    "layout": "block",
                     "sub_fields": [
                         {
                             "key": "field_66fe3e748b31f",
@@ -234,6 +234,52 @@
                                     "parent_repeater": "field_66fe3ed78b322"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_67062d835089e",
+                            "label": "Hero Bages",
+                            "name": "hero_bages",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add New Bage",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67062da85089f",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "Enter your text",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67062d835089e"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -311,7 +357,8 @@
                             "choices": {
                                 "media_left": "Left",
                                 "media_right": "Right",
-                                "media_top": "Top"
+                                "media_top": "Top",
+                                "media_bottom": "Bottom"
                             },
                             "default_value": "media_left",
                             "return_format": "value",
@@ -445,5 +492,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728436928
+    "modified": 1728458668
 }
