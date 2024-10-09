@@ -1,4 +1,5 @@
-<?php $hero = get_field('hero_section', get_queried_object_id());
+<?php
+$hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 
 if(!empty( $hero)) :
@@ -60,6 +61,14 @@ if(!empty( $hero)) :
             $content = $hero['content'];
             if (!empty($content)): ?>
                 <div class="sb-hero-content text-center-mobile">
+                    <?php $bages = $content['hero_bages']; if(!empty($bages)) : ?>
+                    <div class="hero-badge d-flex flex-wrap">
+                        <?php foreach ($bages as $bage) {
+                            printf('<span>%s</span>', wp_kses_post($bage['text']));
+                        } ?>
+
+                    </div>
+                    <?php endif;?>
                     <?php printf('<h1>%s</h1>', wp_kses_post($content['title'])); ?>
                     <?php printf('<h4>%s</h4>', wp_kses_post($content['sub_title'])); ?>
                     <?php printf('<p>%s</p>', wp_kses_post($content['description'])); ?>
