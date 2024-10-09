@@ -335,7 +335,8 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 1,
+                            "default_value": 0,
+                            "allow_in_bindings": 1,
                             "ui_on_text": "Video",
                             "ui_off_text": "Image",
                             "ui": 1
@@ -492,5 +493,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728458668
+    "modified": 1728459073
 }
