@@ -62,60 +62,7 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
 
-                    <!-- Come From Option  -->
-                    <div class="sb-trusted-customer">
-                        <h5>Trusted By</h5>
-                        <div class="trusted-customer-logo">
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/sutes-spot.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/mallorca.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/cachet.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/nybeauty.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/sutes-spot.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/mallorca.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/cachet.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="#">
-                                <img
-                                    src="../assets/images/vectors/nybeauty.svg"
-                                    alt=""
-                                />
-                            </a>
-                        </div>
-                    </div>
+                    <?php get_template_part('/template-parts/globals/client-logos');?>
 
                 </div>
                 <div class="sb-hero-image flex-center">
