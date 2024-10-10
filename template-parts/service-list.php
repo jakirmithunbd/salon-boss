@@ -2,6 +2,8 @@
     $section_title = get_sub_field('section_title');
     $service_list = get_sub_field('service_list');
     $buttons = get_sub_field('button_group');
+    $service_image_size = get_sub_field('service_image_size_small');
+
 ?>
 <section class="sb-single-service">
     <div class="container">
@@ -22,7 +24,8 @@
         <?php if ($service_list): ?>
             <div class="single-service-img-box-list d-flex justify-center">
                 <?php foreach ($service_list as $list): ?>
-                    <div class="sb-image-box <?php echo esc_attr($list['image_alignment']['value']); ?>">
+                    <div class="sb-image-box <?php echo esc_attr($list['image_alignment']['value']); echo $service_image_size ? " image-size-small" : ""; ?>">
+
                         <div class="sb-image-box-media">
                             <?php
                             $sb_list_image = $list['image']['url'] ? esc_url($list['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
