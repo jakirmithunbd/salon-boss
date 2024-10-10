@@ -427,6 +427,19 @@
 
     .sb-card {
         max-width: 1020px;
+
+        .sb-card-btn {
+            padding: 10px 30px;
+
+            a {
+                @include font(22, 34);
+                font-weight: 700;
+
+                @include breakpoint(575) {
+                    @include font(18, 30);
+                }
+            }
+        }
     }
 }
 
@@ -673,6 +686,8 @@
                     margin: 0 auto;
                     @extend .flex-center;
                     gap: 6px;
+                    padding: 8px 15px;
+                    padding-left: 15px;
 
                     &::before {
                         position: inherit;
@@ -1237,6 +1252,19 @@
                     max-width: 685px;
                     margin: 0 auto;
                     padding-bottom: 16px;
+                }
+                
+                .sb-card-btn {
+                    padding: 10px 30px;
+                    
+                    a {
+                        @include font(22, 34);
+                        font-weight: 700;
+
+                        @include breakpoint(575) {
+                            @include font(18, 30);
+                        }
+                    }
                 }
             }
         }
