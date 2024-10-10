@@ -6,7 +6,6 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/page-banner'); ?>
 
-
 <section class="sb-about-us">
     <div class="container">
         <div class="sb-about-list d-flex flex-wrap">
