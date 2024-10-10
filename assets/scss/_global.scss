@@ -31,6 +31,9 @@ body {
     }
 }
 
+button {
+    font-family: $pop;
+}
 img,
 svg {
     max-width: 100%;
@@ -345,9 +348,17 @@ section {
         width: 38px;
         height: 38px;
         top: calc(50% - 19px);
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        background-color: #070825;
     }
 
     &.icon-position-right{
+
+        &::after {
+            content: "";
+        }
 
         @include minbreakpoint(576){
             padding-right: 64px;
@@ -358,21 +369,24 @@ section {
 
         &.button-icon-phone {
             &::after {
-                content: url(../images/vectors/phone-icon.svg);
+                mask: url(../images/vectors/phone-icon.svg);
             }
         }
         &.button-icon-scissor {
             &::after {
-                content: url(../images/vectors/scissor-icon.svg);
+                mask: url(../images/vectors/scissor-icon.svg);
             }
         }
         &.button-icon-book {
             &::after {
-                content: url(../images/vectors/salon-boss.svg)
+                mask: url(../images/vectors/salon-boss.svg)
             }
         }
     }
     &.icon-position-left{
+        &::before {
+            content: "";
+        }
 
         @include minbreakpoint(576){
             padding-left: 64px;
@@ -383,17 +397,17 @@ section {
 
         &.button-icon-phone {
             &::before {
-                content: url(../images/vectors/phone-icon.svg);
+                mask: url(../images/vectors/phone-icon.svg);
             }
         }
         &.button-icon-scissor {
             &::before {
-                content: url(../images/vectors/scissor-icon.svg);
+                mask: url(../images/vectors/scissor-icon.svg);
             }
         }
         &.button-icon-book {
             &::before {
-                content: url(../images/vectors/salon-boss.svg)
+                mask: url(../images/vectors/salon-boss.svg)
             }
         }
     }
@@ -407,7 +421,7 @@ section {
 
             &::after,
             &::before {
-                filter: invert(1);
+                background-color: #fff;
             }
         }
     }
@@ -420,7 +434,7 @@ section {
 
             &::after,
             &::before {
-                filter: invert(1);
+                background-color: #fff;
             }
         }
     }
