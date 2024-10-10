@@ -115,7 +115,7 @@ get_header(); ?>
                     <?php
                     $who_we_help_services = $who_we_help_section['who_we_help_services'];
                     ; ?>
-                    <div class="sb-service-list">
+                    <div class="sb-help-service-list">
                         <?php
                         if ($who_we_help_services):
                             foreach ($who_we_help_services as $who_we_help_service):
