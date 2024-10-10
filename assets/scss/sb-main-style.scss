@@ -1775,6 +1775,17 @@
             padding-bottom: 10px;
             a {
                 @extend .d-flex;
+
+                span {
+                    @extend .transition;
+                }
+
+                &:hover {
+                    span {
+                        color: #000;
+                        background: #FBDCD1;
+                    }
+                }
             }
         }
 
