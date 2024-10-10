@@ -62,16 +62,7 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
 
-                    <!-- Come From Option  -->
-                    <div class="sb-trusted-customer">
-                        <h5>Trusted By</h5>
-                        <div class="trusted-customer-logo d-flex align-center">
-                            <img src="../assets/images/vectors/sutes-spot.svg" alt="" />
-                            <img src="../assets/images/vectors/mallorca.svg" alt="" />
-                            <img src="../assets/images/vectors/cachet.svg" alt="" />
-                            <img src="../assets/images/vectors/nybeauty.svg" alt="" />
-                        </div>
-                    </div>
+                    <?php get_template_part('/template-parts/globals/client-logos');?>
 
                 </div>
                 <div class="sb-hero-image flex-center">
