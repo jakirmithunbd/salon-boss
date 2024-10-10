@@ -65,11 +65,55 @@ get_header(); ?>
                     <!-- Come From Option  -->
                     <div class="sb-trusted-customer">
                         <h5>Trusted By</h5>
-                        <div class="trusted-customer-logo d-flex align-center">
-                            <img src="../assets/images/vectors/sutes-spot.svg" alt="" />
-                            <img src="../assets/images/vectors/mallorca.svg" alt="" />
-                            <img src="../assets/images/vectors/cachet.svg" alt="" />
-                            <img src="../assets/images/vectors/nybeauty.svg" alt="" />
+                        <div class="trusted-customer-logo">
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/sutes-spot.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/mallorca.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/cachet.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/nybeauty.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/sutes-spot.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/mallorca.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/cachet.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="../assets/images/vectors/nybeauty.svg"
+                                    alt=""
+                                />
+                            </a>
                         </div>
                     </div>
 
