@@ -51,7 +51,6 @@ get_header(); ?>
             <div class="sb-section-title text-center">
                 <h2><?php echo wp_kses_post($about_section_title ?? ''); ?></h2>
                 <p><?php echo esc_html($about_section_description ?? ''); ?></p>
-
             </div>
             <div class="sb-expert-list d-flex flex-wrap">
                 <?php
