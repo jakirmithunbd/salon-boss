@@ -3266,6 +3266,18 @@
         .sb-hero-content {
             width: 100%;
             max-width: 955px;
+
+            p{
+                @include font(24, 30);
+                color: #fff;
+
+                @include breakpoint(1024) {
+                    @include font(20, 28);
+                }
+                @include breakpoint(1024) {
+                    @include font(18, 26);
+                }
+            }
         }
     }
 }
@@ -3713,6 +3725,29 @@
                     &:hover {
                         color: $primary;
                     }
+                }
+            }
+        }
+    }
+}
+
+.sb-our-service {
+    &.our-service-case-study {
+        .sb-card {
+            padding-top: 30px;
+
+            .sb-card-content  {
+                h3 {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto 15px; 
+                }
+            }
+
+            .sb-card-btn {
+                padding: 8px 30px;
+                a {
+                    @include font(22, 36);
                 }
             }
         }

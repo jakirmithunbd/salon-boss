@@ -39,7 +39,7 @@ get_header(); ?>
 
 
                     <?php if (!empty($hero_banner_buttons)): ?>
-                        <div class="sb-buttons d-flex">
+                        <div class="sb-buttons d-flex flex-wrap">
 
 
                             <?php if ($hero_banner_buttons): foreach ($hero_banner_buttons as $f_button):

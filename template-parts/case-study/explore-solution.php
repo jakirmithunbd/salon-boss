@@ -3,7 +3,7 @@
 ?>
 
 <?php if ($resource_center) : ?>
-    <section class="sb-our-service">
+    <section class="sb-our-service our-service-case-study">
         <div class="container">
             <div class="flex-center">
                 <div class="sb-card <?php echo esc_attr($resource_center['image_alignment']['value'] ?? ''); ?>">
@@ -17,7 +17,7 @@
 
                         <div class="sb-card-content text-center">
                             <?php if (!empty($resource_center['title'])) : ?>
-                                <h2><?php echo wp_kses_post($resource_center['title']); ?></h2>
+                                <h3><?php echo wp_kses_post($resource_center['title']); ?></h3>
                             <?php endif; ?>
 
                             <?php if (!empty($resource_center['sub_title'])) : ?>
@@ -31,7 +31,7 @@
                             <?php if (!empty($resource_center['service_links'])) : ?>
                                 <ul class="unstyle flex-center flex-wrap">
                                     <?php foreach ($resource_center['service_links'] as $link) : ?>
-                                        <li class="active">
+                                        <li>
                                             <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                                 <?php echo esc_html(get_the_title($link->ID)); ?>
                                             </a>
