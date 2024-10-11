@@ -1308,6 +1308,14 @@
                     @include font(32, 44);
                 }
             }
+            h4 {
+                color: #fff;
+            }
+            p {
+                strong {
+                    color: #fff;
+                }
+            }
         }
     }
 }
@@ -1369,6 +1377,7 @@
                 }
             }
             h4 {
+                color: #fff;
                 text-shadow: 0px 4px 4px #0000001A;
             }
             p {
@@ -1376,6 +1385,7 @@
                 width: 100%;
                 max-width: 695px;
                 margin: 0 auto;
+                color: #fff;
             }
         }
         .sb-consultation-steps {
@@ -1792,6 +1802,18 @@
 
                 }
             }
+        }
+    }
+    .sb-blog-load-more {
+        @extend .text-center;
+        padding-top: 60px;
+
+        @include breakpoint(1024) {
+            padding-top: 40px;
+        }
+        
+        @include breakpoint(768) {
+            padding-top: 30px;
         }
     }
 }
