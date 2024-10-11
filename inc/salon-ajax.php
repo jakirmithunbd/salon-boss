@@ -27,7 +27,7 @@ function sb_filter_posts_function()
 
     $args = [
         'post_type'      => 'post',
-        'posts_per_page' => 2,
+        'posts_per_page' => 6,
         'post_status'    => 'publish',
         'paged' => $paged,
     ];
