@@ -4,7 +4,7 @@
             <?php $box_items = get_sub_field('box_items'); if(!empty($box_items)) : foreach ($box_items as $item) : ?>
             <div class="sb-counter-item">
                 <?php if($item['number_text']) {
-                    printf('<h2><span class="sb-counter-amount" data-target="3">0</span></h2>', wp_kses_post($item['number_text']));
+                    printf('<h2><span class="sb-counter-amount" data-target="%s">0</span></h2>', wp_kses_post($item['number_text']));
                 }?>
 
                 <?php if($item['heading']) {
