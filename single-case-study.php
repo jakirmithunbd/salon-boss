@@ -23,6 +23,9 @@ if (have_rows('single_case_study')):
         elseif (get_row_layout() == 'case_study_content_editor' || get_row_layout() == 'result'):
             get_template_part('template-parts/case-study/content');
 
+        elseif (get_row_layout() == 'case_study_content_&_result'):
+            get_template_part('/template-parts/case-study/content_&_result');
+
         elseif (get_row_layout() == 'result_images'):
             get_template_part('template-parts/case-study/image-result');
 

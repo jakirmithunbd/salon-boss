@@ -1176,7 +1176,7 @@
                             "label": "Email Image Position",
                             "name": "email_image_position",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "select",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1185,11 +1185,20 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "choices": {
+                                "image-position-left": "Left",
+                                "image-position-right": "Right",
+                                "image-position-top": "Top",
+                                "image-position-top-left": "Top-Left",
+                                "image-position-top-right": "Top-Right"
+                            },
+                            "default_value": "image-position-left",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ]
                 },
@@ -1299,7 +1308,7 @@
                             "label": "Number Image Position",
                             "name": "number_image_position",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "select",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1308,11 +1317,20 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "choices": {
+                                "image-position-left": "Left",
+                                "image-position-right": "Right",
+                                "image-position-top": "Top",
+                                "image-position-top-left": "Top-Left",
+                                "image-position-top-right": "Top-Right"
+                            },
+                            "default_value": "image-position-left",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ]
                 }
@@ -1337,5 +1355,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728624819
+    "modified": 1728638167
 }
