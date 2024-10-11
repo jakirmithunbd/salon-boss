@@ -33,10 +33,10 @@ function sb_filter_posts_function()
                 <div class="sb-card-contents-wrapper">
                     <div class="sb-card-image flex-center">
                         <?php
-                        $thumnail = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/Placeholder Image.svg');
-                         ?>
+                        $thumbnail = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/Placeholder Image.svg');
+            ?>
                             <a href="<?php echo esc_url(get_permalink()); ?>">
-                                <img src="<?php echo esc_url($thumnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
                             </a>
                     </div>
                     <div class="sb-card-content text-center">

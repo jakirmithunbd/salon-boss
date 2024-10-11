@@ -427,6 +427,19 @@
 
     .sb-card {
         max-width: 1020px;
+
+        .sb-card-btn {
+            padding: 10px 30px;
+
+            a {
+                @include font(22, 34);
+                font-weight: 700;
+
+                @include breakpoint(575) {
+                    @include font(18, 30);
+                }
+            }
+        }
     }
 }
 
@@ -673,6 +686,8 @@
                     margin: 0 auto;
                     @extend .flex-center;
                     gap: 6px;
+                    padding: 8px 15px;
+                    padding-left: 15px;
 
                     &::before {
                         position: inherit;
@@ -870,7 +885,7 @@
 
                 .sb-button {
                     width: 100%;
-                    max-width: 216px;
+                    max-width: 350px;
                 }
 
                 @include breakpoint(768) {
@@ -1168,6 +1183,24 @@
                             @include breakpoint(1024) {
                                 margin-bottom: 20px;
                             }
+
+                            li {
+                                a {
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                        .sb-card-btn {
+                            padding: 10px 30px;
+                            
+                            a {
+                                @include font(22, 34);
+                                font-weight: 700;
+        
+                                @include breakpoint(575) {
+                                    @include font(18, 30);
+                                }
+                            }
                         }
                     }
                 }
@@ -1237,6 +1270,19 @@
                     max-width: 685px;
                     margin: 0 auto;
                     padding-bottom: 16px;
+                }
+                
+                .sb-card-btn {
+                    padding: 10px 30px;
+                    
+                    a {
+                        @include font(22, 34);
+                        font-weight: 700;
+
+                        @include breakpoint(575) {
+                            @include font(18, 30);
+                        }
+                    }
                 }
             }
         }
@@ -1608,6 +1654,7 @@
                     color: #5B5B5B;
                     background: transparent;
                     padding: 10px;
+                    border-radius: 40px;
                 }
                 input[type="submit"] {
                     @include font(14, 24);
@@ -1636,9 +1683,10 @@
 
         .sb-button {
             min-width: fit-content;
-            padding: 10px;
+            padding: 16px 10px;
             padding-left: 60px;
             border: 0;
+            @include font(16, 24);
             @extend .cursor-pointer;
 
             @include breakpoint(575) {
@@ -1650,9 +1698,9 @@
         padding-top: 30px;
 
         select {
-            @include font(18, 24);
+            @include font(22, 26);
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 24px;
             option {
                color: #000;
             }
@@ -1675,12 +1723,17 @@
         .sb-post-card {
             width: 26%;
             flex-grow: 1;
+            padding-bottom: 70px;
 
             @include breakpoint(1024) {
                 width: 40%;
             }
             @include breakpoint(768) {
                 width: 100%;
+            }
+
+            &::after {
+                height: 50px;
             }
 
             .sb-card-contents-wrapper {
@@ -1715,6 +1768,10 @@
                         padding: 20px 10px 10px;
                     }
 
+                    .post-categories {
+                        @extend .unstyle, .d-flex, .flex-wrap;
+                        padding-bottom: 20px;
+                    }
                     .sb-blog-title {
                         h3 {
                             @extend .transition;
@@ -1723,6 +1780,13 @@
                             h3 {
                                 color: $secondary;
                             }
+                        }
+                    }
+                    .sb-card-btn {
+                        padding: 8px 30px;
+
+                        a {
+                            @include font(22, 32);
                         }
                     }
 
@@ -1752,6 +1816,24 @@
     }
 
     .blog-hero-content {
+
+        .hero-badge {
+            padding-bottom: 10px;
+            a {
+                @extend .d-flex;
+
+                span {
+                    @extend .transition;
+                }
+
+                &:hover {
+                    span {
+                        color: #000;
+                        background: #FBDCD1;
+                    }
+                }
+            }
+        }
 
         h1 {
             @include font(40, 60);
@@ -1818,13 +1900,14 @@
 // Single Blog Content 
 .sb-single-blog-contents {
     background: #ffffff;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 
     @include breakpoint(1024) {
         padding-top: 50px;
     }
     @include breakpoint(768) {
         padding-top: 30px;
+        margin-bottom: 30px;
     }
 
     .container {
@@ -1891,6 +1974,11 @@
                 flex-grow: 1;
                 max-width: 660px;
                 margin: 0 auto;
+                @include font(18, 28);
+                color: #000;
+                @include breakpoint(768) {
+                    @include font(16, 24);
+                }
                 
                 @include minbreakpoint(1025) {
                     width: 30%;
@@ -1935,6 +2023,7 @@
                         li {
                             @include font(16, 25);
                             color: #000;
+                            padding: 0;
                         }
                     }
                 }
@@ -1975,13 +2064,21 @@
                         @include font(16, 26);
                     }
                 }
-                p {
-                    @include font(18, 28);
+                h5 {
+                    margin-bottom: 15px;
+                    @include font(18, 30);
                     color: #000;
-                    @include breakpoint(768) {
-                        @include font(16, 24);
+
+                    @include breakpoint(1024) {
+                        @include font(16, 26);
                     }
                 }
+                h6 {
+                    margin-bottom: 15px;
+                    @include font(16, 24);
+                    color: #000;
+                }
+
                 ul {
                     margin: 0 0 20px 20px;
                     li {
@@ -1997,6 +2094,7 @@
                 img {
                     width: 100%;
                     margin-bottom: 40px;
+                    border-radius: 30px;
                     @include breakpoint(768) {
                         margin-bottom: 20px;
                     }
@@ -2519,28 +2617,19 @@
                 padding-top: 10px;
                 
                 li {
-                    a {
-                        @include font(12, 18);
-                        font-weight: 600;
-                        color: $black;
-                        background: $primary;
-                        padding: 5px;
-                        border-radius: 100px;
-                        @extend .transition;
+                    @include font(12, 18);
+                    font-weight: 600;
+                    color: $black;
+                    background: $primary;
+                    padding: 5px;
+                    border-radius: 100px;
+                    @extend .transition;
 
-                        &:hover {
-                            color: #fff;
-                            background: $secondary;
-                        }
+                    &:hover {
+                        color: #fff;
+                        background: $secondary;
                     }
 
-                    &.sb-active {
-
-                        a {
-                            color: #fff;
-                            background: $secondary;
-                        }
-                    }
                 }
             }
         }
@@ -2549,6 +2638,7 @@
 
 // audit form style 
 .sb-audit-form {
+    z-index: 1;
 
     .sb-audit-form-wrapper {
         width: 100%;
@@ -2601,13 +2691,6 @@
             @include breakpoint(1024) {
                 width: 100%;
             }
-            .sb-image-box-media {
-                width: 17%;
-
-                @include breakpoint(575) {
-                    width: 50%;
-                }
-            }
             .sb-image-box-content {
 
                 h4 {
@@ -2619,6 +2702,16 @@
                 }
                 p {
                     @include font(16, 30);
+                }
+            }
+
+            &.image-size-small {
+                .sb-image-box-media {
+                    width: 17%;
+    
+                    @include breakpoint(575) {
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -2742,6 +2835,7 @@
 // Contact section style 
 .sb-contact {
     margin: 50px 0 40px;
+    z-index: 1;
 
     @include breakpoint(768) {
         margin-top: 40px;
@@ -3266,6 +3360,18 @@
         .sb-hero-content {
             width: 100%;
             max-width: 955px;
+
+            p{
+                @include font(24, 30);
+                color: #fff;
+
+                @include breakpoint(1024) {
+                    @include font(20, 28);
+                }
+                @include breakpoint(1024) {
+                    @include font(18, 26);
+                }
+            }
         }
     }
 }
@@ -3639,7 +3745,8 @@
                     list-style: none;
                     text-align: start;
                     padding-left: 65px;
-                    @extend .relative;
+                    @extend .relative, .d-flex, .align-center;
+                    min-height: 68px;
 
                     &:before {
                         position: absolute;
@@ -3713,6 +3820,29 @@
                     &:hover {
                         color: $primary;
                     }
+                }
+            }
+        }
+    }
+}
+
+.sb-our-service {
+    &.our-service-case-study {
+        .sb-card {
+            padding-top: 30px;
+
+            .sb-card-content  {
+                h3 {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto 15px; 
+                }
+            }
+
+            .sb-card-btn {
+                padding: 8px 30px;
+                a {
+                    @include font(22, 36);
                 }
             }
         }

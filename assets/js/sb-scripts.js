@@ -286,7 +286,6 @@ if(sb_counter){
             slidesToShow: 6,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
           }
         },
         {
