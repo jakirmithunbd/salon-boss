@@ -306,16 +306,27 @@ if (sb_counter) {
     });
 
     // Initialize an empty array to store selected category slugs
+
+
+    let paged = 1;
     let cats = '';
 
     const data = {
         cats
     }
 
+
     $('.sb-blog-tab-buttons .sb-button').on('click', function () {
         $(this).toggleClass('active');
 
         cats = $(this).data('slug');
+        paged = 1;
+
+        sb_filter_posts(cats);
+    });
+
+    $('.sb-blog-load-more .sb-button').on('click', function () {
+        paged += 1;
 
         sb_filter_posts(cats);
     });
@@ -325,6 +336,7 @@ if (sb_counter) {
     })
 
     function sb_filter_posts(data = {}) {
+
         $('#sb-blog-list').append(
             `<div class='preloader'><img src="${ajax.preloader}"/></div>`
         );
