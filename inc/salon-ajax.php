@@ -1,14 +1,31 @@
 <?php
 add_action("wp_ajax_sb_filter_posts", "sb_filter_posts_function");
 add_action("wp_ajax_nopriv_sb_filter_posts", "sb_filter_posts_function");
+function sb_sanitize_array($input)
+{
+    if (is_array($input)) {
+        $sanitized_array = array();
+        foreach ($input as $key => $value) {
+            $sanitized_array[$key] = sb_sanitize_array($value);
+        }
+        return $sanitized_array;
+    } else {
+        return sanitize_text_field($input);
+    }
+}
 
 function sb_filter_posts_function()
 {
+    $nonce = sanitize_text_field($_POST['nonce'] ?? '');
+    if(!wp_verify_nonce($nonce, 'sb-nonce')) {
+        wp_send_json_error(['message' => 'Unauthorize request']);
+    }
+
     $data = $_POST['data'] ?? [];
 
     $args = [
         'post_type'      => 'post',
-        'posts_per_page' => -1,
+        'posts_per_page' => 6,
         'post_status'    => 'publish',
     ];
 

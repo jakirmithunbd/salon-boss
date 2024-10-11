@@ -10,7 +10,7 @@ get_template_part('template-parts/page-banner');
     <div class="container">
         <div class="sb-blog-search text-center">
             <h2><?php echo __('Search by Categories', 'sb'); ?></h2>
-            <div class="sb-blog-seach-form">
+            <div class="sb-blog-search-form">
                 <?php echo get_search_form();?>
             </div>
         </div>
@@ -21,41 +21,44 @@ get_template_part('template-parts/page-banner');
                 'hide_empty' => false,
             ]);
 
-            if (!empty($categories)) {
-                foreach ($categories as $category) {
-                    printf(
-                        '<button data-slug="%s" class="sb-button button-bg-green icon-position-left button-icon-phone">%s</button>',
-                        esc_attr($category->slug),
-                        esc_html($category->name)
-                    );
-                }
-            }
-            ?>
+if (!empty($categories)) {
+    foreach ($categories as $category) {
+        printf(
+            '<button data-slug="%s" class="sb-button button-bg-green icon-position-left button-icon-phone">%s</button>',
+            esc_attr($category->slug),
+            esc_html($category->name)
+        );
+    }
+}
+?>
 
 
         </div>
         <div class="sb-blog-tab-select hide-desktop hide-tab text-center">
             <select name="" id="sb-post-filter-onchange">
             <?php
-            $categories = get_categories([
-                'taxonomy' => 'category',
-                'hide_empty' => false,
-            ]);
+$categories = get_categories([
+    'taxonomy' => 'category',
+    'hide_empty' => false,
+]);
 
-            if (!empty($categories)) {
-                foreach ($categories as $category) {
-                    printf(
-                        '<option value="%s">%s</option>>',
-                        esc_attr($category->slug),
-                        esc_html($category->name)
-                    );
-                }
-            }
-            ?>
+if (!empty($categories)) {
+    foreach ($categories as $category) {
+        printf(
+            '<option value="%s">%s</option>>',
+            esc_attr($category->slug),
+            esc_html($category->name)
+        );
+    }
+}
+?>
             </select>
         </div>
 
         <div class="sb-blog-list d-flex flex-wrap" id="sb-blog-list"></div>
+        <div class="sb-blog-load-more">
+            <button class="sb-button button-bg-green button-icon-phone icon-position-left">Load More</button>
+        </div>
     </div>
 </section><!-- Blog  -->
 

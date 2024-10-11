@@ -1,4 +1,5 @@
 <?php
+
 function salon_enqueue_scripts()
 {
 
@@ -13,6 +14,7 @@ function salon_enqueue_scripts()
         'site_url' => get_template_directory_uri(),
         'preloader' => '/wp-content/themes/salon-boss/assets/images/ajax-loader.gif',
         'admin_ajax' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('sb-nonce')
     );
     wp_localize_script('salon-scripts', 'ajax', $data);
 }
