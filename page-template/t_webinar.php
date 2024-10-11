@@ -80,194 +80,44 @@ get_header(); ?>
 
 <section class="sb-webinar-topics">
     <div class="container">
-        <div class="sb-section-title text-center">
-            <h2>Webinar <span>Topics</span> 📝</h2>
-            <h4>Tailored Just For Salon Suite Owners</h4>
-        </div>
 
-        <div class="sb-accordians-wrapper d-flex flex-wrap">
+        <?php
+        $webinar_topics = get_field('webinar_topics_area');
+        if ($webinar_topics):
+            $webinar_topics_title = $webinar_topics['section_title'];
+            $webinar_topics_accodaians = $webinar_topics['accodaians'];
+            ; ?>
+            <div class="sb-section-title text-center">
+                <?php
+                if ($webinar_topics_title):
+                    $topics_title = $webinar_topics_title['title'];
+                    $topics_sub_title = $webinar_topics_title['sub_title'];
+                    ; ?>
+                    <h2><?php echo wp_kses_post($topics_title ?? ''); ?></h2>
+                    <h4><?php echo esc_attr($topics_sub_title ?? ''); ?></h4>
+                <?php endif; ?>
+            </div>
 
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Profit Explosion:</span> Unlock Hidden Revenue in Your Salon Suite</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
+            <div class="sb-accordians-wrapper d-flex flex-wrap">
+                <?php
+                if ($webinar_topics_accodaians):
+                    foreach ($webinar_topics_accodaians as $accodaian):
+                        $accodaian_title = $accodaian['accodaians_title'];
+                        $accodaians_description = $accodaian['accodaians_description'];
 
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Marketing Magic:</span> Turn Your Salon Suite into a Tenant Magnet</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Sales Magic:</span> Transform Inquiries into Long-Term Tenants</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>SEO Supremacy:</span> Dominate Local Searches and Leave Competitors in the Dust</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Google Maps Mastery:</span> Be the First Salon Suite Everyone Sees</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Data Goldmine:</span> Use Numbers to Nurture Exponential Growth</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Digital Domination:</span> Make Your Salon Suite the Talk of the Town (and Google)</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Full House:</span> The Ultimate Guide to Banishing Vacancies Forever</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Brand Spotlight:</span> Make Your Salon Suite the Only Choice in Town</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>Social Media Sorcery:</span> Turn Likes into Leases</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>5-Star Reputation:</span> Turn Happy Tenants into Your Best Marketers?</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-            <div class="sb-accordian-item">
-                <div class="sb-accordian-header d-grid align-center relative">
-                    <h4><span>2025 Vision:</span> Craft Your Salon Suite Empire's Roadmap to Success</h4>
-                </div>
-                <div class="sb-accordian-body">
-                    <p>
-                        Reputation management is a strategy to monitor, address,
-                        and influence the digital reputation and credibility of a
-                        brand or business. For beauty professionals, this involves
-                        actively managing reviews, feedback, and online conversations
-                        about your salon, suite, or personal brand.
-                    </p>
-                </div>
-            </div><!-- webinar topic Item  -->
-
-        </div>
+                        ; ?>
+                        <div class="sb-accordian-item">
+                            <div class="sb-accordian-header d-grid align-center relative">
+                                <h4><?php echo wp_kses_post($accodaian_title ?? ''); ?></h4>
+                            </div>
+                            <div class="sb-accordian-body">
+                                <?php echo wp_kses_post($accodaians_description ?? ''); ?>
+                            </div>
+                        </div><!-- webinar topic Item  -->
+                    <?php endforeach;
+                endif; ?>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 <!-- Webinar Topics  -->
