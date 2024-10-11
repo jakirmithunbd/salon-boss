@@ -3,6 +3,24 @@
     "title": "Home Page",
     "fields": [
         {
+            "key": "field_67090216ae4a5",
+            "label": "Hero Service Slider",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_6703c64993cad",
             "label": "Who We Help Section",
             "name": "",
@@ -1018,5 +1036,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728387313
+    "modified": 1728643738
 }
