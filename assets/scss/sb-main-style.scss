@@ -3745,7 +3745,8 @@
                     list-style: none;
                     text-align: start;
                     padding-left: 65px;
-                    @extend .relative;
+                    @extend .relative, .d-flex, .align-center;
+                    min-height: 68px;
 
                     &:before {
                         position: absolute;
