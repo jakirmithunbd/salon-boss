@@ -821,7 +821,7 @@
                 "layout_6708c53d1f20a": {
                     "key": "layout_6708c53d1f20a",
                     "name": "case_study_content_&_result",
-                    "label": "case_study_content_&_result",
+                    "label": "Case Study Content & Result",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -978,5 +978,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728640455
+    "modified": 1728642316
 }
