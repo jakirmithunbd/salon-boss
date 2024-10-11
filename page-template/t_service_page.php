@@ -12,11 +12,15 @@
 
                 <?php
                 $service_posts = get_field('select_servies');
+
+
                 if (!empty($service_posts)) :
                     foreach ($service_posts as $service) :
                         $service_post = get_post($service);
                         $excerpt = get_the_excerpt($service_post);
-                        $categories = get_the_terms($service_post->ID, 'service-category');
+
+                        $service_key_points = get_field('service_keypoint_list', $service_post->ID);
+                        
                         ?>
 
                         <div class="sb-card sb-card-filled-bg image-position-top-left">
@@ -36,15 +40,17 @@
                                     </a>
                                     <h5><?php echo wp_kses_post($excerpt); ?></h5>
 
-                                    <ul class="unstyle flex-center flex-wrap">
-                                        <?php if ($categories) :
-                                            foreach ($categories as $category) : ?>
-                                                <li>
-                                                    <a href="<?php echo esc_url(get_term_link($category)); ?>"><?php echo wp_kses_post($category->name); ?></a>
-                                                </li>
-                                            <?php endforeach;
-                                        endif; ?>
+                                    <?php 
+                                        if($service_key_points):
+                                    ?>
+                                    <ul class= "unstyle flex-center flex-wrap">
+                                        <?php 
+                                            foreach($service_key_points as $keypoints):
+                                        ?>
+                                        <li><a href="#"><?php echo wp_kses_post( $keypoints['keypoint_text'] ); ?></a></li>
+                                        <?php endforeach; ?>
                                     </ul>
+                                    <?php endif; ?>
                                     <div class="sb-card-btn">
                                         <a href="<?php echo get_permalink($service_post->ID); ?>"><?php printf('Explore Our %s Services >', wp_kses_post($service_post->post_title)); ?></a>
                                     </div>
