@@ -1723,6 +1723,15 @@ section:has(.sb-video.video-popup-active) {
                 @include breakpoint(575) {
                     @include font(14, 24);
                 }
+                a{
+                    color: $secondary;
+                    text-decoration: underline;
+                    @extend .transition;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
             }
         }
 

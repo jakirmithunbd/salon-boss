@@ -189,6 +189,108 @@ if (!empty($hero)):
 </section>
 <!-- Common Template Form  -->
 
+<section class="sb-faq">
+    <?php
+        $free_resource_faq = get_field('free_resource_faq');
+
+        $title_faq = $free_resource_faq['faqs_title'];
+        $faq_btn = $free_resource_faq['faqs_discover_button'];
+        $faqs = $free_resource_faq['faqs'];
+    ?>
+    <div class="container">
+        <div class="sb-faq-section-title text-center">
+            <?php if (!empty($title_faq)) : ?>
+                <h2><?php echo esc_html($title_faq); ?></h2>
+            <?php endif; ?>
+        </div>
+
+        <div class="sb-accordians-wrapper d-flex flex-wrap">
+            <?php if (!empty($faqs)) : ?>
+                <?php foreach ($faqs as $faq) : ?>
+                    <?php
+                    $question = !empty($faq['question']) ? $faq['question'] : '';
+                    $answer = !empty($faq['answer']) ? $faq['answer'] : '';
+                    ?>
+                    <?php if (!empty($question) && !empty($answer)) : ?>
+                        <div class="sb-accordian-item">
+                            <div class="sb-accordian-header d-grid align-center relative">
+                                <h4><?php echo esc_html($question); ?></h4>
+                            </div>
+                            <div class="sb-accordian-body">
+                                <?php echo wp_kses_post( $answer ); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
+        <?php if (!empty($faq_btn['url']) && !empty($faq_btn['title'])) : ?>
+            <a href="<?php echo esc_url($faq_btn['url']); ?>" class="sb-button button-bg-green">
+                <?php echo esc_html($faq_btn['title']); ?>
+            </a>
+        <?php endif; ?>
+    </div>
+</section>
+<!-- Faq  -->
+
+<?php
+$resource_center = get_field('explore_services_group');
+?>
+
+<?php if ($resource_center) : ?>
+    <section class="sb-our-service">
+        <div class="container">
+            <div class="flex-center">
+                <div class="sb-card <?php echo esc_attr($resource_center['image_alignment']['value'] ?? ''); ?>">
+                    <div class="sb-card-contents-wrapper d-flex align-center">
+
+                        <?php if (!empty($resource_center['image']['url'])) : ?>
+                            <div class="sb-card-image d-flex">
+                                <img src="<?php echo esc_url($resource_center['image']['url']); ?>" alt="<?php echo esc_attr($resource_center['image']['title'] ?? ''); ?>">
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="sb-card-content text-center">
+                            <?php if (!empty($resource_center['title'])) : ?>
+                                <h2><?php echo wp_kses_post($resource_center['title']); ?></h2>
+                            <?php endif; ?>
+
+                            <?php if (!empty($resource_center['sub_title'])) : ?>
+                                <h5><?php echo wp_kses_post($resource_center['sub_title']); ?></h5>
+                            <?php endif; ?>
+
+                            <?php if (!empty($resource_center['description'])) : ?>
+                                <p><?php echo wp_kses_post($resource_center['description']); ?></p>
+                            <?php endif; ?>
+
+                            <?php if (!empty($resource_center['service_links'])) : ?>
+                                <ul class="unstyle flex-center flex-wrap">
+                                    <?php foreach ($resource_center['service_links'] as $link) : ?>
+                                        <li>
+                                            <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
+                                                <?php echo esc_html(get_the_title($link->ID)); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+
+                            <?php if (!empty($resource_center['website_link'])) : ?>
+                                <div class="sb-card-btn">
+                                    <a target="<?php echo esc_attr($resource_center['website_link']['target'] ?? '_self'); ?>" href="<?php echo esc_url($resource_center['website_link']['url']); ?>">
+                                        <?php echo esc_html($resource_center['website_link']['title']); ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <?php get_template_part('template-parts/service-resource-center'); ?>
 
 <?php get_footer(); ?>

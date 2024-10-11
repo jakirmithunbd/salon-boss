@@ -899,13 +899,17 @@
 // Faq style 
 .sb-faq {
 
-    .sb-button {
-        width: 100%;
-        max-width: 352px;
-        margin: 0 auto;
-
-        @include breakpoint(1024) {
-            margin: 30px auto 0;
+    .container {
+        @extend .text-center;
+    
+        .sb-button {
+            width: 100%;
+            max-width: 352px;
+            margin: 0 auto;
+    
+            @include breakpoint(1024) {
+                margin: 30px auto 0;
+            }
         }
     }
 }
@@ -1225,17 +1229,50 @@
         margin-left: 140px;
         border: 1px solid $secondary;
 
-        @include breakpoint(768) {
+        &.image-position-top {
             margin-left: 0;
             margin-right: 0;
-            margin-top: 100px;
+            margin-top: 140px;
+
+            .sb-card-contents-wrapper {
+
+                .sb-card-image {
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: -140px;
+                }
+            }
         }
+        &.image-position-right {
+            margin-left: 0;
+            margin-top: 0;
+            margin-right: 140px;
+
+            .sb-card-contents-wrapper {
+
+                .sb-card-image {
+                    margin-left: 0;
+                    margin-top: 0;
+                    margin-right: -140px;
+                }
+                .sb-card-content {
+                    text-align: center;
+                }
+            }
+        }
+
+        @include breakpoint(768) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            margin-top: 100px !important;
+        }
+
 
         .sb-card-contents-wrapper {
 
             @include breakpoint(768) {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column !important;
+                align-items: center !important;
             }
 
             .sb-card-image {
@@ -1243,16 +1280,16 @@
                 margin-left: -140px;
 
                 @include breakpoint(768) {
-                    margin-left: 0;
-                    margin-right: 0;
-                    margin-top: -100px;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    margin-top: -100px !important;
                 }
             }
     
             .sb-card-content {
 
                 @include breakpoint(768) {
-                    width: 100%;
+                    width: 100% !important;
                 }
                 
                 h2 {
@@ -1286,6 +1323,7 @@
                 }
             }
         }
+
     }
 }
 
