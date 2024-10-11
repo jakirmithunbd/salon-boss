@@ -14,7 +14,7 @@ $buttons = get_sub_field('buttons_group');
             <?php endif; ?>
 
             <?php if (!empty($section_title['sub_title'])): ?>
-                <h2><?php echo wp_kses_post($section_title['sub_title']); ?></h2>
+                <h4><?php echo wp_kses_post($section_title['sub_title']); ?></h4>
             <?php endif; ?>
 
             <?php if (!empty($section_title['description'])): ?>
