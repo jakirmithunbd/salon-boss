@@ -42,27 +42,30 @@ get_header(); ?>
                         <div class="sb-buttons d-flex flex-wrap">
 
 
-                            <?php if ($hero_banner_buttons): foreach ($hero_banner_buttons as $f_button):
-                                $icon_type = '';
-                                $icon_position = '';
+                            <?php if ($hero_banner_buttons):
+                                foreach ($hero_banner_buttons as $f_button):
+                                    $icon_type = '';
+                                    $icon_position = '';
 
-                                if (!empty($f_button['enable_icon'])) {
-                                    $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
-                                    $icon_position = !empty($f_button['icon_alignment'])
-                                        ? 'icon-position-right'
-                                        : 'icon-position-left';
-                                }
-                                ?>
+                                    if (!empty($f_button['enable_icon'])) {
+                                        $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                                        $icon_position = !empty($f_button['icon_alignment'])
+                                            ? 'icon-position-right'
+                                            : 'icon-position-left';
+                                    }
+                                    ?>
 
-                                <a href="<?php echo esc_url($f_button['link']['url']); ?>" target="<?php echo esc_attr($f_button['link']['target']); ?>" class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
-                                    <?php echo esc_html($f_button['link']['title']); ?>
-                                </a>
-                            <?php endforeach; endif; ?>
+                                    <a href="<?php echo esc_url($f_button['link']['url']); ?>"
+                                        target="<?php echo esc_attr($f_button['link']['target']); ?>"
+                                        class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                                        <?php echo esc_html($f_button['link']['title']); ?>
+                                    </a>
+                                <?php endforeach; endif; ?>
 
                         </div>
                     <?php endif; ?>
 
-                    <?php get_template_part('/template-parts/globals/client-logos');?>
+                    <?php get_template_part('/template-parts/globals/client-logos'); ?>
 
                 </div>
                 <div class="sb-hero-image flex-center">
@@ -81,7 +84,7 @@ get_header(); ?>
 </section>
 
 <!-- Hero Home  -->
-<?php get_template_part('template-parts/logo-slider'); ?>
+<?php get_template_part('/template-parts/hero-service-slider'); ?>
 
 <section class="sb-who-we-help">
     <div class="container">
