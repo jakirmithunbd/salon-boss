@@ -136,4 +136,6 @@ get_header(); ?>
 </section>
 <!-- Sb Audit Included  -->
 
+<?php get_template_part('template-parts/service-resource-center'); ?>
+
 <?php get_footer(); ?>

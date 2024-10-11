@@ -49,19 +49,26 @@ $buttons = get_sub_field('buttons_group');
                                 <?php endif; ?>
 
                                 <?php if (!empty($list['description'])): ?>
-                                    <p><?php echo wp_kses_post($list['description']); ?></p>
+                                    <p class="<?php echo ($list['price'] || $list['setup_fee']) ? esc_attr('sb-acrd-content-border-bottom') : ''; ?>">
+                                        <?php echo wp_kses_post($list['description']); ?>
+                                    </p>
                                 <?php endif; ?>
 
-                                <div class="sb-card-btn d-flex align-center space-between">
-                                    <div class="sb-service-price">
-                                        <?php if (!empty($list['price'])): ?>
-                                            <h5><?php echo wp_kses_post($list['price']); ?></h5>
-                                        <?php endif; ?>
 
-                                        <?php if (!empty($list['setup_fee'])): ?>
-                                            <span class="sb-setup-fee"><?php echo wp_kses_post($list['setup_fee']); ?></span>
-                                        <?php endif; ?>
-                                    </div>
+                                <div class="sb-card-btn d-flex align-center space-between">
+                                    <?php if($list['price'] || $list['setup_fee']): ?>
+
+                                        <div class="sb-service-price">
+                                            <?php if (!empty($list['price'])): ?>
+                                                <h5><?php echo wp_kses_post($list['price']); ?></h5>
+                                            <?php endif; ?>
+
+                                            <?php if (!empty($list['setup_fee'])): ?>
+                                                <span class="sb-setup-fee"><?php echo wp_kses_post($list['setup_fee']); ?></span>
+                                            <?php endif; ?>
+                                        </div>
+
+                                    <?php endif; ?>
                                     <?php if (!empty($list['sign_up_link'])) {
                                         printf('<a href="%s" target="%s" class="sb-service-card-btn">%s</a>', $list['sign_up_link']['url'], $list['sign_up_link']['target'], $list['sign_up_link']['title']);
                                     } ?>
