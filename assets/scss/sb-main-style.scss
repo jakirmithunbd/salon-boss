@@ -1183,6 +1183,24 @@
                             @include breakpoint(1024) {
                                 margin-bottom: 20px;
                             }
+
+                            li {
+                                a {
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                        .sb-card-btn {
+                            padding: 10px 30px;
+                            
+                            a {
+                                @include font(22, 34);
+                                font-weight: 700;
+        
+                                @include breakpoint(575) {
+                                    @include font(18, 30);
+                                }
+                            }
                         }
                     }
                 }
@@ -2599,28 +2617,19 @@
                 padding-top: 10px;
                 
                 li {
-                    a {
-                        @include font(12, 18);
-                        font-weight: 600;
-                        color: $black;
-                        background: $primary;
-                        padding: 5px;
-                        border-radius: 100px;
-                        @extend .transition;
+                    @include font(12, 18);
+                    font-weight: 600;
+                    color: $black;
+                    background: $primary;
+                    padding: 5px;
+                    border-radius: 100px;
+                    @extend .transition;
 
-                        &:hover {
-                            color: #fff;
-                            background: $secondary;
-                        }
+                    &:hover {
+                        color: #fff;
+                        background: $secondary;
                     }
 
-                    &.sb-active {
-
-                        a {
-                            color: #fff;
-                            background: $secondary;
-                        }
-                    }
                 }
             }
         }
@@ -2629,6 +2638,7 @@
 
 // audit form style 
 .sb-audit-form {
+    z-index: 1;
 
     .sb-audit-form-wrapper {
         width: 100%;
@@ -2681,13 +2691,6 @@
             @include breakpoint(1024) {
                 width: 100%;
             }
-            .sb-image-box-media {
-                width: 17%;
-
-                @include breakpoint(575) {
-                    width: 50%;
-                }
-            }
             .sb-image-box-content {
 
                 h4 {
@@ -2699,6 +2702,16 @@
                 }
                 p {
                     @include font(16, 30);
+                }
+            }
+
+            &.image-size-small {
+                .sb-image-box-media {
+                    width: 17%;
+    
+                    @include breakpoint(575) {
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -2822,6 +2835,7 @@
 // Contact section style 
 .sb-contact {
     margin: 50px 0 40px;
+    z-index: 1;
 
     @include breakpoint(768) {
         margin-top: 40px;

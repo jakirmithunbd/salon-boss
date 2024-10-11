@@ -17,6 +17,61 @@
                 "id": ""
             },
             "layouts": {
+                "layout_6708f13238dd6": {
+                    "key": "layout_6708f13238dd6",
+                    "name": "services_keypoints",
+                    "label": "Service Keypoints",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6708f16638de0",
+                            "label": "Service keypoint list",
+                            "name": "service_keypoint_list",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6708f19d38de1",
+                                    "label": "keypoint Text",
+                                    "name": "keypoint_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6708f16638de0"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_66fe3a4986d69": {
                     "key": "layout_66fe3a4986d69",
                     "name": "services",
@@ -1900,5 +1955,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728560054
+    "modified": 1728639485
 }
