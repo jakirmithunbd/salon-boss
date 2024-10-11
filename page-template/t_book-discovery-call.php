@@ -24,7 +24,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-
 </section>
 <!-- Sb Booking Form  -->
 
