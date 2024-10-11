@@ -336,16 +336,25 @@ if (sb_counter) {
     })
 
     function sb_filter_posts(data = {}) {
+        if (paged > 1) {
+            $('#sb-blog-list').append(
+                `<div class='preloader'><img src="${ajax.preloader}"/></div>`
+            );
+        } else {
+            $('#sb-blog-list').html(
+                `<div class='preloader'><img src="${ajax.preloader}"/></div>`
+            );
+        }
 
-        $('#sb-blog-list').append(
-            `<div class='preloader'><img src="${ajax.preloader}"/></div>`
-        );
-        
         wp.ajax
-            .post('sb_filter_posts', { data, nonce: ajax.nonce })
+            .post('sb_filter_posts', { data, nonce: ajax.nonce, paged })
             .done((res) => {
                 if (res) {
-                    $('#sb-blog-list').append(res.page);
+                    if (paged > 1) {
+                        $('#sb-blog-list').append(res.page);
+                    } else {
+                        $('#sb-blog-list').html(res.page);
+                    }
                 }
                 $('#sb-blog-list .preloader').remove();
             })

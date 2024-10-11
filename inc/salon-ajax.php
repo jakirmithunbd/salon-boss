@@ -21,12 +21,15 @@ function sb_filter_posts_function()
         wp_send_json_error(['message' => 'Unauthorize request']);
     }
 
-    $data = $_POST['data'] ?? [];
+    $data = sb_sanitize_array($_POST['data'] ?? '');
+
+    $paged = sanitize_text_field($_POST['paged'] ?? '');
 
     $args = [
         'post_type'      => 'post',
-        'posts_per_page' => 6,
+        'posts_per_page' => 2,
         'post_status'    => 'publish',
+        'paged' => $paged,
     ];
 
     if (!empty($data)) {
