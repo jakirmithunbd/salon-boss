@@ -2028,6 +2028,7 @@ section:has(.sb-video.video-popup-active) {
     .sb-icon-box-content {
         width: 50%;
         flex-grow: 1;
+        @extend .d-flex, .flex-wrap;
 
         @include breakpoint(575) {
             width: 100%;
@@ -2038,6 +2039,7 @@ section:has(.sb-video.video-popup-active) {
             font-weight: 600;
             margin-bottom: 5px;
             @extend .sb-multy-color;
+            width: 100%;
         }
         p {
             @include font(16, 20);
