@@ -1101,8 +1101,13 @@ section {
                     color: #000;
                     margin: 0;
                     padding-bottom: 20px;
-                    border-bottom: 1px solid $primary;
+                    
+                    &.sb-acrd-content-border-bottom {
+                        border-bottom: 1px solid $primary;
+
+                    }
                 }
+                
                 .sb-card-btn {
                     padding: 5px 30px 15px;
                     padding-left: 120px;
