@@ -20,7 +20,7 @@ $explore_services = get_field('explore_services_option', 'options');
 
                         <div class="sb-card-content text-center">
                             <?php if (!empty($explore_services['title'])): ?>
-                                <h2><?php echo wp_kses_post($explore_services['title']); ?></h2>
+                                <h3><?php echo wp_kses_post($explore_services['title']); ?></h3>
                             <?php endif; ?>
 
                             <?php if (!empty($explore_services['sub_title'])): ?>
