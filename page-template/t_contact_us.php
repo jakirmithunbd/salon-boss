@@ -104,7 +104,7 @@ get_header(); ?>
                                     <div class="sb-card-content text-center-mobile">
                                         <h4><?php echo esc_html($sb_number_title ?? ''); ?></h4>
                                         <a href="<?php echo esc_url('tel:' . ($sb_number ?? '')); ?>
-">             <?php echo esc_html($sb_number ?? ''); ?></a>
+">            <?php echo esc_html($sb_number ?? ''); ?></a>
 
                                         <div class="sb-card-contact-btn-wrapper d-flex flex-wrap">
                                             <a href="<?php echo esc_url('tel:' . ($sb_number ?? '')); ?>

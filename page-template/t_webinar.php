@@ -34,30 +34,34 @@ get_header(); ?>
                     if ($webinar_feature_list):
                         foreach ($webinar_feature_list as $list):
                             $list_title = $list['title'];
-                            $list_sub_title = $list['sup_title'];
+                            $list_sub_title = $list['sub_title'];
+                            $list_sub_title_size = $list['sub_title_size'];
+                            $list_sub_logo = $list['sub_logo'];
                             $list_description = $list['description'];
                             ; ?>
                             <div class="sb-webinar-feature-item">
-                                <h4><?php esc_html_e('$list_title'); ?></h4>
-                                <h5>2nd Wednesday of Every Month</h5>
-                                <ul>
-                                    <li>May 8th @ 9am PT</li>
-                                    <li>June 12th @ 9am PT</li>
-                                    <li>July 11th @ 9am PT</li>
-                                </ul>
-                            </div>
+                                <h4><?php echo esc_html($list_title ?? ''); ?></h4>
 
-                            <div class="sb-webinar-feature-item">
-                                <h4>Durration</h4>
-                                <h5>60 Minutes via</h5>
-                                <span><img src="/assets/images/vectors/zoom-icon.svg" alt=""></span>
-                            </div>
+                                <?php
+                                if (!empty($list_sub_title) || !empty($list_sub_logo)) {
 
-                            <div class="sb-webinar-feature-item">
-                                <h4>Price</h4>
-                                <h3>FREE</h3>
-                                <p>No cost or obligations. Our goal is to simply educate you on how to market and scale your
-                                    salon suite business.</p>
+                                    if ($list_sub_title_size === true) {
+                                        $font_tag = 'h3';
+                                    } elseif ($list_sub_title_size === false) {
+                                        $font_tag = 'h5';
+                                    } else {
+                                        $font_tag = 'p';
+                                    }
+
+                                    echo '<' . esc_html($font_tag) . '>' . wp_kses_post($list_sub_title ?? '') . '</' . esc_html($font_tag) . '>';
+
+                                    if (!empty($list_sub_logo)) {
+                                        echo '<span><img src="' . esc_url($list_sub_logo['url'] ?? '') . '" alt="' . esc_attr($list_sub_logo['alt'] ?? '') . '"></span>';
+                                    }
+                                }
+                                ?>
+
+                                <?php echo wp_kses_post($list_description ?? ''); ?>
                             </div>
 
                             <?php
