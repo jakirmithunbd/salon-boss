@@ -349,6 +349,12 @@ if (sb_counter) {
         wp.ajax
             .post('sb_filter_posts', { data, nonce: ajax.nonce, paged })
             .done((res) => {
+                if(res.max_num_pages <= paged){
+                    $('.sb-blog-load-more .sb-button').hide();
+                }else {
+                    $('.sb-blog-load-more .sb-button').show();
+                }
+                
                 if (res) {
                     if (paged > 1) {
                         $('#sb-blog-list').append(res.page);

@@ -79,6 +79,6 @@ function sb_filter_posts_function()
 
     // Output the HTML
     $my_html = ob_get_clean();
-    wp_send_json_success(['page' => $my_html, 'cat' => $data], );
+    wp_send_json_success(['page' => $my_html, 'cat' => $data, 'max_num_pages' =>  $loop->max_num_pages ]);
 }
 ?>
