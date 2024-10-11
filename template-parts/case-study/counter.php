@@ -6,27 +6,22 @@
             <div class="sb-counter-item">
             <?php
             if (!empty($item['number_text'])) {
-                $explode_number = explode('|', $item['number_text']);
 
-                if (count($explode_number) === 1 && is_numeric($item['number_text'])) {
-                    printf(
-                        '<h2><span class="sb-counter-amount" data-target="%s">0</span></h2>',
-                        esc_html($item['number_text'])
-                    );
-                } elseif (count($explode_number) === 2 && is_numeric($explode_number[0])) {
-                    printf(
-                        '<h2><span class="sb-counter-amount" data-target="%s">0</span><span class="sb-counter-suffix">%s</span></h2>',
-                        esc_html($explode_number[0]),
-                        esc_html($explode_number[1])
-                    );
-                } elseif (count($explode_number) === 2 && is_numeric($explode_number[1])) {
-                    printf(
-                        '<h2><span class="sb-counter-prefix">%s</span><span class="sb-counter-amount" data-target="%s">0</span></h2>',
-                        esc_html($explode_number[0]),
-                        esc_html($explode_number[1])
-                    );
-                }
+                $explode_number = explode('|', $item['number_text']);
+                $count = count($explode_number);
+
+                $prefix = $count > 1 && is_numeric($explode_number[1]) ? esc_html($explode_number[0]) : '';
+                $amount = is_numeric($item['number_text']) ? esc_html($item['number_text']) : ($count > 1 ? esc_html($explode_number[1]) : esc_html($explode_number[0]));
+                $suffix = $count === 3 ? esc_html($explode_number[2]) : ($count === 2 && !is_numeric($explode_number[1]) ? esc_html($explode_number[1]) : '');
+
+                printf(
+                    '<h2>%s<span class="sb-counter-amount" data-target="%s">0</span>%s</h2>',
+                    $prefix ? '<span class="sb-counter-prefix">' . $prefix . '</span>' : '',
+                    $amount,
+                    $suffix ? '<span class="sb-counter-suffix">' . $suffix . '</span>' : ''
+                );
             }
+
                 ?>
 
 
