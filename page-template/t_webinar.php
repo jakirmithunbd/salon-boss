@@ -29,29 +29,41 @@ get_header(); ?>
             <div class="sb-common-template-sidebox">
 
                 <div class="sb-webinar-feature-list d-flex flex-wrap text-center-mobile">
+                    <?php
+                    $webinar_feature_list = get_field('webinar_feature_list');
+                    if ($webinar_feature_list):
+                        foreach ($webinar_feature_list as $list):
+                            $list_title = $list['title'];
+                            $list_sub_title = $list['sup_title'];
+                            $list_description = $list['description'];
+                            ; ?>
+                            <div class="sb-webinar-feature-item">
+                                <h4><?php esc_html_e('$list_title'); ?></h4>
+                                <h5>2nd Wednesday of Every Month</h5>
+                                <ul>
+                                    <li>May 8th @ 9am PT</li>
+                                    <li>June 12th @ 9am PT</li>
+                                    <li>July 11th @ 9am PT</li>
+                                </ul>
+                            </div>
 
-                    <div class="sb-webinar-feature-item">
-                        <h4>Upcoming Dates & Times</h4>
-                        <h5>2nd Wednesday of Every Month</h5>
-                        <ul>
-                            <li>May 8th @ 9am PT</li>
-                            <li>June 12th @ 9am PT</li>
-                            <li>July 11th @ 9am PT</li>
-                        </ul>
-                    </div>
+                            <div class="sb-webinar-feature-item">
+                                <h4>Durration</h4>
+                                <h5>60 Minutes via</h5>
+                                <span><img src="/assets/images/vectors/zoom-icon.svg" alt=""></span>
+                            </div>
 
-                    <div class="sb-webinar-feature-item">
-                        <h4>Durration</h4>
-                        <h5>60 Minutes via</h5>
-                        <span><img src="/assets/images/vectors/zoom-icon.svg" alt=""></span>
-                    </div>
+                            <div class="sb-webinar-feature-item">
+                                <h4>Price</h4>
+                                <h3>FREE</h3>
+                                <p>No cost or obligations. Our goal is to simply educate you on how to market and scale your
+                                    salon suite business.</p>
+                            </div>
 
-                    <div class="sb-webinar-feature-item">
-                        <h4>Price</h4>
-                        <h3>FREE</h3>
-                        <p>No cost or obligations. Our goal is to simply educate you on how to market and scale your
-                            salon suite business.</p>
-                    </div>
+                            <?php
+                        endforeach;
+                    endif;
+                    ?>
 
                 </div>
 
