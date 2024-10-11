@@ -11,14 +11,14 @@ get_header(); ?>
         <div class="sb-contact-type-list d-flex flex-wrap">
             <?php
             $type_of_contact = get_field('contact_type');
-            if ($type_of_contact):
-                foreach ($type_of_contact as $contact):
-                    $contact_type_title = $contact['title'];
-                    $contact_type_description = $contact['description'];
-                    $contact_type_button = $contact['button'];
-                    $contact_type_image = $contact['image'];
-                    $contact_image_position = $contact['image_position'] ?? '';
-                    ; ?>
+if ($type_of_contact):
+    foreach ($type_of_contact as $contact):
+        $contact_type_title = $contact['title'];
+        $contact_type_description = $contact['description'];
+        $contact_type_button = $contact['button'];
+        $contact_type_image = $contact['image'];
+        $contact_image_position = $contact['image_position'] ?? '';
+        ; ?>
                     <div class="sb-card sb-card-filled-bg <?php echo esc_attr($contact_image_position); ?>">
                         <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
                         <div class="sb-card-contents-wrapper d-flex align-center">
@@ -30,8 +30,8 @@ get_header(); ?>
                                 <h2><?php echo wp_kses_post($contact_type_title ?? ''); ?></h2>
                                 <p><?php echo esc_attr($contact_type_description ?? ''); ?></p>
                                 <?php
-                                if ($contact_type_button):
-                                    ; ?>
+                    if ($contact_type_button):
+                        ; ?>
                                     <a
                                         href="<?php echo esc_url($contact_type_button['url'] ?? site_url()); ?>"><?php echo esc_attr($contact_type_button['title'] ?? ''); ?></a>
                                 <?php endif; ?>
@@ -47,46 +47,83 @@ get_header(); ?>
 <section class="sb-contact">
     <div class="container">
         <div class="sb-contact-wrapper d-flex flex-wrap">
-            <div class="sb-email-phone-contact d-flex flex-wrap align-center">
+            <?php
+            $contact_info = get_field('contact_info', 'options');
+if ($contact_info):
+    $contact_email = $contact_info['email_info'];
+    $contact_number = $contact_info['number_info'];
 
-                <div class="sb-card">
-                    <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                    <div class="sb-card-contents-wrapper d-flex align-center">
-                        <div class="sb-card-image d-flex">
-                            <img src="../assets/images/Salon-Boss-email.png" alt="">
-                        </div>
-                        <div class="sb-card-content text-center-mobile">
-                            <h4>Email Us</h4>
-                            <a href="mailto:hello@salonbossmarketing.com">hello@salonbossmarketing.com</a>
-                            <div class="sb-card-contact-btn-wrapper d-flex flex-wrap">
-                                <a href="mailto:hello@salonbossmarketing.com" class="sb-card-contact-btn">Send us an
-                                    email</a>
-                            </div>
-                        </div>
+    ; ?>
+                <div class="sb-email-phone-contact d-flex flex-wrap align-center">
+                    <?php
+        if ($contact_email):
+            $sb_email = $contact_email['contact_email'];
+            $sb_email_title = $contact_email['email_title'];
+            $sb_email_image = $contact_email['email_image'];
+            $sb_e_image_position = $contact_email['email_image_position'] ?? '';
+            if ($sb_email):
+                ; ?>
+                            <div class="sb-card <?php echo esc_attr($sb_e_image_position ?? ''); ?>">
+                                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                                <div class="sb-card-contents-wrapper d-flex align-center">
+                                    <div class="sb-card-image d-flex">
+                                        <img src="<?php echo esc_url($sb_email_image['url'] ?? ''); ?>"
+                                            alt="<?php echo esc_attr($sb_email_image['alt'] ?? ''); ?>">
+                                    </div>
+                                    <div class="sb-card-content text-center-mobile">
+                                        <h4><?php echo esc_html($sb_email_title ?? ''); ?></h4>
+                                        <a
+                                            href="<?php echo esc_url('mailto:' . ($sb_email ?? '')); ?>"><?php echo esc_attr($sb_email ?? ''); ?></a>
+                                        <?php if ($sb_email):
+                                            ; ?>
+                                            <div class="sb-card-contact-btn-wrapper d-flex flex-wrap">
+                                                <a href="<?php echo esc_url('mailto:' . ($sb_email ?? '')); ?>"
+                                                    class="sb-card-contact-btn">SEND US AN EMAIL</a>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div><!-- Sb Card  -->
+                        <?php endif; endif;
+
+    if ($contact_number):
+        $sb_number = $contact_number['contact_number'];
+        $sb_number_title = $contact_number['number_title'];
+        $sb_number_image = $contact_number['number_image'];
+        $sb_n_image_position = $contact_number['number_image_position'] ?? '';
+        if ($sb_number):
+            ?>
+
+                            <div class="sb-card <?php echo esc_attr($sb_n_image_position ?? ''); ?>">
+                                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                                <div class="sb-card-contents-wrapper d-flex align-center">
+                                    <div class="sb-card-image d-flex">
+                                        <img src="<?php echo esc_url($sb_number_image['url'] ?? ''); ?>"
+                                            alt="<?php echo esc_attr($sb_number_image['alt'] ?? ''); ?>">
+                                    </div>
+                                    <div class="sb-card-content text-center-mobile">
+                                        <h4><?php echo esc_html($sb_number_title ?? ''); ?></h4>
+                                        <a href="<?php echo esc_url('tel:' . ($sb_number ?? '')); ?>
+">             <?php echo esc_html($sb_number ?? ''); ?></a>
+
+                                        <div class="sb-card-contact-btn-wrapper d-flex flex-wrap">
+                                            <a href="<?php echo esc_url('tel:' . ($sb_number ?? '')); ?>
+" class="sb-card-contact-btn">Call
+                                                us</a>
+                                            <a href="<?php echo esc_url('sms:' . ($sb_number ?? '')); ?>
+" class="sb-card-contact-btn">Text
+                                                us</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><!-- Sb Card  -->
+                        <?php endif; ?>
                     </div>
-                </div><!-- Sb Card  -->
-
-                <div class="sb-card">
-                    <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                    <div class="sb-card-contents-wrapper d-flex align-center">
-                        <div class="sb-card-image d-flex">
-                            <img src="../assets/images/Salon-Boss-phone.png" alt="">
-                        </div>
-                        <div class="sb-card-content text-center-mobile">
-                            <h4>Call Or Text Us</h4>
-                            <a href="tel:(866) 860-2677">(866) 860-2677</a>
-                            <div class="sb-card-contact-btn-wrapper d-flex flex-wrap">
-                                <a href="tel:(866) 860-2677" class="sb-card-contact-btn">Call us</a>
-                                <a href="sms:(866) 860-2677" class="sb-card-contact-btn">Text us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Sb Card  -->
-
-            </div>
+                <?php endif; endif; ?>
             <div class="sb-contact-form">
                 <div class="sb-form">
-                    <?php echo do_shortcode( '[gravityform id="3" title="false"]' ); ?>
+                    <?php echo do_shortcode('[gravityform id="3" title="false"]'); ?>
                     <p class="sb-form-condition-text text-center-mobile">
                         By submitting this form, you agree to our privacy policy and terms & conditions.
                         You also agree to be contacted by Salon Boss via email, sms & phone. We never
