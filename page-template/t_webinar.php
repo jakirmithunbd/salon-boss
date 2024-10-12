@@ -11,115 +11,115 @@ $media = $hero['media'];
 $video = $media['video'];
 
 if (!empty($hero)):
-    $sec_class = empty($media['image']) ? 'hero-without-image' : ''; ?>
-    <section class="hero-sb-common-template common-hero hero-bg <?php echo esc_attr($sec_class); ?>">
-        <div class="container">
+    $sec_class = empty($media['image'] || $video) ? 'hero-without-image' : ''; ?>
+<section class="hero-sb-common-template common-hero hero-bg <?php echo esc_attr($sec_class); ?>">
+    <div class="container">
 
-            <div class="text-center">
-                <h2>Salon Suites Marketing Webinar</h2>
-            </div>
+        <div class="text-center">
+            <h2>Salon Suites Marketing Webinar</h2>
+        </div>
 
-            <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
+        <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
-                <?php
-                if ($media['image'] || $video):
+            <?php
+            if ($media['image'] || $video):
 
-                    if (!$media['is_video']):
-                        $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
-                        ?>
+                if (!$media['is_video']):
+                    $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
+                    ?>
 
-                        <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
-                            <?php if ($media['image']) {
-                                printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr($media['image']['title']));
-                            } ?>
+                    <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
+                        <?php if ($media['image']) {
+                            printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr($media['image']['title']));
+                        } ?>
 
-                            <?php if ($media['title']): ?>
-                                <div class="sb-hero-image-title">
-                                    <button class="link-available"><?php echo esc_html($media['title']); ?></button>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                    <?php else:
-
-                        $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
-                        ?>
-
-                        <div class="sb-hero-video d-flex flex-wrap">
-                            <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>"
-                                style="background-image: url(<?php echo esc_url($media['video_thumbnail']['url']); ?>);">
-
-                                <?php if (!empty($video)) {
-                                    printf('<div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>');
-                                } ?>
-
-                                <div class="sb-video-frame">
-                                    <div class="sb-video-wrapper relative">
-                                        <?php echo $video; ?>
-
-                                        <button class="sb-video-close-btn">
-                                            <span></span>
-                                            <span></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <?php if ($media['title']): ?>
-                                <div class="sb-hero-video-title">
-                                    <button class="link-available"><?php echo esc_html($media['title']); ?></button>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                    <?php endif; endif; ?>
-
-                <?php
-                $text_center = !$media['image'] ? 'text-center' : '';
-                $content = $hero['content'];
-                if (!empty($content)): ?>
-                    <div class="sb-hero-content text-center-mobile <?php echo esc_attr($text_center); ?>">
-                        <?php $bages = $content['hero_bages'];
-                        if (!empty($bages)): ?>
-                            <div class="hero-badge d-flex flex-wrap">
-                                <?php foreach ($bages as $bage) {
-                                    printf('<span>%s</span>', wp_kses_post($bage['text']));
-                                } ?>
-
+                        <?php if ($media['title']): ?>
+                            <div class="sb-hero-image-title">
+                                <button class="link-available"><?php echo esc_html($media['title']); ?></button>
                             </div>
                         <?php endif; ?>
-                        <?php printf('<h1>%s</h1>', wp_kses_post($content['title'])); ?>
-                        <?php printf('<h4>%s</h4>', wp_kses_post($content['sub_title'])); ?>
-                        <?php printf('<p>%s</p>', wp_kses_post($content['description'])); ?>
-
-                        <?php $buttons = $content['buttons_group']; ?>
-
-                        <div class="sb-buttons d-flex">
-                            <?php if ($buttons):
-                                foreach ($buttons as $f_button):
-                                    $icon_type = '';
-                                    $icon_position = '';
-                                    $color = !empty($f_button['color']) ? 'pink' : 'green';
-                                    if (!empty($f_button['enable_icon'])) {
-                                        $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
-                                        $icon_position = !empty($f_button['icon_alignment'])
-                                            ? 'icon-position-right'
-                                            : 'icon-position-left';
-                                    }
-                                    ?>
-
-                                    <a href="<?php echo esc_url($f_button['link']['url']); ?>"
-                                        target="<?php echo esc_attr($f_button['link']['target']); ?>"
-                                        class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
-                                        <?php echo esc_html($f_button['link']['title']); ?>
-                                    </a>
-                                <?php endforeach; endif; ?>
-                        </div>
                     </div>
-                <?php endif; ?>
-            </div>
+
+                <?php else:
+
+                    $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
+                    ?>
+
+                    <div class="sb-hero-video d-flex flex-wrap">
+                        <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>"
+                            style="background-image: url(<?php echo esc_url($media['video_thumbnail']['url']); ?>);">
+
+                            <?php if (!empty($video)) {
+                                printf('<div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>');
+                            } ?>
+
+                            <div class="sb-video-frame">
+                                <div class="sb-video-wrapper relative">
+                                    <?php echo $video; ?>
+
+                                    <button class="sb-video-close-btn">
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php if ($media['title']): ?>
+                            <div class="sb-hero-video-title">
+                                <button class="link-available"><?php echo esc_html($media['title']); ?></button>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                <?php endif; endif; ?>
+
+            <?php
+            $text_center = !$media['image'] ? 'text-center' : '';
+            $content = $hero['content'];
+            if (!empty($content)): ?>
+                <div class="sb-hero-content text-center-mobile <?php echo esc_attr($text_center); ?>">
+                    <?php $bages = $content['hero_bages'];
+                    if (!empty($bages)): ?>
+                        <div class="hero-badge d-flex flex-wrap">
+                            <?php foreach ($bages as $bage) {
+                                printf('<span>%s</span>', wp_kses_post($bage['text']));
+                            } ?>
+
+                        </div>
+                    <?php endif; ?>
+                    <?php printf('<h1>%s</h1>', wp_kses_post($content['title'])); ?>
+                    <?php printf('<h4>%s</h4>', wp_kses_post($content['sub_title'])); ?>
+                    <?php printf('<p>%s</p>', wp_kses_post($content['description'])); ?>
+
+                    <?php $buttons = $content['buttons_group']; ?>
+
+                    <div class="sb-buttons d-flex">
+                        <?php if ($buttons):
+                            foreach ($buttons as $f_button):
+                                $icon_type = '';
+                                $icon_position = '';
+                                $color = !empty($f_button['color']) ? 'pink' : 'green';
+                                if (!empty($f_button['enable_icon'])) {
+                                    $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
+                                    $icon_position = !empty($f_button['icon_alignment'])
+                                        ? 'icon-position-right'
+                                        : 'icon-position-left';
+                                }
+                                ?>
+
+                                <a href="<?php echo esc_url($f_button['link']['url']); ?>"
+                                    target="<?php echo esc_attr($f_button['link']['target']); ?>"
+                                    class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                                    <?php echo esc_html($f_button['link']['title']); ?>
+                                </a>
+                            <?php endforeach; endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
-    </section>
+    </div>
+</section>
 <?php endif; ?>
 <!-- Hero Common Template  -->
 
@@ -197,7 +197,6 @@ if (!empty($hero)):
 
 <section class="sb-webinar-topics">
     <div class="container">
-
         <?php
         $webinar_topics = get_field('webinar_topics_area');
         if ($webinar_topics):
@@ -238,7 +237,6 @@ if (!empty($hero)):
     </div>
 </section>
 <!-- Webinar Topics  -->
-
 <?php get_template_part('template-parts/analysis-service'); ?>
 
 <section class="sb-webinar-meet-expert">
@@ -280,52 +278,53 @@ if (!empty($hero)):
 
 
             <?php
-                $service_posts = get_field('select_servies');
+            $service_posts = get_field('select_servies');
 
-                if (!empty($service_posts)) :
-                    foreach ($service_posts as $service) :
-                        $service_post = get_post($service);
-                        $excerpt = get_the_excerpt($service_post);
+            if (!empty($service_posts)):
+                foreach ($service_posts as $service):
+                    $service_post = get_post($service);
+                    $excerpt = get_the_excerpt($service_post);
 
-                        $service_key_points = get_field('service_keypoint_list', $service_post->ID);
-                        
-            ?>
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="<?php echo get_permalink($service_post->ID); ?>">
-                            <?php
-                            if (has_post_thumbnail($service_post->ID)) :
-                                echo get_the_post_thumbnail($service_post->ID, 'full', ['alt' => esc_attr($service_post->post_title)]);
-                            endif;
-                            ?>
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
-                            <h2><?php echo esc_html($service_post->post_title); ?><span> Services</span></h2>
-                        </a>
-                        <h5><?php echo wp_kses_post($excerpt); ?></h5>
+                    $service_key_points = get_field('service_keypoint_list', $service_post->ID);
 
-                        <?php 
-                            if($service_key_points):
-                        ?>
-                        <ul class= "unstyle flex-center flex-wrap">
-                            <?php 
-                                foreach($service_key_points as $keypoints):
-                            ?>
-                            <li><a href="#"><?php echo wp_kses_post( $keypoints['keypoint_text'] ); ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-                        <div class="sb-card-btn">
-                            <a href="<?php echo get_permalink($service_post->ID); ?>"><?php printf('Explore Our %s Services >', wp_kses_post($service_post->post_title)); ?></a>
+                    ?>
+                    <div class="sb-card sb-card-filled-bg image-position-top-left">
+                        <div class="sb-card-contents-wrapper d-flex align-center">
+                            <div class="sb-card-image d-flex">
+                                <a href="<?php echo get_permalink($service_post->ID); ?>">
+                                    <?php
+                                    if (has_post_thumbnail($service_post->ID)):
+                                        echo get_the_post_thumbnail($service_post->ID, 'full', ['alt' => esc_attr($service_post->post_title)]);
+                                    endif;
+                                    ?>
+                                </a>
+                            </div>
+                            <div class="sb-card-content text-center">
+                                <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
+                                    <h2><?php echo esc_html($service_post->post_title); ?><span> Services</span></h2>
+                                </a>
+                                <h5><?php echo wp_kses_post($excerpt); ?></h5>
+
+                                <?php
+                                if ($service_key_points):
+                                    ?>
+                                    <ul class="unstyle flex-center flex-wrap">
+                                        <?php
+                                        foreach ($service_key_points as $keypoints):
+                                            ?>
+                                            <li><a href="#"><?php echo wp_kses_post($keypoints['keypoint_text']); ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <div class="sb-card-btn">
+                                    <a
+                                        href="<?php echo get_permalink($service_post->ID); ?>"><?php printf('Explore Our %s Services >', wp_kses_post($service_post->post_title)); ?></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
-            <?php endforeach;
-                endif; ?>
+                    </div><!-- Sb Card  -->
+                <?php endforeach;
+            endif; ?>
 
             <div class="sb-card sb-card-filled-bg image-position-top-left">
 
@@ -342,22 +341,22 @@ if (!empty($hero)):
                         <img src="<?php echo $service_img; ?>" alt="<?php echo $service_img_title; ?>">
                     </div>
                     <div class="sb-card-content text-center">
-                        <?php if($resource_center['title']) {
+                        <?php if ($resource_center['title']) {
                             printf('<h2>%s</h2>', wp_kses_post($resource_center['title']));
                         } ?>
 
-                        <?php if($resource_center['sub_title']) {
+                        <?php if ($resource_center['sub_title']) {
                             printf('<h5>%s</h5>', wp_kses_post($resource_center['sub_title']));
                         } ?>
 
-                        <?php if($resource_center['description']) {
+                        <?php if ($resource_center['description']) {
                             printf('<p>%s</p>', wp_kses_post($resource_center['description']));
                         } ?>
 
                         <?php $service_links = $resource_center['service_links'];
-                        if (!empty($service_links)) : ?>
+                        if (!empty($service_links)): ?>
                             <ul class="unstyle flex-center flex-wrap">
-                                <?php foreach ($service_links as $link) : ?>
+                                <?php foreach ($service_links as $link): ?>
                                     <li>
                                         <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                             <?php echo wp_kses_post(get_the_title($link->ID)); ?>
@@ -366,9 +365,10 @@ if (!empty($hero)):
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <?php if (!empty($website_link)) : ?>
+                        <?php if (!empty($website_link)): ?>
                             <div class="sb-card-btn">
-                                <a target="<?php echo esc_attr($website_link['target']); ?>" href="<?php echo esc_url($website_link['url']); ?>">
+                                <a target="<?php echo esc_attr($website_link['target']); ?>"
+                                    href="<?php echo esc_url($website_link['url']); ?>">
                                     <?php echo wp_kses_post($website_link['title']); ?>
                                 </a>
                             </div>

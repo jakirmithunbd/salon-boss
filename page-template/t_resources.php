@@ -8,150 +8,67 @@ get_header(); ?>
 <section class="sb-resource">
     <div class="container">
         <?php
-        $resource_list_area = get_field('resorce_list_area');
+
 
         ; ?>
         <div class="sb-resource-list d-flex flex-wrap">
 
             <?php
-            $resource_list = $resource_list_area
-            ; ?>
+            $resource_list = get_field('resource_list');
+            if ($resource_list):
+                foreach ($resource_list as $list):
 
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="./single-service.html">
-                            <img src="../assets/images/Salon-Boss-service-web-devolopment.png" alt="">
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-resource-title" href="./single-service.html">
-                            <h2>Live <span>Webinars</span> 👩‍💻</h2>
-                        </a>
-                        <h5>Custom Websites That Convert</h5>
+                    $resource_list_title = $list['title'];
+                    $resource_list_sub_title = $list['sub_title'];
+                    $resource_list_image = $list['image'];
+                    $resource_list_button = $list['button'];
+                    $resource_list_keypoints = $list['keypoint'];
+                    $resource_list_image_position = $list['image_position'] ?? '';
 
-                        <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
-                                <a href="#">Fully Custom Designed</a>
-                            </li>
-                            <li>
-                                <a href="#">Increase your conversion Rate</a>
-                            </li>
-                            <li>
-                                <a href="#">Hassle Free Management</a>
-                            </li>
-                        </ul>
-                        <div class="sb-card-btn">
-                            <a href="./single-service.html">Explore Our Website Services ></a>
+                    ; ?>
+
+                    <div class="sb-card sb-card-filled-bg <?php echo esc_attr($resource_list_image_position); ?>">
+                        <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                        <div class="sb-card-contents-wrapper d-flex align-center">
+                            <div class="sb-card-image d-flex">
+                                <a href="./single-service.html">
+                                    <img src="<?php echo esc_url($resource_list_image['url'] ?? ''); ?>"
+                                        alt="<?php echo esc_attr($resource_list_image['alt'] ?? ''); ?>">
+                                </a>
+                            </div>
+                            <div class="sb-card-content text-center">
+                                <a class="sb-resource-title" href="./single-service.html">
+                                    <h2>Live <span>Webinars</span> 👩‍💻</h2>
+                                </a>
+                                <h5>Custom Websites That Convert</h5>
+
+                                <?php
+                                if ($resource_list_keypoints):
+                                    ?>
+                                    <ul class="unstyle flex-center flex-wrap">
+                                        <?php
+                                        $audit_keypoint = $audit_service_keypoints['keypoint'];
+
+                                        if ($audit_keypoint):
+                                            foreach ($audit_keypoint as $keypoint):
+                                                ?>
+                                                <li><?php echo wp_kses_post($keypoint['keypoint_text'] ?? ""); ?></li>
+                                                <?php
+                                            endforeach;
+                                        endif;
+                                        ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <div class="sb-card-btn">
+                                    <a href="./single-service.html">Explore Our Website Services ></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
+                    </div><!-- Sb Card  -->
 
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="./single-service.html">
-                            <a href="./single-service.html">
-                                <img src="../assets/images/Salon-Boss-service-social-media.png" alt="">
-                            </a>
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-resource-title" href="./single-service.html">
-                            <h2>Our <span>Communities</span> 🤝</h2>
-                        </a>
-                        <h5>Build Your Social Community</h5>
-
-                        <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
-                                <a href="#">grow your business organically</a>
-                            </li>
-                            <li>
-                                <a href="#">outrank your competition</a>
-                            </li>
-                            <li>
-                                <a href="#">become your local leader</a>
-                            </li>
-                        </ul>
-                        <div class="sb-card-btn">
-                            <a href="./single-service.html">Explore Our Social Media Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
-
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="./single-service.html">
-                            <img src="../assets/images/Salon-Boss-reviews-hero.png" alt="">
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-resource-title" href="./single-service.html">
-                            <h2>Free <span>Audits</span> 📈</h2>
-                        </a>
-                        <h5>Stay On Top Of Your Reputation</h5>
-                        <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
-                                <a href="#">Manage Your Reviews</a>
-                            </li>
-                            <li>
-                                <a href="#">Automate Your Responses</a>
-                            </li>
-                            <li>
-                                <a href="#">Increase your online Reviews</a>
-                            </li>
-                        </ul>
-                        <div class="sb-card-btn">
-                            <a href="./single-service.html">Explore Our Review Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
-
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="./single-service.html">
-                            <img src="../assets/images/Salon-Boss-service-social-media.png" alt="">
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-resource-title" href="./single-service.html">
-                            <h2>Exciting Resources <span>Coming Soon!</span> 🤫</h2>
-                        </a>
-                        <h5>Make Your Brand Shine</h5>
-                        <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
-                                <a href="#">Logos</a>
-                            </li>
-                            <li>
-                                <a href="#">Print Materials</a>
-                            </li>
-                            <li>
-                                <a href="#">Social Media Posts</a>
-                            </li>
-                            <li>
-                                <a href="#">Brand Guidelines</a>
-                            </li>
-                            <li>
-                                <a href="#">Email Templates</a>
-                            </li>
-                        </ul>
-                        <div class="sb-card-btn">
-                            <a href="./single-service.html">Explore Our Social Media Services ></a>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
-
+                <?php endforeach; endif; ?>
         </div>
+
     </div>
 </section><!-- SB Resource  -->
 
