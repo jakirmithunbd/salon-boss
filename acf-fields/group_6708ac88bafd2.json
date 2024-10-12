@@ -65,249 +65,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_6708b5131a749",
-            "label": "Audit Included Service",
-            "name": "audit_included_service",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6708bb941a74a",
-                    "label": "Section Title",
-                    "name": "section_title",
-                    "aria-label": "",
-                    "type": "group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6708bc251a74c",
-                            "label": "Title",
-                            "name": "title",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_6708bc3f1a74d",
-                            "label": "Sub Title",
-                            "name": "sub_title",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_6708bc521a74e",
-                            "label": "Description",
-                            "name": "description",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": "",
-                            "placeholder": "",
-                            "new_lines": ""
-                        }
-                    ]
-                },
-                {
-                    "key": "field_6708c4b295ea0",
-                    "label": "Service Image Size Small ?",
-                    "name": "service_image_size_small",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_6708c6195d4d0",
-                    "label": "Included Service List",
-                    "name": "service_list",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add new service",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_6708c6195d4d1",
-                            "label": "Image",
-                            "name": "image",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "40",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "allow_in_bindings": 0,
-                            "preview_size": "thumbnail",
-                            "parent_repeater": "field_6708c6195d4d0"
-                        },
-                        {
-                            "key": "field_6708c6195d4d2",
-                            "label": "Image Alignment",
-                            "name": "image_alignment",
-                            "aria-label": "",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "20",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "image-position-left": "Left",
-                                "image-position-top": "Top",
-                                "image-position-right": "Right"
-                            },
-                            "default_value": "image-position-left",
-                            "return_format": "array",
-                            "multiple": 0,
-                            "allow_null": 0,
-                            "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "parent_repeater": "field_6708c6195d4d0"
-                        },
-                        {
-                            "key": "field_6708c6195d4d3",
-                            "label": "Title",
-                            "name": "title",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "40",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "Enter your title",
-                            "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_6708c6195d4d0"
-                        },
-                        {
-                            "key": "field_6708c6195d4d4",
-                            "label": "Description",
-                            "name": "description",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 4,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_6708c6195d4d0"
-                        }
-                    ]
-                }
-            ]
         }
     ],
     "location": [
@@ -315,14 +72,14 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "407"
+                "value": "522"
             }
         ],
         [
             {
                 "param": "page",
                 "operator": "==",
-                "value": "465"
+                "value": "632"
             }
         ]
     ],
@@ -338,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728637310
+    "modified": 1728709273
 }
