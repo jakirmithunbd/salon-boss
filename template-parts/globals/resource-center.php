@@ -32,7 +32,7 @@ $website_link = isset($resource_center['website_link']) ? $resource_center['webs
                         if (!empty($service_links)) : ?>
                             <ul class="unstyle flex-center flex-wrap">
                                 <?php foreach ($service_links as $link) : ?>
-                                    <li class="active">
+                                    <li>
                                         <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                             <?php echo wp_kses_post(get_the_title($link->ID)); ?>
                                         </a>

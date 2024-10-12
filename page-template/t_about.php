@@ -44,7 +44,6 @@ get_header(); ?>
         if ($team_area):
             $about_section_title = $team_area['about_section_title'];
             $about_section_description = $team_area['about_section_description'];
-            $meambers = $team_area['meambers'];
             ; ?>
 
             <div class="sb-section-title text-center">
@@ -52,35 +51,8 @@ get_header(); ?>
                 <p><?php echo esc_html($about_section_description ?? ''); ?></p>
             </div>
             <div class="sb-expert-list d-flex flex-wrap">
-                <?php
-                if ($meambers):
-                    foreach ($meambers as $meamber):
-                        $name = $meamber['name'];
-                        $position_title = $meamber['position_title'];
-                        $image = $meamber['image'];
-                        $image_position = ['image_position'] ?? '';
-                        $quote = $meamber['quote'];
-                        ; ?>
 
-                        <div class="sb-author-card image-position-top <?php echo esc_attr($image_position) ?>">
-                            <!--image-position-right-->
-                            <div class="sb-author-card-content-wrapper d-flex">
-                                <div class="sb-author-card-image flex-center relative">
-                                    <img src="<?php echo esc_url($image['url'] ?? ''); ?>"
-                                        alt="<?php echo esc_attr($image['alt'] ?? ''); ?>">
-                                </div>
-                                <div class="sb-author-card-content flex-center flex-col text-center">
-                                    <h3 class="sb-author-name"><?php echo esc_html($name ?? ''); ?></h3>
-                                    <h5 class="sb-suthor-title"><?php echo esc_html($position_title ?? ''); ?></h5>
-                                    <?php echo wp_kses_post($quote ?? ''); ?>
-                                </div>
-                            </div>
-                        </div><!-- Sb Author Card  -->
-
-                        <?php
-                    endforeach;
-                endif;
-                ?>
+            <?php get_template_part('template-parts/common-author-box'); ?>
             </div>
 
         <?php endif; ?>
