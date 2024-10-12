@@ -41,7 +41,7 @@
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
-                            "button_label": "Add Row",
+                            "button_label": "Add Resources Item",
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
@@ -126,11 +126,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "layout": "table",
+                                    "layout": "",
                                     "min": 0,
                                     "max": 0,
                                     "collapsed": "",
-                                    "button_label": "Add Row",
+                                    "button_label": "Add New Keypoint",
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
@@ -210,14 +210,14 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_670a71c3108c0": {
-                    "key": "layout_670a71c3108c0",
+                "layout_670a6d1177d12": {
+                    "key": "layout_670a6d1177d12",
                     "name": "resources_special",
                     "label": "Resources Special",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_670a71cc108c2",
+                            "key": "field_670a6cce77d09",
                             "label": "Resources Special",
                             "name": "resources_special",
                             "aria-label": "",
@@ -234,11 +234,11 @@
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
-                            "button_label": "Add Row",
+                            "button_label": "Add Special Resources Item",
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_670a71cc108c3",
+                                    "key": "field_670a6cce77d0a",
                                     "label": "Title",
                                     "name": "title",
                                     "aria-label": "",
@@ -257,10 +257,10 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 },
                                 {
-                                    "key": "field_670a71cc108c4",
+                                    "key": "field_670a6cce77d0b",
                                     "label": "Sub Title",
                                     "name": "sub_title",
                                     "aria-label": "",
@@ -279,10 +279,10 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 },
                                 {
-                                    "key": "field_670a71cc108c5",
+                                    "key": "field_670a6cce77d0c",
                                     "label": "Image",
                                     "name": "image",
                                     "aria-label": "",
@@ -306,10 +306,10 @@
                                     "mime_types": "",
                                     "allow_in_bindings": 1,
                                     "preview_size": "medium",
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 },
                                 {
-                                    "key": "field_670a71cc108c6",
+                                    "key": "field_670a6cce77d0d",
                                     "label": "Keypoint",
                                     "name": "keypoint",
                                     "aria-label": "",
@@ -326,11 +326,11 @@
                                     "min": 0,
                                     "max": 0,
                                     "collapsed": "",
-                                    "button_label": "Add Row",
+                                    "button_label": "Add New Keypoint",
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
-                                            "key": "field_670a71cc108c7",
+                                            "key": "field_670a6cce77d0e",
                                             "label": "Keypoint Text",
                                             "name": "keypoint_text",
                                             "aria-label": "",
@@ -349,13 +349,13 @@
                                             "placeholder": "",
                                             "prepend": "",
                                             "append": "",
-                                            "parent_repeater": "field_670a71cc108c6"
+                                            "parent_repeater": "field_670a6cce77d0d"
                                         }
                                     ],
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 },
                                 {
-                                    "key": "field_670a71cc108c8",
+                                    "key": "field_670a6cce77d0f",
                                     "label": "Button",
                                     "name": "button",
                                     "aria-label": "",
@@ -370,10 +370,10 @@
                                     },
                                     "return_format": "array",
                                     "allow_in_bindings": 1,
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 },
                                 {
-                                    "key": "field_670a71cc108c9",
+                                    "key": "field_670a6cce77d10",
                                     "label": "Image Position",
                                     "name": "image_position",
                                     "aria-label": "",
@@ -401,7 +401,7 @@
                                     "ui": 1,
                                     "ajax": 0,
                                     "placeholder": "",
-                                    "parent_repeater": "field_670a71cc108c2"
+                                    "parent_repeater": "field_670a6cce77d09"
                                 }
                             ]
                         }
@@ -412,15 +412,15 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add Sections"
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "page-template\/t_resources.php"
+                "value": "652"
             }
         ]
     ],
@@ -433,5 +433,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728737812
+    "modified": 1728740123
 }

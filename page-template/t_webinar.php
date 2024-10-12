@@ -123,7 +123,6 @@ if (!empty($hero)):
 <?php endif; ?>
 <!-- Hero Common Template  -->
 
-
 <section class="sb-common-template-form">
     <div class="container">
         <div class="sb-common-template-form-sidebox d-flex flex-wrap">

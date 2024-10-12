@@ -4,7 +4,8 @@
  * */
 get_header(); ?>
 
-<?php get_template_part('template-pparts/page-banner'); ?>
+<?php get_template_part('template-parts/page-banner'); ?>
+
 
 <?php
 
@@ -124,7 +125,6 @@ if (have_rows('resources_list_part')):
                     </div>
                 </div>
             </section><!-- Sb resources_special -->
-
             <?php
         endif;
     endwhile;
