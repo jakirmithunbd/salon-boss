@@ -382,15 +382,10 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "service"
-            ],
+            "post_type": ["service"],
             "post_status": "",
             "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
+            "filters": ["search", "taxonomy"],
             "return_format": "id",
             "min": "",
             "max": "",
@@ -405,7 +400,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-template\/t_webinar.php"
+                "value": "page-template/t_webinar.php"
             }
         ]
     ],
