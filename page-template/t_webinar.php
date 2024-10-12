@@ -1,6 +1,6 @@
 <?php
 /*
- *  Template name: Webinar Template
+ *  Template name: Webinar page
  * */
 get_header(); ?>
 
