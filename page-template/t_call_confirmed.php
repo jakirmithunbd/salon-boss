@@ -54,9 +54,12 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="sb-author-card-content flex-center flex-col text-center">
-                        <?php echo wp_kses_post($author_quotation ?? ''); ?>
-                        <a href="<?php echo esc_url($author_button['url']); ?>"
-                            class="sb-button button-bg-green icon-position-left button-icon-sboss"><?php echo esc_attr($author_button['title']); ?></a>
+                        <?php echo wp_kses_post($author_quotation ?? '');
+                        if ($author_button):
+                            ?>
+                            <a href="<?php echo esc_url($author_button['url']); ?>"
+                                class="sb-button button-bg-green icon-position-left button-icon-sboss"><?php echo esc_attr($author_button['title']); ?></a>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>
