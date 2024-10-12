@@ -4,7 +4,7 @@ $media = $hero['media'];
 $video = $media['video'];
 
 if (!empty($hero)):
-    $sec_class = empty($media['image']) ? 'hero-without-image' : ''; ?>
+    $sec_class = empty($media['image'] || $video) ? 'hero-without-image' : ''; ?>
     <section class="common-hero hero-bg <?php echo esc_attr($sec_class); ?>">
         <div class="container">
             <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
