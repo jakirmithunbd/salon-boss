@@ -3352,16 +3352,20 @@
         margin-top: 40px;
     }
     .sb-webinar-meet-expert-wrapper {
-        gap: 65px;
+        row-gap: 70px;
+        justify-content: space-between;
 
-        @include breakpoint(1280) {
-            gap: 40px;
+        @include breakpoint(1024) {
+            row-gap: 50px;
+        }
+        @include breakpoint(1024) {
+            row-gap: 40px;
         }
 
         .sb-author-card,
         .sb-section-title {
-            width: 35%;
-            flex-grow: 1;
+            width: 47.5%;
+            margin: inherit;
 
             @include breakpoint(1024) {
                 width: 100%;
@@ -3387,19 +3391,54 @@
 .sb-webinar-resource-center {
 
     .sb-webinar-salon-suites {
-        gap: 17px;
+        row-gap: 50px;
+        justify-content: space-between;
 
         @include breakpoint(1024) {
-            gap: 30px;
+            row-gap: 30px;
         }
 
         .sb-card {
-            width: 40%;
-            flex-grow: 1;
+            width: 49%;
 
             @include breakpoint(1024) {
                 width: 100%;
             }
+
+            .sb-card-contents-wrapper {
+                
+                // .sb-card-image  {
+                    
+                // }
+                .sb-card-content {
+                    .sb-service-title {
+                        h3 {
+                            display: inline-block;
+                            @include font(40, 60);
+                            margin-bottom: 15px;
+                            color: $white;
+                            @extend .transition;
+                    
+                            @include breakpoint(1024) {
+                                @include font(32, 44);
+                            }
+                            @include breakpoint(768) {
+                                @include font(26, 38);
+                            }
+                            span {
+                                @extend .sb-multy-color;
+                            }
+                        }
+
+                        &:hover {
+                            h2 {
+                                color: $secondary;
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

@@ -296,7 +296,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "block",
+                    "layout": "row",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
@@ -341,8 +341,8 @@
                             },
                             "default_value": "",
                             "tabs": "all",
-                            "toolbar": "basic",
-                            "media_upload": 0,
+                            "toolbar": "full",
+                            "media_upload": 1,
                             "delay": 0,
                             "parent_repeater": "field_670949af78228"
                         }
@@ -351,8 +351,8 @@
             ]
         },
         {
-            "key": "field_670a117d442ba",
-            "label": "Your Host Area",
+            "key": "field_670a3241fd56b",
+            "label": "Select Salon Service",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -369,121 +369,9 @@
             "selected": 0
         },
         {
-            "key": "field_670a119e442bb",
-            "label": "Your Host",
-            "name": "your_host",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_670a11b5442bc",
-                    "label": "Host Title",
-                    "name": "host_title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_670a12e697d1f",
-                    "label": "Sub Title",
-                    "name": "sub_title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_670a11f8442be",
-                    "label": "Host Button",
-                    "name": "host_button",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
-                },
-                {
-                    "key": "field_670a11e0442bd",
-                    "label": "Host Description",
-                    "name": "host_description",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0
-                }
-            ]
-        },
-        {
-            "key": "field_670a22baee7b8",
-            "label": "Resorch",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_670a22cbee7b9",
-            "label": "resorch",
-            "name": "resorch",
+            "key": "field_670a2c717d790",
+            "label": "Select Servies",
+            "name": "select_servies",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -494,15 +382,14 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
+            "post_type": ["service"],
             "post_status": "",
             "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
+            "filters": ["search", "taxonomy"],
+            "return_format": "id",
             "min": "",
             "max": "",
+            "allow_in_bindings": 0,
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
@@ -513,7 +400,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-template\/t_webinar.php"
+                "value": "page-template/t_webinar.php"
             }
         ]
     ],
@@ -526,5 +413,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728717583
+    "modified": 1728721536
 }
