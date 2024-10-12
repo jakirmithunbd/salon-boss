@@ -251,21 +251,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "750"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "632"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "522"
+                "value": "488"
             }
         ]
     ],
@@ -281,5 +267,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728709655
+    "modified": 1728711380
 }

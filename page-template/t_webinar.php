@@ -239,7 +239,7 @@ if (!empty($hero)):
 </section>
 <!-- Webinar Topics  -->
 
-<?php get_template_part( 'template-parts/analysis-service' ); ?>
+<?php get_template_part('template-parts/analysis-service'); ?>
 
 <section class="sb-webinar-meet-expert">
     <div class="container">
@@ -270,19 +270,26 @@ if (!empty($hero)):
                 </div>
             </div><!-- Sb Author Card  -->
 
-            <div class="sb-section-title text-center-mobile">
-                <h5>Your Host</h5>
-                <h2>Meet Your <span>Industry Expert</span></h2>
-                <p>
-                    Meet the team behind Salon Boss! With over a decade of experience
-                    marketing in the beauty industry and an unique experience behind the chair,
-                    Salon Boss has the leading edge in this industry. We're all fun
-                    and hardworking humans who care about helping business owners
-                    just like you, make their mark in this ever evolving world or hair & beauty.
-                </p>
-                <a href="#" class="sb-button button-bg-green button-icon-scissor icon-position-right">Secure My
-                    Spot!</a>
-            </div>
+            <?php
+            $host_area = get_field('your_host');
+            if ($host_area):
+                $host_title = $host_area['host_title'];
+                $host_sub_title = $host_area['sub_title'];
+                $host_description = $host_area['host_description'];
+                $host_button = $host_area['host_button'];
+                ; ?>
+
+                <div class="sb-section-title text-center-mobile">
+                    <h5><?php esc_html_e($host_sub_title ?? ''); ?></h5>
+                    <h2><?php echo wp_kses_post($host_title ?? ''); ?></h2>
+                    <?php echo wp_kses_post($host_description ?? '');
+                    if ($host_button):
+                        ?>
+                        <a href="<?php echo esc_url($host_button['url'] ?? ''); ?>"
+                            class="sb-button button-bg-green button-icon-scissor icon-position-right"><?php echo esc_attr($host_button['title'] ?? ''); ?></a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
