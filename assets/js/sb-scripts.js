@@ -338,11 +338,11 @@ if (sb_counter) {
     function sb_filter_posts(data = {}) {
         if (paged > 1) {
             $('#sb-blog-list').append(
-                `<div class='preloader'><img src="${ajax.preloader}"/></div>`
+                `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
             );
         } else {
             $('#sb-blog-list').html(
-                `<div class='preloader'><img src="${ajax.preloader}"/></div>`
+                `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
             );
         }
 

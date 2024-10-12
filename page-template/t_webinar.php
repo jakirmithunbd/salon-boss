@@ -75,10 +75,9 @@ if (!empty($hero)):
                 <?php endif; endif; ?>
 
             <?php
-            $text_center = !$media['image'] ? 'text-center' : '';
             $content = $hero['content'];
             if (!empty($content)): ?>
-                <div class="sb-hero-content text-center-mobile <?php echo esc_attr($text_center); ?>">
+                <div class="sb-hero-content text-center-mobile">
                     <?php $bages = $content['hero_bages'];
                     if (!empty($bages)): ?>
                         <div class="hero-badge d-flex flex-wrap">
@@ -158,6 +157,7 @@ if (!empty($hero)):
                             <div class="sb-webinar-feature-item">
                                 <h4><?php echo esc_html($list_title ?? ''); ?></h4>
 
+                                <div class="sub-title-icon-wrapper d-flex align-center">
                                 <?php
                                 if (!empty($list_sub_title) || !empty($list_sub_logo)) {
 
@@ -176,6 +176,7 @@ if (!empty($hero)):
                                     }
                                 }
                                 ?>
+                            </div>
 
                                 <?php echo wp_kses_post($list_description ?? ''); ?>
                             </div>
