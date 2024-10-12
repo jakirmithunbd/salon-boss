@@ -134,7 +134,7 @@ if (!empty($hero)):
                     <h4>Next Webinar Is in 14 Days, 9 Hour & 10 Minutes</h4>
                 </div>
 
-                <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
+                <?php echo do_shortcode('[gravityform id="4" title="false"]'); ?>
 
                 <p class="sb-form-condition-text text-center-mobile">
                     By submitting this form, you agree to our privacy policy and terms & conditions.
@@ -244,6 +244,31 @@ if (!empty($hero)):
 <section class="sb-webinar-meet-expert">
     <div class="container">
         <div class="sb-webinar-meet-expert-wrapper d-flex flex-wrap align-center">
+
+            <div class="sb-author-card image-position-top">
+                <div class="sb-author-card-content-wrapper d-flex">
+                    <div class="sb-author-card-image flex-center relative">
+                        <img src="../assets/images/Salon-Boss-salonboss-matt.png" alt="">
+                    </div>
+                    <div class="sb-author-card-content flex-center flex-col text-center">
+                        <h3 class="sb-author-name">Matthew Peters-Mejia</h3>
+                        <h5 class="sb-suthor-title">Salon Boss Founder & CEO (El Hefe)</h5>
+                        <p>
+                            With a decade of advanced marketing experience,
+                            Matt has transformed numerous small to medium businesses,
+                            driving their growth through his digital marketing expertise.
+                            His journey in the beauty industry started in 2013 when he
+                            consulted for a multi-million dollar U.S. hair extension company,
+                            giving him a deep understanding of the unique marketing
+                            needs of beauty professionals.
+                        </p>
+                        <p>
+                            On his off time Matt likes to canyoneer the slot canyons of southern utah,
+                            hone-in his jiu jitsu skills and spend time with his pets.
+                        </p>
+                    </div>
+                </div>
+            </div><!-- Sb Author Card  -->
 
             <div class="sb-author-card image-position-top">
                 <div class="sb-author-card-content-wrapper d-flex">
