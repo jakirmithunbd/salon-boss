@@ -197,7 +197,6 @@ if (!empty($hero)):
 
 <section class="sb-webinar-topics">
     <div class="container">
-
         <?php
         $webinar_topics = get_field('webinar_topics_area');
         if ($webinar_topics):
@@ -238,7 +237,6 @@ if (!empty($hero)):
     </div>
 </section>
 <!-- Webinar Topics  -->
-
 <?php get_template_part('template-parts/analysis-service'); ?>
 
 <section class="sb-webinar-meet-expert">
@@ -280,52 +278,53 @@ if (!empty($hero)):
 
 
             <?php
-                $service_posts = get_field('select_servies');
+            $service_posts = get_field('select_servies');
 
-                if (!empty($service_posts)) :
-                    foreach ($service_posts as $service) :
-                        $service_post = get_post($service);
-                        $excerpt = get_the_excerpt($service_post);
+            if (!empty($service_posts)):
+                foreach ($service_posts as $service):
+                    $service_post = get_post($service);
+                    $excerpt = get_the_excerpt($service_post);
 
-                        $service_key_points = get_field('service_keypoint_list', $service_post->ID);
-                        
-            ?>
-            <div class="sb-card sb-card-filled-bg image-position-top-left">
-                <div class="sb-card-contents-wrapper d-flex align-center">
-                    <div class="sb-card-image d-flex">
-                        <a href="<?php echo get_permalink($service_post->ID); ?>">
-                            <?php
-                            if (has_post_thumbnail($service_post->ID)) :
-                                echo get_the_post_thumbnail($service_post->ID, 'full', ['alt' => esc_attr($service_post->post_title)]);
-                            endif;
-                            ?>
-                        </a>
-                    </div>
-                    <div class="sb-card-content text-center">
-                        <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
-                            <h2><?php echo esc_html($service_post->post_title); ?><span> Services</span></h2>
-                        </a>
-                        <h5><?php echo wp_kses_post($excerpt); ?></h5>
+                    $service_key_points = get_field('service_keypoint_list', $service_post->ID);
 
-                        <?php 
-                            if($service_key_points):
-                        ?>
-                        <ul class= "unstyle flex-center flex-wrap">
-                            <?php 
-                                foreach($service_key_points as $keypoints):
-                            ?>
-                            <li><a href="#"><?php echo wp_kses_post( $keypoints['keypoint_text'] ); ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-                        <div class="sb-card-btn">
-                            <a href="<?php echo get_permalink($service_post->ID); ?>"><?php printf('Explore Our %s Services >', wp_kses_post($service_post->post_title)); ?></a>
+                    ?>
+                    <div class="sb-card sb-card-filled-bg image-position-top-left">
+                        <div class="sb-card-contents-wrapper d-flex align-center">
+                            <div class="sb-card-image d-flex">
+                                <a href="<?php echo get_permalink($service_post->ID); ?>">
+                                    <?php
+                                    if (has_post_thumbnail($service_post->ID)):
+                                        echo get_the_post_thumbnail($service_post->ID, 'full', ['alt' => esc_attr($service_post->post_title)]);
+                                    endif;
+                                    ?>
+                                </a>
+                            </div>
+                            <div class="sb-card-content text-center">
+                                <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
+                                    <h2><?php echo esc_html($service_post->post_title); ?><span> Services</span></h2>
+                                </a>
+                                <h5><?php echo wp_kses_post($excerpt); ?></h5>
+
+                                <?php
+                                if ($service_key_points):
+                                    ?>
+                                    <ul class="unstyle flex-center flex-wrap">
+                                        <?php
+                                        foreach ($service_key_points as $keypoints):
+                                            ?>
+                                            <li><a href="#"><?php echo wp_kses_post($keypoints['keypoint_text']); ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <div class="sb-card-btn">
+                                    <a
+                                        href="<?php echo get_permalink($service_post->ID); ?>"><?php printf('Explore Our %s Services >', wp_kses_post($service_post->post_title)); ?></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div><!-- Sb Card  -->
-            <?php endforeach;
-                endif; ?>
+                    </div><!-- Sb Card  -->
+                <?php endforeach;
+            endif; ?>
 
             <div class="sb-card sb-card-filled-bg image-position-top-left">
 
@@ -342,22 +341,22 @@ if (!empty($hero)):
                         <img src="<?php echo $service_img; ?>" alt="<?php echo $service_img_title; ?>">
                     </div>
                     <div class="sb-card-content text-center">
-                        <?php if($resource_center['title']) {
+                        <?php if ($resource_center['title']) {
                             printf('<h2>%s</h2>', wp_kses_post($resource_center['title']));
                         } ?>
 
-                        <?php if($resource_center['sub_title']) {
+                        <?php if ($resource_center['sub_title']) {
                             printf('<h5>%s</h5>', wp_kses_post($resource_center['sub_title']));
                         } ?>
 
-                        <?php if($resource_center['description']) {
+                        <?php if ($resource_center['description']) {
                             printf('<p>%s</p>', wp_kses_post($resource_center['description']));
                         } ?>
 
                         <?php $service_links = $resource_center['service_links'];
-                        if (!empty($service_links)) : ?>
+                        if (!empty($service_links)): ?>
                             <ul class="unstyle flex-center flex-wrap">
-                                <?php foreach ($service_links as $link) : ?>
+                                <?php foreach ($service_links as $link): ?>
                                     <li>
                                         <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                             <?php echo wp_kses_post(get_the_title($link->ID)); ?>
@@ -366,9 +365,10 @@ if (!empty($hero)):
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <?php if (!empty($website_link)) : ?>
+                        <?php if (!empty($website_link)): ?>
                             <div class="sb-card-btn">
-                                <a target="<?php echo esc_attr($website_link['target']); ?>" href="<?php echo esc_url($website_link['url']); ?>">
+                                <a target="<?php echo esc_attr($website_link['target']); ?>"
+                                    href="<?php echo esc_url($website_link['url']); ?>">
                                     <?php echo wp_kses_post($website_link['title']); ?>
                                 </a>
                             </div>
