@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
+
 add_action('after_setup_theme', 'salon_theme_setup');
 function salon_theme_setup()
 {

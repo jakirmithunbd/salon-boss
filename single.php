@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+
+if( ! defined('ABSPATH' )) {
+    exit('Direct File access not allow!');
+}
+
+get_header(); ?>
 <section class="hero-single-blog hero-bg">
     <div class="container">
         <div class="blog-hero-content text-center">

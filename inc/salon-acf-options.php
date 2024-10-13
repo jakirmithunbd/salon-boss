@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
+
 // Check if function exists and hook into ACF initialization.
 if (function_exists('acf_add_options_page')) {
 

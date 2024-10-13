@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
+
 function salon_enqueue_scripts()
 {
 
