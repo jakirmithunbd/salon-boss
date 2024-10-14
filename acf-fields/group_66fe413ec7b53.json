@@ -138,6 +138,28 @@
                                     "parent_repeater": "field_66fe3ed78b322"
                                 },
                                 {
+                                    "key": "field_67052d6accbc3",
+                                    "label": "Color",
+                                    "name": "color",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Green | Enable to pink",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui_on_text": "Pink",
+                                    "ui_off_text": "Green",
+                                    "ui": 1,
+                                    "parent_repeater": "field_66fe3ed78b322"
+                                },
+                                {
                                     "key": "field_6704d1be70c6e",
                                     "label": "Enable Icon",
                                     "name": "enable_icon",
@@ -160,6 +182,36 @@
                                     "parent_repeater": "field_66fe3ed78b322"
                                 },
                                 {
+                                    "key": "field_6703ca0a59f47",
+                                    "label": "Button Type",
+                                    "name": "button_type",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Default: Call Button | Enable to show service button",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_6704d1be70c6e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "allow_in_bindings": 1,
+                                    "ui_on_text": "Service",
+                                    "ui_off_text": "Call",
+                                    "ui": 1,
+                                    "parent_repeater": "field_66fe3ed78b322"
+                                },
+                                {
                                     "key": "field_66fe47f1f5f7f",
                                     "label": "Icon Alignment",
                                     "name": "icon_alignment",
@@ -170,7 +222,7 @@
                                     "conditional_logic": [
                                         [
                                             {
-                                                "field": "field_66fe47bef5f7e",
+                                                "field": "field_6704d1be70c6e",
                                                 "operator": "==",
                                                 "value": "1"
                                             }
@@ -186,50 +238,6 @@
                                     "allow_in_bindings": 0,
                                     "ui_on_text": "Right",
                                     "ui_off_text": "Left",
-                                    "ui": 1,
-                                    "parent_repeater": "field_66fe3ed78b322"
-                                },
-                                {
-                                    "key": "field_6703ca0a59f47",
-                                    "label": "Button Type",
-                                    "name": "button_type",
-                                    "aria-label": "",
-                                    "type": "true_false",
-                                    "instructions": "Default: Call Button | Enable to show service button",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 1,
-                                    "allow_in_bindings": 1,
-                                    "ui_on_text": "Service",
-                                    "ui_off_text": "Call",
-                                    "ui": 1,
-                                    "parent_repeater": "field_66fe3ed78b322"
-                                },
-                                {
-                                    "key": "field_67052d6accbc3",
-                                    "label": "Color",
-                                    "name": "color",
-                                    "aria-label": "",
-                                    "type": "true_false",
-                                    "instructions": "Default: Green | Enable to pink",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "allow_in_bindings": 0,
-                                    "ui_on_text": "Pink",
-                                    "ui_off_text": "Green",
                                     "ui": 1,
                                     "parent_repeater": "field_66fe3ed78b322"
                                 }
@@ -493,5 +501,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728840843
+    "modified": 1728881576
 }

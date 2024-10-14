@@ -9,12 +9,8 @@
 .hero-home {
     margin-top: 30px;
     &::before {
-        top: 230px;
+        top: 120px;
         background-image: url(../images/Salon-Boss-hreo-home-bg.png);
-        
-        @include minbreakpoint(1441) {
-            height: 575px;
-        }
     }
     .sb-row {
         gap: 80px;
@@ -2668,8 +2664,14 @@
     }
 
     .sb-row {
-        flex-direction: column;
 
+
+        @include breakpoint(1024) {
+            justify-content: left;
+        }
+        @include breakpoint(575) {
+            justify-content: center;
+        }
         .sb-hero-image {
             width: 100%;
             max-width: 460px;
@@ -2678,9 +2680,17 @@
             width: 100%;
             max-width: 825px;
 
-            ul {
+            @include breakpoint(1024) {
+                max-width: 100%;
+            }
+
+            .audit-keypoints {
                 gap: 8px;
                 padding-top: 10px;
+
+                @include breakpoint(575) {
+                    justify-content: center
+                }
                 
                 li {
                     @include font(12, 18);
@@ -2697,6 +2707,22 @@
                     }
 
                 }
+            }
+        }
+
+        &.media_top,
+        &.media_bottom {
+            justify-content: center;
+
+            .audit-keypoints {
+                justify-content: center;
+            }
+        }
+    }
+    &.hero-without-image {
+        .sb-row {
+            .audit-keypoints {
+                justify-content: center;
             }
         }
     }
