@@ -124,7 +124,6 @@ if (have_rows('resources_list_part')):
                     </div>
                 </div>
             </section><!-- Sb resources_special -->
-
             <?php
         endif;
     endwhile;

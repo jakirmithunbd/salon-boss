@@ -3180,6 +3180,9 @@
                             @include font(20, 32);
                         }
                     }
+                    .sub-title-icon-wrapper {
+                        gap: 10px;
+                    }
                     h5 {
                         @include font(22, 34);
                         color: $primary;

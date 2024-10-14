@@ -1415,6 +1415,8 @@ section {
             .sb-hero-content {
                 width: 100%;
                 max-width: 1160px;
+                text-align: center;
+                
                 .hero-badge {
                     justify-content: center;
                 }
@@ -2058,4 +2060,10 @@ section:has(.sb-video.video-popup-active) {
             color: #fff;
         }
     }
+}
+
+.sb-preloader {
+    width: 100px;
+    height: 100px;
+    margin: auto;
 }
