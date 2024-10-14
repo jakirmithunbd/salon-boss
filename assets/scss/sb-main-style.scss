@@ -1243,10 +1243,18 @@
                 }
             }
         }
+        &.image-position-left {
+            @include minbreakpoint(769) {
+                padding-right: 150px;
+               }
+        }
         &.image-position-right {
             margin-left: 0;
             margin-top: 0;
             margin-right: 140px;
+           @include minbreakpoint(769) {
+            padding-left: 150px;
+           }
 
             .sb-card-contents-wrapper {
 

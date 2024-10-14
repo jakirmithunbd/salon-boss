@@ -51,9 +51,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "138"
+                "value": "page-template\/frontpage.php"
             }
         ],
         [
@@ -61,6 +61,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-template\/t_book-discovery-call.php"
             }
         ]
     ],
@@ -75,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728644670
+    "modified": 1728907154
 }
