@@ -336,7 +336,7 @@
                             "label": "Quote",
                             "name": "quote",
                             "aria-label": "",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -346,11 +346,11 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 5,
-                            "placeholder": "",
-                            "new_lines": "",
+                            "allow_in_bindings": 1,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
                             "parent_repeater": "field_670d096aeebb7"
                         }
                     ]
@@ -378,5 +378,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728907822
+    "modified": 1728908076
 }

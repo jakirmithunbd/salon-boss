@@ -22,7 +22,7 @@ if ($common_author):
                 <div class="sb-author-card-content flex-center flex-col text-center">
                     <h3 class="sb-author-name"><?php echo esc_html($name ?? ''); ?></h3>
                     <h5 class="sb-suthor-title"><?php echo esc_html($position_title ?? ''); ?></h5>
-                    <p><?php echo wp_kses_post($quote ); ?></p>
+                    <?php echo wp_kses_post($quote ); ?>
                 </div>
             </div>
         </div><!-- Sb Author Card  -->
