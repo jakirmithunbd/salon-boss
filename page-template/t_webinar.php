@@ -9,6 +9,7 @@ get_header(); ?>
 $hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 $video = $media['video'];
+$webinar_types = get_field('audience_types');
 
 if (!empty($hero)):
     $sec_class = empty($media['image'] || $video) ? 'hero-without-image' : ''; ?>
@@ -16,7 +17,9 @@ if (!empty($hero)):
     <div class="container">
 
         <div class="text-center">
-            <h2>Salon Suites Marketing Webinar</h2>
+            <h1><?php echo esc_html($webinar_types['audience_single']); ?>
+                <?php echo !empty($webinar_types['heading']) ? esc_html($webinar_types['heading']) : 'Marketing Webinar'; ?>
+            </h1>
         </div>
 
         <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
@@ -88,14 +91,24 @@ if (!empty($hero)):
 
                         </div>
                     <?php endif; ?>
-                    <?php printf('<h1>%s</h1>', wp_kses_post($content['title'])); ?>
-                    <?php printf('<h4>%s</h4>', wp_kses_post($content['sub_title'])); ?>
-                    <?php printf('<p>%s</p>', wp_kses_post($content['description'])); ?>
+                    <?php
+                    if (!empty($content['title'])) {
+                        printf('<h2>%s</h2>', wp_kses_post($content['title']));
+                    }
 
-                    <?php $buttons = $content['buttons_group']; ?>
+                    if (!empty($content['sub_title'])) {
+                        printf('<h4>%s</h4>', wp_kses_post($content['sub_title']));
+                    }
+
+                    if (!empty($content['description'])) {
+                        printf('<p>%s</p>', wp_kses_post($content['description']));
+                    }
+                    ?>
+
+                    <?php $buttons = $content['buttons_group']; if ($buttons): ?>
 
                     <div class="sb-buttons d-flex">
-                        <?php if ($buttons):
+                        <?php
                             foreach ($buttons as $f_button):
                                 $icon_type = '';
                                 $icon_position = '';
@@ -113,8 +126,9 @@ if (!empty($hero)):
                                     class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
                                     <?php echo esc_html($f_button['link']['title']); ?>
                                 </a>
-                            <?php endforeach; endif; ?>
+                            <?php endforeach; ?>
                     </div>
+                        <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -122,32 +136,81 @@ if (!empty($hero)):
 </section>
 <?php endif; ?>
 <!-- Hero Common Template  -->
-
-
 <section class="sb-common-template-form">
     <div class="container">
         <div class="sb-common-template-form-sidebox d-flex flex-wrap">
+            <?php
+            $webinar_feature_list = get_field('webinar_feature_list');
+            $register_info = get_field('register_info');
 
-            <div class="sb-form">
-                <div class="sb-form-title text-center">
-                    <h2>Register Now</h2>
-                    <h4>Next Webinar Is in 14 Days, 9 Hour & 10 Minutes</h4>
+            if (!empty($register_info)) :
+                ?>
+
+                <div class="sb-form">
+                    <div class="sb-form-title text-center">
+                        <?php if (!empty($register_info['title'])) : ?>
+                            <h2><?php echo esc_html($register_info['title']); ?></h2>
+                        <?php endif; ?>
+
+                        <?php
+                        // Assuming 'webinar_countdown' holds a date in 'Y-m-d H:i:s' format (e.g., 2024-10-30 14:00:00)
+                        $webinar_data_time = $register_info['webinar_countdown'];
+                        var_dump($webinar_data_time);
+                        $form_shortcode = $register_info['form_shortcode'] ?? '';
+                        $webinar_description = $register_info['webinar_description'] ?? 'Next Webinar Is in 14 Days, 9 Hours & 10 Minutes';
+                        ?>
+
+                        <?php if (!empty($webinar_data_time)) : ?>
+                            <h4 id="countdown-timer"></h4>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Set the date for the webinar countdown
+                                    var countdownDate = new Date('<?php echo esc_js($webinar_data_time); ?>').getTime();
+console.log(countdownDate)
+                                    // Update the countdown every 1 second
+                                    var x = setInterval(function() {
+                                        var now = new Date().getTime();
+                                        var distance = countdownDate - now;
+
+                                        // Time calculations for days, hours, minutes, and seconds
+                                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                        // Display the result
+                                        document.getElementById("countdown-timer").innerHTML =
+                                            days + " Days, " + hours + " Hours, " + minutes + " Minutes, " + seconds + " Seconds ";
+
+                                        // If the countdown is over, display a message
+                                        if (distance < 0) {
+                                            clearInterval(x);
+                                            document.getElementById("countdown-timer").innerHTML = "Webinar is Live!";
+                                        }
+                                    }, 1000);
+                                });
+                            </script>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php
+                    // Output the form if shortcode exists
+                    if (!empty($form_shortcode)) {
+                        echo do_shortcode($form_shortcode);
+                    }
+                    ?>
+
+                    <p class="sb-form-condition-text text-center-mobile">
+                        <?php echo esc_html($webinar_description); ?>
+                    </p>
                 </div>
 
-                <?php echo do_shortcode('[gravityform id="4" title="false"]'); ?>
-
-                <p class="sb-form-condition-text text-center-mobile">
-                    By submitting this form, you agree to our privacy policy and terms & conditions.
-                    You also agree to be contacted by Salon Boss via email, sms & phone. We never
-                    ell your data. You may opt-out at any time.
-                </p>
-            </div>
+            <?php endif; ?>
 
             <div class="sb-common-template-sidebox">
 
                 <div class="sb-webinar-feature-list d-flex flex-wrap text-center-mobile">
                     <?php
-                    $webinar_feature_list = get_field('webinar_feature_list');
                     if ($webinar_feature_list):
                         foreach ($webinar_feature_list as $list):
                             $list_title = $list['title'];
