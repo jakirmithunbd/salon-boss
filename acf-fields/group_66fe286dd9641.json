@@ -1059,7 +1059,7 @@
         },
         {
             "key": "field_6708a1d67a834",
-            "label": "contact info",
+            "label": "Contact info",
             "name": "contact_info",
             "aria-label": "",
             "type": "group",
@@ -1550,5 +1550,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728717068
+    "modified": 1728892241
 }

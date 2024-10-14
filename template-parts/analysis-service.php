@@ -23,7 +23,7 @@
                             echo $service_image_size ? " image-size-small" : ""; ?>">
                             <div class="sb-image-box-media">
                                 <?php
-                                $sb_list_image = $list['image']['url'] ? esc_url($list['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
+                                    $sb_list_image = $list['image'] ? esc_url($list['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
                                 ?>
                                 <img src="<?php echo $sb_list_image; ?>" alt="<?php echo esc_attr($list['image']['title']); ?>" />
                             </div>
