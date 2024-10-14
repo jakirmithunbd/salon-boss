@@ -1,5 +1,7 @@
 <?php
-
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
 // Register Custom Post Type for Services
 function sb_custom_post_type_services()
 {

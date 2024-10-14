@@ -1,4 +1,9 @@
 <?php
+
+if( ! defined('ABSPATH' )) {
+    die('Direct File access not allow!');
+}
+
 get_header(); ?>
 
 <?php get_template_part('template-parts/page-banner'); ?>

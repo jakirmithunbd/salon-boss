@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 

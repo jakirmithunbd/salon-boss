@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+
+if( ! defined('ABSPATH' )) {
+    die('Direct File access not allow!');
+}
+
+get_header(); ?>
 
 <?php
 

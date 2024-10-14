@@ -3,6 +3,105 @@
     "title": "Webinar Page",
     "fields": [
         {
+            "key": "field_670c04f9f34a9",
+            "label": "Audience Types",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_670c0509f34aa",
+            "label": "Audience Types",
+            "name": "audience_types",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_670c052af34ab",
+                    "label": "Audience Single",
+                    "name": "audience_single",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your text",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_670c0538f34ac",
+                    "label": "Audience Plural",
+                    "name": "audience_plural",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your text",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_670c05fb96aee",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your text",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
             "key": "field_67091e65f3c4a",
             "label": "Webinar Feature",
             "name": "",
@@ -19,6 +118,106 @@
             "placement": "left",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_670c084f6c7a1",
+            "label": "Register Info",
+            "name": "register_info",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_670c08c26c7a2",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your text",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_670c08de6c7a3",
+                    "label": "Form Shortcode",
+                    "name": "form_shortcode",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your shortcode",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_670c09396c7a4",
+                    "label": "Webinar Countdown",
+                    "name": "webinar_countdown",
+                    "aria-label": "",
+                    "type": "date_time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y g:i a",
+                    "return_format": "d\/m\/Y g:i a",
+                    "first_day": 1,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_670c09756c7a5",
+                    "label": "Webinar Description",
+                    "name": "webinar_description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
         },
         {
             "key": "field_67091b2b6f92d",
@@ -382,10 +581,15 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": ["service"],
+            "post_type": [
+                "service"
+            ],
             "post_status": "",
             "taxonomy": "",
-            "filters": ["search", "taxonomy"],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
             "return_format": "id",
             "min": "",
             "max": "",
@@ -400,7 +604,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-template/t_webinar.php"
+                "value": "page-template\/t_webinar.php"
             }
         ]
     ],
@@ -413,5 +617,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728721536
+    "modified": 1728842717
 }

@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
+
 add_action("wp_ajax_sb_filter_posts", "sb_filter_posts_function");
 add_action("wp_ajax_nopriv_sb_filter_posts", "sb_filter_posts_function");
 function sb_sanitize_array($input)

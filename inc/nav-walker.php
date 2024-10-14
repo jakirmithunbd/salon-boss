@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+    die('Direct File access not allow!');
+}
+
 class CCWalkernav extends Walker_Nav_Menu
 {
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
