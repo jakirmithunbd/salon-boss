@@ -1251,16 +1251,30 @@ section {
                 justify-content: center;
             }
         }
-        &.media_bottom {
-            flex-direction: column-reverse;
-
+        &.media_bottom,
+        &.media_top {
+            .sb-hero-video {
+                width: 100%;
+                max-width: 725px;
+            }
             .sb-hero-content {
                 @extend .text-center;
                 width: 100%;
                 max-width: 1160px;
+
+                .sb-buttons {
+                    justify-content: center;
+                }
             }
             .hero-badge {
                 justify-content: center;
+            }
+
+        }
+        &.media_bottom {
+            justify-content: center;
+            @include minbreakpoint(1025) {
+                flex-direction: column-reverse;
             }
         }
 
@@ -1270,7 +1284,6 @@ section {
 
         @include breakpoint(1024) {
             flex-wrap: wrap;
-            flex-direction: column-reverse;
             gap: 40px;
         }
         @include breakpoint(575) {

@@ -9,10 +9,14 @@ get_header(); ?>
 $hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 $video = $media['video'];
+$image = $media['image'];
+
+$video_on = $media['is_video'] == true;
+$image_on = $media['is_video'] == false;
 $webinar_types = get_field('audience_types');
 
 if (!empty($hero)):
-    $sec_class = empty($media['image'] || $video) ? 'hero-without-image' : ''; ?>
+    $sec_class = empty($image_on && $image || $video_on && $video) ? 'hero-without-image' : ''; ?>
 <section class="hero-sb-common-template common-hero hero-bg <?php echo esc_attr($sec_class); ?>">
     <div class="container">
 
@@ -25,9 +29,8 @@ if (!empty($hero)):
         <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
             <?php
-            if ($media['image'] || $video):
 
-                if (!$media['is_video']):
+                if ($image_on && $image):
                     $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
                     ?>
 
@@ -43,7 +46,9 @@ if (!empty($hero)):
                         <?php endif; ?>
                     </div>
 
-                <?php else:
+                <?php endif;
+
+                if($video_on && $video):
 
                     $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
                     ?>
@@ -75,7 +80,7 @@ if (!empty($hero)):
                         <?php endif; ?>
                     </div>
 
-                <?php endif; endif; ?>
+                <?php endif; ?>
 
             <?php
             $text_center = !$media['image'] ? 'text-center' : '';
