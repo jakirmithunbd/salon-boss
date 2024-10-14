@@ -153,10 +153,8 @@ if (!empty($hero)):
                         <?php endif; ?>
 
                         <?php
-                        // Assuming 'webinar_countdown' holds a date in 'Y-m-d H:i:s' format (e.g., 2024-10-30 14:00:00)
                         $webinar_data_time = $register_info['webinar_countdown'];
-                        var_dump($webinar_data_time);
-                        $form_shortcode = $register_info['form_shortcode'] ?? '';
+                        $form_id = $register_info['form_shortcode_id'] ?? '';
                         $webinar_description = $register_info['webinar_description'] ?? 'Next Webinar Is in 14 Days, 9 Hours & 10 Minutes';
                         ?>
 
@@ -164,25 +162,35 @@ if (!empty($hero)):
                             <h4 id="countdown-timer"></h4>
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
-                                    // Set the date for the webinar countdown
-                                    var countdownDate = new Date('<?php echo esc_js($webinar_data_time); ?>').getTime();
-console.log(countdownDate)
-                                    // Update the countdown every 1 second
-                                    var x = setInterval(function() {
-                                        var now = new Date().getTime();
-                                        var distance = countdownDate - now;
+                                    const acfDate = '<?php echo esc_js($webinar_data_time); ?>';
+                                    const parts = acfDate.split(' ');
+                                    const dateParts = parts[0].split('/');
+                                    const timePart = parts[1];
+                                    const ampm = parts[2];
+                                    const timeParts = timePart.split(':');
+                                    let hours = parseInt(timeParts[0]);
+                                    const minutes = timeParts[1];
 
-                                        // Time calculations for days, hours, minutes, and seconds
-                                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                    if (ampm === 'pm' && hours < 12) {
+                                        hours += 12;
+                                    }
+                                    if (ampm === 'am' && hours === 12) {
+                                        hours = 0;
+                                    }
 
-                                        // Display the result
-                                        document.getElementById("countdown-timer").innerHTML =
-                                            days + " Days, " + hours + " Hours, " + minutes + " Minutes, " + seconds + " Seconds ";
+                                    const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]} ${hours}:${minutes}:00`;
+                                    const countdownDate = new Date(formattedDate).getTime();
 
-                                        // If the countdown is over, display a message
+                                    const x = setInterval(function() {
+                                        const now = new Date().getTime();
+                                        const distance = countdownDate - now;
+                                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                        const countdownMessage = `Next Webinar Is in ${days} Days, ${hours} Hours, ${minutes} Minutes`;
+
+                                        document.getElementById("countdown-timer").innerHTML = countdownMessage;
+
                                         if (distance < 0) {
                                             clearInterval(x);
                                             document.getElementById("countdown-timer").innerHTML = "Webinar is Live!";
@@ -190,13 +198,14 @@ console.log(countdownDate)
                                     }, 1000);
                                 });
                             </script>
+                        
                         <?php endif; ?>
                     </div>
 
                     <?php
                     // Output the form if shortcode exists
-                    if (!empty($form_shortcode)) {
-                        echo do_shortcode($form_shortcode);
+                    if (!empty($form_id)) {
+                        echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
                     }
                     ?>
 

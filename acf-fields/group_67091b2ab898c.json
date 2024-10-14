@@ -158,8 +158,8 @@
                 },
                 {
                     "key": "field_670c08de6c7a3",
-                    "label": "Form Shortcode",
-                    "name": "form_shortcode",
+                    "label": "Form Shortcode ID",
+                    "name": "form_shortcode_id",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -221,7 +221,7 @@
         },
         {
             "key": "field_67091b2b6f92d",
-            "label": "Webinar Feature List",
+            "label": "Webinar Feature",
             "name": "webinar_feature_list",
             "aria-label": "",
             "type": "repeater",
@@ -278,7 +278,8 @@
                     },
                     "message": "",
                     "default_value": 0,
-                    "ui_on_text": "Learg",
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "Large",
                     "ui_off_text": "Small",
                     "ui": 1,
                     "parent_repeater": "field_67091b2b6f92d"
@@ -293,12 +294,13 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -314,7 +316,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "10",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -327,6 +329,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
+                    "allow_in_bindings": 1,
                     "preview_size": "thumbnail",
                     "parent_repeater": "field_67091b2b6f92d"
                 },
@@ -373,7 +376,7 @@
         },
         {
             "key": "field_6709493478224",
-            "label": "Webinar Topics Area",
+            "label": "",
             "name": "webinar_topics_area",
             "aria-label": "",
             "type": "group",
@@ -465,7 +468,7 @@
                 },
                 {
                     "key": "field_6709499c78227",
-                    "label": "Accodaians",
+                    "label": "Accordions",
                     "name": "",
                     "aria-label": "",
                     "type": "tab",
@@ -483,7 +486,7 @@
                 },
                 {
                     "key": "field_670949af78228",
-                    "label": "Accodaians",
+                    "label": "Accordions",
                     "name": "accodaians",
                     "aria-label": "",
                     "type": "repeater",
@@ -505,7 +508,7 @@
                     "sub_fields": [
                         {
                             "key": "field_670949bd78229",
-                            "label": "Accodaians Title",
+                            "label": "Title",
                             "name": "accodaians_title",
                             "aria-label": "",
                             "type": "text",
@@ -519,6 +522,7 @@
                             },
                             "default_value": "",
                             "maxlength": "",
+                            "allow_in_bindings": 1,
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -526,7 +530,7 @@
                         },
                         {
                             "key": "field_67094a207822a",
-                            "label": "Accodaians Description",
+                            "label": "Description",
                             "name": "accodaians_description",
                             "aria-label": "",
                             "type": "wysiwyg",
@@ -539,6 +543,7 @@
                                 "id": ""
                             },
                             "default_value": "",
+                            "allow_in_bindings": 1,
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1,
@@ -569,7 +574,7 @@
         },
         {
             "key": "field_670a2c717d790",
-            "label": "Select Servies",
+            "label": "Select Services",
             "name": "select_servies",
             "aria-label": "",
             "type": "relationship",
@@ -617,5 +622,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728842717
+    "modified": 1728889611
 }
