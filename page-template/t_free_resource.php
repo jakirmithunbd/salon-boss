@@ -26,8 +26,6 @@ if (!empty($hero)):
         <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
             <?php
-            if ($image_on && $image || $video_on && $video):
-
                 if ($image_on && $image):
                     $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
                     ?>
@@ -78,7 +76,7 @@ if (!empty($hero)):
                         <?php endif; ?>
                     </div>
 
-                <?php endif; endif; ?>
+                <?php endif; ?>
 
             <?php
             $content = $hero['content'];
