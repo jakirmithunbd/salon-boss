@@ -1,6 +1,6 @@
 
 <?php
-$common_author = get_field('authors', get_queried_object_id());
+$common_author = get_field('team_area', get_queried_object_id());
 if ($common_author):
     $meambers = $common_author['meambers'];
     

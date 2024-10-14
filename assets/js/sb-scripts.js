@@ -184,7 +184,6 @@ if (sb_counter) {
 
 (function ($) {
 
-    // Accordian start 
     $(document).ready(function () {
         function sbAccordianToggle() {
             // Select all accordion wrappers
@@ -199,6 +198,23 @@ if (sb_counter) {
                     // Open the first accordion item by default
                     $(frequentlyQs[0]).addClass("sb-accordian-active");
                     $(answerTitle[0]).show();
+
+                    // Set a current index to track which item is active
+                    let currentIndex = 0;
+
+                    // Function to activate the next accordion item
+                    function activateNextItem() {
+                        // Hide the current item and remove active class
+                        $(answerTitle[currentIndex]).slideUp(300);
+                        $(frequentlyQs[currentIndex]).removeClass("sb-accordian-active");
+
+                        // Move to the next index
+                        currentIndex = (currentIndex + 1) % frequentlyQs.length; // Loop back to the first item when it reaches the end
+
+                        // Show the next item and add active class
+                        $(frequentlyQs[currentIndex]).addClass("sb-accordian-active");
+                        $(answerTitle[currentIndex]).slideDown(300);
+                    }
 
                     // Loop through each accordion header and set click event
                     frequentlyQs.forEach((item, i) => {
@@ -217,8 +233,14 @@ if (sb_counter) {
                                 $(answerTitle[i]).slideUp(300);
                                 $(item).removeClass("sb-accordian-active");
                             }
+
+                            // Update the currentIndex when clicked
+                            currentIndex = i;
                         });
                     });
+
+                    // Auto-repeat the accordion after a delay
+                    setInterval(activateNextItem, 5000); // Change every 5 seconds (5000 ms)
                 }
             });
         }
