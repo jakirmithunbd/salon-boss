@@ -1479,6 +1479,8 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #2F2F2F;
+    @extend .relative;
+    overflow: hidden;
 
     .sb-video-play-btn {
         @extend .relative, .transition;
@@ -1519,89 +1521,82 @@ section {
     }
 
     .sb-video-frame {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
+        position: absolute;
+        width: 100%;
+        height: 100%;
         left: 0;
-        bottom: 600%;
-        background: rgba(118, 110, 232, 0.9);
-        z-index: 99999;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
         @extend .relative, .transition;
 
         .sb-video-wrapper {
-            width: 70%;
-            background: $primary;
+            width: 100%;
+            height: 100%;
             border-radius: 16px;
             @extend .d-flex;
-            padding: 10px;
             position: absolute;
             margin: 0 auto;
             left: 0;
             right: 0;
-            top: 10%;
-
-
-            @include breakpoint(1024) {
-                width: 80%;
-            }
-            @include breakpoint(768) {
-                width: 90%;
-                top: 15%;
-                padding: 5px;
-            }
+            top: 0;
 
             iframe {
                 width: 100%;
                 height: auto;
-                border-radius: 16px;
                 aspect-ratio: 16/9;
             }
-            .sb-video-close-btn {
-                width: 30px;
-                height: 23px;
-                background: transparent;
-                @extend .absolute, .d-flex, .cursor-pointer;
-                top: 0;
-                right: -40px;
 
-                @include breakpoint(768) {
-                    right: 0;
-                    top: -40px;
-                }
-
-                span {
-                    width: 100%;
-                    height: 4px;
-                    display: block;
-                    background: #ffffff;
-                    position: absolute;
-                    left: 0;
-                    top: 10px;
-                    @extend .transition;
-
-                    &:first-child {
-                        transform: rotate(45deg);
-                    }
-                    &:last-child {
-                        transform: rotate(-45deg);
-                    }
-                }
-
-                &:hover {
-                    span {
-                        background: red;
-                    }
-                }
-            }
+            //.sb-video-close-btn {
+            //    width: 30px;
+            //    height: 23px;
+            //    background: transparent;
+            //    @extend .absolute, .d-flex, .cursor-pointer;
+            //    top: 0;
+            //    right: -40px;
+            //
+            //    @include breakpoint(768) {
+            //        right: 0;
+            //        top: -40px;
+            //    }
+            //
+            //    span {
+            //        width: 100%;
+            //        height: 4px;
+            //        display: block;
+            //        background: #ffffff;
+            //        position: absolute;
+            //        left: 0;
+            //        top: 10px;
+            //        @extend .transition;
+            //
+            //        &:first-child {
+            //            transform: rotate(45deg);
+            //        }
+            //        &:last-child {
+            //            transform: rotate(-45deg);
+            //        }
+            //    }
+            //
+            //    &:hover {
+            //        span {
+            //            background: red;
+            //        }
+            //    }
+            //}
         }
     }
 
     &.video-popup-active {
 
         .sb-video-frame {
-            bottom: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
+        .sb-video-play-btn {
+            display: none;
+        }
     }
 }
 section:has(.sb-video.video-popup-active) {
