@@ -79,12 +79,17 @@
                     letter-spacing: 0.16px;
                 }
                 .trusted-customer-logo {
-                    a {
-                        display: inline-flex;
-                        padding: 0 20px;
+                    .trusted-logo-item {
+                        padding: 0 10px;
 
-                        @include breakpoint(575) {
+                        a {
+                            min-height: 52px;
+                            @extend .flex-center;
                             padding: 0 10px;
+    
+                            @include breakpoint(575) {
+                                padding: 0;
+                            }
                         }
                     }
                 }

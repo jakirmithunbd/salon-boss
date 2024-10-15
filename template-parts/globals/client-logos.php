@@ -9,7 +9,7 @@ if(!empty($client_logos)) :
             <?php
             foreach ($client_logos as $logo) {
                 if (!empty($logo['website']) && !empty($logo['logo']['url'])) {
-                    printf('<a target="_blank" href="%s"><img src="%s" alt="%s" /></a>',
+                    printf('<div class="trusted-logo-item"><a target="_blank" href="%s"><img src="%s" alt="%s" /></a></div>',
                         esc_url($logo['website']),
                         esc_url($logo['logo']['url']),
                         esc_attr($logo['logo']['alt'] ?? 'Client Logo')
