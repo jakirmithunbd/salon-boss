@@ -11,7 +11,7 @@
                 $count = count($explode_number);
 
                 $prefix = $count > 1 && is_numeric($explode_number[1]) ? esc_html($explode_number[0]) : '';
-                $amount = is_numeric($item['number_text']) ? esc_html($item['number_text']) : ($count > 1 ? esc_html($explode_number[1]) : esc_html($explode_number[0]));
+                $amount = is_numeric($item['number_text']) ? esc_html($item['number_text']) : (($count > 1 && is_numeric($explode_number[1])) ? esc_html($explode_number[1]) : esc_html($explode_number[0]));
                 $suffix = $count === 3 ? esc_html($explode_number[2]) : ($count === 2 && !is_numeric($explode_number[1]) ? esc_html($explode_number[1]) : '');
 
                 printf(
