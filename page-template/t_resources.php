@@ -128,7 +128,7 @@ if (have_rows('resources_list_part')):
         endif;
     endwhile;
 else:
-    printf('<h4>Please add section!</h4>');
+    printf('<h4>%s</h4>', __('Please add section!', 'sb'));
 endif;
 ?>
 

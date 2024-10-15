@@ -11,7 +11,7 @@ get_header(); ?>
 <section class="sb-apppointment">
     <div class="container">
         <div class="sb-appointment-form">
-            <?php echo $appointment_page_content;?>
+            <?php echo wp_kses_post($appointment_page_content);?>
         </div>
     </div>
 </section><!-- Appointment  -->
