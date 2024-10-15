@@ -1050,6 +1050,59 @@
     }
 }
 
+// Client Logo Slider 
+.sb-client-logo-section {
+    margin: 60px 0 40px;
+
+    @include breakpoint(11024) {
+        margin-top: 50px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .container {
+        max-width: 1410px;
+
+        .sb-client-logo-title-wrappper {
+            background: #171717;
+            border-bottom: 1px solid $primary;
+            border-radius: 30px;
+            padding: 20px 20px 30px;
+
+            h3 {
+                @include font(22, 34);
+                color: #fff;
+                margin-bottom: 40px;
+
+                @include breakpoint(768) {
+                    @include font(20, 32);
+                    margin-bottom: 30px;
+                }
+            }
+            .sb-client-logo-slider {
+                .sb-client-logo-item {
+                    padding: 0 20px;
+                    
+                    @include breakpoint(768) {
+                        padding: 0 10px;
+                    }
+
+                    a {
+                        padding: 0 10px;
+                        min-height: 55px;
+                        @extend .flex-center;
+                        
+                        @include breakpoint(575) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 // ********** Service Page Style *********** //
 // service hero style 

@@ -317,6 +317,48 @@ if (sb_counter) {
         ]
     });
 
+    // trusted-customer-logo slider
+    $('.sb-client-logo-slider').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 427,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
     // Initialize an empty array to store selected category slugs
 
 
