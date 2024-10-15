@@ -46,6 +46,7 @@ get_header(); ?>
                                 foreach ($hero_banner_buttons as $f_button):
                                     $icon_type = '';
                                     $icon_position = '';
+                                    $color = !empty($f_button['color']) ? 'pink' : 'green';
 
                                     if (!empty($f_button['enable_icon'])) {
                                         $icon_type = !empty($f_button['button_type']) ? 'button-icon-scissor' : 'button-icon-phone';
@@ -57,7 +58,7 @@ get_header(); ?>
 
                                     <a href="<?php echo esc_url($f_button['link']['url']); ?>"
                                         target="<?php echo esc_attr($f_button['link']['target']); ?>"
-                                        class="sb-button button-bg-green <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
+                                        class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
                                         <?php echo esc_html($f_button['link']['title']); ?>
                                     </a>
                                 <?php endforeach; endif; ?>
