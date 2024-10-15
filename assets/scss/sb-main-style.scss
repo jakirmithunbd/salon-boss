@@ -1550,18 +1550,18 @@
             width: 100%;
             max-width: 855px;
 
-            .sb-video {
-                min-height: 510px;
-                @include breakpoint(1024) {
-                    min-height: 400px;
-                }
-                @include breakpoint(768) {
-                    min-height: 300px;
-                }
-                @include breakpoint(575) {
-                    min-height: 220px;
-                }
-            }
+            // .sb-video {
+            //     min-height: 510px;
+            //     @include breakpoint(1024) {
+            //         min-height: 400px;
+            //     }
+            //     @include breakpoint(768) {
+            //         min-height: 300px;
+            //     }
+            //     @include breakpoint(575) {
+            //         min-height: 220px;
+            //     }
+            // }
         }
         .sb-hero-content {
             width: 100%;
@@ -2533,23 +2533,9 @@
         flex-direction: column-reverse;
 
         .sb-hero-video {
-            width: 100%;
-            max-width: 855px;
+            // width: 100%;
+            // max-width: 855px;
 
-            .sb-card {
-                .sb-video {
-                    min-height: 510px;
-                    @include breakpoint(1024) {
-                        min-height: 400px;
-                    }
-                    @include breakpoint(768) {
-                        min-height: 300px;
-                    }
-                    @include breakpoint(575) {
-                        min-height: 220px;
-                    }
-                }
-            }
         }
         .sb-hero-content {
             width: 100%;
