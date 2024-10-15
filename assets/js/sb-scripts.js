@@ -25,70 +25,70 @@ if (common_header) {
 };
 
 
-const sb_custom_slider = document.querySelector('.sb-service-slider');
-if (sb_custom_slider) {
-
-    function initTextSlider(customSpeed) {
-        var slider = document.querySelector('.sb-service-slider');
-        var items = slider.getElementsByTagName('p');
-        var isPaused = false;
-        var itemWidth = items[0].offsetWidth + 20;
-        var sliderWidth = itemWidth * items.length;
-
-        var innerSlider = document.createElement('div');
-        innerSlider.classList.add('inner-slider');
-
-        // Clone the items to simulate an infinite scroll
-        while (items.length) {
-            innerSlider.appendChild(items[0]);
-        }
-        innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
-
-        slider.appendChild(innerSlider);
-
-        Object.assign(innerSlider.style, {
-            display: 'inline-flex',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-        });
-
-        var position = 0;
-
-        function animateSlider() {
-            if (!isPaused) {
-                position -= customSpeed / 20; // Adjust speed based on customSpeed
-
-                // Seamless transition when end of original content is reached
-                if (Math.abs(position) >= sliderWidth) {
-                    position = 0;
-                }
-
-                innerSlider.style.transform = `translateX(${position}px)`;
-            }
-            requestAnimationFrame(animateSlider);
-        }
-
-        requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
-
-        slider.addEventListener('mouseenter', function () {
-            isPaused = true;
-        });
-
-        slider.addEventListener('mouseleave', function () {
-            isPaused = false;
-        });
-
-        document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                isPaused = true; 
-            } else {
-                isPaused = false;
-            }
-        });
-    }
-
-    initTextSlider(5);
-}
+// const sb_custom_slider = document.querySelector('.sb-service-slider');
+// if (sb_custom_slider) {
+//
+//     function initTextSlider(customSpeed) {
+//         var slider = document.querySelector('.sb-service-slider');
+//         var items = slider.getElementsByTagName('p');
+//         var isPaused = false;
+//         var itemWidth = items[0].offsetWidth + 20;
+//         var sliderWidth = itemWidth * items.length;
+//
+//         var innerSlider = document.createElement('div');
+//         innerSlider.classList.add('inner-slider');
+//
+//         // Clone the items to simulate an infinite scroll
+//         while (items.length) {
+//             innerSlider.appendChild(items[0]);
+//         }
+//         innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
+//
+//         slider.appendChild(innerSlider);
+//
+//         Object.assign(innerSlider.style, {
+//             display: 'inline-flex',
+//             whiteSpace: 'nowrap',
+//             position: 'relative',
+//         });
+//
+//         var position = 0;
+//
+//         function animateSlider() {
+//             if (!isPaused) {
+//                 position -= customSpeed / 20; // Adjust speed based on customSpeed
+//
+//                 // Seamless transition when end of original content is reached
+//                 if (Math.abs(position) >= sliderWidth) {
+//                     position = 0;
+//                 }
+//
+//                 innerSlider.style.transform = `translateX(${position}px)`;
+//             }
+//             requestAnimationFrame(animateSlider);
+//         }
+//
+//         requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
+//
+//         slider.addEventListener('mouseenter', function () {
+//             isPaused = true;
+//         });
+//
+//         slider.addEventListener('mouseleave', function () {
+//             isPaused = false;
+//         });
+//
+//         document.addEventListener('visibilitychange', function () {
+//             if (document.hidden) {
+//                 isPaused = true; 
+//             } else {
+//                 isPaused = false;
+//             }
+//         });
+//     }
+//
+//     initTextSlider(5);
+// }
 // Service Slider (Custom) end
 
 
@@ -265,6 +265,21 @@ if (sb_counter) {
                 }
             }
         ]
+    });
+
+    // Service slider
+    $('.sb-service-slider').slick({
+        infinite: true,
+        speed: 5000,          
+        autoplay: true,
+        autoplaySpeed: 0,      
+        cssEase: 'linear',      
+        slidesToScroll: 1,     
+        variableWidth: true,   
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        centerMode: true,     
+        arrows: false,        
     });
 
     // trusted-customer-logo slider

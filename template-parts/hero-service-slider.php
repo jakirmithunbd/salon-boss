@@ -1,6 +1,6 @@
 <section class="sb-service-slider">
     <?php
-    $service_slider = get_field('service_slider');
+    $service_slider = get_field('service_slider') ? get_field('service_slider') : get_field('service_slider', 'options');
 
     if ($service_slider && is_array($service_slider)) {
         foreach ($service_slider as $slider_item) {
@@ -9,7 +9,7 @@
             }
         }
     } else {
-        echo '<p>No services available.</p>';
+        printf('<p>%s</p>', __('No services available.', 'sb'));
     }
     ?>
 </section>
