@@ -353,7 +353,7 @@ get_header(); ?>
                             Our goal is to provide you with the knowledge and guidance on how to grow your business
                             online. `</p>
                         <ul class="unstyle flex-center flex-wrap">
-                            <li class="active">
+                            <li>
                                 <a href="#">Completely Free</a>
                             </li>
                             <li>

@@ -235,6 +235,7 @@ if (!empty($hero)):
                             <div class="sb-webinar-feature-item">
                                 <h4><?php echo esc_html($list_title ?? ''); ?></h4>
 
+                                <div class="sub-title-icon-wrapper d-flex align-center">
                                 <?php
                                 if (!empty($list_sub_title) || !empty($list_sub_logo)) {
 
@@ -253,6 +254,7 @@ if (!empty($hero)):
                                     }
                                 }
                                 ?>
+                                </div>
 
                                 <?php echo wp_kses_post($list_description ?? ''); ?>
                             </div>

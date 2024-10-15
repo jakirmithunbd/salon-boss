@@ -52,7 +52,8 @@
                 color: #fff;
             }
             p {
-                strong {
+                strong,
+                b {
                     color: #fff;
                 }
             }
@@ -124,6 +125,10 @@
         border-radius: 5px;
         min-width: 60px;
         box-shadow: 2px 2px 19px 0 rgb(0 0 0 / 35%);
+    }
+    
+    .slick-list {
+        z-index: 2; // Plaese Don't remove it 
     }
 }
 
@@ -475,6 +480,12 @@
 
         h2 {
            @extend .sb-multy-color;
+        }
+        h3 {
+            color: #fff;
+        }
+        h4 {
+            color: #fff;
         }
         p {
             @include font(16, 30);
@@ -1221,6 +1232,7 @@
         max-width: 1020px;
         margin-left: 140px;
         border: 1px solid $secondary;
+        padding-top: 30px;
 
         &.image-position-top {
             margin-left: 0;
@@ -1351,7 +1363,8 @@
                 color: #fff;
             }
             p {
-                strong {
+                strong,
+                b {
                     color: #fff;
                 }
             }
@@ -2690,8 +2703,24 @@
                 max-width: 100%;
             }
 
+            p {
+                width: 100%;
+                max-width: 780px;
+                margin: 0 auto;
+                padding-bottom: 15px;
+
+                @include font(22, 33);
+                color: #fff;
+
+                @include breakpoint(1024) {
+                    @include font(18, 30);
+                }
+                @include breakpoint(575) {
+                    @include font(16, 24);
+                }
+            }
             .audit-keypoints {
-                gap: 8px;
+                gap: 10px;
                 padding-top: 10px;
 
                 @include breakpoint(575) {
@@ -3050,6 +3079,18 @@
     @include breakpoint(768) {
         padding-bottom: 30px;
     }
+    h1 {
+        color: #fff;
+        @include font(50, 66);
+
+        @include breakpoint(1024) {
+            @include font(40, 52);
+        }
+
+        @include breakpoint(768) {
+            @include font(32, 44);
+        }
+    }
     .sb-row {
         padding-top: 70px;
 
@@ -3063,15 +3104,10 @@
             padding-top: 10px;
         }
         .sb-hero-content {
-            h1 {
-                @include font(50, 66);
-
-                @include breakpoint(1024) {
-                    @include font(40, 52);
-                }
-
-                @include breakpoint(768) {
-                    @include font(32, 44);
+            h2 {
+                color: $primary;
+                span {
+                    @extend .sb-multy-color;
                 }
             }
         }
@@ -3761,6 +3797,7 @@
                 height: 150px;
                 top: calc(50% - 75px);
                 left: 0;
+                @extend .d-flex;
 
                 @include breakpoint(575) {
                     left: calc(50% - 85px);
@@ -3769,6 +3806,7 @@
 
                 img {
                     width: 100%;
+                    object-fit: contain;
                 }
             }
             .sb-solution-card-content {

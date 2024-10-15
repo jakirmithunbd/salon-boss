@@ -34,7 +34,7 @@ $explore_services = get_field('explore_services_option', 'options');
                             <?php if (!empty($explore_services['service_links'])): ?>
                                 <ul class="unstyle flex-center flex-wrap">
                                     <?php foreach ($explore_services['service_links'] as $link): ?>
-                                        <li class="active">
+                                        <li>
                                             <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                                 <?php echo esc_html(get_the_title($link->ID)); ?>
                                             </a>

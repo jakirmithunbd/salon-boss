@@ -486,12 +486,14 @@ section {
 
     .sb-image-box-media {
         width: 25%;
+        @extend .d-flex;
 
         @include breakpoint(575) {
             width: 50%;
         }
         img {
             width: 100%;
+            object-fit: contain;
         }
     }
     .sb-image-box-content{
@@ -507,6 +509,7 @@ section {
             @include font(24, 36);
             font-weight: 600;
             color: $white;
+            text-transform: uppercase;
 
             @include breakpoint(768) {
                 @include font(20, 32);
@@ -524,6 +527,11 @@ section {
 
             @include breakpoint(575) {
                 width: 50%;
+            }
+        }
+        .sb-image-box-content {
+            h4 {
+                text-transform: inherit;
             }
         }
     }
@@ -604,7 +612,8 @@ section {
             @include font(16, 28);
         }
 
-        strong {
+        strong,
+        b {
             color: #fff;
         }
     }
@@ -657,10 +666,16 @@ section {
             width: 100%;
             max-width: 150px;
             margin-left: -90px;
+            @extend .d-flex;
 
             @include breakpoint(575) {
                 margin-left: inherit;
                 margin-top: -70px;
+            }
+
+            img {
+                width: 100%;
+                object-fit: contain;
             }
         }
         .sb-card-content {
@@ -940,6 +955,12 @@ section {
                                 background: $secondary;
                             }
                         }
+                    }
+                }
+                .sb-card-btn {
+                    padding: 8px 30px;
+                    a {
+                        @include font(22, 36);
                     }
                 }
             }
@@ -1321,6 +1342,14 @@ section {
             }
             h4 {
                 margin-bottom: 15px;
+                color: #fff;
+            }
+            p {
+
+                strong,
+                b {
+                    color: #fff;
+                }
             }
             .sb-buttons {
                 flex-wrap: wrap;
@@ -1414,10 +1443,16 @@ section {
         min-height: 440px;
 
         @include breakpoint(1280) {
-            min-height: 400px;
+            min-height: 350px;
+        }
+        @include breakpoint(1024) {
+            min-height: 300px;
         }
         @include breakpoint(768) {
-            min-height: 350px;
+            min-height: 200px;
+        }
+        @include breakpoint(575) {
+            min-height: auto;
         }
 
         .sb-row  {

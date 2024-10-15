@@ -96,7 +96,7 @@ $resource_center = get_field('explore_services_group');
                             <?php if (!empty($resource_center['service_links'])) : ?>
                                 <ul class="unstyle flex-center flex-wrap">
                                     <?php foreach ($resource_center['service_links'] as $link) : ?>
-                                        <li class="active">
+                                        <li>
                                             <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
                                                 <?php echo esc_html(get_the_title($link->ID)); ?>
                                             </a>
