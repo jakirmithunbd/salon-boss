@@ -27,14 +27,14 @@ if (have_rows('single_service')):
         elseif (get_row_layout() == 'case_study_layout'):
             get_template_part('template-parts/service-case-study');
 
-        elseif (get_row_layout() == 'case_study_layout'):
+        elseif (get_row_layout() == 'solutions_layout'):
             get_template_part('template-parts/service-popular-solution');
 
         elseif (get_row_layout() == 'package_layout'):
             get_template_part('template-parts/service-package');
 
-            //            elseif( get_row_layout() == 'why_choose_us' ):
-//                get_template_part('template-parts/service-customer-review');
+        elseif (get_row_layout() == 'case_study_layout'):
+            get_template_part('template-parts/service-case-study.php');
 
         elseif (get_row_layout() == 'service_seo_audits'):
             get_template_part('template-parts/service-seo-audits');

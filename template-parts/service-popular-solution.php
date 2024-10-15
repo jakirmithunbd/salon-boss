@@ -7,11 +7,11 @@ $solution_list = get_sub_field('solution_list');
     <div class="container">
         <div class="sb-section-title text-center">
             <?php if (!empty($section_title['title'])): ?>
-                <h2><?php echo esc_html($section_title['title']); ?></h2>
+                <h2><?php echo wp_kses_post($section_title['title']); ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($section_title['description'])): ?>
-                <p><?php echo esc_html($section_title['description']); ?></p>
+                <p><?php echo wp_kses_post($section_title['description']); ?></p>
             <?php endif; ?>
         </div>
         <div class="sb-reputation-review-list d-flex flex-wrap">
