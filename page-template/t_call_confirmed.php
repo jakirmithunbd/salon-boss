@@ -58,7 +58,7 @@ if ($author_massage):
 
                         <?php if(isset($author_button['url'])): ?>
                         <a href="<?php echo esc_url($author_button['url']); ?>"
-                            class="sb-button button-bg-green icon-position-left button-icon-sboss"><?php echo esc_attr($author_button['title']); ?></a>
+                            class="sb-button button-bg-green icon-position-left button-icon-book"><?php echo esc_attr($author_button['title']); ?></a>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
