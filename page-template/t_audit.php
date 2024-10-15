@@ -144,16 +144,25 @@ if (!empty($hero)):
 
 
 
+<?php
+$form = get_field('form', get_queried_object_id()); if(!empty($form)) :
+$form_id = $form['gravity_form_id'];
+$f_description = $form['description'];
+?>
+
 <section class="sb-audit-form">
     <div class="container">
         <div class="sb-audit-form-wrapper">
 
             <div class="sb-form">
-            <?php echo do_shortcode( '[gravityform id="3" title="false"]' ); ?>
+                <?php
+                if (!empty($form_id)) {
+                    echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
+                }
+                ?>
+
                 <p class="sb-form-condition-text text-center-mobile">
-                    By submitting this form, you agree to our privacy policy and terms & conditions. 
-                    You also agree to be contacted by Salon Boss via email, sms & phone. We never 
-                    ell your data. You may opt-out at any time.
+                    <?php echo esc_html($f_description); ?>
                 </p>
             </div>
 
@@ -161,6 +170,7 @@ if (!empty($hero)):
     </div>
 </section>
 <!-- Form section  -->
+<?php endif;?>
 
 <?php get_template_part( 'template-parts/analysis-service' ); ?>
 

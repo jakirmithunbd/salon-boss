@@ -46,13 +46,8 @@ if (!empty($hero)):
                                 } ?>
 
                                 <div class="sb-video-frame">
-                                    <div class="sb-video-wrapper relative">
+                                    <div class="sb-video-wrapper">
                                         <?php echo $video; ?>
-
-                                        <button class="sb-video-close-btn">
-                                            <span></span>
-                                            <span></span>
-                                        </button>
                                     </div>
                                 </div>
                             </div>

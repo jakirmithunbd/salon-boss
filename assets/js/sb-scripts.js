@@ -25,74 +25,73 @@ if (common_header) {
 };
 
 
-const sb_custom_slider = document.querySelector('.sb-service-slider');
-if (sb_custom_slider) {
-
-    function initTextSlider(customSpeed) {
-        var slider = document.querySelector('.sb-service-slider');
-        var items = slider.getElementsByTagName('p');
-        var isPaused = false;
-        var itemWidth = items[0].offsetWidth + 20;
-        var sliderWidth = itemWidth * items.length;
-
-        var innerSlider = document.createElement('div');
-        innerSlider.classList.add('inner-slider');
-
-        // Clone the items to simulate an infinite scroll
-        while (items.length) {
-            innerSlider.appendChild(items[0]);
-        }
-        innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
-
-        slider.appendChild(innerSlider);
-
-        Object.assign(innerSlider.style, {
-            display: 'inline-flex',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-        });
-
-        var position = 0;
-
-        function animateSlider() {
-            if (!isPaused) {
-                position -= customSpeed / 20; // Adjust speed based on customSpeed
-
-                // Seamless transition when end of original content is reached
-                if (Math.abs(position) >= sliderWidth) {
-                    position = 0;
-                }
-
-                innerSlider.style.transform = `translateX(${position}px)`;
-            }
-            requestAnimationFrame(animateSlider); // Smooth animation
-        }
-
-        requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
-
-        slider.addEventListener('mouseenter', function () {
-            isPaused = true;
-        });
-
-        slider.addEventListener('mouseleave', function () {
-            isPaused = false;
-        });
-
-        document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                isPaused = true; // Pause animation when tab is inactive
-            } else {
-                isPaused = false; // Resume animation when tab is active
-            }
-        });
-    }
-
-    // You can pass the speed value here; higher value = slower speed, lower = faster
-    initTextSlider(5); // Example: 5 for slower, you can adjust this value
-};
+// const sb_custom_slider = document.querySelector('.sb-service-slider');
+// if (sb_custom_slider) {
+//
+//     function initTextSlider(customSpeed) {
+//         var slider = document.querySelector('.sb-service-slider');
+//         var items = slider.getElementsByTagName('p');
+//         var isPaused = false;
+//         var itemWidth = items[0].offsetWidth + 20;
+//         var sliderWidth = itemWidth * items.length;
+//
+//         var innerSlider = document.createElement('div');
+//         innerSlider.classList.add('inner-slider');
+//
+//         // Clone the items to simulate an infinite scroll
+//         while (items.length) {
+//             innerSlider.appendChild(items[0]);
+//         }
+//         innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
+//
+//         slider.appendChild(innerSlider);
+//
+//         Object.assign(innerSlider.style, {
+//             display: 'inline-flex',
+//             whiteSpace: 'nowrap',
+//             position: 'relative',
+//         });
+//
+//         var position = 0;
+//
+//         function animateSlider() {
+//             if (!isPaused) {
+//                 position -= customSpeed / 20; // Adjust speed based on customSpeed
+//
+//                 // Seamless transition when end of original content is reached
+//                 if (Math.abs(position) >= sliderWidth) {
+//                     position = 0;
+//                 }
+//
+//                 innerSlider.style.transform = `translateX(${position}px)`;
+//             }
+//             requestAnimationFrame(animateSlider);
+//         }
+//
+//         requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
+//
+//         slider.addEventListener('mouseenter', function () {
+//             isPaused = true;
+//         });
+//
+//         slider.addEventListener('mouseleave', function () {
+//             isPaused = false;
+//         });
+//
+//         document.addEventListener('visibilitychange', function () {
+//             if (document.hidden) {
+//                 isPaused = true; 
+//             } else {
+//                 isPaused = false;
+//             }
+//         });
+//     }
+//
+//     initTextSlider(5);
+// }
 // Service Slider (Custom) end
 
-// Dynamic Sb Card height 
+
 const sb_cards = document.querySelectorAll('.sb-card');
 sb_cards.forEach(card => {
     const sb_card_btn = card.querySelector('.sb-card-btn');
@@ -111,9 +110,7 @@ if (sb_videos.length) {
     sb_videos.forEach(video => {
         const sb_video_play_button = video.querySelector('.sb-video-play-btn');
         const sb_video_close_button = video.querySelector('.sb-video-close-btn');
-
-
-        // Add your event listeners or logic here for play and close buttons
+        
         if (sb_video_play_button) {
             sb_video_play_button.addEventListener('click', () => {
                 video.classList.add('video-popup-active');  // Add the 'active' class
@@ -123,7 +120,7 @@ if (sb_videos.length) {
 
         if (sb_video_close_button) {
             sb_video_close_button.addEventListener('click', () => {
-                video.classList.remove('video-popup-active');  // Remove the 'active' class
+                video.classList.remove('video-popup-active');
                 console.log('Close button clicked, class removed');
             });
         }
@@ -268,6 +265,21 @@ if (sb_counter) {
                 }
             }
         ]
+    });
+
+    // Service slider
+    $('.sb-service-slider').slick({
+        infinite: true,
+        speed: 5000,          
+        autoplay: true,
+        autoplaySpeed: 0,      
+        cssEase: 'linear',      
+        slidesToScroll: 1,     
+        variableWidth: true,   
+        pauseOnFocus: true,
+        pauseOnHover: true,
+        centerMode: true,     
+        arrows: false,        
     });
 
     // trusted-customer-logo slider

@@ -110,14 +110,7 @@
     background: $primary;
     padding: 19px 0;
     width: 100%;
-    overflow: hidden; 
-    position: relative; 
-
-    .inner-slider {
-        display: inline-flex;
-        white-space: nowrap;
-        z-index: 2;
-    }
+    position: relative;
 
     p {
         background: $white;

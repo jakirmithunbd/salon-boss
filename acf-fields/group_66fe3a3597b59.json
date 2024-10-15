@@ -908,7 +908,8 @@
                             "post_status": "",
                             "taxonomy": "",
                             "filters": [
-                                "search"
+                                "search",
+                                "taxonomy"
                             ],
                             "return_format": "id",
                             "min": "",
@@ -1955,5 +1956,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728663622
+    "modified": 1728963880
 }

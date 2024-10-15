@@ -1473,8 +1473,8 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #2F2F2F;
-    position: relative;
-    width: 100%;
+    @extend .relative;
+    overflow: hidden;
 
     .sb-video-play-btn {
         @extend .relative, .absolute;
@@ -1516,67 +1516,82 @@ section {
     }
 
     .sb-video-frame {
+        position: absolute;
         width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        @extend .relative, .transition;
 
         .sb-video-wrapper {
-            display: flex;
-            // position: relative;
-            // width: 100%;
-            // padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            // height: 0;
-            // overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            @extend .d-flex;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 0;
 
             iframe {
                 width: 100%;
-                border-radius: 30px 30px 0 0;
+                height: auto;
                 aspect-ratio: 16/9;
             }
-            .sb-video-close-btn {
-                width: 30px;
-                height: 23px;
-                background: transparent;
-                @extend .absolute, .d-flex, .cursor-pointer;
-                top: 0;
-                right: -40px;
 
-                @include breakpoint(768) {
-                    right: 0;
-                    top: -40px;
-                }
-
-                span {
-                    width: 100%;
-                    height: 4px;
-                    display: block;
-                    background: #ffffff;
-                    position: absolute;
-                    left: 0;
-                    top: 10px;
-                    @extend .transition;
-
-                    &:first-child {
-                        transform: rotate(45deg);
-                    }
-                    &:last-child {
-                        transform: rotate(-45deg);
-                    }
-                }
-
-                &:hover {
-                    span {
-                        background: red;
-                    }
-                }
-            }
+            //.sb-video-close-btn {
+            //    width: 30px;
+            //    height: 23px;
+            //    background: transparent;
+            //    @extend .absolute, .d-flex, .cursor-pointer;
+            //    top: 0;
+            //    right: -40px;
+            //
+            //    @include breakpoint(768) {
+            //        right: 0;
+            //        top: -40px;
+            //    }
+            //
+            //    span {
+            //        width: 100%;
+            //        height: 4px;
+            //        display: block;
+            //        background: #ffffff;
+            //        position: absolute;
+            //        left: 0;
+            //        top: 10px;
+            //        @extend .transition;
+            //
+            //        &:first-child {
+            //            transform: rotate(45deg);
+            //        }
+            //        &:last-child {
+            //            transform: rotate(-45deg);
+            //        }
+            //    }
+            //
+            //    &:hover {
+            //        span {
+            //            background: red;
+            //        }
+            //    }
+            //}
         }
     }
 
     &.video-popup-active {
 
         .sb-video-frame {
-
+            opacity: 1;
+            visibility: visible;
         }
 
+        .sb-video-play-btn {
+            display: none;
+        }
     }
 }
 section:has(.sb-video.video-popup-active) {

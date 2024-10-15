@@ -208,7 +208,6 @@ if (!empty($hero)):
                     </div>
 
                     <?php
-                    // Output the form if shortcode exists
                     if (!empty($form_id)) {
                         echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
                     }
@@ -313,32 +312,112 @@ if (!empty($hero)):
         <?php endif; ?>
     </div>
 </section>
+
 <!-- Webinar Topics  -->
-<?php get_template_part('template-parts/analysis-service'); ?>
+<section class="sb-audit-included">
+    <div class="container">
+        <?php
+        $included_service = get_field('audit_included_service', get_queried_object_id());
+        
+        if ($included_service):
+
+            $included_service_section_title = $included_service['section_title'];
+            $included_service_list = $included_service['service_list'];
+            $service_image_size = $included_service['service_image_size_small'];
+            ?>
+            <div class="sb-section-title text-center">
+                <?php printf('<h2>%s</h2>', wp_kses_post($included_service_section_title['title'])); ?>
+                <?php printf('<h4>%s</h4>', wp_kses_post($included_service_section_title['sub_title'])); ?>
+                <?php printf('<p>%s</p>', wp_kses_post($included_service_section_title['description'])); ?>
+            </div>
+
+            <?php if ($included_service_list): ?>
+            <div class="sb-audit-included-list d-flex flex-wrap">
+                <?php foreach ($included_service_list as $list): ?>
+
+                    <div
+                            class="sb-image-box <?php echo esc_attr($list['image_alignment']['value']);
+                            echo $service_image_size ? " image-size-small" : ""; ?>">
+                        <div class="sb-image-box-media">
+                            <?php
+                            $sb_list_image = $list['image'] ? esc_url($list['image']['url']) : esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
+                            ?>
+                            <img src="<?php echo $sb_list_image; ?>" alt="<?php echo esc_attr($list['image']['title']); ?>" />
+                        </div>
+                        <div class="sb-image-box-content">
+                            <?php if (!empty($list['title'])): ?>
+                                <h4><?php echo wp_kses_post($list['title']); ?></h4>
+                            <?php endif; ?>
+
+                            <?php if (!empty($list['description'])): ?>
+                                <p><?php echo wp_kses_post($list['description']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div><!-- / Image Box  -->
+                <?php
+                endforeach;
+                ?>
+            </div>
+
+        <?php
+        endif;
+        endif;
+        ?>
+    </div>
+</section>
+<!-- Sb Audit Included  -->
 
 <section class="sb-webinar-meet-expert">
     <div class="container">
         <div class="sb-webinar-meet-expert-wrapper d-flex flex-wrap align-center">
 
-            <?php get_template_part('template-parts/common-author-box'); ?>
+            <?php
+            $host_area = get_field('meet_your_industry_expert', get_queried_object_id());
+            $common_author = $host_area['author'];
+            if ($common_author):
+                    $name = $common_author['name'];
+                    $position_title = $common_author['position_title'];
+                    $image = $common_author['image'];
+                    $image_position = $common_author['image_position'] ?? '';
+                    $quote = $common_author['quote'];
+                    ; ?>
+
+                    <div class="sb-author-card <?php echo esc_attr($image_position) ?>">
+                        <!--image-position-right-->
+                        <div class="sb-author-card-content-wrapper d-flex">
+                            <div class="sb-author-card-image flex-center relative">
+                                <img src="<?php echo esc_url($image['url'] ?? ''); ?>"
+                                     alt="<?php echo esc_attr($image['alt'] ?? ''); ?>">
+                            </div>
+                            <div class="sb-author-card-content flex-center flex-col text-center">
+                                <h3 class="sb-author-name"><?php echo esc_html($name ?? ''); ?></h3>
+                                <h5 class="sb-suthor-title"><?php echo esc_html($position_title ?? ''); ?></h5>
+                                <?php echo wp_kses_post($quote ?? ''); ?>
+                            </div>
+                        </div>
+                    </div><!-- Sb Author Card  -->
+
+                <?php
+            endif;
+            ?>
 
             <?php
-            $host_area = get_field('your_host');
+
             if ($host_area):
-                $host_title = $host_area['host_title'];
-                $host_sub_title = $host_area['sub_title'];
-                $host_description = $host_area['host_description'];
-                $host_button = $host_area['host_button'];
+                $host_title = $host_area['small_text'];
+                $host_sub_title = $host_area['title'];
+                $host_description = $host_area['description'];
+                $host_button = $host_area['button'];
                 ; ?>
 
                 <div class="sb-section-title text-center-mobile">
-                    <h5><?php esc_html_e($host_sub_title ?? ''); ?></h5>
-                    <h2><?php echo wp_kses_post($host_title ?? ''); ?></h2>
-                    <?php echo wp_kses_post($host_description ?? '');
+                    <h5><?php esc_html_e($host_sub_title); ?></h5>
+                    <h2><?php echo wp_kses_post($host_title); ?></h2>
+                    <?php printf('<p>%s</p>', wp_kses_post($host_description));
                     if ($host_button):
                         ?>
-                        <a href="<?php echo esc_url($host_button['url'] ?? ''); ?>"
-                            class="sb-button button-bg-green button-icon-scissor icon-position-right"><?php echo esc_attr($host_button['title'] ?? ''); ?></a>
+                        <a href="<?php echo esc_url($host_button['url'] ); ?>"
+                            class="sb-button button-bg-green button-icon-scissor icon-position-right"><?php echo esc_attr($host_button['title']); ?></a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -352,7 +431,6 @@ if (!empty($hero)):
 <section class="sb-webinar-resource-center resource-center-section">
     <div class="container">
         <div class="sb-webinar-salon-suites d-flex flex-wrap">
-
 
             <?php
             $service_posts = get_field('select_servies');

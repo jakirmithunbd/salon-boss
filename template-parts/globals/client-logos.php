@@ -9,10 +9,10 @@ if(!empty($client_logos)) :
             <?php
             foreach ($client_logos as $logo) {
                 if (!empty($logo['website']) && !empty($logo['logo']['url'])) {
-                    printf('<a href="%s"><img src="%s" alt="%s" /></a>',
+                    printf('<a target="_blank" href="%s"><img src="%s" alt="%s" /></a>',
                         esc_url($logo['website']),
                         esc_url($logo['logo']['url']),
-                        esc_attr($logo['logo']['alt'] ?? 'Client Logo') // Use alt text if available
+                        esc_attr($logo['logo']['alt'] ?? 'Client Logo')
                     );
                 }
             }

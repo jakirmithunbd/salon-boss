@@ -51,7 +51,7 @@ $quote = get_sub_field('quote');
                             <?php endif; ?>
                         </div>
                         <div class="sb-customer-rating d-flex justify-end">
-                                <?php for ($i = 0; $i < 6; $i++): ?>
+                                <?php for ($i = 0; $i < 5; $i++): ?>
                                     <span><img src="<?php echo get_theme_file_uri('/assets/images/vectors/rating-star.svg')?>" alt="Star"></span>
                                 <?php endfor; ?>
                         </div>

@@ -40,6 +40,7 @@
                     },
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "Enter your service name",
                     "prepend": "",
                     "append": "",
@@ -51,9 +52,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "page-template\/frontpage.php"
+                "value": "579"
             }
         ],
         [
@@ -61,13 +62,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "service"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "page-template\/t_book-discovery-call.php"
             }
         ]
     ],
@@ -82,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728907154
+    "modified": 1728915577
 }

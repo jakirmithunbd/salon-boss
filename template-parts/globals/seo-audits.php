@@ -1,10 +1,7 @@
 <?php
 $seo_audits_cta = get_field('seo_audits_cta', 'options');
-
-
 $image_alignment = isset($seo_audits_cta['image_alignment']['value']) ? esc_attr($seo_audits_cta['image_alignment']['value']) : '';
 $website_link = isset($seo_audits_cta['website_link']) ? $seo_audits_cta['website_link'] : site_url();
-
 ?>
 
 <section class="sb-free-seo-audit">
@@ -13,7 +10,7 @@ $website_link = isset($seo_audits_cta['website_link']) ? $seo_audits_cta['websit
             <div class="sb-card sb-card-filled-bg <?php echo $image_alignment; ?>">
                 <div class="sb-card-contents-wrapper d-flex align-center">
                     <div class="sb-card-image d-flex">
-                    <?php if($seo_audits_cta['image']['url']) : ?>
+                    <?php if($seo_audits_cta['image']) : ?>
                         <img src="<?php echo esc_url($seo_audits_cta['image']['url']); ?>" alt="<?php echo $seo_audits_cta['image']['title']; ?>">
                     <?php endif;?>
                     </div>

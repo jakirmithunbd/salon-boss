@@ -270,7 +270,8 @@ get_header(); ?>
                     <div class="sb-buttons d-flex">
                         <?php
                         $about_service_buttons = $about_us_section['button_group'];
-
+                        
+                        if(!empty($about_service_buttons)) :
                         foreach ($about_service_buttons as $button):
                             $button_link = $button['button_link'] ?? '';
                             $button_icon = $button['icon'] ?? '';
@@ -309,7 +310,7 @@ get_header(); ?>
                                 <?php echo esc_html($button_link['title'] ?? ''); ?>
                             </a>
 
-                        <?php endforeach; ?>
+                        <?php endforeach; endif; ?>
                     </div>
                 </div>
                 <div class="sb-media">
