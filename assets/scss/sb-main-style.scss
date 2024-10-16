@@ -650,7 +650,7 @@
     }
 
     .container {
-        max-width: 1040px;
+        max-width: 1165px;
 
         .sb-row {
             gap: 25px;
@@ -1691,6 +1691,8 @@
     }
 
 }
+
+
 
 // ********** Blog Page Style *********** //
 // Blog hero style 
@@ -4085,5 +4087,12 @@
                 }
             }
         }
+    }
+}
+
+.sb-confirmation {
+
+    .sb-author-card {
+        padding-top: 0;
     }
 }

@@ -59,7 +59,7 @@ $quote = get_sub_field('quote');
                     <div class="sb-customer-quote text-center-mobile">
                         <?php if (!empty($quote)): ?>
                             <p>
-                                “<span><?php echo esc_html($quote); ?></span>”
+                                <?php echo wp_kses_post($quote); ?>
                             </p>
                         <?php endif; ?>
                     </div>

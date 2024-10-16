@@ -34,13 +34,13 @@ if (have_rows('resources_list_part')):
                                     <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
                                     <div class="sb-card-contents-wrapper d-flex align-center">
                                         <div class="sb-card-image d-flex">
-                                            <a href="<?php echo esc_url($resource_list_button['url'] ?? site_url()); ?>">
+                                            <a <?php echo esc_attr($resource_list_button['target']); ?> href="<?php echo esc_url($resource_list_button['url'] ?? site_url()); ?>">
                                                 <img src="<?php echo esc_url($resource_list_image['url'] ?? ''); ?>"
                                                     alt="<?php echo esc_attr($resource_list_image['alt'] ?? ''); ?>">
                                             </a>
                                         </div>
                                         <div class="sb-card-content text-center">
-                                            <a class="sb-resource-title"
+                                            <a <?php echo esc_attr($resource_list_button['target']); ?> target="<?php echo esc_attr($resource_list_button['target']); ?>" class="sb-resource-title"
                                                 href="<?php echo esc_url($resource_list_button['url'] ?? site_url()); ?>">
                                                 <h2><?php echo wp_kses_post($resource_list_title ?? ''); ?></h2>
                                             </a>
@@ -56,7 +56,7 @@ if (have_rows('resources_list_part')):
                                             if ($resource_list_button):
                                                 ?>
                                                 <div class="sb-card-btn">
-                                                    <a href="<?php echo esc_url($resource_list_button['url'] ?? site_url()); ?>">
+                                                    <a target="<?php echo $resource_list_button['target']; ?>" href="<?php echo esc_url($resource_list_button['url'] ?? site_url()); ?>">
                                                         <?php echo esc_attr($resource_list_button['title'] . '>'); ?>
                                                     </a>
                                                 </div>
@@ -90,12 +90,12 @@ if (have_rows('resources_list_part')):
 
                                 ?>
                                 <div class="sb-content-reource-item">
-                                    <a href="<?php echo esc_url($resources_special_button['url'] ?? site_url()); ?>">
+                                    <a <?php echo esc_attr($resources_special_button['target']); ?> href="<?php echo esc_url($resources_special_button['url'] ?? site_url()); ?>">
                                         <img src="<?php echo esc_url($resources_special_image['url'] ?? ''); ?>"
                                             alt="<?php echo esc_attr($resources_special_image['alt'] ?? ''); ?>">
                                     </a>
 
-                                    <a class="sb-content-resource-title"
+                                    <a <?php echo esc_attr($resources_special_button['target']); ?> class="sb-content-resource-title"
                                         href="<?php echo esc_url($resources_special_button['url'] ?? site_url()); ?>">
                                         <h3><?php echo wp_kses_post($resources_special_title ?? ''); ?></h3>
                                     </a>
@@ -112,7 +112,7 @@ if (have_rows('resources_list_part')):
                                         ?>
 
                                         <div class="sb-content-reource-item-foot">
-                                            <a href="<?php echo esc_url($resources_special_button['url'] ?? site_url()); ?>">
+                                            <a <?php echo esc_attr($resources_special_button['target']); ?> href="<?php echo esc_url($resources_special_button['url'] ?? site_url()); ?>">
                                                 <?php echo esc_attr($resources_special_button['title'] . '>'); ?>
                                             </a>
                                         </div>

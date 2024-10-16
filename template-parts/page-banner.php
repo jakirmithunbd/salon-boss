@@ -7,7 +7,9 @@ $image = $media['image'];
 $video_on = $media['is_video'] == true;
 $image_on = $media['is_video'] == false;
 
-if (!empty($hero)):
+$content = $hero['content'];
+
+if (!empty($content['title'])):
     $sec_class = empty($image_on && $image || $video_on && $video) ? 'hero-without-image' : ''; ?>
     <section class="common-hero hero-bg <?php echo esc_attr($sec_class); ?>">
         <div class="container">
@@ -62,7 +64,7 @@ if (!empty($hero)):
                     <?php endif; ?>
 
                 <?php
-                $content = $hero['content'];
+                
                 if (!empty($content)): ?>
                     <div class="sb-hero-content text-center-mobile">
                         <?php $bages = $content['hero_bages'];

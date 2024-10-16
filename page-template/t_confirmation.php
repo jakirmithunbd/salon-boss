@@ -7,14 +7,17 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/page-banner'); ?>
 
-<section class="sb-dis-confirmation">
+<?php
+$author_massage = get_field('author_box');
+if($author_massage['title']):
+?>
+<section class="sb-confirmation">
     <div class="container">
 
         <div class="sb-author-card">
             <div class="sb-author-card-content-wrapper d-flex">
 
                 <?php
-                    $author_massage = get_field('author_box');
                     if ($author_massage):
                     $author_name = $author_massage['name'];
                     $author_title = $author_massage['title'];
@@ -44,5 +47,13 @@ get_header(); ?>
     </div>
 </section><!-- dis confirmation  -->
 
+<?php 
+endif;
 
-<?php get_footer(); ?>
+get_template_part('template-parts/service-booking-cta');
+
+
+
+get_footer(); 
+
+?>
