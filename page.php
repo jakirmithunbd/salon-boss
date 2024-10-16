@@ -5,6 +5,7 @@ if( ! defined('ABSPATH' )) {
 }
 
 get_header(); ?>
+<?php get_template_part('template-parts/page-banner'); ?>
     <main id="primary" class="site-main">
         <div class="container">
             <div class="cc-post-content-decoration">
