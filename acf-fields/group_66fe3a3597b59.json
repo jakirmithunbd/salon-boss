@@ -1953,7 +1953,7 @@
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
-                            "placeholder": "",
+                            "placeholder": "Enter your text",
                             "prepend": "",
                             "append": ""
                         },
@@ -2021,7 +2021,7 @@
                                     },
                                     "default_value": "",
                                     "allow_in_bindings": 1,
-                                    "placeholder": "",
+                                    "placeholder": "Enter your url",
                                     "parent_repeater": "field_670e5c21fba0f"
                                 }
                             ]
@@ -2056,5 +2056,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728998467
+    "modified": 1729050128
 }

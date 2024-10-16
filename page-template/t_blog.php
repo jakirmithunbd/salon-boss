@@ -37,21 +37,21 @@ if (!empty($categories)) {
         <div class="sb-blog-tab-select hide-desktop hide-tab text-center">
             <select name="" id="sb-post-filter-onchange">
             <?php
-$categories = get_categories([
-    'taxonomy' => 'category',
-    'hide_empty' => false,
-]);
-
-if (!empty($categories)) {
-    foreach ($categories as $category) {
-        printf(
-            '<option value="%s">%s</option>>',
-            esc_attr($category->slug),
-            esc_html($category->name)
-        );
-    }
-}
-?>
+                $categories = get_categories([
+                    'taxonomy' => 'category',
+                    'hide_empty' => false,
+                ]);
+                
+                if (!empty($categories)) {
+                    foreach ($categories as $category) {
+                        printf(
+                            '<option value="%s">%s</option>>',
+                            esc_attr($category->slug),
+                            esc_html($category->name)
+                        );
+                    }
+                }
+                ?>
             </select>
         </div>
 
