@@ -1802,14 +1802,6 @@ section:has(.sb-video.video-popup-active) {
     width: 100%;
     max-width: 970px;
     margin: 0 auto;
-    padding-top: 100px;
-
-    @include breakpoint(1024) {
-        padding-top: 70px;
-    }
-    @include breakpoint(768) {
-        padding-top: 50px;
-    }
 
     .sb-author-card-content-wrapper {
         gap: 20px;
