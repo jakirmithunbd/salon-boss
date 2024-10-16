@@ -349,6 +349,7 @@ section {
         mask-repeat: no-repeat;
         mask-size: cover;
         background-color: #070825;
+        @extend .transition;
     }
 
     &.icon-position-right{
