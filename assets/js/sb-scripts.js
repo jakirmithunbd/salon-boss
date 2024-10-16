@@ -194,8 +194,8 @@ if (sb_counter) {
 
                 if (frequentlyQs.length) {
                     // Open the first accordion item by default
-                    $(frequentlyQs[0]).addClass("sb-accordian-active");
-                    $(answerTitle[0]).show();
+                    // $(frequentlyQs[0]).addClass("sb-accordian-active");
+                    // $(answerTitle[0]).show();
 
                     // Loop through each accordion header and set click event
                     frequentlyQs.forEach((item, i) => {

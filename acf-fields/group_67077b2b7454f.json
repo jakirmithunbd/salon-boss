@@ -257,7 +257,7 @@
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Add Row",
+                    "button_label": "Add New Member",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -352,6 +352,127 @@
                             "media_upload": 1,
                             "delay": 0,
                             "parent_repeater": "field_670d096aeebb7"
+                        },
+                        {
+                            "key": "field_670fd616916e0",
+                            "label": "Social items",
+                            "name": "social_items",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add New social link",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_670fd657916e1",
+                                    "label": "Social Icon",
+                                    "name": "social_icon",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "allow_in_bindings": 0,
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_670fd616916e0"
+                                },
+                                {
+                                    "key": "field_670fd68a916e2",
+                                    "label": "social link",
+                                    "name": "social_link",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_670fd616916e0"
+                                },
+                                {
+                                    "key": "field_670fe65207671",
+                                    "label": "Link Type",
+                                    "name": "link_type",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "Email": "Email",
+                                        "Call": "Call",
+                                        "SMS": "SMS",
+                                        "Website_Link": "Website_Link"
+                                    },
+                                    "default_value": "Website_Link",
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_670fd616916e0"
+                                }
+                            ],
+                            "parent_repeater": "field_670d096aeebb7"
+                        },
+                        {
+                            "key": "field_670fd6cb916e3",
+                            "label": "Optional Button",
+                            "name": "optional_button",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_670d096aeebb7"
                         }
                     ]
                 }
@@ -378,5 +499,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728908076
+    "modified": 1729097655
 }

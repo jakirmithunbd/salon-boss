@@ -24,6 +24,50 @@ if ($common_author):
                     <h5 class="sb-suthor-title"><?php echo esc_html($position_title ?? ''); ?></h5>
                     <?php echo wp_kses_post($quote ); ?>
                 </div>
+                <div class="sb-author-social-icons">
+                    <?php
+                        $social_items = $meamber['social_items'];
+                        $optional_button = $meamber['optional_button'];
+                    ?>
+                    <ul>
+                        <?php
+                        if($social_items):
+                            foreach($social_items as $items):
+                                $social_icon = $items['social_icon'];
+                                $social_link = $items['social_link'];
+                                $social_link_type = $items['link_type'];
+                        ?>
+                        <li>
+                            <a href="
+                            <?php
+                             if($social_link_type == 'Email'){
+                                echo wp_kses_post( "mailto:" . $social_link );
+                             }elseif($social_link_type == 'Call'){
+                                echo wp_kses_post( "tel:" . $social_link );
+                             }elseif($social_link_type == 'SMS'){
+                                echo wp_kses_post( "sms:" . $social_link );
+                             }else{
+                                echo wp_kses_post( $social_link );
+                             };
+                            
+                            ?>"
+                            target="_blank">
+                                <?php if($social_icon): ?>
+                                    <img src="<?php echo esc_url( $social_icon['url'] ) ?>" alt="<?php echo esc_attr($social_icon['alt']); ?>">
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                        <?php   
+                        endforeach;
+                        endif;
+                        ?>
+                    </ul>
+                    <?php if($optional_button): ?>
+                    <a class="author-optional-btn" href="<?php echo esc_url( $optional_button['url'] ); ?>" target="<?php echo esc_attr($optional_button['target']); ?>">
+                        <?php echo esc_html( $optional_button['title'] ); ?>
+                    </a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div><!-- Sb Author Card  -->
 

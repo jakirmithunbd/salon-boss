@@ -2720,6 +2720,50 @@
                             color: #000;
                         }
                     }
+                    .sb-author-social-icons {
+                        @extend .flex-center, .flex-wrap;
+                        gap: 30px;
+                        width: 100%;
+
+                        @include breakpoint(768) {
+                            gap: 20px;
+                        }
+
+                        ul {
+                            @extend .flex-center, .unstyle;
+                            gap: 11px;
+
+                            li {
+                                a {
+                                    background: #000;
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 2px;
+                                    padding: 7px 5px;
+                                    @extend .d-flex, .transition;
+
+                                    &:hover {
+                                        background: $secondary;
+                                    }
+                                }
+                            }
+                        }
+                        .author-optional-btn {
+                            @include font(16, 24);
+                            font-weight: 600;
+                            color: #fff;
+                            background: #000;
+                            padding: 6px 10px;
+                            width: 100%;
+                            border-radius: 100px;
+                            @extend .flex-center, .transition;
+
+                            &:hover {
+                                background: $secondary;
+                            }
+                        }
+                        
+                    }
                 }
             }
         }
