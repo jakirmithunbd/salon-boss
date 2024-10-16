@@ -5,7 +5,7 @@
     if ($service_slider && is_array($service_slider)) {
         foreach ($service_slider as $slider_item) {
             if (!empty($slider_item['service_name'])) {
-                printf('<div class="slick-slider"><p>%s</p></div>', esc_html($slider_item['service_name']));
+                printf('<div class="slick-slider"><div class="service-slider-item"><p>%s</p></div></div>', esc_html($slider_item['service_name']));
             }
         }
     } else {

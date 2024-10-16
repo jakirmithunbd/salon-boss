@@ -114,22 +114,24 @@
 // Service slider style 
 .sb-service-slider {
     background: $primary;
-    padding: 19px 0;
     width: 100%;
     position: relative;
-
-    p {
-        background: $white;
-        color: $black;
-        @include font(17, 29);
-        font-weight: 700;
-        text-transform: uppercase;
-        padding: 6px 10px;
-        text-align: center;
-        margin: 0 22px 0 0;
-        border-radius: 5px;
-        min-width: 60px;
-        box-shadow: 2px 2px 19px 0 rgb(0 0 0 / 35%);
+    
+    .service-slider-item {
+        padding: 20px 11px;
+        p {
+            background: $white;
+            color: $black;
+            @include font(17, 29);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            margin: 0;
+            text-align: center;
+            border-radius: 5px;
+            min-width: 60px;
+            box-shadow: 2px 2px 19px 0 rgb(0 0 0 / 35%);
+        }
     }
     
     .slick-list {

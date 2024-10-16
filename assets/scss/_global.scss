@@ -1524,6 +1524,7 @@ section {
         background-color: var(--play-button-icon-color);
         border-radius: 50%;
         cursor: pointer;
+        opacity: 0.8;
 
         @include breakpoint(575) {
             width: 50px;
