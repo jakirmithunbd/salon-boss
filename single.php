@@ -45,7 +45,7 @@ get_header(); ?>
         <div class="sb-single-blog-content-wrapper d-flex align-start">
 
             <!-- Table Of Content Work On js  -->
-            <div class="sb-table-content text-center">
+            <div id="sb-table-content" class="sb-table-content text-center">
                 <h3 class="sb-table-content-title">Table of Contents</h3>
                 <ul>
                     <li><a href="#">Harness the Power of Social Media</a></li>
@@ -54,7 +54,7 @@ get_header(); ?>
                 </ul>
             </div>
 
-            <div class="sb-blog-content">
+            <div id="sb-blog-content" class="sb-blog-content">
 
                 <div class="sb-summery-generate d-flex flex-col justify-center">
                     <div class="sb-summery-title-icon flex-center">
