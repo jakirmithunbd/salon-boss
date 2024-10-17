@@ -4148,6 +4148,20 @@
     }
 }
 
+// ********** Confirmation Style *********** //
+.sb-confirmation {
+    .sb-author-card {
+        .sb-author-card-content-wrapper {
+            .sb-author-card-content {
+                p {
+                    width: 100%;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
 // ********** Parent Template Style *********** //
 .why-sb-parent-service {
     margin: 100px 0 40px;
@@ -4160,9 +4174,229 @@
     }
 
     .parent-section-title {
+        h2 {
+            @extend .sb-multy-color;
+        }
+    }
+    .parent-service-list {
+        padding-top: 80px;
+        @extend .d-flex, .flex-wrap;
+        gap: 70px;
+
+        @include breakpoint(1024) {
+            padding-top: 60px;
+            gap: 50px;   
+        }
+        @include breakpoint(768) {
+            padding-top: 40px;
+            gap: 40px;   
+        }
+
+        .sb-image-box {
+            width: 100%;
+
+            @include breakpoint(768) {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .sb-image-box-media {
+                @include breakpoint(768) {
+                    width: 50%;
+                }
+            }
+            .sb-image-box-content {
+                @include breakpoint(768) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// Direct Partner style 
+.sb-directory-partner,
+.sb-online-directories {
+    margin: 140px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 80px;
+    }
+    @include breakpoint(768) {
+        margin-top: 50px;
+    }
+
+    .section-title {
 
         h2 {
             @extend .sb-multy-color;
+        }
+        p {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            @include font(16, 30);
+        }
+    }
+    .sb-direct-partner-logos {
+        padding: 30px 20px;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        margin-top: 60px;
+
+        @include breakpoint(1024) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.sb-online-directories {
+
+    .citation-service-card {
+        width: 100%;
+        max-width: 820px;
+        margin: 0 auto;
+        background-image: url(../images/Salon-Boss-card-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 25px 50px 45px;
+        border: 1px solid $primary;
+        border-radius: 30px;
+        margin-top: 65px;
+
+        @include breakpoint(1024) {
+            margin-top: 50px;
+            padding: 25px 30px 30px;
+        }
+        @include breakpoint(768) {
+            margin-top: 40px;
+            padding: 20px 10px 20px;
+        }
+
+        .ciation-service-head {
+            gap: 25px;
+
+            @include breakpoint(768) {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .citation-service-image {
+                width: 28%;
+                display: flex;
+
+                @include breakpoint(768) {
+                    width: 50%;
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            .citation-service-content {
+                width: 50%;
+                flex-grow: 1;
+
+                @include breakpoint(768) {
+                    width: 100%;
+                    text-align: center
+                }
+                h3 {
+                    @include font(34, 48);
+                    @extend .sb-multy-color;
+
+                    @include breakpoint(1024) {
+                        @include font(26, 36);
+                    }
+                    @include breakpoint(768) {
+                        @include font(22, 34);
+                    }
+                }
+                h4 {
+                    @include font(24, 36);
+                    color: #000;
+
+                    @include breakpoint(1024) {
+                        @include font(22, 34);
+                    }
+                    @include breakpoint(768) {
+                        @include font(18, 30);
+                    }
+                }   
+                p {
+                    @include font(16, 25);
+                    color: #000;
+                }
+            }
+        }
+        .citation-service-list {
+            width: 100%;
+            max-width: 532px;
+            margin: 0 auto;
+            margin-top: 35px;
+            gap: 25px;
+            @extend .d-flex, .flex-wrap;
+
+            @include breakpoint(1024) {
+                margin-top: 20px;
+                gap: 20px;
+            }
+
+            .sb-icon-box {
+                width: 100%;
+
+                h4 {
+                    -webkit-text-fill-color: #000;
+                }
+                p {
+                    color: #000;
+                }
+            }
+
+        }
+        .citation-service-foot {
+            margin-top: 60px;
+
+            @include breakpoint(1024) {
+                margin-top: 40px;
+            }
+            @include breakpoint(768) {
+                margin-top: 30px;
+            }
+
+            .sb-price {
+                h3 {
+                    color: #000;
+                }
+            }
+            .sb-sign-up-btn {
+                @include font(18, 27);
+                font-weight: 600;
+                color: #fff;
+                background: #000;
+                @extend .flex-center, .transition;
+                width: 100%;
+                max-width: 380px;
+                margin: 0 auto;
+                padding: 15px 10px;
+                border-radius: 100px;
+
+                &:hover {
+                    background: $secondary;
+                }
+            }
+            .sb-setup-fee {
+                @include font(12, 18);
+                font-weight: 700;
+                color: #000;
+                margin-top: 10px;
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ if($author_massage['title']):
                             <h6><?php echo esc_attr($author_title ?? ''); ?></h6>
                         </div>
                     </div>
-                    <div class="sb-author-card-content flex-center flex-col text-center">
+                    <div class="sb-author-card-content flex-center flex-col text-center-mobile">
                         <?php echo wp_kses_post($author_quotation ?? ''); ?>
 
                         <?php if(isset($author_button['url'])): ?>

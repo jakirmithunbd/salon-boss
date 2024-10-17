@@ -544,14 +544,6 @@ section {
             flex-direction: column;
         }
 
-        .sb-image-box-content {
-            @extend .text-end;
-
-            @include breakpoint(575) {
-                text-align: center !important;
-            }
-        }
-
         .sb-simple-btn {
             padding-right: inherit;
             padding-left: 22px;
