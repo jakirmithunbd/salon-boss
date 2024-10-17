@@ -182,7 +182,7 @@
                     "label": "Webinar Countdown",
                     "name": "webinar_countdown",
                     "aria-label": "",
-                    "type": "date_time_picker",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -191,10 +191,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y g:i a",
-                    "return_format": "d\/m\/Y g:i a",
-                    "first_day": 1,
-                    "allow_in_bindings": 0
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_670c09756c7a5",
@@ -1137,5 +1139,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729075465
+    "modified": 1729143840
 }
