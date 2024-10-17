@@ -4400,3 +4400,52 @@
         }
     }
 }
+
+.sb-tenant-retention {
+    margin: 140px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 50px;
+    }
+
+    .sb-section-title {
+
+        h2 {
+            @extend .sb-multy-color;
+        }
+    }
+    .retention-solution-list {
+        row-gap: 55px;
+
+        @include breakpoint(768) {
+            row-gap: 40px;
+        }
+        .sb-service-card {
+            // width: 42.5%;
+
+            @include breakpoint(1200) {
+                width: 40%;
+            }
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.ready-to-retention-section-title {
+    padding-bottom: 90px;
+
+    @include breakpoint(1024) {
+        padding-bottom: 60px;
+    }
+    @include breakpoint(768) {
+        padding-bottom: 40px;
+    }
+    h2 {
+        @extend .sb-multy-color;
+    }
+}

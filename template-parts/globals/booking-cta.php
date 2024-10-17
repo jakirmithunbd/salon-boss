@@ -13,6 +13,20 @@ $sb_cta_first_img_title = isset($sb_cta_first['image']['title']) ? esc_html($sb_
 
 <section class="sb-first-step">
     <div class="container">
+
+        <!-- For only Parent Template  start-->
+        <?php 
+        $tenant_retention_booking_cta = get_field('parent_booking_cta');
+        if($tenant_retention_booking_cta):
+            $tenat_booking_section_title = $tenant_retention_booking_cta['tenat_booking_section_title'];
+            if($tenat_booking_section_title):
+        ?>
+         <div class="ready-to-retention-section-title text-center">
+             <h2><?php echo wp_kses_post( $tenat_booking_section_title ); ?></h2>
+         </div>
+         <?php endif; endif; ?>
+         <!-- For only Parent Template  end-->
+
         <div class="sb-row align-center">
             <div class="sb-first-step-card text-center">
                 <img src="<?php echo $sb_cta_first_img; ?>" alt="<?php echo $sb_cta_first_img_title; ?>">
