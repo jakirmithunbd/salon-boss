@@ -403,7 +403,7 @@
                                 },
                                 {
                                     "key": "field_670fd68a916e2",
-                                    "label": "social link",
+                                    "label": "Social link",
                                     "name": "social_link",
                                     "aria-label": "",
                                     "type": "text",
@@ -499,5 +499,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729097655
+    "modified": 1729145612
 }

@@ -68,25 +68,6 @@
                     "allow_in_bindings": 0,
                     "preview_size": "medium",
                     "parent_repeater": "field_67075ff8f8e5e"
-                },
-                {
-                    "key": "field_6707621321020",
-                    "label": "Website",
-                    "name": "website",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "Enter your URL",
-                    "parent_repeater": "field_67075ff8f8e5e"
                 }
             ]
         },
@@ -1550,5 +1531,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728961612
+    "modified": 1729146300
 }

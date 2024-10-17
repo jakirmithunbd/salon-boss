@@ -82,7 +82,7 @@
                     .trusted-logo-item {
                         padding: 0 10px;
 
-                        a {
+                        .trusted-logo-wrapper {
                             min-height: 52px;
                             @extend .flex-center;
                             padding: 0 10px;
@@ -1095,7 +1095,7 @@
                         padding: 0 10px;
                     }
 
-                    a {
+                    .sb-client-logo-wrapper {
                         padding: 0 10px;
                         min-height: 55px;
                         @extend .flex-center;
@@ -2759,6 +2759,10 @@
                                     &:hover {
                                         background: $secondary;
                                     }
+
+                                    img {
+                                        width: 100%;
+                                    }
                                 }
                             }
                         }
@@ -4140,6 +4144,25 @@
                     @include font(22, 36);
                 }
             }
+        }
+    }
+}
+
+// ********** Parent Template Style *********** //
+.why-sb-parent-service {
+    margin: 100px 0 40px;
+
+    @include breakpoint(1024) {
+        margin-top: 70px;
+    }
+    @include breakpoint(768) {
+        margin-top: 40px;
+    }
+
+    .parent-section-title {
+
+        h2 {
+            @extend .sb-multy-color;
         }
     }
 }

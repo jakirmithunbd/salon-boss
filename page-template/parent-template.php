@@ -9,8 +9,11 @@ get_header(); ?>
 
 <section class="why-sb-parent-service">
     <div class="container">
-        <div class="parent-section-title">
+        <div class="parent-section-title text-center">
             <h2>Why Business Listings Matter?</h2>
+        </div>
+        <div class="parent-service-list">
+            
         </div>
     </div>
 </section>

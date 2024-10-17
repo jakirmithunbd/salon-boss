@@ -1988,7 +1988,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "40",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2003,25 +2003,6 @@
                                     "mime_types": "",
                                     "allow_in_bindings": 0,
                                     "preview_size": "medium",
-                                    "parent_repeater": "field_670e5c21fba0f"
-                                },
-                                {
-                                    "key": "field_670e5ca5fba11",
-                                    "label": "Website Link",
-                                    "name": "website_link",
-                                    "aria-label": "",
-                                    "type": "url",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "allow_in_bindings": 1,
-                                    "placeholder": "Enter your url",
                                     "parent_repeater": "field_670e5c21fba0f"
                                 }
                             ]
@@ -2056,5 +2037,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729050128
+    "modified": 1729145778
 }
