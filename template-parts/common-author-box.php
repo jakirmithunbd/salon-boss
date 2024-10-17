@@ -34,24 +34,31 @@ if ($common_author):
                         if($social_items):
                             foreach($social_items as $items):
                                 $social_icon = $items['social_icon'];
-                                $social_link = $items['social_link'];
                                 $social_link_type = $items['link_type'];
+                                $social_links = $items['social_links'];
+
+                                $social_website_link = $social_links['website_link'];
+                                $social_mail = $social_links['mail'];
+                                $social_call = $social_links['call'];
+                                $social_sms = $social_links['sms'];
+
                         ?>
                         <li>
-                            <a href="
-                            <?php
+                            <a href="<?php
                              if($social_link_type == 'Email'){
-                                echo wp_kses_post( "mailto:" . $social_link );
+                                echo wp_kses_post( "mailto:" . $social_mail );
                              }elseif($social_link_type == 'Call'){
-                                echo wp_kses_post( "tel:" . $social_link );
+                                echo wp_kses_post( "tel:" . $social_call );
                              }elseif($social_link_type == 'SMS'){
-                                echo wp_kses_post( "sms:" . $social_link );
+                                echo wp_kses_post( "sms:" . $social_sms );
                              }else{
-                                echo wp_kses_post( $social_link );
+                                echo wp_kses_post( $social_website_link );
                              };
-                            
                             ?>"
-                            target="_blank">
+                            <?php if($social_link_type == 'Website_Link'){ ?>
+                            target="_blank"
+                            <?php } ?>
+                            >
                                 <?php if($social_icon): ?>
                                     <img src="<?php echo esc_url( $social_icon['url'] ) ?>" alt="<?php echo esc_attr($social_icon['alt']); ?>">
                                 <?php endif; ?>

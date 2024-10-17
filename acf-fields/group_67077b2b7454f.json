@@ -384,7 +384,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "40",
+                                        "width": "30",
                                         "class": "",
                                         "id": ""
                                     },
@@ -402,28 +402,6 @@
                                     "parent_repeater": "field_670fd616916e0"
                                 },
                                 {
-                                    "key": "field_670fd68a916e2",
-                                    "label": "Social link",
-                                    "name": "social_link",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "40",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "allow_in_bindings": 1,
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_670fd616916e0"
-                                },
-                                {
                                     "key": "field_670fe65207671",
                                     "label": "Link Type",
                                     "name": "link_type",
@@ -433,7 +411,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "30",
                                         "class": "",
                                         "id": ""
                                     },
@@ -451,6 +429,141 @@
                                     "ui": 0,
                                     "ajax": 0,
                                     "placeholder": "",
+                                    "parent_repeater": "field_670fd616916e0"
+                                },
+                                {
+                                    "key": "field_6710b2996f096",
+                                    "label": "social links",
+                                    "name": "social_links",
+                                    "aria-label": "",
+                                    "type": "group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6710af399020f",
+                                            "label": "Website Link",
+                                            "name": "website_link",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_670fe65207671",
+                                                        "operator": "==",
+                                                        "value": "Website_Link"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_6710b00190210",
+                                            "label": "mail",
+                                            "name": "mail",
+                                            "aria-label": "",
+                                            "type": "email",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_670fe65207671",
+                                                        "operator": "==",
+                                                        "value": "Email"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_6710b03a90211",
+                                            "label": "Call",
+                                            "name": "call",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_670fe65207671",
+                                                        "operator": "==",
+                                                        "value": "Call"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "step": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_6710b0bb90212",
+                                            "label": "Sms",
+                                            "name": "sms",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_670fe65207671",
+                                                        "operator": "==",
+                                                        "value": "SMS"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "step": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        }
+                                    ],
                                     "parent_repeater": "field_670fd616916e0"
                                 }
                             ],
@@ -499,5 +612,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729145612
+    "modified": 1729147905
 }
