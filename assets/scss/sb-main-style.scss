@@ -2711,10 +2711,11 @@
                 padding-top: 70px;
             }
             @include breakpoint(820) {
-                gap: 0;
+                gap: 30px;
             }
             @include breakpoint(768) {
                 padding-top: 50px;
+                gap: 20px;
             }
 
             .sb-author-card {
