@@ -14,26 +14,36 @@ get_template_part('template-parts/page-banner');
                 <?php echo get_search_form();?>
             </div>
         </div>
-        <?php $post_type_name = get_field('post_type'); 
-        ?>
+        <?php $post_type_name = get_field('post_type');
+?>
 
-        <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile" date-post_type="<?php echo esc_attr($post_type_name); ?>">
-            <?php
-            $post_category_name = get_field('post_category');
-            $categories = get_categories([
-                'taxonomy' => $post_category_name,
-                'hide_empty' => false,
-            ]);
+        <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile" data-post_type="<?php echo esc_attr($post_type_name); ?>">
+        <?php
+        $key = str_replace('-', '_', $post_type_name) . '_category';
+$post_category_name = get_field($key);
 
-if (!empty($categories)) {
-    foreach ($categories as $category) {
-        printf(
-            '<button data-slug="%s" class="sb-button button-bg-green icon-position-left button-icon-phone">%s</button>',
-            esc_attr($category->slug),
-            esc_html($category->name)
-        );
+if (! empty($post_category_name) && is_array($post_category_name)) {
+    foreach ($post_category_name as $taxonomy) {
+        $categories = get_categories([
+            'taxonomy' => $taxonomy,
+            'hide_empty' => false,
+        ]);
+
+        if (!empty($categories)) {
+            foreach ($categories as $category) {
+                printf(
+                    '<button data-taxonomy="%s" data-slug="%s" class="sb-button button-bg-green icon-position-left button-icon-phone">%s</button>',
+                    esc_attr($taxonomy),
+                    esc_attr($category->slug),
+                    esc_html($category->name)
+                );
+            }
+        }
     }
+
 }
+
+
 ?>
 
 
@@ -41,11 +51,7 @@ if (!empty($categories)) {
         <div class="sb-blog-tab-select hide-desktop hide-tab text-center">
             <select name="" id="sb-post-filter-onchange">
             <?php
-                // $categories = get_categories([
-                //     'taxonomy' => 'category',
-                //     'hide_empty' => false,
-                // ]);
-                
+
                 if (!empty($categories)) {
                     foreach ($categories as $category) {
                         printf(
@@ -55,7 +61,7 @@ if (!empty($categories)) {
                         );
                     }
                 }
-                ?>
+?>
             </select>
         </div>
 

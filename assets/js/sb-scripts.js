@@ -364,18 +364,15 @@ if (sb_counter) {
     $(document).ready(function () {
         let paged = 1;
         let post_type_name = $('[data-post_type]').data('post_type');
-        console.log(post_type_name);
         let cats = '';
-
-        const data = {
-            cats
-        }
+        let taxonomy = '';
 
 
         $('.sb-blog-tab-buttons .sb-button').on('click', function () {
             $(this).toggleClass('active');
 
             cats = $(this).data('slug');
+            taxonomy = $(this).data('taxonomy');
             paged = 1;
 
             sb_filter_posts(cats);
@@ -403,7 +400,7 @@ if (sb_counter) {
             }
 
             wp.ajax
-                .post('sb_filter_posts', { data, nonce: ajax.nonce, paged })
+                .post('sb_filter_posts', { data, nonce: ajax.nonce, paged, post_type: post_type_name, taxonomy })
                 .done((res) => {
                     if(res.max_num_pages <= paged){
                         $('.sb-blog-load-more .sb-button').hide();
