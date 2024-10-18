@@ -361,71 +361,76 @@ if (sb_counter) {
 
     // Initialize an empty array to store selected category slugs
 
+    $(document).ready(function () {
+        let paged = 1;
+        let post_type_name = $('[data-post_type]').data('post_type');
+        console.log(post_type_name);
+        let cats = '';
 
-    let paged = 1;
-    let cats = '';
-
-    const data = {
-        cats
-    }
-
-
-    $('.sb-blog-tab-buttons .sb-button').on('click', function () {
-        $(this).toggleClass('active');
-
-        cats = $(this).data('slug');
-        paged = 1;
-
-        sb_filter_posts(cats);
-    });
-
-    $('.sb-blog-load-more .sb-button').on('click', function () {
-        paged += 1;
-
-        sb_filter_posts(cats);
-    });
-
-    $('#sb-post-filter-onchange').on('change', function () {
-        sb_filter_posts($(this).val());
-    })
-
-    function sb_filter_posts(data = {}) {
-        if (paged > 1) {
-            $('#sb-blog-list').append(
-                `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
-            );
-        } else {
-            $('#sb-blog-list').html(
-                `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
-            );
+        const data = {
+            cats
         }
 
-        wp.ajax
-            .post('sb_filter_posts', { data, nonce: ajax.nonce, paged })
-            .done((res) => {
-                if(res.max_num_pages <= paged){
-                    $('.sb-blog-load-more .sb-button').hide();
-                }else {
-                    $('.sb-blog-load-more .sb-button').show();
-                }
-                
-                if (res) {
-                    if (paged > 1) {
-                        $('#sb-blog-list').append(res.page);
-                    } else {
-                        $('#sb-blog-list').html(res.page);
+
+        $('.sb-blog-tab-buttons .sb-button').on('click', function () {
+            $(this).toggleClass('active');
+
+            cats = $(this).data('slug');
+            paged = 1;
+
+            sb_filter_posts(cats);
+        });
+
+        $('.sb-blog-load-more .sb-button').on('click', function () {
+            paged += 1;
+
+            sb_filter_posts(cats);
+        });
+
+        $('#sb-post-filter-onchange').on('change', function () {
+            sb_filter_posts($(this).val());
+        })
+
+        function sb_filter_posts(data = {}) {
+            if (paged > 1) {
+                $('#sb-blog-list').append(
+                    `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
+                );
+            } else {
+                $('#sb-blog-list').html(
+                    `<div class='sb-preloader'><img src="${ajax.preloader}"/></div>`
+                );
+            }
+
+            wp.ajax
+                .post('sb_filter_posts', { data, nonce: ajax.nonce, paged })
+                .done((res) => {
+                    if(res.max_num_pages <= paged){
+                        $('.sb-blog-load-more .sb-button').hide();
+                    }else {
+                        $('.sb-blog-load-more .sb-button').show();
                     }
-                }
-                $('#sb-blog-list .preloader').remove();
-            })
-            .fail((err) => {
-                $('#sb-blog-list .preloader').remove();
-                console.log(err);
-            })
+                    
+                    if (res) {
+                        if (paged > 1) {
+                            $('#sb-blog-list').append(res.page);
+                        } else {
+                            $('#sb-blog-list').html(res.page);
+                        }
+                    }
+                    $('#sb-blog-list .preloader').remove();
+                })
+                .fail((err) => {
+                    $('#sb-blog-list .preloader').remove();
+                    console.log(err);
+                })
 
-    }
+        }
 
-    sb_filter_posts();
+        sb_filter_posts();
+    });
+
+
 
 
 })(jQuery);

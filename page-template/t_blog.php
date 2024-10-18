@@ -14,10 +14,14 @@ get_template_part('template-parts/page-banner');
                 <?php echo get_search_form();?>
             </div>
         </div>
-        <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile">
+        <?php $post_type_name = get_field('post_type'); 
+        ?>
+
+        <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile" date-post_type="<?php echo esc_attr($post_type_name); ?>">
             <?php
+            $post_category_name = get_field('post_category');
             $categories = get_categories([
-                'taxonomy' => 'category',
+                'taxonomy' => $post_category_name,
                 'hide_empty' => false,
             ]);
 
@@ -37,10 +41,10 @@ if (!empty($categories)) {
         <div class="sb-blog-tab-select hide-desktop hide-tab text-center">
             <select name="" id="sb-post-filter-onchange">
             <?php
-                $categories = get_categories([
-                    'taxonomy' => 'category',
-                    'hide_empty' => false,
-                ]);
+                // $categories = get_categories([
+                //     'taxonomy' => 'category',
+                //     'hide_empty' => false,
+                // ]);
                 
                 if (!empty($categories)) {
                     foreach ($categories as $category) {
