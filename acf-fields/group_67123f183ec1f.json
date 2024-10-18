@@ -1,160 +1,9 @@
 {
-    "key": "group_6711f75200a2a",
-    "title": "Post Type Template",
+    "key": "group_67123f183ec1f",
+    "title": "Webinar Gallery",
     "fields": [
         {
-            "key": "field_6712295f66ea4",
-            "label": "Select Post Type & Category",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_6711f753fcfff",
-            "label": "Post Type",
-            "name": "post_type",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "post": "Blog",
-                "case-study": "Case Study",
-                "resource": "Resource"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_6711f7c9fd000",
-            "label": "Select Post Category",
-            "name": "post_category",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6711f753fcfff",
-                        "operator": "==",
-                        "value": "post"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "category": "Blog Category",
-                "post_tag": "Tags"
-            },
-            "default_value": [
-                "category"
-            ],
-            "return_format": "value",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 1,
-            "ajax": 1,
-            "placeholder": ""
-        },
-        {
-            "key": "field_671203fbc5431",
-            "label": "Select Case Study Category",
-            "name": "case_study_category",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6711f753fcfff",
-                        "operator": "==",
-                        "value": "case-study"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "case-study-category": "Case Study Category"
-            },
-            "default_value": [],
-            "return_format": "value",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 1,
-            "ajax": 1,
-            "placeholder": ""
-        },
-        {
-            "key": "field_671239203bd8d",
-            "label": "Select Resource Category",
-            "name": "resource_category",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6711f753fcfff",
-                        "operator": "==",
-                        "value": "resource"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "resource-category": "Resource Category"
-            },
-            "default_value": [],
-            "return_format": "value",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 1,
-            "ajax": 1,
-            "placeholder": ""
-        },
-        {
-            "key": "field_6712299066ea5",
+            "key": "field_67123f4ac6878",
             "label": "Explore Our Service",
             "name": "",
             "aria-label": "",
@@ -172,7 +21,7 @@
             "selected": 0
         },
         {
-            "key": "field_67122acb4e91a",
+            "key": "field_67123f51c6879",
             "label": "Want to show Explore Service?",
             "name": "explore_service_switch",
             "aria-label": "",
@@ -193,7 +42,7 @@
             "ui": 1
         },
         {
-            "key": "field_6712286a97e89",
+            "key": "field_67123f5ec687a",
             "label": "Explore Our Service",
             "name": "explore_services_group",
             "aria-label": "",
@@ -203,7 +52,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_67122acb4e91a",
+                        "field": "field_67123f51c6879",
                         "operator": "==",
                         "value": "1"
                     }
@@ -217,7 +66,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6712286a97e8e",
+                    "key": "field_67123f5ec687f",
                     "label": "Image",
                     "name": "image",
                     "aria-label": "",
@@ -243,7 +92,7 @@
                     "preview_size": "thumbnail"
                 },
                 {
-                    "key": "field_6712286a97e8f",
+                    "key": "field_67123f5ec6880",
                     "label": "Image Alignment",
                     "name": "image_alignment",
                     "aria-label": "",
@@ -271,7 +120,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_6712286a97e90",
+                    "key": "field_67123f5ec6881",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -292,7 +141,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6712286a97e91",
+                    "key": "field_67123f5ec6882",
                     "label": "Sub Title",
                     "name": "sub_title",
                     "aria-label": "",
@@ -313,7 +162,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6712286a97e92",
+                    "key": "field_67123f5ec6883",
                     "label": "Description",
                     "name": "description",
                     "aria-label": "",
@@ -334,7 +183,7 @@
                     "new_lines": ""
                 },
                 {
-                    "key": "field_6712286a97e93",
+                    "key": "field_67123f5ec6884",
                     "label": "Service Links",
                     "name": "service_links",
                     "aria-label": "",
@@ -359,7 +208,7 @@
                     "bidirectional_target": []
                 },
                 {
-                    "key": "field_6712286a97e94",
+                    "key": "field_67123f5ec6885",
                     "label": "Website Link",
                     "name": "website_link",
                     "aria-label": "",
@@ -378,7 +227,7 @@
             ]
         },
         {
-            "key": "field_67122b2d0979b",
+            "key": "field_67123f66c6886",
             "label": "Resource Center",
             "name": "",
             "aria-label": "",
@@ -396,7 +245,7 @@
             "selected": 0
         },
         {
-            "key": "field_67122b590979c",
+            "key": "field_67123f69c6887",
             "label": "Want to show Resource Center?",
             "name": "resource_center_switch",
             "aria-label": "",
@@ -422,7 +271,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-template\/t_blog.php"
+                "value": "page-template\/webinar-gallery.php"
             }
         ]
     ],
@@ -431,12 +280,9 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content",
-        "excerpt"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729249210
+    "modified": 1729249393
 }
