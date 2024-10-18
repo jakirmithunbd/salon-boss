@@ -4464,14 +4464,106 @@
     .sb-webinar-list {
         row-gap: 70px;
 
-        .sb-card {
+        .sb-webinar-card {
             width: 43.5%;
+            padding-top: 30px;
 
             @include breakpoint(1200) {
                 width: 40%;
             }
             @include breakpoint(1024) {
                 width: 100%;
+            }
+
+            .sb-card-contents-wrapper {
+
+                .sb-card-content {
+
+                    .sb-webinar-title {
+                        display: inline-flex;
+
+                        h2 {
+                            @include font(32, 44);
+                            @extend .sb-multy-color, .transition;
+
+                            @include breakpoint(1024) {
+                                @include font(26, 36);
+                            }
+
+                            @include breakpoint(768) {
+                                @include font(24, 34);
+                            }
+                        }
+                        &:hover {
+                            h2 {
+                                -webkit-text-fill-color: #000;
+                            }
+                        }
+                    }
+                    .webinar-post-content {
+                        margin-bottom: 10px;
+                        @include font(16, 25);
+                        font-weight: 400;
+                        color: #000;
+
+                        h3 {
+                            @include font(24, 36);
+                            color: #000;
+                            margin: 0;
+    
+                            @include breakpoint(1024) {
+                                @include font(22, 32);
+                            }
+                            @include breakpoint(768) {
+                                @include font(20, 30);
+                            }
+                        }
+                        ul {
+                            margin: 0;
+                            padding-top: 10px;
+
+                            li {
+                                display: inline-block;
+                                list-style: none;
+                                @include font(12, 18);
+                                font-weight: 700;
+                                color: #fff;
+                                background: $secondary;
+                                padding: 5px 10px;
+                                border-radius: 30px;
+                            }
+                        }
+                    }
+                    .sb-devider {
+                        width: 100%;
+                        height: 1px;
+                        background: #000;
+                        margin: 10px 0;
+                    }
+                    .sb-next-webinar {
+                        padding-bottom: 10px;
+                        p {
+                            @include font(12, 18);
+                            color: #000;
+
+                            span {
+                                color: $secondary;
+                            }
+                        }
+                    }
+                    .sb-card-btn {
+                        padding: 10px 30px;
+                        
+                        a {
+                            @include font(22, 34);
+                            font-weight: 700;
+    
+                            @include breakpoint(575) {
+                                @include font(18, 30);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

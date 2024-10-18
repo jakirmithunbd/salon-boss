@@ -23,7 +23,7 @@ get_template_part('template-parts/page-banner');
         ?>
             <div class="sb-webinar-list d-flex flex-wrap space-between">
                 <?php while ($webinar_query->have_posts()) : $webinar_query->the_post(); ?>
-                    <div class="sb-card"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                    <div class="sb-card sb-webinar-card"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
                         <div class="sb-card-contents-wrapper d-flex align-center">
                                 <div class="sb-card-image d-flex">
                                     <a href="<?php echo esc_url(get_permalink()); ?>">
@@ -33,10 +33,16 @@ get_template_part('template-parts/page-banner');
                                     </a>
                                 </div>
                                 <div class="sb-card-content text-center-mobile">
-                                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                                        <h4><?php the_title(); ?></h4>
+                                    <a class="sb-webinar-title" href="<?php echo esc_url(get_permalink()); ?>">
+                                        <h2><?php the_title(); ?></h2>
                                     </a>
-                                    <p><?php the_excerpt(); ?></p>
+                                    <div class="webinar-post-content">
+                                        <?php echo get_the_content( );?>
+                                    </div>
+                                    <div class="sb-devider"></div>
+                                    <div class="sb-next-webinar">
+                                        <p><b>Next Webinar:<span> December 2nd</span></b> in 10 Days, 4 Hours, 25 Minutes</p>
+                                    </div>
                                     <div class="sb-card-btn">
                                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Register For Free 👩‍🏫'); ?></a>
                                     </div>

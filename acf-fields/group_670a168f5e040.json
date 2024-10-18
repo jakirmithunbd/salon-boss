@@ -181,8 +181,8 @@
         "the_content",
         "excerpt"
     ],
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729090997
+    "modified": 1729275068
 }

@@ -282,7 +282,7 @@ if (!empty($hero)):
 <section class="sb-audit-included">
     <div class="container">
         <?php
-        $included_service = get_field('audit_included_service', get_queried_object_id());
+        $included_service = get_field('audit_included_service');
         
         if ($included_service):
 
@@ -300,8 +300,7 @@ if (!empty($hero)):
             <div class="sb-audit-included-list d-flex flex-wrap">
                 <?php foreach ($included_service_list as $list): ?>
 
-                    <div
-                            class="sb-image-box <?php echo esc_attr($list['image_alignment']['value']);
+                    <div class="sb-image-box <?php echo esc_attr($list['image_alignment']['value']);
                             echo $service_image_size ? " image-size-small" : ""; ?>">
                         <div class="sb-image-box-media">
                             <?php
@@ -337,7 +336,7 @@ if (!empty($hero)):
         <div class="sb-webinar-meet-expert-wrapper d-flex flex-wrap align-center">
 
             <?php
-            $host_area = get_field('meet_your_industry_expert', get_queried_object_id());
+            $host_area = get_field('meet_your_industry_expert');
             $common_author = $host_area['author'];
             if ($common_author):
                     $name = $common_author['name'];

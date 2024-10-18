@@ -192,7 +192,7 @@ function sb_custom_post_type_webinar()
         'label' => __('Webinar', 'sb'),
         'description' => __('Webinar documentation', 'sb'),
         'labels' => $labels,
-        'supports' => array('title', 'excerpt', 'thumbnail'), // Add other supports if needed
+        'supports' => array('title', 'editor', 'excerpt', 'thumbnail'), // Add other supports if needed
         'public' => true,
         'menu_icon' => 'dashicons-video-alt3',
         'has_archive' => true,
