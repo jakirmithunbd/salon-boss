@@ -29,9 +29,11 @@ function sb_filter_posts_function()
     $data = sb_sanitize_array($_POST['data'] ?? '');
 
     $paged = sanitize_text_field($_POST['paged'] ?? '');
+    $taxonomy = sanitize_text_field($_POST['taxonomy'] ?? 'category');
+    $post_type = sanitize_text_field($_POST['post_type'] ?? 'post');
 
     $args = [
-        'post_type'      => 'post',
+        'post_type'      => $post_type,
         'posts_per_page' => 6,
         'post_status'    => 'publish',
         'paged' => $paged,
@@ -40,7 +42,7 @@ function sb_filter_posts_function()
     if (!empty($data)) {
         $args['tax_query'] = [
             [
-                'taxonomy' => 'category',
+                'taxonomy' => $taxonomy,
                 'field'    => 'slug',
                 'terms'    => $data,
             ]
