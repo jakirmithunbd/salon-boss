@@ -41,7 +41,7 @@
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
-                            "button_label": "Add Row",
+                            "button_label": "Add New Resource",
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
@@ -213,7 +213,7 @@
                 "layout_670a71c3108c0": {
                     "key": "layout_670a71c3108c0",
                     "name": "resources_special",
-                    "label": "Resources Special",
+                    "label": "Special Resources List",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -234,7 +234,7 @@
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
-                            "button_label": "Add Row",
+                            "button_label": "Add New Special Resource",
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
@@ -412,7 +412,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add Resource List"
         }
     ],
     "location": [
@@ -435,5 +435,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729075213
+    "modified": 1729342310
 }
