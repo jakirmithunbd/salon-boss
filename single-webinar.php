@@ -254,8 +254,8 @@ while (have_rows('single_webinar')):
     <section class="sb-webinar-topics">
         <div class="container">
             <?php
-                $webinar_topics_title = get_sub_field['section_title'];
-                $webinar_topics_accodaians = get_sub_field['accodaians'];
+                $webinar_topics_title = get_sub_field('section_title');
+                $webinar_topics_accodaians = get_sub_field('accodaians');
                 ; ?>
                 <div class="sb-section-title text-center">
                     <?php

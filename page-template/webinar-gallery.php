@@ -40,9 +40,21 @@ get_template_part('template-parts/page-banner');
                                         <?php echo get_the_content( );?>
                                     </div>
                                     <div class="sb-devider"></div>
+                                    <?php
+                                    if (have_rows('single_webinar')):
+                                        while (have_rows('single_webinar')):
+                                            the_row();
+                                            if (get_row_layout() == 'webinar_form_time'):
+                                                $register_info = get_sub_field('register_info');
+                                    ?>
                                     <div class="sb-next-webinar">
-                                        <p><b>Next Webinar:<span> December 2nd</span></b> in 10 Days, 4 Hours, 25 Minutes</p>
+                                        <p><?php echo wp_kses_post($register_info['webinar_countdown'] ?? ''); ?></p>
                                     </div>
+                                    <?php
+                                            endif;
+                                        endwhile;
+                                    endif;
+                                    ?>
                                     <div class="sb-card-btn">
                                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Register For Free 👩‍🏫'); ?></a>
                                     </div>
