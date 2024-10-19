@@ -495,6 +495,13 @@
                 "operator": "==",
                 "value": "webinar"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
         ]
     ],
     "menu_order": 0,
@@ -506,5 +513,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729266036
+    "modified": 1729332145
 }

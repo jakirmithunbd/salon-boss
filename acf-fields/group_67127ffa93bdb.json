@@ -1226,6 +1226,15 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67139f85ce29a": {
+                    "key": "layout_67139f85ce29a",
+                    "name": "webinar_faqs_copy",
+                    "label": "FAQ (copy)",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6712a16ab9f45": {
                     "key": "layout_6712a16ab9f45",
                     "name": "webinar_related_service",
@@ -1291,5 +1300,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729325772
+    "modified": 1729339320
 }
