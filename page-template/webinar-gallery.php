@@ -9,69 +9,61 @@ get_template_part('template-parts/page-banner');
 
 <section class="sb-webinars">
     <div class="container">
+        <div class="sb-webinar-list d-flex flex-wrap space-between">
+            <?php
+                $webinar_item = get_field('webinar_item');
+                if($webinar_item):
+                    foreach($webinar_item as $item):
+                        $title_image = $item['title_image'];
+                        $webinar_date_time = $item['webinar_date_time'];
 
-        <?php
-        $args = array(
-            'post_type'      => 'webinar',     // Custom post type
-            'posts_per_page' => -1,             // Number of posts to show
-            'post_status'    => 'publish',     // Only show published posts
-        );
-
-        $webinar_query = new WP_Query($args);
-
-        if ($webinar_query->have_posts()) : 
-        ?>
-            <div class="sb-webinar-list d-flex flex-wrap space-between">
-                <?php while ($webinar_query->have_posts()) : $webinar_query->the_post(); ?>
-                    <div class="sb-card sb-webinar-card"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
-                        <div class="sb-card-contents-wrapper d-flex align-center">
-                                <div class="sb-card-image d-flex">
-                                    <a href="<?php echo esc_url(get_permalink()); ?>">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <?php the_post_thumbnail('thumbnail'); ?> 
-                                        <?php endif; ?>
-                                    </a>
-                                </div>
-                                <div class="sb-card-content text-center-mobile">
-                                    <a class="sb-webinar-title" href="<?php echo esc_url(get_permalink()); ?>">
-                                        <h2><?php the_title(); ?></h2>
-                                    </a>
-                                    <div class="webinar-post-content">
-                                        <?php echo get_the_content( );?>
-                                    </div>
-                                    <div class="sb-devider"></div>
-                                    <?php
-                                    if (have_rows('single_webinar')):
-                                        while (have_rows('single_webinar')):
-                                            the_row();
-                                            if (get_row_layout() == 'webinar_form_time'):
-                                                $register_info = get_sub_field('register_info');
-                                    ?>
-                                    <div class="sb-next-webinar">
-                                        <p><?php echo wp_kses_post($register_info['webinar_countdown'] ?? ''); ?></p>
-                                    </div>
-                                    <?php
-                                            endif;
-                                        endwhile;
-                                    endif;
-                                    ?>
-                                    <div class="sb-card-btn">
-                                        <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Register For Free 👩‍🏫'); ?></a>
-                                    </div>
-                                </div>
+                        $image = $title_image['image'];
+                        $title = $title_image['title'];
+                        $sub_title = $title_image['sub_title'];
+                        $description = $title_image['description'];
+                        $date_of_every_month = $webinar_date_time['date_of_every_month'];
+                        $next_webinar = $webinar_date_time['next_webinar'];
+                        $webinar_button = $webinar_date_time['webinar_button'];
+            ?>
+            <div class="sb-card sb-webinar-card"> <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
+                <div class="sb-card-contents-wrapper d-flex align-center">
+                        <div class="sb-card-image d-flex">
+                            <a href="<?php echo esc_url($webinar_button['url'] ?? ""); ?>">
+                                <?php if($image): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr( $image['title'] ?? '' ); ?>">
+                                <?php endif; ?>
+                            </a>
                         </div>
-                    </div><!-- Sb Card  -->
-                <?php endwhile; ?>
-            </div>
-        <?php
-        else :
-            echo '<p>No webinars found.</p>';
-        endif;
-
-        // Reset post data
-        wp_reset_postdata();
-        ?>
-
+                        <div class="sb-card-content text-center-mobile">
+                            <a class="sb-webinar-title" href="<?php echo esc_url($webinar_button['url'] ?? ""); ?>">
+                                <h2><?php echo wp_kses_post( $title ?? '' ); ?></h2>
+                            </a>
+                            <div class="webinar-post-content">
+                               <h4><?php echo wp_kses_post( $sub_title ?? '' ); ?></h4>
+                               <p><?php echo wp_kses_post( $description ?? '' ); ?></p>
+                               <?php if($date_of_every_month): ?>
+                               <ul>
+                                <?php foreach($date_of_every_month as $date): ?>
+                                <li><?php echo wp_kses_post( $date['date'] ?? '' ); ?></li>
+                                <?php endforeach; ?>
+                               </ul>
+                               <?php endif; ?>
+                            </div>
+                            <div class="sb-devider"></div>
+                            <div class="sb-next-webinar">
+                                <p><?php echo wp_kses_post( $next_webinar ?? '' ); ?></p>
+                            </div>
+                            <div class="sb-card-btn">
+                                <a href="<?php echo esc_url($webinar_button['url'] ?? ""); ?>"><?php echo wp_kses_post( $webinar_button['title'] ?? '' ); ?></a>
+                            </div>
+                        </div>
+                </div>
+            </div><!-- Sb Card  -->
+            <?php
+                endforeach;
+                endif;
+            ?>
+        </div>
     </div>
 </section>
 <!-- Webinar list  -->
