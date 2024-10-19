@@ -34,13 +34,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "service"
-            ],
+            "post_type": "",
             "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search",
+                "post_type",
                 "taxonomy"
             ],
             "return_format": "id",
@@ -306,5 +305,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729181779
+    "modified": 1729319781
 }
