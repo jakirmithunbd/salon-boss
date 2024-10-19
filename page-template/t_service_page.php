@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="sb-card-content text-center">
                                     <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
-                                        <h3><?php echo esc_html($service_post->post_title); ?></h3>
+                                        <h3><?php echo wp_kses_post($service_post->post_title); ?></h3>
                                     </a>
                                     <h5><?php echo wp_kses_post($excerpt); ?></h5>
 
@@ -98,7 +98,7 @@ $resource_center = get_field('explore_services_group');
                                     <?php foreach ($resource_center['service_links'] as $link) : ?>
                                         <li>
                                             <a href="<?php echo esc_url(get_the_permalink($link->ID)); ?>">
-                                                <?php echo esc_html(get_the_title($link->ID)); ?>
+                                                <?php echo wp_kses_post(get_the_title($link->ID)); ?>
                                             </a>
                                         </li>
                                     <?php endforeach; ?>
@@ -108,7 +108,7 @@ $resource_center = get_field('explore_services_group');
                             <?php if (!empty($resource_center['website_link'])) : ?>
                                 <div class="sb-card-btn">
                                     <a target="<?php echo esc_attr($resource_center['website_link']['target'] ?? '_self'); ?>" href="<?php echo esc_url($resource_center['website_link']['url']); ?>">
-                                        <?php echo esc_html($resource_center['website_link']['title']); ?>
+                                        <?php echo wp_kses_post($resource_center['website_link']['title']); ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
