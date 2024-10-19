@@ -144,10 +144,10 @@ if (!empty($hero)):
 <!-- Hero Common Template  -->
 
 <?php
-if (have_rows('single_service')):
+if (have_rows('single_webinar')):
 
 
-while (have_rows('single_service')):
+while (have_rows('single_webinar')):
     the_row();
 
 
