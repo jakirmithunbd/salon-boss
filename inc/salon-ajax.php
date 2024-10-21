@@ -67,8 +67,22 @@ function sb_filter_posts_function()
                             </a>
                     </div>
                     <div class="sb-card-content text-center">
-                        <?php the_category(); ?>
+                        <?php
+                        $terms = get_the_terms(get_the_ID(), $taxonomy);
+
+                        if (!is_wp_error($terms) && !empty($terms)) {
+                            echo '<ul class="post-categories">';
+                            foreach ($terms as $term) {
+                                echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+                            }
+                            echo '</ul>';
+                        } ?>
                         <a class="sb-blog-title" href="<?php echo esc_url(get_permalink()); ?>"><h3><?php echo esc_html(get_the_title()); ?></h3></a>
+
+                        <?php if(get_the_excerpt()) {
+                            printf('<p>%s</p>', wp_trim_words(get_the_excerpt(), 15, ' ...'));
+                        } ?>
+
                         <span class="sb-blog-date"><?php echo get_the_date(); ?></span>
                         <div class="sb-card-btn">
                             <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Read Article >'); ?></a>

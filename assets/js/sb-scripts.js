@@ -367,6 +367,8 @@ if (sb_counter) {
         let cats = '';
         let taxonomy = '';
 
+        taxonomy = $('.sb-blog-tab-buttons .sb-button').data('taxonomy')
+
 
         $('.sb-blog-tab-buttons .sb-button').on('click', function () {
             $(this).toggleClass('active');
