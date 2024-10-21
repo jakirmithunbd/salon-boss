@@ -157,9 +157,9 @@
                     "append": ""
                 },
                 {
-                    "key": "field_670c08de6c7a3",
-                    "label": "Form Shortcode ID",
-                    "name": "form_shortcode_id",
+                    "key": "field_670c09396c7a4",
+                    "label": "Webinar Countdown",
+                    "name": "webinar_countdown",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -172,17 +172,17 @@
                     },
                     "default_value": "",
                     "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "Enter your shortcode",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
                     "prepend": "",
                     "append": ""
                 },
                 {
-                    "key": "field_670c09396c7a4",
-                    "label": "Webinar Countdown",
-                    "name": "webinar_countdown",
+                    "key": "field_670c08de6c7a3",
+                    "label": "Embed Code form",
+                    "name": "embed_form",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -192,11 +192,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "allow_in_bindings": 1,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_670c09756c7a5",
@@ -1139,5 +1139,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729275769
+    "modified": 1729511130
 }
