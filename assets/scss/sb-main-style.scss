@@ -2348,7 +2348,6 @@
                 max-width: 535px;
                 p {
                     @include font(14, 25);
-                    font-weight: 400;
                     color: #fff;
                     text-align: start;
                 }
@@ -2730,8 +2729,12 @@
                     .sb-author-card-content {
                         p {
                             @include font(16, 24);
-                            font-weight: 400;
                             color: #000;
+                            text-align: start;
+
+                            @include breakpoint(575) {
+                                text-align: center;
+                            }
                         }
                     }
                     .sb-author-social-icons {
@@ -3569,6 +3572,11 @@
         }
 
         .sb-section-title {
+            h5 {
+                @include minbreakpoint(1025) {
+                    padding-top: 100px;
+                }
+            }
             h2 {
                 color: $primary;
             }
@@ -4153,9 +4161,9 @@
     .sb-author-card {
         .sb-author-card-content-wrapper {
             .sb-author-card-content {
+                max-width: 620px;
                 p {
                     width: 100%;
-                    font-weight: 500;
                 }
             }
         }
@@ -4419,9 +4427,16 @@
     }
     .retention-solution-list {
         row-gap: 55px;
+        padding-top: 80px;
+
+        
+        @include breakpoint(1024) {
+            padding-top: 50px;
+        }
 
         @include breakpoint(768) {
             row-gap: 40px;
+            padding-top: 30px;
         }
         .sb-service-card {
             width: 42.5%;
@@ -4485,6 +4500,7 @@
                         h2 {
                             @include font(32, 44);
                             @extend .sb-multy-color, .transition;
+                            margin-bottom: 5px;
 
                             @include breakpoint(1024) {
                                 @include font(26, 36);
@@ -4506,7 +4522,7 @@
                         font-weight: 400;
                         color: #000;
 
-                        h3 {
+                        h4 {
                             @include font(24, 36);
                             color: #000;
                             margin: 0;
@@ -4518,9 +4534,12 @@
                                 @include font(20, 30);
                             }
                         }
+                        p {
+                            margin: 0;
+                        }
                         ul {
                             margin: 0;
-                            padding-top: 10px;
+                            padding-top: 8px;
 
                             li {
                                 display: inline-block;
