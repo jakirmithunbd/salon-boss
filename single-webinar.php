@@ -84,10 +84,9 @@ if (!empty($hero)):
                 <?php endif; ?>
 
             <?php
-            $text_center = !$media['image'] ? 'text-center' : '';
             $content = $hero['content'];
             if (!empty($content)): ?>
-                <div class="sb-hero-content text-center-mobile <?php echo esc_attr($text_center); ?>">
+                <div class="sb-hero-content text-center-mobile">
                     <?php $bages = $content['hero_bages'];
                     if (!empty($bages)): ?>
                         <div class="hero-badge d-flex flex-wrap">

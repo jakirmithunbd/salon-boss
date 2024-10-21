@@ -1880,11 +1880,12 @@ section:has(.sb-video.video-popup-active) {
             }
             p {
                 @include font(16, 30);
-                font-weight: 700;
+                font-weight: 500;
                 color: #000;
 
                 @include breakpoint(575) {
                     @include font(14, 24);
+                    text-align: center !important;
                 }
             }
         }
