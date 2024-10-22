@@ -146,7 +146,7 @@ if (!empty($hero)):
 
 <?php
 $form = get_field('form', get_queried_object_id()); if(!empty($form)) :
-$form_id = $form['gravity_form_id'];
+$form_embed_codes = $form['form_embed_codes'];
 $f_description = $form['description'];
 ?>
 
@@ -155,11 +155,7 @@ $f_description = $form['description'];
         <div class="sb-audit-form-wrapper">
 
             <div class="sb-form">
-                <?php
-                if (!empty($form_id)) {
-                    echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
-                }
-                ?>
+                <?php echo $form_embed_codes; ?>
 
                 <p class="sb-form-condition-text text-center-mobile">
                     <?php echo esc_html($f_description); ?>

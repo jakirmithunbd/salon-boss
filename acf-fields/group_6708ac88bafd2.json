@@ -120,10 +120,10 @@
             "sub_fields": [
                 {
                     "key": "field_670cd92f099da",
-                    "label": "Gravity Form Id",
-                    "name": "gravity_form_id",
+                    "label": "Form Embed Codes",
+                    "name": "form_embed_codes",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -133,11 +133,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "Add form id only",
-                    "prepend": "",
-                    "append": ""
+                    "allow_in_bindings": 1,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_670cd944099db",
@@ -446,5 +446,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728895597
+    "modified": 1729583038
 }
