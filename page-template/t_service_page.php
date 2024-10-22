@@ -38,7 +38,7 @@
                                     <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
                                         <h3><?php echo wp_kses_post($service_post->post_title); ?></h3>
                                     </a>
-                                    <h5><?php echo wp_kses_post($excerpt); ?></h5>
+                                    <p><?php echo wp_kses_post($excerpt); ?></p>
 
                                     <?php 
                                         if($service_key_points):
