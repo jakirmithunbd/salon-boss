@@ -171,7 +171,7 @@ while (have_rows('single_webinar')):
 
                             <?php
                             $webinar_countdown_shortcode = $register_info['webinar_countdown'];
-                            $form_id = $register_info['form_shortcode_id'] ?? '';
+                            $embed_form = $register_info['embed_form'];
                             $webinar_description = $register_info['webinar_description'] ?? 'Next Webinar Is in 14 Days, 9 Hours & 10 Minutes';
                             ?>
 
@@ -182,11 +182,13 @@ while (have_rows('single_webinar')):
                             <?php endif; ?>
                         </div>
 
-                        <?php
-                        if (!empty($form_id)) {
-                            echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
-                        }
-                        ?>
+                        <div class="embed-form">
+                            <?php
+                            if (!empty($embed_form)) {
+                                echo $embed_form;
+                            }
+                            ?>
+                        </div>
 
                         <p class="sb-form-condition-text text-center-mobile">
                             <?php echo esc_html($webinar_description); ?>
