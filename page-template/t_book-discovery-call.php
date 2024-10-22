@@ -8,68 +8,68 @@ get_header(); ?>
 <?php get_template_part('template-parts/page-banner'); ?>
 <?php get_template_part('/template-parts/hero-service-slider'); ?>
 
+<?php $booking_form = get_field('booking_form'); ?>
+
 <section class="sb-booking-form">
     <div class="container">
         <div class="sb-section-title text-center">
-            <h2>Book A <span>Discovery Call</span> ☎️</h2>
+            <?php if(isset($booking_form['title'])) {
+                printf('<h2>%s</h2>', wp_kses_post($booking_form['title']));
+            } ?>
+
         </div>
         <div class="sb-booking-form-wrapper">
             <div class="sb-form">
-                <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
-                <p class="sb-form-condition-text text-center">
-                    By submitting this form, you agree to our privacy policy and terms & conditions.
-                    You also agree to be contacted by Salon Boss via email, sms & phone. We never
-                    ell your data. You may opt-out at any time.
-                </p>
+                <?php if(isset($booking_form['title'])) {
+                    echo $booking_form['form_embed_code'];
+                } ?>
+
+                <?php if(isset($booking_form['description'])) {
+                    printf('<p class="sb-form-condition-text text-center">%s</p>', wp_kses_post($booking_form['description']));
+                } ?>
+
             </div>
         </div>
     </div>
 </section>
 <!-- Sb Booking Form  -->
 
+<?php $what_to_expect = get_field('what_to_expect'); ?>
 <section class="sb-expectation">
     <div class="container">
+
         <div class="sb-section-title text-center">
-            <h2>What to expect:</h2>
-            <h4>Maximizing Your Growth in 60 Minutes</h4>
-            <p>
-                Every discovery call with Salon Boss is a strategic roadmap to your business growth.
-                <strong>Here's a glimpse of what you can expect:</strong>
-            </p>
+            <?php if(isset($what_to_expect['title'])) {
+                printf('<h2>%s</h2>', wp_kses_post($what_to_expect['title']));
+            } ?>
+
+            <?php if(isset($what_to_expect['title'])) {
+                printf('<h4>%s</h4>', wp_kses_post($what_to_expect['sub_title']));
+            } ?>
+
+            <?php if(isset($what_to_expect['description'])) {
+                printf('<p>%s</p>', wp_kses_post($what_to_expect['description']));
+            } ?>
         </div>
+
         <div class="sb-consultation-steps d-flex flex-wrap">
 
-            <div class="sb-consultation-step-item text-center">
-                <h3>1</h3>
-                <h4>Getting to Know Your Business</h4>
-                <p>
-                    We take the time to understand the unique values,
-                    strengths, and challenges of your salon, salon suite,
-                    or beauty brand. This deep dive helps us align our
-                    services with your specific needs.
-                </p>
-            </div>
+            <?php $process = $what_to_expect['process']; if(!empty($process)) : foreach ($process as $item) : ?>
 
             <div class="sb-consultation-step-item text-center">
-                <h3>2</h3>
-                <h4>
-                    Evaluating Your Marketing Needs and Goals
-                </h4>
-                <p>
-                    We assess your existing marketing efforts and future plans.
-                    Each business is unique, and our strategies reflect that uniqueness.
-                </p>
-            </div>
+                <?php if(isset($item['number'])) {
+                    printf('<h3>%s</h3>', wp_kses_post($item['number']));
+                } ?>
 
-            <div class="sb-consultation-step-item text-center">
-                <h3>3</h3>
-                <h4>Introducing Salon Boss</h4>
-                <p>
-                    We wrap up the call with an overview of our services,
-                    pricing, and how to get started. Remember, this call is
-                    completely FREE and comes with no obligations.
-                </p>
+                <?php if(isset($item['title'])) {
+                    printf('<h4>%s</h4>', wp_kses_post($item['title']));
+                } ?>
+
+                <?php if(isset($item['title'])) {
+                    printf('<p>%s</p>', wp_kses_post($item['title']));
+                } ?>
             </div>
+            <?php endforeach; endif; ?>
 
         </div>
     </div>
