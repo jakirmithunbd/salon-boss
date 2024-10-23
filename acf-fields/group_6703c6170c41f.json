@@ -494,6 +494,7 @@
                                 "id": ""
                             },
                             "layout": "block",
+                            "parent_repeater": "field_6704f97f96228",
                             "sub_fields": [
                                 {
                                     "key": "field_6704f779f9c8a",
@@ -577,8 +578,7 @@
                                     "allow_null": 0,
                                     "layout": "horizontal"
                                 }
-                            ],
-                            "parent_repeater": "field_6704f97f96228"
+                            ]
                         },
                         {
                             "key": "field_6704f7e2f9c8d",
@@ -1018,5 +1018,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728643738
+    "modified": 1729660013
 }
