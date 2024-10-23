@@ -3,6 +3,27 @@
     "title": "Single Resource",
     "fields": [
         {
+            "key": "field_6718a6effd301",
+            "label": "Short Description",
+            "name": "short_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_67138846c68ec",
             "label": "",
             "name": "single_resource",
@@ -79,27 +100,6 @@
                                     "append": ""
                                 },
                                 {
-                                    "key": "field_671388474c929",
-                                    "label": "Form Shortcode ID",
-                                    "name": "form_shortcode_id",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "50",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "allow_in_bindings": 0,
-                                    "placeholder": "Enter your shortcode",
-                                    "prepend": "",
-                                    "append": ""
-                                },
-                                {
                                     "key": "field_6713884750603",
                                     "label": "Sub Title",
                                     "name": "sub_title",
@@ -121,6 +121,27 @@
                                     "new_lines": ""
                                 },
                                 {
+                                    "key": "field_671388474c929",
+                                    "label": "Form Embed Code",
+                                    "name": "form_embed_code",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "allow_in_bindings": 1,
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
                                     "key": "field_67138847540df",
                                     "label": "Formr Description",
                                     "name": "form_description",
@@ -130,7 +151,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -658,5 +679,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729341301
+    "modified": 1729686859
 }

@@ -32,8 +32,12 @@ get_header(); ?>
                                 <?php
                                 if ($contact_type_button):
                                     ; ?>
-                                    <a
-                                        href="<?php echo esc_url($contact_type_button['url'] ?? site_url()); ?>"><?php echo esc_attr($contact_type_button['title'] ?? ''); ?></a>
+                                    <a 
+                                    href="<?php echo esc_url($contact_type_button['url'] ?? site_url()); ?>"
+                                    target="<?php echo esc_attr($contact_type_button['target']); ?>"
+                                    >
+                                        <?php echo esc_attr($contact_type_button['title'] ?? ''); ?>
+                                    </a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -46,7 +50,7 @@ get_header(); ?>
 
 <section class="sb-contact">
     <div class="container">
-        <div class="sb-contact-wrapper d-flex flex-wrap">
+        <div class="sb-contact-wrapper d-flex flex-wrap align-center">
             <?php
             $contact_info = get_field('contact_info', 'options');
             if ($contact_info):

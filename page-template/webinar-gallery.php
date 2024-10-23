@@ -51,7 +51,7 @@ get_template_part('template-parts/page-banner');
                             </div>
                             <div class="sb-devider"></div>
                             <div class="sb-next-webinar">
-                                <p><?php echo wp_kses_post( $next_webinar ?? '' ); ?></p>
+                                <?php echo do_shortcode($next_webinar); ?>
                             </div>
                             <div class="sb-card-btn">
                                 <a href="<?php echo esc_url($webinar_button['url'] ?? ""); ?>"><?php echo wp_kses_post( $webinar_button['title'] ?? '' ); ?></a>

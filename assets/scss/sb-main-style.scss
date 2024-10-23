@@ -3281,7 +3281,6 @@
             }
 
             .sb-form-title {
-                padding-bottom: 30px;
 
                 @include breakpoint(768) {
                     padding-bottom: 20px;
@@ -3614,10 +3613,7 @@
             }
 
             .sb-card-contents-wrapper {
-                
-                // .sb-card-image  {
-                    
-                // }
+            
                 .sb-card-content {
                     .sb-service-title {
                         h3 {
@@ -4569,13 +4565,11 @@
                     }
                     .sb-next-webinar {
                         padding-bottom: 10px;
-                        p {
-                            @include font(12, 18);
-                            color: #000;
+                        @include font(12, 18);
+                        color: #000;
 
-                            span {
-                                color: $secondary;
-                            }
+                        span {
+                            color: $secondary;
                         }
                     }
                     .sb-card-btn {

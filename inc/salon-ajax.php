@@ -79,9 +79,12 @@ function sb_filter_posts_function()
                         } ?>
                         <a class="sb-blog-title" href="<?php echo esc_url(get_permalink()); ?>"><h3><?php echo esc_html(get_the_title()); ?></h3></a>
 
-                        <?php if(get_the_excerpt()) {
-                            printf('<p>%s</p>', wp_trim_words(get_the_excerpt(), 15, ' ...'));
-                        } ?>
+                        <?php
+                            $short_description = get_field('short_description');
+                            if($short_description){
+                                printf('<p>%s</p>', $short_description);
+                            }
+                        ?>
 
                         <span class="sb-blog-date"><?php echo get_the_date(); ?></span>
                         <div class="sb-card-btn">

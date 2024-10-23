@@ -95,38 +95,48 @@ get_header(); ?>
     </div>
 </section><!-- Single Blog Content  -->
 
+<?php
+$author_information = get_field('author_information');
+if($author_information):
+?>
 <section class="sb-single-blog-author">
     <div class="container">
         <div class="sb-author-card">
             <div class="sb-author-card-content-wrapper d-flex">
-                <?php
-                $author_id = get_the_author_meta('ID', get_current_blog_id());
-                ; ?>
                 <div class="sb-author-card-image flex-center relative">
                     <?php
-                    $author_image = get_avatar_url($author_id);
+                        $author_image = $author_information['author_image'];
+                        $author_name = $author_information['author_name'];
+                        $author_title = $author_information['author_title'];
+                        $learn_more = $author_information['learn_more'];
+                        $author_description = $author_information['author_description'];
+
+                        if($author_image):
                     ?>
-                    <img src="<?php echo esc_url($author_image); ?>" alt="<?php echo esc_attr(get_the_author()); ?>">
+                    <img src="<?php echo esc_url( $author_image['url']); ?>" alt="<?php echo esc_attr($author_image['alt']); ?>">
+                    <?php endif; ?>
                     <div class="sb-author-card-badge text-center">
-                        <h5><?php echo esc_html(get_the_author_meta('display_name', $author_id)); ?></h5>
-                        <h6><?php echo esc_html(get_the_author_meta('nickname', $author_id)); ?></h6>
+                        <h5><?php echo wp_kses_post( $author_name ?? '' ); ?></h5>
+                        <h6><?php echo wp_kses_post( $author_title ?? '' ); ?></h6>
                     </div>
                 </div>
                 <div class="sb-author-card-content flex-center flex-col text-center">
                     <p>
-                        <?php
-                        echo esc_html(get_the_author_meta('description', $author_id)); ?>
+                        <?php echo wp_kses_post( $author_description ?? '' ); ?>
                     </p>
-                    <a target="_blank"
-                        href="<?php echo esc_url(get_the_author_meta('user_url', $author_id) ?? site_url()); ?>">
-                        Learn More About <?php echo esc_html(get_the_author_meta('first_name', $author_id)); ?> & Salon
-                        Boss >
+
+                    <?php if($learn_more): ?>
+                    <a href="<?php echo esc_url($learn_more['url']); ?>"
+                        target="<?php echo esc_attr($learn_more['target']); ?>">
+                        <?php echo esc_html($learn_more['title'] ?? ''); ?>
                     </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div><!-- Sb Author Card  -->
     </div>
 </section>
+<?php endif; ?>
 
 <section class="sb-related-post">
     <div class="container">
