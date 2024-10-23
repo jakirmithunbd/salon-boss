@@ -4584,3 +4584,33 @@
         }
     }
 }
+
+// 404 page style 
+.hero-404 {
+    .container {
+        .sb-hero-404-img {
+            width: 100%;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+        .sb-hero-content {
+            width: 100%;
+
+            h1 {
+                @include font(210, 220);
+                margin: 0;
+
+                @include breakpoint(768) {
+                    @include font(100, 120);
+                }
+            }
+            h4 {
+                margin-bottom: 30px;
+
+                @include breakpoint(768) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
