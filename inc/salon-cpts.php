@@ -140,7 +140,7 @@ function sb_custom_post_type_resource()
         'public' => true,
         'menu_icon' => 'dashicons-media-document',
         'has_archive' => true,
-        'rewrite' => array('slug' => 'resource'),
+        'rewrite' => array('slug' => 'resources'),
     );
     register_post_type('resource', $args);
 }
@@ -196,7 +196,7 @@ function sb_custom_post_type_webinar()
         'public' => true,
         'menu_icon' => 'dashicons-video-alt3',
         'has_archive' => true,
-        'rewrite' => array('slug' => 'webinar'),
+        'rewrite' => array('slug' => 'webinars'),
     );
     register_post_type('webinar', $args);
 }
