@@ -83,7 +83,7 @@ function sb_custom_post_type_case_study()
         'public' => true,
         'menu_icon' => 'dashicons-portfolio',
         'has_archive' => true,
-        'rewrite' => array('slug' => 'case-study'),
+        'rewrite' => array('slug' => 'case-studies'),
     );
     register_post_type('case-study', $args);
 }

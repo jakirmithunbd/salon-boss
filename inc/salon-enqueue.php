@@ -16,7 +16,7 @@ function salon_enqueue_scripts()
     // Localize script data
     $data = array(
         'site_url' => get_template_directory_uri(),
-        'preloader' => '/wp-content/themes/salonboss/assets/images/vectors/ajax-loader.gif',
+        'preloader' => '/wp-content/themes/salon-boss/assets/images/vectors/ajax-loader.gif',
         'admin_ajax' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('sb-nonce')
     );
