@@ -1270,6 +1270,19 @@
     }
 }
 
+// Hide short description on Who We Service Page
+.page-id-412 {
+    .sb-service {
+        .sb-service-list {
+            .sb-card-content {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+} 
+
 // Sb Our Service 
 .sb-our-service {
     margin: 110px 0 40px;
