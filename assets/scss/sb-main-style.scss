@@ -1754,61 +1754,6 @@
             color: $white;
             margin-bottom: 27px;
         }
-        .sb-blog-search-form {
-
-            form {
-                background: #E1E1E1;
-                padding: 3.5px;
-                border-radius: 40px;
-                width: 100%;
-                max-width: 717px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 10px;
-
-                .screen-reader-text {
-                    border: 0;
-                    clip: rect(1px, 1px, 1px, 1px);
-                    clip-path: inset(50%);
-                    height: 49px;
-                    margin: -1px;
-                    overflow: hidden;
-                    padding: 0;
-                    position: absolute;
-                    width: 207px;
-                    word-wrap: normal !important;
-                }
-                label {
-                    width: 50%;
-                    flex-grow: 1;
-                    text-align: start
-                }
-                input {
-                    width: 100%;
-                    @include font(16, 24);
-                    font-weight: 600;
-                    color: #5B5B5B;
-                    background: transparent;
-                    padding: 10px;
-                    border-radius: 40px;
-                }
-                input[type="submit"] {
-                    @include font(14, 24);
-                    color: $white;
-                    background: $secondary;
-                    max-width: 144px;
-                    border-radius: 40px;
-                    @extend .transition , .cursor-pointer;
-
-                    &:hover {
-                        background: #363179;
-                    }
-
-                }
-            }
-        }
     }
     .sb-blog-tab-buttons {
         padding-top: 40px;
@@ -4610,6 +4555,90 @@
                 @include breakpoint(768) {
                     margin-bottom: 20px;
                 }
+            }
+        }
+    }
+}
+
+// Serch page style 
+.hero-search {
+
+    .container {
+
+        .sb-hero-content {
+            width: 100%;
+            max-width: 620px;
+        }
+    }
+}
+.sb-search-result {
+    margin-top: 0;
+
+    .sb-search-result-list {
+        row-gap: 40px;
+        column-gap: 18px;
+
+        @include breakpoint(1024) {
+            column-gap: 25px;
+        }
+        @include breakpoint(768) {
+            row-gap: 30px;
+        }
+
+        .sb-post-card {
+            width: 32%;
+
+            @include breakpoint(1024) {
+                width: 48%;
+            }
+            @include breakpoint(768) {
+                width: 100%;
+            }
+
+            .sb-card-contents-wrapper {
+                .sb-card-image {
+                    padding: 0;
+
+                    .post-thumbnail {
+                        width: 100%;
+
+                        a {
+                            img {
+                                @extend .transition;
+                            }
+
+                            &:hover {
+                                img {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+                    }
+                }
+                .sb-card-content {
+
+                    .sb-blog-title {
+
+                        h3 {
+                            @extend .transition;
+                        }
+                        &:hover {
+                            h3 {
+                                color: $secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sb-no-post {
+
+        h2 {
+            margin-bottom: 30px;
+
+            @include breakpoint(768) {
+                margin-bottom: 20px;
             }
         }
     }
