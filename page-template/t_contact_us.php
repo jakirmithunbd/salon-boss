@@ -127,12 +127,13 @@ get_header(); ?>
                 <?php endif; endif; ?>
             <div class="sb-contact-form">
                 <div class="sb-form">
-                    <?php echo do_shortcode('[gravityform id="2" title="false"]'); ?>
-                    <p class="sb-form-condition-text text-center-mobile">
-                        By submitting this form, you agree to our privacy policy and terms & conditions.
-                        You also agree to be contacted by Salon Boss via email, sms & phone. We never
-                        ell your data. You may opt-out at any time.
-                    </p>
+                    <?php
+                        $form_embed_code = get_field('form_embed_code');
+
+                        if($form_embed_code):
+                            echo $form_embed_code;
+                        endif;
+                    ?>
                 </div>
             </div>
         </div>
