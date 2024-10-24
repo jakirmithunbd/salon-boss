@@ -24,6 +24,16 @@ if (common_header) {
     document.body.style.setProperty('--header-top-space', common_header_top_space + 'px');
 };
 
+// For mobile menu 
+const subMenu = document.querySelectorAll(".main-header-menu .has-children");
+
+function subMenuActive() {
+    this.classList.toggle("sub_menu_active");
+}
+
+subMenu.forEach((toggle) => toggle.addEventListener("click", subMenuActive));
+// mobile sub menu end
+
 
 // const sb_custom_slider = document.querySelector('.sb-service-slider');
 // if (sb_custom_slider) {
