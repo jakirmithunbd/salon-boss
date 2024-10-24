@@ -97,7 +97,7 @@ get_header(); ?>
 
 <?php
 $author_information = get_field('author_information');
-if($author_information):
+if($author_information['author_name']):
 ?>
 <section class="sb-single-blog-author">
     <div class="container">
