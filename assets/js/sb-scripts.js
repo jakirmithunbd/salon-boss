@@ -110,7 +110,7 @@ if (sb_videos.length) {
     sb_videos.forEach(video => {
         const sb_video_play_button = video.querySelector('.sb-video-play-btn');
         const sb_video_close_button = video.querySelector('.sb-video-close-btn');
-        
+
         if (sb_video_play_button) {
             sb_video_play_button.addEventListener('click', () => {
                 video.classList.add('video-popup-active');  // Add the 'active' class
@@ -270,16 +270,16 @@ if (sb_counter) {
     // Service slider
     $('.sb-service-slider').slick({
         infinite: true,
-        speed: 5000,          
+        speed: 5000,
         autoplay: true,
-        autoplaySpeed: 0,      
-        cssEase: 'linear',      
-        slidesToScroll: 1,     
-        variableWidth: true,   
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        slidesToScroll: 1,
+        variableWidth: true,
         pauseOnFocus: true,
         pauseOnHover: true,
-        centerMode: true,     
-        arrows: false,        
+        centerMode: true,
+        arrows: false,
     });
 
     // trusted-customer-logo slider
@@ -409,7 +409,7 @@ if (sb_counter) {
                     }else {
                         $('.sb-blog-load-more .sb-button').show();
                     }
-                    
+
                     if (res) {
                         if (paged > 1) {
                             $('#sb-blog-list').append(res.page);
@@ -433,8 +433,3 @@ if (sb_counter) {
 
 
 })(jQuery);
-
-
-
-
-

@@ -67,17 +67,22 @@ class CCWalkernav extends Walker_Nav_Menu
             }
         }
 
-        $item_output .= '<span>' . $link_before . apply_filters('the_title', $item->title, $item->ID) . $link_after;
+        $dropboxIcon = get_field('dropdown_icon', $item->ID);
+
+        $item_output .= '<img src="'.$dropboxIcon.'">';
+
+        $item_output .= '<div class="sb-icon-menu-item" ><span>' . $link_before . apply_filters('the_title', $item->title, $item->ID) . $link_after;
 
         // Add support for menu item title
         if (strlen($item->attr_title) > 2) {
             $item_output .= '<h3 class="tit">' . esc_html($item->attr_title) . '</h3>';
         }
+        $item_output .= '</span>';
         // Add support for menu item descriptions
         if ($item->description) {
-            $item_output .= '<small>' . esc_html($item->description) . '</small>';
+            $item_output .= '<small>' . esc_html($item->description) . '</small></div>';
         }
-        $item_output .= '</span>';
+
         $item_output .= '</a>';
         $item_output .= $args_after; // Use args_after here
 
