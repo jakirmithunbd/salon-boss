@@ -220,3 +220,101 @@
 
     }
 }
+
+
+// drop Down menu style 
+
+.sb-menu-side {
+
+    ul {
+
+        li {
+            &.menu-item-has-children {
+                position: relative;
+
+                a {
+                    padding-right: 15px !important;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    border-bottom: 1px solid #fff;
+                    border-left: 1px solid #fff;
+                    top: calc(50% - 5px);
+                    right: 0;
+                    @extend .transition;
+                    transform: rotate(-45deg);
+                }
+                ul.sub-menu {
+                    position: absolute;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: max-content;
+                    background: linear-gradient(360deg, #7970E9 13.16%, #A08DF3 100%);
+                    gap: 0;
+                    border-radius: 15px;
+                    top: calc(100% + 10px);
+                    left: 0;
+                    @extend .transition;
+                    opacity: 0;
+                    visibility: hidden;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-bottom: 30px solid #A08DF3;
+                        top: - 20px;
+                        left: 25px;
+                        z-index: -1;
+                    }
+
+                    li {
+                        width: 100%;
+
+                        &:not(:last-child) {
+                            border-bottom: 2px solid #202022;
+                        }
+
+                        a {
+                            span {
+                                padding: 12px 40px;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    ul.sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    &::after {
+                        transform: rotate(135deg);
+                        top: calc(50% - 2px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 1025px) {
+    .sb-header .sb-main-header .sb-logo-side .sb-logo img {
+        max-width: 140px;
+    }
+    .sb-header .sb-main-header .sb-menu-side ul {
+        gap: 15px;
+    }
+    .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+}
