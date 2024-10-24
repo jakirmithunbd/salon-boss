@@ -706,7 +706,7 @@
                             "label": "Summary",
                             "name": "result_summary",
                             "aria-label": "",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -716,11 +716,11 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 6,
-                            "placeholder": "Enter your text",
-                            "new_lines": ""
+                            "allow_in_bindings": 1,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -999,5 +999,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729668961
+    "modified": 1729745716
 }
