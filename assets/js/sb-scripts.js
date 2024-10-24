@@ -425,8 +425,50 @@ if (sb_counter) {
                 })
 
         }
-
         sb_filter_posts();
+
+        // For Dropdown Menu start
+        if (window.innerWidth <= 1024) {
+            const menuItemChilden = document.querySelectorAll(
+                ".menu-item-has-children"
+            );
+
+            const dropdownMenu = document.querySelectorAll(".sub-menu");
+
+            dropdownMenu.forEach((item, i) => {
+                $(item).click(function (e) {
+                    e.stopPropagation();
+                });
+            });
+            if (menuItemChilden) {
+                menuItemChilden.forEach((item, i) => {
+                    $(item).click(function (e) {
+                        if (e.target.nodeName === "SPAN") {
+                            return;
+                        }
+                        e.preventDefault();
+
+                        dropdownMenu.forEach((answer, index) => {
+                            if (i !== index && $(answer).is(":visible")) {
+                                $(answer).slideUp(300);
+                                $(menuItemChilden[index]).removeClass(
+                                    "active-dopdown-menu"
+                                );
+                            }
+                        });
+
+                        if ($(dropdownMenu[i]).is(":hidden")) {
+                            $(dropdownMenu[i]).slideDown(300);
+                            $(item).addClass("active-dopdown-menu");
+                        } else {
+                            $(dropdownMenu[i]).slideUp(300);
+                            $(item).removeClass("active-dopdown-menu");
+                        }
+                    });
+                });
+            }
+        }
+        // For Dropdown Menu ens
     });
 
 

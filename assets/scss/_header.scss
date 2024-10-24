@@ -73,6 +73,13 @@
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
+
+                    max-height: 525px;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                    }
                 }
 
                 li {
@@ -82,6 +89,7 @@
 
                     @include breakpoint(1024) {
                         padding: 0;
+                        width: 100%;
                     } 
 
                     a {
@@ -95,6 +103,7 @@
 
                         @include breakpoint(1024) {
                             padding-left: 0;
+                            display: inline-block;
                         }
 
                         &:hover {
@@ -123,6 +132,7 @@
 
                             @include breakpoint(1024) {
                                 margin-top: 10px;
+                                max-width: 260px;
                             }
 
                             &::before {
@@ -251,12 +261,17 @@
                     content: "";
                     width: 6px;
                     height: 6px;
-                    border-bottom: 1px solid #fff;
-                    border-left: 1px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    border-left: 2px solid #fff;
                     top: calc(50% - 5px);
                     right: 0;
                     @extend .transition;
                     transform: rotate(-45deg);
+
+                    @include breakpoint(1024) {
+                        top: 14px;
+                        right: 10px;
+                    }
                 }
                 ul.sub-menu {
                     position: absolute;
@@ -269,18 +284,35 @@
                     top: 100%;
                     left: calc(50% - 185px);
                     @extend .transition;
-                    // max-height: 800px;
-                    // overflow-y: scroll;
+                    z-index: 2;
                     opacity: 0;
                     visibility: hidden;
+                    // max-height: 800px;
+                    
+                    @include breakpoint(1024) {
+                        overflow-y: scroll;
+                        max-height: 510px;
+                        display: none;
+                    }
 
-                    // @include breakpoint(1024) {
-                    //     max-height: 510px;
-                    // }
+                    @include breakpoint(768) {
+                        max-height: 460px;
+                    }
 
-                    // &::-webkit-scrollbar {
-                    //     width: 0px;
-                    // }
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                    }
+
+
+
+                    @include breakpoint(1024) {
+                        position: inherit;
+                        opacity: 1;
+                        visibility: visible;
+                        left: 0;
+                        top: 0;
+                        width: 320px;
+                    }
 
                     &:before {
                         position: absolute;
@@ -302,6 +334,8 @@
                         &:not(:last-child) {
                             border-bottom: 2px solid #202022;
                         }
+
+
 
                         a {
                             padding: 12px 40px;
@@ -359,6 +393,10 @@
                     &::after {
                         transform: rotate(135deg);
                         top: calc(50% - 2px);
+
+                        @include breakpoint(1024) {
+                            top: 17px;
+                        }
                     }
                 }
             }
