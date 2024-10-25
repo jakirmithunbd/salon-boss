@@ -364,31 +364,36 @@ if (sb_counter) {
         if (window.innerWidth <= 1024) {
         
             const menuItemChildren = document.querySelectorAll(".menu-item-has-children");
+
             menuItemChildren.forEach((menuItem) => {
                 menuItem.addEventListener("click", (event) => {
-                    event.preventDefault(); // Prevent default link behavior if necessary
-                    
-                    // Hide other open dropdowns and remove 'sb-menu-active' class from other menu items
-                    menuItemChildren.forEach((item) => {
-                        if (item !== menuItem) {
-                            const otherDropdown = item.querySelector(".sub-menu");
-                            if (otherDropdown) {
-                                otherDropdown.classList.remove("visible");
+                    if (event.target === menuItem || event.target.closest(".menu-item-has-children") === menuItem) {
+                        event.preventDefault();
+                        menuItemChildren.forEach((item) => {
+                            if (item !== menuItem) {
+                                const otherDropdown = item.querySelector(".sub-menu");
+                                if (otherDropdown) {
+                                    otherDropdown.classList.remove("visible");
+                                }
+                                item.classList.remove("sb-menu-active");
                             }
-                            item.classList.remove("sb-menu-active");
+                        });
+            
+                        const dropdownMenu = menuItem.querySelector(".sub-menu");
+                        if (dropdownMenu) {
+                            dropdownMenu.classList.toggle("visible");
+                            menuItem.classList.toggle("sb-menu-active");
                         }
-                    });
-                    
-                    // Toggle visibility of the clicked dropdown
-                    const dropdownMenu = menuItem.querySelector(".sub-menu");
-                    if (dropdownMenu) {
-                        dropdownMenu.classList.toggle("visible");
-                        // Toggle 'sb-menu-active' class on the clicked menu item
-                        menuItem.classList.toggle("sb-menu-active");
                     }
                 });
+                const links = menuItem.querySelectorAll("a");
+                links.forEach((link) => {
+                    link.addEventListener("click", (event) => {
+                        event.stopPropagation();
+                    });
+                });
             });
-            
+
         };
         // For Dropdown Menu end
     });
