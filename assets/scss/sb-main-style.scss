@@ -2069,12 +2069,12 @@
                             @extend .transition;
 
                             &:hover {
-                                font-weight: 700;
+                                color: $secondary;
                             }
                         }
                         &.sb-tb-active {
                             a {
-                                font-weight: 700;
+                                color: $secondary;
                             }
                         }
                     }
