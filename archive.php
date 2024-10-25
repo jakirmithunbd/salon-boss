@@ -71,7 +71,7 @@
         </div>
         <?php else: ?>
             <div class="sb-no-post">
-                <h2 class="text-center">No Post Found</h2>
+                <h2 class="text-center">Nothing Found</h2>
             </div>
         <?php endif; ?>
     </div>
