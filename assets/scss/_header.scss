@@ -43,13 +43,16 @@
         .sb-menu-side {
 
             @include breakpoint(1024) {
-                position: absolute;
-                background: $secondary;
+                position: fixed;
+                background: #766EE8;
                 width: 100%;
                 left: 200%;
-                top: var(--header-height);
+                top: var(--header-height-top);
                 padding: 50px 25px;
                 border-radius: 0 0 20px 20px;
+                overflow-y: scroll;
+                height: 100%;
+                padding-bottom: var(--header-height-top) !important;
 
                 @include breakpoint(768) {
                     padding: 35px 25px;
@@ -73,9 +76,6 @@
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
-
-                    // max-height: 525px;
-                    // overflow-y: scroll;
 
                     &::-webkit-scrollbar {
                         width: 10px;
@@ -286,22 +286,23 @@
                     @extend .transition;
                     z-index: 2;
                     display: none;
-                    // max-height: 800px;
                     
                     @include breakpoint(1024) {
-                        // overflow-y: scroll;
-                        // max-height: 510px;
-                        display: none;
                         position: inherit;
                         left: 0;
                         top: 0;
                         width: 100%;
-
+                        overflow: hidden;
                         display: grid;
                         grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
                         grid-template-rows: auto;
                         background: #202022;
                         grid-gap: 2px;
+                        height: 0;
+
+                        &.visible {
+                            height: auto;
+                        }
                     }
 
                     @include breakpoint(768) {
@@ -323,10 +324,6 @@
                         top: - 20px;
                         left: calc(50% - 15px);
                         z-index: -1;
-
-                        @include breakpoint(1024) {
-                            display: none;
-                        }
                     }
 
                     li {
