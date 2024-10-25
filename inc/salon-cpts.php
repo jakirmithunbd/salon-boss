@@ -83,7 +83,7 @@ function sb_custom_post_type_case_study()
         'public' => true,
         'menu_icon' => 'dashicons-portfolio',
         'has_archive' => true,
-        'rewrite' => array('slug' => 'case-studies'),
+//        'rewrite' => array('slug' => 'case-studies'),
     );
     register_post_type('case-study', $args);
 }
@@ -139,7 +139,7 @@ function sb_custom_post_type_resource()
         'supports' => array('title', 'excerpt', 'thumbnail'), // Add other supports if necessary
         'public' => true,
         'menu_icon' => 'dashicons-media-document',
-        'has_archive' => true,
+        'has_archive' => false,
         'rewrite' => array('slug' => 'resources'),
     );
     register_post_type('resource', $args);

@@ -418,7 +418,7 @@
                 }
             }
 
-            &.active-dopdown-menu {
+            &.sb-menu-active {
 
                 &::after {
                     @include breakpoint(1024) {
