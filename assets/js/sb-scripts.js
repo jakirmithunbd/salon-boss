@@ -32,75 +32,6 @@ function subMenuActive() {
 }
 
 subMenu.forEach((toggle) => toggle.addEventListener("click", subMenuActive));
-// mobile sub menu end
-
-
-// const sb_custom_slider = document.querySelector('.sb-service-slider');
-// if (sb_custom_slider) {
-//
-//     function initTextSlider(customSpeed) {
-//         var slider = document.querySelector('.sb-service-slider');
-//         var items = slider.getElementsByTagName('p');
-//         var isPaused = false;
-//         var itemWidth = items[0].offsetWidth + 20;
-//         var sliderWidth = itemWidth * items.length;
-//
-//         var innerSlider = document.createElement('div');
-//         innerSlider.classList.add('inner-slider');
-//
-//         // Clone the items to simulate an infinite scroll
-//         while (items.length) {
-//             innerSlider.appendChild(items[0]);
-//         }
-//         innerSlider.innerHTML += innerSlider.innerHTML; // Duplicate content for looping
-//
-//         slider.appendChild(innerSlider);
-//
-//         Object.assign(innerSlider.style, {
-//             display: 'inline-flex',
-//             whiteSpace: 'nowrap',
-//             position: 'relative',
-//         });
-//
-//         var position = 0;
-//
-//         function animateSlider() {
-//             if (!isPaused) {
-//                 position -= customSpeed / 20; // Adjust speed based on customSpeed
-//
-//                 // Seamless transition when end of original content is reached
-//                 if (Math.abs(position) >= sliderWidth) {
-//                     position = 0;
-//                 }
-//
-//                 innerSlider.style.transform = `translateX(${position}px)`;
-//             }
-//             requestAnimationFrame(animateSlider);
-//         }
-//
-//         requestAnimationFrame(animateSlider); // Start animation with requestAnimationFrame
-//
-//         slider.addEventListener('mouseenter', function () {
-//             isPaused = true;
-//         });
-//
-//         slider.addEventListener('mouseleave', function () {
-//             isPaused = false;
-//         });
-//
-//         document.addEventListener('visibilitychange', function () {
-//             if (document.hidden) {
-//                 isPaused = true; 
-//             } else {
-//                 isPaused = false;
-//             }
-//         });
-//     }
-//
-//     initTextSlider(5);
-// }
-// Service Slider (Custom) end
-
 
 const sb_cards = document.querySelectorAll('.sb-card');
 sb_cards.forEach(card => {
@@ -483,28 +414,45 @@ if (sb_counter) {
 })(jQuery);
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Get the content wrapper and the TOC container
     const contentWrapper = document.getElementById('sb-blog-content');
     const tocContainer = document.querySelector('#sb-table-content ul');
 
+    // Check if the required elements are present on the page
+    if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
+
+    // Define the offset value in pixels (adjust this value as needed)
     const offset = 130;
 
+    // Clear any placeholder items in the TOC container
     tocContainer.innerHTML = '';
 
+    // Select all h2, h3, and h4 elements inside the content wrapper
     const headings = contentWrapper.querySelectorAll('h2');
 
+    // Loop through all h2, h3, and h4 elements to create the TOC items
     headings.forEach((heading, index) => {
+        // Create a unique ID for each heading if not present
         if (!heading.id) {
             heading.id = 'heading-' + (index + 1);
         }
+
+        // Create a list item with a link to the heading
         const listItem = document.createElement('li');
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
+
+        // Add classes based on the heading level (h2, h3, h4)
         listItem.classList.add(`toc-${heading.tagName.toLowerCase()}`);
+
         listItem.appendChild(link);
+
+        // Add the list item to the TOC container
         tocContainer.appendChild(listItem);
     });
 
+    // Add scroll behavior with offset to each link
     tocContainer.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
             e.preventDefault();
