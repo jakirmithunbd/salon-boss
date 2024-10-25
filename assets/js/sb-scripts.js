@@ -480,8 +480,43 @@ if (sb_counter) {
         }
         // For Dropdown Menu ens
     });
-
-
-
-
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const contentWrapper = document.getElementById('sb-blog-content');
+    const tocContainer = document.querySelector('#sb-table-content ul');
+
+    const offset = 130;
+
+    tocContainer.innerHTML = '';
+
+    const headings = contentWrapper.querySelectorAll('h2');
+
+    headings.forEach((heading, index) => {
+        if (!heading.id) {
+            heading.id = 'heading-' + (index + 1);
+        }
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent;
+        listItem.classList.add(`toc-${heading.tagName.toLowerCase()}`);
+        listItem.appendChild(link);
+        tocContainer.appendChild(listItem);
+    });
+
+    tocContainer.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
