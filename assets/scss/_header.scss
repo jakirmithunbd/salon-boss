@@ -44,7 +44,7 @@
 
             @include breakpoint(1024) {
                 position: fixed;
-                background: #766EE8;
+                background: #171717;
                 width: 100%;
                 left: 200%;
                 top: var(--header-height-top);
@@ -104,6 +104,7 @@
                         @include breakpoint(1024) {
                             padding-left: 0;
                             display: inline-block;
+                            color: #fff;
                         }
 
                         &:hover {
@@ -154,14 +155,14 @@
                                    background-color: #fff;
                                 }
 
-                                @include breakpoint(1024) {
-                                    background: $primary;
-                                    color: #000;
+                                // @include breakpoint(1024) {
+                                //     background: $primary;
+                                //     color: #000;
 
-                                    &::before {
-                                        background-color: #000;
-                                     }
-                                }
+                                //     &::before {
+                                //         background-color: #000;
+                                //      }
+                                // }
 
                             }
 

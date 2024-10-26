@@ -250,7 +250,7 @@ if (sb_counter) {
         ]
     });
 
-    // trusted-customer-logo slider
+    // Client-logo slider
     $('.sb-client-logo-slider').slick({
         dots: false,
         arrows: false,
