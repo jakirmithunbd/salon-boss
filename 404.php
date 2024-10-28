@@ -6,7 +6,7 @@
             <div class="sb-hero-404-img">
                 <img
                     src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-boss-404.png')); ?>"
-                    alt=""
+                    alt="Salon Boss 404"
                 />
 
             </div>
