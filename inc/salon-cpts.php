@@ -195,7 +195,7 @@ function sb_custom_post_type_webinar()
         'supports' => array('title', 'editor', 'excerpt', 'thumbnail'), // Add other supports if needed
         'public' => true,
         'menu_icon' => 'dashicons-video-alt3',
-        'has_archive' => true,
+        'has_archive' => false,
         'rewrite' => array('slug' => 'webinars'),
     );
     register_post_type('webinar', $args);

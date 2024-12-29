@@ -370,6 +370,13 @@ section {
                 mask: url(../images/vectors/phone-icon.svg);
             }
         }
+
+        &.button-icon-loader {
+            &::after {
+                mask: url(../images/vectors/loading.svg);
+            }
+        }
+
         &.button-icon-scissor {
             &::after {
                 mask: url(../images/vectors/scissor-icon.svg);
@@ -398,6 +405,13 @@ section {
                 mask: url(../images/vectors/phone-icon.svg);
             }
         }
+
+        &.button-icon-loader {
+            &::after {
+                background-image: url(../images/vectors/loading.svg);
+            }
+        }
+
         &.button-icon-scissor {
             &::before {
                 mask: url(../images/vectors/scissor-icon.svg);

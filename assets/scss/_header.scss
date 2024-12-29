@@ -9,8 +9,11 @@
     z-index: 99;
     
     .sb-main-header {
-        padding: 10px 0;
+        padding: 65px 0;
 
+        @include breakpoint(12080) {
+            padding: 40px 0;
+        }
         @include breakpoint(1024) {
             padding: 20px 0;
         }
@@ -43,16 +46,13 @@
         .sb-menu-side {
 
             @include breakpoint(1024) {
-                position: fixed;
-                background: #171717;
+                position: absolute;
+                background: $secondary;
                 width: 100%;
                 left: 200%;
-                top: var(--header-height-top);
+                top: var(--header-height);
                 padding: 50px 25px;
                 border-radius: 0 0 20px 20px;
-                overflow-y: scroll;
-                height: 100%;
-                padding-bottom: var(--header-height-top) !important;
 
                 @include breakpoint(768) {
                     padding: 35px 25px;
@@ -76,21 +76,10 @@
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
-
-                    &::-webkit-scrollbar {
-                        width: 10px;
-                    }
                 }
 
                 li {
                     list-style: none;
-                    @extend .transition;
-                    padding: 35px 0;
-
-                    @include breakpoint(1024) {
-                        padding: 0;
-                        width: 100%;
-                    } 
 
                     a {
                         display: block;
@@ -103,8 +92,6 @@
 
                         @include breakpoint(1024) {
                             padding-left: 0;
-                            display: inline-block;
-                            color: #fff;
                         }
 
                         &:hover {
@@ -133,7 +120,6 @@
 
                             @include breakpoint(1024) {
                                 margin-top: 10px;
-                                max-width: 260px;
                             }
 
                             &::before {
@@ -155,14 +141,14 @@
                                    background-color: #fff;
                                 }
 
-                                // @include breakpoint(1024) {
-                                //     background: $primary;
-                                //     color: #000;
+                                @include breakpoint(1024) {
+                                    background: $primary;
+                                    color: #000;
 
-                                //     &::before {
-                                //         background-color: #000;
-                                //      }
-                                // }
+                                    &::before {
+                                        background-color: #000;
+                                     }
+                                }
 
                             }
 
@@ -178,11 +164,15 @@
         box-shadow: 0 0 16px 0 rgb(255 255 255 / 25%);
         
         .sb-main-header {
-            padding: 5px 0;
+            padding: 30px;
 
-            @include breakpoint(1024) {
-                padding: 15px 0;
+            @include breakpoint(12080) {
+                padding: 20px 0;
             }
+            @include breakpoint(1024) {
+                padding: 10px 0;
+            }
+
             .sb-logo-side {
                 .sb-logo {
                     img {
@@ -193,18 +183,7 @@
 
             .sb-menu-side {
                 @include breakpoint(1024) {
-                    margin-top: -25px;
-                }
-
-                ul {
-
-                    li {
-                        padding: 15px 0;
-
-                        @include breakpoint(1024) {
-                            padding: 0;
-                        }
-                    }
+                    margin-top: -38px;
                 }
             }
         }
@@ -239,208 +218,5 @@
             }
         }
 
-    }
-}
-
-
-// drop Down menu style 
-
-.sb-menu-side {
-
-    ul {
-
-        li {
-            &.menu-item-has-children {
-                position: relative;
-
-                a {
-                    padding-right: 15px !important;
-                }
-
-                &::after {
-                    position: absolute;
-                    content: "";
-                    width: 6px;
-                    height: 6px;
-                    border-bottom: 2px solid #fff;
-                    border-left: 2px solid #fff;
-                    top: calc(50% - 5px);
-                    right: 0;
-                    @extend .transition;
-                    transform: rotate(-45deg);
-
-                    @include breakpoint(1024) {
-                        top: 14px;
-                        right: 10px;
-                        border-bottom: 3px solid #fff;
-                        border-left: 3px solid #fff;
-                    }
-                }
-                ul.sub-menu {
-                    position: absolute;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    width: 370px;
-                    background: linear-gradient(360deg, #7970E9 13.16%, #A08DF3 100%);
-                    gap: 0;
-                    border-radius: 15px;
-                    top: 100%;
-                    left: calc(50% - 185px);
-                    @extend .transition;
-                    z-index: 2;
-                    display: none;
-                    
-                    @include breakpoint(1024) {
-                        position: inherit;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        overflow: hidden;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-                        grid-template-rows: auto;
-                        background: #202022;
-                        grid-gap: 2px;
-                        height: 0;
-
-                        &.visible {
-                            height: auto;
-                        }
-                    }
-
-                    @include breakpoint(768) {
-                        // max-height: 460px;
-                    }
-
-                    &::-webkit-scrollbar {
-                        width: 10px;
-                    }
-
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        width: 0;
-                        height: 0;
-                        border-left: 15px solid transparent;
-                        border-right: 15px solid transparent;
-                        border-bottom: 30px solid #A08DF3;
-                        top: - 20px;
-                        left: calc(50% - 15px);
-                        z-index: -1;
-                    }
-
-                    li {
-                        width: 100%;
-                        padding: 0 !important;
-
-                        &:not(:last-child) {
-                            border-bottom: 2px solid #202022;
-
-                            @include breakpoint(1024) {
-                                border: 0;
-                            }
-
-                        }
-                        @include breakpoint(1024) {
-                            background: #A08DF3;
-                            height: 100%;
-                        }
-
-
-
-                        a {
-                            padding: 12px 40px;
-                            @extend .d-flex, .transition;
-                            gap: 15px;
-                            padding-right: 40px !important;
-
-                            &:hover {
-                                background: #A08DF3;
-                                transform: scale(1.05);
-                                border-radius: 10px;
-                                box-shadow: 0px 0px 12px 4px rgb(120 112 233 / 50%);
-                            }
-
-                            @include breakpoint(1024) {
-                                padding: 10px 20px;
-                                padding-right: 20px !important;
-                            }
-
-                            .image-wrapper {
-                                width: 100%;
-                                max-width: 60px;
-                                height: 60px;
-                                padding: 12px 8px;
-                                background: #171717;
-                                border-radius: 10px;
-                                @extend .d-flex, .transition;
-
-                                img {
-                                    width: 100%;
-                                    object-fit: contain;
-                                }
-                            }
-                            span {
-                                width: 50%;
-                                flex-grow: 1;
-                                @include font(16, 24);
-                                font-weight: 500;
-                                color: #fff;
-                                @extend .transition;
-
-                                small {
-                                    @include font(12, 18);
-                                    font-weight: 400;
-                                    display: inline-block;
-                                }
-                            }
-
-                        }
-
-                        
-                    }
-                }
-
-                @include minbreakpoint(1025) {
-                    &:hover {
-                        ul.sub-menu {
-                            display: block;
-                        }
-    
-                        &::after {
-                            transform: rotate(135deg);
-                            top: calc(50% - 2px);
-    
-                            @include breakpoint(1024) {
-                                top: 17px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            &.sb-menu-active {
-
-                &::after {
-                    @include breakpoint(1024) {
-                        transform: rotate(135deg);
-                        top: 17px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1150px) and (min-width: 1025px) {
-    .sb-header .sb-main-header .sb-logo-side .sb-logo img {
-        max-width: 140px;
-    }
-    .sb-header .sb-main-header .sb-menu-side ul {
-        gap: 15px;
-    }
-    .sb-header .sb-main-header .sb-menu-side ul li.sb-book-btn a {
-        font-size: 16px;
-        padding: 8px 10px;
     }
 }
