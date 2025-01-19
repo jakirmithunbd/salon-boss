@@ -9,6 +9,8 @@
                 />
         <link href="//fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"
                 />
+                
+                <script nowprocket nitro-exclude type="text/javascript" id="sa-dynamic-optimization" data-uuid="ac0eb667-bbf3-46ef-a9a6-30936be22c07" src="data:text/javascript;base64,dmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpO3NjcmlwdC5zZXRBdHRyaWJ1dGUoIm5vd3Byb2NrZXQiLCAiIik7c2NyaXB0LnNldEF0dHJpYnV0ZSgibml0cm8tZXhjbHVkZSIsICIiKTtzY3JpcHQuc3JjID0gImh0dHBzOi8vZGFzaGJvYXJkLmxpbmtncmFwaC5jb20vc2NyaXB0cy9keW5hbWljX29wdGltaXphdGlvbi5qcyI7c2NyaXB0LmRhdGFzZXQudXVpZCA9ICJhYzBlYjY2Ny1iYmYzLTQ2ZWYtYTlhNi0zMDkzNmJlMjJjMDciO3NjcmlwdC5pZCA9ICJzYS1keW5hbWljLW9wdGltaXphdGlvbi1sb2FkZXIiO2RvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQoc2NyaXB0KTs="></script>
     <?php wp_head(); ?>
 </head>
 

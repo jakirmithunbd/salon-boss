@@ -145,12 +145,12 @@ while (have_rows('single_resource')):
                 <div class="sb-common-template-form-sidebox d-flex flex-wrap">
                     <?php
                         $register_info = get_sub_field('register_info');
-
                         $title = $register_info['title'];
-                        $sub_title = $register_info['sub_title'];
-                        $form_shortcode_id = $register_info['form_shortcode_id'];
+                        $sub_title =$register_info['sub_title'];
+                        $form_embed_code = $register_info['form_embed_code'];
                         $form_description = $register_info['form_description'];
                     ?>
+
                     <div class="sb-form">
                         <div class="sb-form-title text-center">
                             <h3><?php echo wp_kses_post( $title ?? '' ); ?></h3>
@@ -158,14 +158,16 @@ while (have_rows('single_resource')):
                         </div>
 
                         <?php
-                        if (!empty($form_shortcode_id)) {
-                            echo do_shortcode('[gravityform id="' . esc_attr($form_shortcode_id) . '" title="false" description="false" ajax="true"]');
-                        }
+                            if (!empty($form_embed_code)) {
+                                echo $form_embed_code;
+                            }
                         ?>
 
+                        <?php if($form_description): ?>
                         <p class="sb-form-condition-text text-center-mobile">
-                        <?php echo wp_kses_post( $form_description ?? '' ); ?>
+                            <?php echo wp_kses_post( $form_description ?? '' ); ?>
                         </p>
+                        <?php endif; ?>
                     </div>
 
                     <div class="sb-common-template-sidebox">

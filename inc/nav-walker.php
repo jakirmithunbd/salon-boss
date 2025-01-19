@@ -58,7 +58,7 @@ class CCWalkernav extends Walker_Nav_Menu
         $item_output .= '<a' . $attributes . '>';
 
         // Check if item has featured image
-        $has_image = get_field('product_logo', $item->ID);
+        $has_image = get_field('dropdown_icon', $item->ID);
         if ($has_image !== false) {
             if ($has_image) {
                 $item_output .= "<div class='image-wrapper'>";

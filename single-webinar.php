@@ -172,12 +172,13 @@ while (have_rows('single_webinar')):
                             <?php
                             $webinar_countdown_shortcode = $register_info['webinar_countdown'];
                             $embed_form = $register_info['embed_form'];
-                            $webinar_description = $register_info['webinar_description'] ?? 'Next Webinar Is in 14 Days, 9 Hours & 10 Minutes';
+                            $webinar_description = $register_info['webinar_description'];
                             ?>
 
-                            <?php if (!empty($webinar_data_time)) : ?>
+                            <?php if (!empty($webinar_countdown_shortcode)) : ?>
                                 <h4 id="countdown-timer">
-                                    <?php echo do_shortcode('<?php $webinar_countdown_shortcode; ?>'); ?>
+                                    <?php echo do_shortcode($webinar_countdown_shortcode); ?>
+
                                 </h4>
                             <?php endif; ?>
                         </div>
@@ -191,7 +192,7 @@ while (have_rows('single_webinar')):
                         </div>
 
                         <p class="sb-form-condition-text text-center-mobile">
-                            <?php echo esc_html($webinar_description); ?>
+                            <?php echo esc_html($webinar_description ?? ''); ?>
                         </p>
                     </div>
 
@@ -439,7 +440,7 @@ while (have_rows('single_webinar')):
                                     <a class="sb-service-title" href="<?php echo get_permalink($service_post->ID); ?>">
                                         <h2><?php echo esc_html($service_post->post_title); ?><span> Services</span></h2>
                                     </a>
-                                    <h5><?php echo wp_kses_post($excerpt); ?></h5>
+                                    <p><?php echo wp_kses_post($excerpt); ?></p>
 
                                     <?php
                                     if ($service_key_points):

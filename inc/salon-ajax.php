@@ -61,10 +61,10 @@ function sb_filter_posts_function()
                     <div class="sb-card-image flex-center">
                         <?php
                         $thumbnail = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/Placeholder Image.svg');
-            ?>
-                            <a href="<?php echo esc_url(get_permalink()); ?>">
-                                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                            </a>
+                        ?>
+                        <a href="<?php echo esc_url(get_permalink()); ?>">
+                            <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        </a>
                     </div>
                     <div class="sb-card-content text-center">
                         <?php
@@ -79,13 +79,24 @@ function sb_filter_posts_function()
                         } ?>
                         <a class="sb-blog-title" href="<?php echo esc_url(get_permalink()); ?>"><h3><?php echo esc_html(get_the_title()); ?></h3></a>
 
-                        <?php if(get_the_excerpt()) {
-                            printf('<p>%s</p>', wp_trim_words(get_the_excerpt(), 15, ' ...'));
-                        } ?>
+                        <?php
+                        $short_description = get_field('short_description');
+                        if($short_description){
+                            printf('<p>%s</p>', $short_description);
+                        }
+                        ?>
 
                         <span class="sb-blog-date"><?php echo get_the_date(); ?></span>
                         <div class="sb-card-btn">
-                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Read Article >'); ?></a>
+                            <?php $read_more = '';
+                            if ($post_type == 'case-study') {
+                                $read_more = 'Explore Case Study >';
+                            } elseif ($post_type == 'resource') {
+                                $read_more = 'Explore Resource >';
+                            } else {
+                                $read_more = 'Read Article >';
+                            } ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo $read_more; ?></a>
                         </div>
                     </div>
                 </div>

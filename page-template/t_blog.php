@@ -17,7 +17,7 @@ get_template_part('template-parts/page-banner');
             <?php $post_type_name = get_field('post_type');
             ?>
 
-            <div class="sb-blog-tab-buttons d-flex justify-center flex-wrap hide-mobile  d-none" data-post_type="<?php echo esc_attr($post_type_name); ?>">
+            <div class="sb-blog-tab-buttons  d-none d-flex justify-center flex-wrap hide-mobile" data-post_type="<?php echo esc_attr($post_type_name); ?>">
                 <?php
                 $key = str_replace('-', '_', $post_type_name) . '_category';
                 $post_category_name = get_field($key);
@@ -67,7 +67,7 @@ get_template_part('template-parts/page-banner');
 
             <div class="sb-blog-list d-flex flex-wrap" id="sb-blog-list"></div>
             <div class="sb-blog-load-more">
-                <button class="sb-button button-bg-green button-icon-phone icon-position-left">Load More</button>
+                <button class="sb-button button-bg-green"> <img style="width: 38px; margin-right: 10px;" src="<?php echo get_theme_file_uri('/assets/images/vectors/loading.svg')?>" alt="Loading">Load More</button>
             </div>
         </div>
     </section><!-- Blog  -->

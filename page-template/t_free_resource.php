@@ -131,20 +131,31 @@ if (!empty($hero)):
 <section class="sb-common-template-form">
     <div class="container">
         <div class="sb-common-template-form-sidebox d-flex flex-wrap">
+            <?php
+                $register_info = get_field('register_info');
+                $title = $register_info['title'];
+                $sub_title =$register_info['sub_title'];
+                $form_embed_code = $register_info['form_embed_code'];
+                $form_description = $register_info['form_description'];
+            ?>
 
             <div class="sb-form">
                 <div class="sb-form-title text-center">
-                    <h3>Request Your Free{Resource Type}</h3>
-                    <h5>Simply enter your information below and your free resource will be on it's way to your inbox!</h5>
+                    <h3><?php echo wp_kses_post( $title ?? '' ); ?></h3>
+                    <h5><?php echo wp_kses_post( $sub_title ?? '' ); ?></h5>
                 </div>
 
-                <?php echo do_shortcode('[gravityform id="4" title="false"]'); ?>
+                <?php
+                    if (!empty($form_embed_code)) {
+                        echo $form_embed_code;
+                    }
+                ?>
 
+                <?php if($form_description): ?>
                 <p class="sb-form-condition-text text-center-mobile">
-                    By submitting this form, you agree to our privacy policy and terms & conditions. 
-                    You also agree to be contacted by Salon Boss via email, sms & phone. We never 
-                    ell your data. You may opt-out at any time.
+                    <?php echo wp_kses_post( $form_description ?? '' ); ?>
                 </p>
+                <?php endif; ?>
             </div>
 
             <div class="sb-common-template-sidebox">
