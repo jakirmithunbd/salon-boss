@@ -443,7 +443,11 @@
                     .sb-work-media {
                         overflow: hidden;
                         width: 100%;
-                        height: 75vh;
+                        height: 70vh;
+
+                        @include breakpoint(768) {
+                            height: 60vh;
+                        }
                         
                         h4 {
                             position: absolute;
