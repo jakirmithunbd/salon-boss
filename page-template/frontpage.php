@@ -335,6 +335,45 @@ get_header(); ?>
     </div>
 </section><!-- About section -->
 
+<section class="sb-our-work">
+    <div class="container">
+        <div class="sb-section-title text-center">
+            <?php
+                $work_section_title = get_field('work_section_title');
+            ?>
+            <h3><?php echo wp_kses_post($work_section_title['title'] ?? ''); ?></h3>
+            <p><?php echo wp_kses_post($work_section_title['description'] ?? ''); ?></p>
+        </div>
+        <div class="sb-our-work-wrapper">
+            <?php 
+            $work_item = get_field('work_item');
+            if ($work_item):
+                foreach ($work_item as $work):
+
+                $work_color = $work['work_color'];
+                $work_title = $work['work_title'];
+                $work_image = $work['work_image'];
+            ?>
+            <div class="sb-work-item" style="--sb-work-item-color: <?php echo esc_html( $work_color ?? "" ); ?>;">
+                <div class="sb-work-contents-wrapper">
+                    <div class="sb-work-media relative flex-center">
+                        <h4><?php echo wp_kses_post( $work_title ?? "" ); ?></h4>
+                        <?php if($work_image){ ?>
+                            <img src="<?php echo esc_url( $work_image['url'] ); ?>" alt="<?php echo esc_attr( $work_image['alt'] ?? "" ); ?>">
+                        <?php } ?>
+                    </div><!-- Work media  -->
+                </div><!-- Contents Wrapper  -->
+            </div><!-- Work item  -->
+
+            <?php
+                endforeach;
+                endif;
+            ?>
+
+        </div><!-- Our work wrapper  -->
+    </div> <!-- Container  -->
+</section><!-- Our work section  -->
+
 
 <?php get_template_part('/template-parts/globals/resource-center'); ?>
 
