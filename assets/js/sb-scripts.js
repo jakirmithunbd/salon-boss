@@ -292,6 +292,17 @@ if (sb_counter) {
         ]
     });
 
+    // Our work slider
+    $('.sb-our-work-wrapper').slick({
+        dots: true,
+        arrows: true,
+        infinite: false,
+        autoplay: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+
     // Initialize an empty array to store selected category slugs
 
     $(document).ready(function () {
@@ -405,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const tocContainer = document.querySelector('#sb-table-content ul');
 
     // Check if the required elements are present on the page
-    if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
+    // if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
 
     // Define the offset value in pixels (adjust this value as needed)
     const offset = 130;
@@ -454,3 +465,43 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+    // Check if the required elements are present on the page
+    // if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
+
+// Dynamic Work Images Height Start
+const sb_work_media = document.querySelectorAll('.sb-work-contents-wrapper');
+
+if(sb_work_media){
+    sb_work_media.forEach(media => {
+        const img = media.querySelector('img'); // Select the image inside this media element
+        if (img) {
+            img.addEventListener('load', () => {
+                const imageHeight = img.height; // Get the displayed image height
+                let imageHoverTransition = imageHeight / 8; // Calculate the hover transition time
+    
+                if (!Number.isInteger(imageHoverTransition)) {
+                    imageHoverTransition = Math.ceil(imageHoverTransition); // Round up the transition time
+                }
+    
+                // Set CSS custom properties
+                media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
+                media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
+            });
+    
+            // Ensure the height is set even if the image is already loaded
+            if (img.complete) {
+                const imageHeight = img.height; // Get the displayed image height
+                let imageHoverTransition = imageHeight / 600;
+    
+                if (!Number.isInteger(imageHoverTransition)) {
+                    imageHoverTransition = Math.ceil(imageHoverTransition);
+                }
+    
+                media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
+                media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
+            }
+        }
+    });
+};
+// Dynamic Work Images Height End

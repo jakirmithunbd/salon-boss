@@ -6,8 +6,7 @@
             <div class="sb-hero-404-img">
                 <img
                     src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-boss-404.png')); ?>"
-                    alt="Salon Boss 404"
-                />
+                    alt="" />
 
             </div>
             <div class="sb-hero-content text-center">
@@ -18,9 +17,7 @@
                 <h4>Page Not Found</h4>
                 <a
                     href="<?php echo esc_url(site_url()); ?>"
-                    class="sb-button button-bg-green"
-                    >Visit Home Page</a
-                >
+                    class="sb-button button-bg-green">Visit Home Page</a>
             </div>
         </div>
     </div>

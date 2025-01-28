@@ -12,29 +12,24 @@ get_header(); ?>
             if ($home_hero_banner):
 
                 $hero_banner_content = $home_hero_banner['content'];
-                $hero_banner_media = $home_hero_banner['media'];
-
-                ; ?>
+                $hero_banner_media = $home_hero_banner['media'];; ?>
                 <div class="sb-hero-content text-center-mobile">
 
                     <?php
                     $hero_banner_title = $hero_banner_content['title'];
                     $hero_banner_subtitle = $hero_banner_content['sub_title'];
                     $hero_banner_description = $hero_banner_content['description'];
-                    $hero_banner_buttons = $hero_banner_content['buttons_group'];
-                    ; ?>
+                    $hero_banner_buttons = $hero_banner_content['buttons_group'];; ?>
                     <h1>
                         <?php
-                        echo wp_kses_post($hero_banner_title ?? '')
-                        ; ?>
+                        echo wp_kses_post($hero_banner_title ?? ''); ?>
                     </h1>
                     <h4>
                         <?php echo esc_html($hero_banner_subtitle); ?>
                     </h4>
                     <p>
                         <?php
-                        echo wp_kses_post($hero_banner_description ?? '')
-                        ; ?>
+                        echo wp_kses_post($hero_banner_description ?? ''); ?>
                     </p>
 
 
@@ -54,14 +49,15 @@ get_header(); ?>
                                             ? 'icon-position-right'
                                             : 'icon-position-left';
                                     }
-                                    ?>
+                            ?>
 
                                     <a href="<?php echo esc_url($f_button['link']['url']); ?>"
                                         target="<?php echo esc_attr($f_button['link']['target']); ?>"
                                         class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
                                         <?php echo esc_html($f_button['link']['title']); ?>
                                     </a>
-                                <?php endforeach; endif; ?>
+                            <?php endforeach;
+                            endif; ?>
 
                         </div>
                     <?php endif; ?>
@@ -72,9 +68,7 @@ get_header(); ?>
                 <div class="sb-hero-image flex-center">
                     <?php
 
-                    $hero_banner_image = $hero_banner_media['image'];
-
-                    ; ?>
+                    $hero_banner_image = $hero_banner_media['image'];; ?>
                     <img src="<?php echo esc_url($hero_banner_image['url'] ?? ''); ?>"
                         alt="<?php echo esc_attr($hero_banner_image['alt'] ?? ''); ?>" />
 
@@ -95,17 +89,14 @@ get_header(); ?>
         if ($who_we_help_section):
 
             $who_we_help_section_titles = $who_we_help_section['content_area'] ?? '';
-            $who_we_help_section_titles_image = $who_we_help_section['title_image'] ?? '';
-
-            ; ?>
+            $who_we_help_section_titles_image = $who_we_help_section['title_image'] ?? '';; ?>
 
             <div class="sb-row">
                 <div class="sb-section-title text-center-mobile">
                     <?php
                     $section_title = $who_we_help_section_titles['title'];
                     $section_sub_title = $who_we_help_section_titles['sub_title'];
-                    $section_description = $who_we_help_section_titles['description'];
-                    ; ?>
+                    $section_description = $who_we_help_section_titles['description'];; ?>
                     <h5><?php echo esc_html($section_sub_title ?? ''); ?></h5>
                     <h3><?php echo wp_kses_post($section_title ?? ''); ?></h3>
                     <p><?php echo esc_attr($section_description ?? ''); ?></p>
@@ -117,8 +108,7 @@ get_header(); ?>
 
                 <div class="sb-help-wrapper">
                     <?php
-                    $who_we_help_services = $who_we_help_section['who_we_help_services'];
-                    ; ?>
+                    $who_we_help_services = $who_we_help_section['who_we_help_services'];; ?>
                     <div class="sb-help-service-list">
                         <?php
                         if ($who_we_help_services):
@@ -127,8 +117,7 @@ get_header(); ?>
                                 $who_we_help_service_description = $who_we_help_service['description'];
                                 $who_we_help_service_explor = $who_we_help_service['explor_button'];
                                 $who_we_help_service_image = $who_we_help_service['image'];
-                                $image_position_class = $who_we_help_service['image_position'] ?? '';
-                                ; ?>
+                                $image_position_class = $who_we_help_service['image_position'] ?? '';; ?>
 
                                 <div class="sb-image-box <?php echo $image_position_class; ?>">
                                     <!-- image-position-right / image-position-top -->
@@ -144,7 +133,7 @@ get_header(); ?>
                                     </div>
                                 </div>
                                 <!-- / Image Box  -->
-                                <?php
+                        <?php
                             endforeach;
                         endif;
                         ?>
@@ -152,9 +141,7 @@ get_header(); ?>
 
                     <?php
                     $explor_service_button = $who_we_help_section['explore_service'];
-                    if ($explor_service_button):
-
-                        ; ?>
+                    if ($explor_service_button):; ?>
                         <a href="<?php echo esc_url($explor_service_button['url'] ?? site_url()); ?>"
                             class="sb-button button-bg-green button-icon-scissor icon-position-right">
                             <?php echo esc_attr(!empty($explor_service_button['title']) ? $explor_service_button['title'] : 'Explore our services'); ?>
@@ -175,7 +162,7 @@ get_header(); ?>
             $what_we_do_section_title = $what_we_do_section['title'];
             $what_we_do_section_sub_title = $what_we_do_section['sub_title'];
             $what_we_do_section_description = $what_we_do_section['description'];
-            ?>
+        ?>
 
             <div class="sb-section-title text-center">
                 <h5><?php echo esc_html($what_we_do_section_sub_title ?? ''); ?></h5>
@@ -196,14 +183,13 @@ get_header(); ?>
                         $what_we_do_service_button = $what_we_do_content['button'];
                         $service_image_position = $what_we_do_content['image_position'];
 
-                        ?>
+                ?>
 
                         <div class="sb-card <?php echo esc_attr($service_image_position); ?>">
                             <!-- image-position-right / image-position-top / image-position-top-left / image-position-top-right -->
                             <div class="sb-card-contents-wrapper d-flex align-center">
                                 <?php
-                                if ($what_we_do_service_image):
-                                    ; ?>
+                                if ($what_we_do_service_image):; ?>
                                     <div class="sb-card-image d-flex">
                                         <img src="<?php echo esc_url($what_we_do_service_image['url']); ?>"
                                             alt="<?php echo esc_attr($what_we_do_service_image['alt']); ?>">
@@ -222,7 +208,7 @@ get_header(); ?>
                         </div><!-- Sb Card  -->
 
 
-                    <?php endforeach;
+                <?php endforeach;
                 endif; ?>
             </div>
 
@@ -244,7 +230,7 @@ get_header(); ?>
             $title_area_sub_title = $about_us_title_area['sub_title'];
             $title_area_description = $about_us_title_area['description'];
 
-            ?>
+        ?>
             <div class="sb-row align-center">
                 <div class="sb-section-title text-center-mobile">
                     <h5><?php echo esc_html($title_area_sub_title ?? ''); ?></h5>
@@ -257,13 +243,13 @@ get_header(); ?>
                             foreach ($about_service as $service):
                                 $service_title = $service['title'];
                                 $service_description = $service['description'];
-                                ?>
+                        ?>
                                 <div class="sb-simple-card text-center-mobile">
                                     <h5><?php echo esc_html($service_title ?? ''); ?></h5>
                                     <!-- Fixed to echo instead of esc_html_e -->
                                     <p><?php echo wp_kses_post($service_description ?? ''); ?></p>
                                 </div>
-                                <?php
+                        <?php
                             endforeach;
                         endif;
                         ?>
@@ -271,47 +257,48 @@ get_header(); ?>
                     <div class="sb-buttons d-flex">
                         <?php
                         $about_service_buttons = $about_us_section['button_group'];
-                        
-                        if(!empty($about_service_buttons)) :
-                        foreach ($about_service_buttons as $button):
-                            $button_link = $button['button_link'] ?? '';
-                            $button_icon = $button['icon'] ?? '';
-                            $button_type = $button['button_type'] ?? '';
-                            $button_type_class = '';
-                            $button_icon_class = '';
-                            $position_class = '';
 
-                            // Determine button type class
-                            if ($button_type === false) {
-                                $button_type_class = 'button-bg-green';
-                            } elseif ($button_type === true) {
-                                $button_type_class = 'button-bg-pink';
-                            }
+                        if (!empty($about_service_buttons)) :
+                            foreach ($about_service_buttons as $button):
+                                $button_link = $button['button_link'] ?? '';
+                                $button_icon = $button['icon'] ?? '';
+                                $button_type = $button['button_type'] ?? '';
+                                $button_type_class = '';
+                                $button_icon_class = '';
+                                $position_class = '';
 
-                            // Determine button icon class and position
-                            if ($button_icon) {
-                                $button_icon_position = $button['icon_position'] ?? null; // Fixed the variable name
-                    
-                                if ($button_icon_position === false) {
-                                    $position_class = 'icon-position-left';
-                                } elseif ($button_icon_position === true) {
-                                    $position_class = 'icon-position-right';
-                                }
-
+                                // Determine button type class
                                 if ($button_type === false) {
-                                    $button_icon_class = 'button-icon-phone';
+                                    $button_type_class = 'button-bg-green';
                                 } elseif ($button_type === true) {
-                                    $button_icon_class = 'button-icon-scissor';
+                                    $button_type_class = 'button-bg-pink';
                                 }
-                            }
-                            ?>
 
-                            <a href="<?php echo esc_url($button_link['url']); ?>"
-                                class="sb-button <?php echo esc_attr($button_type_class . ' ' . $button_icon_class . ' ' . $position_class); ?>">
-                                <?php echo esc_html($button_link['title'] ?? ''); ?>
-                            </a>
+                                // Determine button icon class and position
+                                if ($button_icon) {
+                                    $button_icon_position = $button['icon_position'] ?? null; // Fixed the variable name
 
-                        <?php endforeach; endif; ?>
+                                    if ($button_icon_position === false) {
+                                        $position_class = 'icon-position-left';
+                                    } elseif ($button_icon_position === true) {
+                                        $position_class = 'icon-position-right';
+                                    }
+
+                                    if ($button_type === false) {
+                                        $button_icon_class = 'button-icon-phone';
+                                    } elseif ($button_type === true) {
+                                        $button_icon_class = 'button-icon-scissor';
+                                    }
+                                }
+                        ?>
+
+                                <a href="<?php echo esc_url($button_link['url']); ?>"
+                                    class="sb-button <?php echo esc_attr($button_type_class . ' ' . $button_icon_class . ' ' . $position_class); ?>">
+                                    <?php echo esc_html($button_link['title'] ?? ''); ?>
+                                </a>
+
+                        <?php endforeach;
+                        endif; ?>
                     </div>
                 </div>
                 <div class="sb-media">
@@ -334,6 +321,45 @@ get_header(); ?>
         <?php endif; ?>
     </div>
 </section><!-- About section -->
+
+<section class="sb-our-work">
+    <div class="container">
+        <div class="sb-section-title text-center">
+            <?php
+            $work_section_title = get_field('work_section_title');
+            ?>
+            <h3><?php echo wp_kses_post($work_section_title['title'] ?? ''); ?></h3>
+            <p><?php echo wp_kses_post($work_section_title['description'] ?? ''); ?></p>
+        </div>
+        <div class="sb-our-work-wrapper">
+            <?php
+            $work_item = get_field('work_item');
+            if ($work_item):
+                foreach ($work_item as $work):
+
+                    $work_color = $work['work_color'];
+                    $work_title = $work['work_title'];
+                    $work_image = $work['work_image'];
+            ?>
+                    <div class="sb-work-item" style="--sb-work-item-color: <?php echo esc_html($work_color ?? ""); ?>;">
+                        <div class="sb-work-contents-wrapper">
+                            <div class="sb-work-media relative flex-center">
+                                <h4><?php echo wp_kses_post($work_title ?? ""); ?></h4>
+                                <?php if ($work_image) { ?>
+                                    <img src="<?php echo esc_url($work_image['url']); ?>" alt="<?php echo esc_attr($work_image['alt'] ?? ""); ?>">
+                                <?php } ?>
+                            </div><!-- Work media  -->
+                        </div><!-- Contents Wrapper  -->
+                    </div><!-- Work item  -->
+
+            <?php
+                endforeach;
+            endif;
+            ?>
+
+        </div><!-- Our work wrapper  -->
+    </div> <!-- Container  -->
+</section><!-- Our work section  -->
 
 
 <?php get_template_part('/template-parts/globals/resource-center'); ?>
