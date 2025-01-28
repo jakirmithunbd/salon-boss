@@ -410,88 +410,64 @@ if (sb_counter) {
     });
 })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the content wrapper and the TOC container
+document.addEventListener('DOMContentLoaded', function () {
     const contentWrapper = document.getElementById('sb-blog-content');
     const tocContainer = document.querySelector('#sb-table-content ul');
+    if (!contentWrapper || !tocContainer) return;
 
-    // Check if the required elements are present on the page
-    // if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
-
-    // Define the offset value in pixels (adjust this value as needed)
     const offset = 130;
-
-    // Clear any placeholder items in the TOC container
     tocContainer.innerHTML = '';
 
-    // Select all h2, h3, and h4 elements inside the content wrapper
     const headings = contentWrapper.querySelectorAll('h2');
-
-    // Loop through all h2, h3, and h4 elements to create the TOC items
     headings.forEach((heading, index) => {
-        // Create a unique ID for each heading if not present
-        if (!heading.id) {
-            heading.id = 'heading-' + (index + 1);
-        }
+        if (!heading.id) heading.id = 'heading-' + (index + 1);
 
-        // Create a list item with a link to the heading
         const listItem = document.createElement('li');
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
-
-        // Add classes based on the heading level (h2, h3, h4)
         listItem.classList.add(`toc-${heading.tagName.toLowerCase()}`);
-
         listItem.appendChild(link);
-
-        // Add the list item to the TOC container
         tocContainer.appendChild(listItem);
     });
 
-    // Add scroll behavior with offset to each link
-    tocContainer.addEventListener('click', function(e) {
+    tocContainer.addEventListener('click', function (e) {
         if (e.target.tagName === 'A') {
             e.preventDefault();
             const targetId = e.target.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const targetPosition =
+                    targetElement.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         }
     });
 });
-
-    // Check if the required elements are present on the page
-    // if (!contentWrapper || !tocContainer) return; // Exit if elements are not found
 
 // Dynamic Work Images Height Start
 const sb_work_media = document.querySelectorAll('.sb-work-contents-wrapper');
 
 if(sb_work_media){
     sb_work_media.forEach(media => {
-        const img = media.querySelector('img'); // Select the image inside this media element
+        const img = media.querySelector('img'); 
         if (img) {
             img.addEventListener('load', () => {
-                const imageHeight = img.height; // Get the displayed image height
-                let imageHoverTransition = imageHeight / 8; // Calculate the hover transition time
+                const imageHeight = img.height; 
+                let imageHoverTransition = imageHeight / 8; 
     
                 if (!Number.isInteger(imageHoverTransition)) {
-                    imageHoverTransition = Math.ceil(imageHoverTransition); // Round up the transition time
+                    imageHoverTransition = Math.ceil(imageHoverTransition); 
                 }
     
-                // Set CSS custom properties
                 media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
                 media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
             });
     
-            // Ensure the height is set even if the image is already loaded
             if (img.complete) {
-                const imageHeight = img.height; // Get the displayed image height
+                const imageHeight = img.height; 
                 let imageHoverTransition = imageHeight / 600;
     
                 if (!Number.isInteger(imageHoverTransition)) {
@@ -504,4 +480,3 @@ if(sb_work_media){
         }
     });
 };
-// Dynamic Work Images Height End
