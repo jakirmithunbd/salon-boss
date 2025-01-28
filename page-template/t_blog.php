@@ -67,7 +67,7 @@ get_template_part('template-parts/page-banner');
 
             <div class="sb-blog-list d-flex flex-wrap" id="sb-blog-list"></div>
             <div class="sb-blog-load-more">
-                <button class="sb-button button-bg-green button-icon-phone icon-position-left">Load More</button>
+                <button class="sb-button button-bg-green"> <img style="width: 38px; margin-right: 10px;" src="<?php echo get_theme_file_uri('/assets/images/vectors/loading.svg')?>" alt="Loading">Load More</button>
             </div>
         </div>
     </section><!-- Blog  -->

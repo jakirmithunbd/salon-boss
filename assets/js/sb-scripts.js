@@ -472,14 +472,14 @@ const sb_work_media = document.querySelectorAll('.sb-work-contents-wrapper');
 
 if(sb_work_media){
     sb_work_media.forEach(media => {
-        const img = media.querySelector('img');
+        const img = media.querySelector('img'); // Select the image inside this media element
         if (img) {
             img.addEventListener('load', () => {
-                const imageHeight = img.height;
-                let imageHoverTransition = imageHeight / 600;
+                const imageHeight = img.height; // Get the displayed image height
+                let imageHoverTransition = imageHeight / 600; // Calculate the hover transition time
     
                 if (!Number.isInteger(imageHoverTransition)) {
-                    imageHoverTransition = Math.ceil(imageHoverTransition);
+                    imageHoverTransition = Math.ceil(imageHoverTransition); // Round up the transition time
                 }
     
                 // Set CSS custom properties
@@ -487,6 +487,18 @@ if(sb_work_media){
                 media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
             });
     
+            // Ensure the height is set even if the image is already loaded
+            if (img.complete) {
+                const imageHeight = img.height; // Get the displayed image height
+                let imageHoverTransition = imageHeight / 600;
+    
+                if (!Number.isInteger(imageHoverTransition)) {
+                    imageHoverTransition = Math.ceil(imageHoverTransition);
+                }
+    
+                media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
+                media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
+            }
         }
     });
 };

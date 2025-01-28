@@ -88,7 +88,15 @@ function sb_filter_posts_function()
 
                         <span class="sb-blog-date"><?php echo get_the_date(); ?></span>
                         <div class="sb-card-btn">
-                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo wp_kses_post('Read Article >'); ?></a>
+                            <?php $read_more = '';
+                            if ($post_type == 'case-study') {
+                                $read_more = 'Explore Case Study >';
+                            } elseif ($post_type == 'resource') {
+                                $read_more = 'Explore Resource >';
+                            } else {
+                                $read_more = 'Read Article >';
+                            } ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo $read_more; ?></a>
                         </div>
                     </div>
                 </div>

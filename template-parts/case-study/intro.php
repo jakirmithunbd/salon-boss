@@ -17,7 +17,7 @@
                 <?php if (get_the_post_thumbnail_url()) : ?>
                     <div class="sb-hero-image-title">
                         <button class="link-available">
-                            Salon Suite Owners Watch This Video ☝️
+                            Explore How We Helped This Client
                         </button>
                     </div>
                 <?php endif; ?>
