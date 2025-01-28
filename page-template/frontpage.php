@@ -337,17 +337,23 @@ get_header(); ?>
             if ($work_item):
                 foreach ($work_item as $work):
 
-                    $work_color = $work['work_color'];
                     $work_title = $work['work_title'];
                     $work_image = $work['work_image'];
+                    $work_url = $work['work_url'];
             ?>
-                    <div class="sb-work-item" style="--sb-work-item-color: <?php echo esc_html($work_color ?? ""); ?>;">
+                    <div class="sb-work-item">
                         <div class="sb-work-contents-wrapper">
                             <div class="sb-work-media relative flex-center">
                                 <h4><?php echo wp_kses_post($work_title ?? ""); ?></h4>
                                 <?php if ($work_image) { ?>
                                     <img src="<?php echo esc_url($work_image['url']); ?>" alt="<?php echo esc_attr($work_image['alt'] ?? ""); ?>">
                                 <?php } ?>
+                                <a class="sb-workl-learn-more" 
+                                href="<?php echo esc_url($work_url['url'] ?? site_url()); ?>"
+                                target="<?php echo esc_attr($work_url['target'] ?? ""); ?>"
+                                >
+                                <?php echo esc_html($work_url['title'] ?? "Learn more"); ?>
+                                </a>
                             </div><!-- Work media  -->
                         </div><!-- Contents Wrapper  -->
                     </div><!-- Work item  -->

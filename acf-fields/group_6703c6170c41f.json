@@ -1148,10 +1148,10 @@
                 },
                 {
                     "key": "field_679781f8d9c74",
-                    "label": "Work Color",
-                    "name": "work_color",
+                    "label": "Work Url",
+                    "name": "work_url",
                     "aria-label": "",
-                    "type": "color_picker",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1160,10 +1160,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "enable_opacity": 0,
-                    "return_format": "string",
-                    "allow_in_bindings": 0,
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
                     "parent_repeater": "field_67977dd8d285e"
                 }
             ]
@@ -1189,5 +1187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737982509
+    "modified": 1738046747
 }
