@@ -461,7 +461,7 @@ section {
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;
-        background-color: $primary;
+        background-color: currentColor;
         right: 0;
         top: calc(50% - 5px);
         @extend .transition;
@@ -2154,6 +2154,38 @@ section:has(.sb-video.video-popup-active) {
                 background: #363179;
             }
 
+        }
+    }
+}
+
+
+// Trusted Customer logo slider style 
+
+.sb-trusted-customer {
+    padding-top: 85px;
+
+    @include breakpoint(1024) {
+        padding-top: 40px;
+    }
+
+    h5 {
+        @include font(15, 27);
+        color: $white;
+        letter-spacing: 0.16px;
+    }
+    .trusted-customer-logo {
+        .trusted-logo-item {
+            padding: 0 10px;
+
+            .trusted-logo-wrapper {
+                min-height: 52px;
+                @extend .flex-center;
+                padding: 0 10px;
+
+                @include breakpoint(575) {
+                    padding: 0;
+                }
+            }
         }
     }
 }
