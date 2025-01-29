@@ -17,12 +17,27 @@ if (!empty($content['title'])):
             <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
                 <?php
-                get_template_part('template-parts/banner-slider', null, ['slider' => $slider]);
 
                 if ($image_on && $image):
                     $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
                 ?>
 
+                    <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
+                        <?php
+                        if (isset($slider)) :
+                            get_template_part('template-parts/banner-slider', null, ['slider' => $slider]);
+                        endif;
+                        ?>
+                        <?php if ($media['image']) {
+                            printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr($media['image']['title']));
+                        } ?>
+
+                        <?php if ($media['title']): ?>
+                            <div class="sb-hero-image-title">
+                                <button class="link-available"><?php echo esc_html($media['title']); ?></button>
+                            </div>
+                        <?php endif; ?>
+                    </div>
 
                 <?php endif;
                 if ($video_on && $video):
