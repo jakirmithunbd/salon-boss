@@ -353,7 +353,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "60",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -374,7 +374,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "15",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -526,14 +526,43 @@
                     "selected": 0
                 },
                 {
+                    "key": "field_6799cf3337797",
+                    "label": "Enable Service Slider",
+                    "name": "enable_service_slider",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "If you enable service slider, Media ( Image, Video ) will not show.",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_67977dd8d285e",
                     "label": "Slider",
                     "name": "work_item",
                     "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6799cf3337797",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -658,5 +687,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738124711
+    "modified": 1738136818
 }
