@@ -3,6 +3,7 @@ $hero = get_field('hero_section', get_queried_object_id());
 $media = $hero['media'];
 $video = $media['video'];
 $image = $media['image'];
+$slider = $hero['work_item'];
 
 $video_on = $media['is_video'] == true;
 $image_on = $media['is_video'] == false;
@@ -16,55 +17,45 @@ if (!empty($content['title'])):
             <div class="sb-row <?php echo esc_attr($media['media_alignment']); ?>">
 
                 <?php
+                get_template_part('template-parts/banner-slider', null, ['slider' => $slider]);
 
-                    if ($image_on && $image):
-                        $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
-                        ?>
+                if ($image_on && $image):
+                    $classes = !empty($media['title']) ? 'sb-image-title-available' : '';
+                ?>
 
-                        <div class="sb-hero-image d-flex flex-wrap <?php echo esc_attr($classes); ?>">
-                            <?php if ($media['image']) {
-                                printf('<img src="%s" alt="%s"/>', esc_url($media['image']['url']), esc_attr($media['image']['title']));
+
+                <?php endif;
+                if ($video_on && $video):
+
+                    $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
+                ?>
+
+                    <div class="sb-hero-video d-flex flex-wrap">
+                        <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>"
+                            style="background-image: url(<?php echo esc_url($media['video_thumbnail']['url']); ?>);">
+
+                            <?php if (!empty($video)) {
+                                printf('<div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>');
                             } ?>
 
-                            <?php if ($media['title']): ?>
-                                <div class="sb-hero-image-title">
-                                    <button class="link-available"><?php echo esc_html($media['title']); ?></button>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                    <?php endif;
-                    if($video_on && $video):
-
-                        $video_title_classes = !empty($media['title']) ? 'sb-video-title-available' : '';
-                        ?>
-
-                        <div class="sb-hero-video d-flex flex-wrap">
-                            <div class="sb-video flex-center <?php echo esc_attr($video_title_classes); ?>"
-                                style="background-image: url(<?php echo esc_url($media['video_thumbnail']['url']); ?>);">
-
-                                <?php if (!empty($video)) {
-                                    printf('<div class="sb-video-play-btn" style="--paly-button-color: #6FF2D8; --play-button-icon-color: #000;"></div>');
-                                } ?>
-
-                                <div class="sb-video-frame">
-                                    <div class="sb-video-wrapper">
-                                        <?php echo $video; ?>
-                                    </div>
+                            <div class="sb-video-frame">
+                                <div class="sb-video-wrapper">
+                                    <?php echo $video; ?>
                                 </div>
                             </div>
-
-                            <?php if ($media['title']): ?>
-                                <div class="sb-hero-video-title">
-                                    <button class="link-available"><?php echo esc_html($media['title']); ?></button>
-                                </div>
-                            <?php endif; ?>
                         </div>
 
-                    <?php endif; ?>
+                        <?php if ($media['title']): ?>
+                            <div class="sb-hero-video-title">
+                                <button class="link-available"><?php echo esc_html($media['title']); ?></button>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                <?php endif; ?>
 
                 <?php
-                
+
                 if (!empty($content)): ?>
                     <div class="sb-hero-content text-center-mobile">
                         <?php $bages = $content['hero_bages'];
@@ -94,14 +85,15 @@ if (!empty($content['title'])):
                                             ? 'icon-position-right'
                                             : 'icon-position-left';
                                     }
-                                    ?>
+                            ?>
 
                                     <a href="<?php echo esc_url($f_button['link']['url']); ?>"
                                         target="<?php echo esc_attr($f_button['link']['target']); ?>"
                                         class="sb-button button-bg-<?php echo esc_attr($color); ?> <?php echo esc_attr($icon_type); ?> <?php echo esc_attr($icon_position); ?>">
                                         <?php echo esc_html($f_button['link']['title']); ?>
                                     </a>
-                                <?php endforeach; endif; ?>
+                            <?php endforeach;
+                            endif; ?>
                         </div>
                     </div>
                 <?php endif; ?>
