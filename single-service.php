@@ -1,6 +1,6 @@
 <?php
 
-if( ! defined('ABSPATH' )) {
+if (! defined('ABSPATH')) {
     die('Direct File access not allow!');
 }
 
@@ -50,7 +50,7 @@ if (have_rows('single_service')):
 
         elseif (get_row_layout() == 'sb-client-logo-slider'):
             get_template_part('template-parts/client-logo-slider');
-            
+
         endif;
     endwhile;
 else:
