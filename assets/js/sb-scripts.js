@@ -475,7 +475,8 @@ if(sb_work_media){
         const img = media.querySelector('img');
         if (img) {
             img.addEventListener('load', () => {
-                const imageHeight = img.height; 
+                const imageHeight = img.height;
+                console.log(imageHeight)
                 let imageHoverTransition = imageHeight / 600;
     
                 if (!Number.isInteger(imageHoverTransition)) {
