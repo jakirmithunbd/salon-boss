@@ -468,38 +468,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Dynamic Work Images Height Start
-const sb_work_media = document.querySelectorAll('.sb-work-contents-wrapper');
+window.addEventListener('load', function() {
+    const sb_work_media = document.querySelectorAll(
+        '.sb-work-contents-wrapper'
+    );
 
-if(sb_work_media){
-    sb_work_media.forEach(media => {
-        const img = media.querySelector('img');
-        if (img) {
-            img.addEventListener('load', () => {
+    if (sb_work_media) {
+        sb_work_media.forEach((media) => {
+            const img = media.querySelector('img');
+
+            if (img) {
+                img.addEventListener('load', () => {
                 const imageHeight = img.height;
-                console.log(imageHeight)
-                let imageHoverTransition = imageHeight / 600;
-    
+                console.dir(imageHeight);
+
+                let imageHoverTransition = imageHeight / 400;
+
                 if (!Number.isInteger(imageHoverTransition)) {
                     imageHoverTransition = Math.ceil(imageHoverTransition);
                 }
 
-                media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
-                media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
-            });
-    
-            // Ensure the height is set even if the image is already loaded
-            if (img.complete) {
-                const imageHeight = img.height;
-                let imageHoverTransition = imageHeight / 600;
-    
-                if (!Number.isInteger(imageHoverTransition)) {
-                    imageHoverTransition = Math.ceil(imageHoverTransition);
+                media.style.setProperty(
+                    '--sb-work-image-hover-transition',
+                    `${imageHoverTransition}s`
+                );
+                media.style.setProperty(
+                    '--sb-work-image-height',
+                    `${imageHeight}px`
+                );
+                });
+
+                // Ensure the height is set even if the image is already loaded
+                if (img.complete) {
+                    const imageHeight = img.height;
+                    let imageHoverTransition = imageHeight / 400;
+
+                    if (!Number.isInteger(imageHoverTransition)) {
+                        imageHoverTransition = Math.ceil(imageHoverTransition);
+                    }
+
+                    media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
+                    media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
                 }
-    
-                media.style.setProperty('--sb-work-image-hover-transition', `${imageHoverTransition}s`);
-                media.style.setProperty('--sb-work-image-height', `${imageHeight}px`);
             }
-        }
-    });
-};
+        });
+    }
+})
 // Dynamic Work Images Height End
