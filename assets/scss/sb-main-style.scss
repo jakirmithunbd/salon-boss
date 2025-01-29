@@ -470,7 +470,6 @@
                     img {
                         position: absolute;
                         width: 100%;
-                        bottom: 0;
                         scroll-behavior: smooth;
                         transition: all 1s ease;
                         bottom: calc(100% - var(--sb-work-image-height));
