@@ -255,6 +255,13 @@ h4 {
         @include font(18, 30);
     }
 }
+h5 {
+    @include font(18, 30);
+
+    @include breakpoint(768) {
+        @include font(16, 24);
+    }
+}
 .width-fit {
     width: fit-content;
 }
@@ -332,6 +339,7 @@ section {
     @extend .transition, .relative, .flex-center;
 
     @include breakpoint(575) {
+        @include font(16, 22);
         width: 100%;
         gap: 10px;
         padding: 8px 15px;
@@ -608,6 +616,17 @@ section {
         strong,
         b {
             color: #fff;
+        }
+    }
+    .sb-section-tag {
+        margin-bottom: 10px;
+
+        h5 {
+            width: fit-content;
+            color: #000;
+            background: #FFCF93;
+            padding: 10px 14px;
+            border-radius: 10px;
         }
     }
 }

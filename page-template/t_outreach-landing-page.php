@@ -202,6 +202,62 @@ if (!empty($content['title'])):
     </div><!-- Container  -->
 </section><!-- Extend Service  -->
 
+<section class="sb-marketing-automation">
+    <div class="container">
+        <?php
+            $marketing_automation = get_field('marketing_automation');
+            $marketing_automation_content = $marketing_automation['marketing_automation_content'];
+            $marketing_automation_image = $marketing_automation['marketing_automation_image'];
+        ?>
+        <div class="sb-section-title text-center">
+            <div class="sb-section-tag">
+                <h5><?php echo esc_html($marketing_automation_content['sub_title'] ?? ''); ?></h5>
+            </div>
+            <h2><?php echo wp_kses_post($marketing_automation_content['title'] ?? ''); ?></h2>
+            <?php echo wp_kses_post($marketing_automation_content['description'] ?? ''); ?>
+        </div>
+        <div class="sb-marketing-media">
+            <?php if($marketing_automation_image): ?>
+                <img src="<?php echo esc_url($marketing_automation_image['url']); ?>" alt="<?php echo esc_attr($marketing_automation_image['alt']); ?>">
+            <?php endif; ?>
+        </div>
+    </div> <!-- Container  -->
+</section><!-- Marketing & Automation  -->
+
+<section class="sb-dominate-seo"> 
+    <div class="container">
+        <?php
+            $outreach_seo = get_field('outreach_seo');
+            $seo_content = $outreach_seo['seo_content'];
+            $seo_image = $outreach_seo['seo_image'];
+        ?>
+        <div class="sb-row align-center space-between">
+            <div class="sb-dominate-seo-media">
+                <?php if($seo_image): ?>
+                <img src="<?php echo esc_url($seo_image['url']); ?>" alt="<?php echo esc_attr($seo_image['alt']); ?>">
+                <?php endif; ?>
+            </div><!-- Seo  media  -->
+            <div class="sb-dominate-seo-content">
+                <div class="sb-section-title">
+                    <div class="sb-section-tag">
+                        <h5><?php echo esc_html($seo_content['sub_title'] ?? ''); ?></h5>
+                    </div>
+                    <h2><?php echo wp_kses_post($seo_content['title'] ?? ''); ?></h2>
+                    <?php echo wp_kses_post($seo_content['description'] ?? ''); ?>
+                </div>
+            </div><!-- Seo Content  -->
+        </div><!-- Row  -->
+        <div class="sb-seo-action text-center">
+            <?php
+                $seo_cta = $seo_content['seo_cta'];
+            ?>
+            <h3><?php echo wp_kses_post($seo_cta['cta_title'] ?? ''); ?></h3>
+            <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($seo_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($seo_cta['cta_button']['target']); ?>">
+                <?php echo esc_html($seo_cta['cta_button']['title']); ?>
+            </a>
+        </div><!-- Seo Action  -->
+    </div><!-- Container  -->  
+</section><!-- Dominate SEO -->
 
 
 

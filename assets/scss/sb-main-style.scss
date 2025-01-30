@@ -4823,11 +4823,6 @@
             .sb-buttons {
                 margin-top: 10px;
 
-                .sb-button {
-                    @include breakpoint(575) {
-                        @include font(16, 22);
-                    }
-                }
             }
             .sb-trusted-customer {
                 padding-top: 36px;
@@ -4982,6 +4977,135 @@
                     margin: 0;
                 }
 
+            }
+        }
+    }
+}
+// Marketing Automation style
+.sb-marketing-automation {
+    padding-top: 80px;
+
+    @include breakpoint(1024) {
+        padding-top: 60px;
+    }
+    @include breakpoint(768) {
+        padding-top: 40px;
+    }
+
+    .sb-section-title {
+        .sb-section-tag {
+            h5 {
+                margin: 0 auto;
+            }
+        }
+        
+        h2 {
+            color: $primary;
+        }
+        p {
+            @include font(16, 30);
+            width: 100%;
+            max-width: 795px;
+            margin: 0 auto;
+        }
+    }
+    .sb-marketing-media {
+        padding-top: 55px;
+
+        @include breakpoint(1024) {
+            padding-top: 40px;
+        }
+        @include breakpoint(768) {
+            padding-top: 30px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// Dominate SEO style
+.sb-dominate-seo {
+    padding-top: 180px;
+
+    @include breakpoint(1200) {        
+        padding-top: 120px;        
+    }
+    @include breakpoint(1024) {
+        padding-top: 80px;       
+    }
+    @include breakpoint(768) {
+        padding-top: 60px;
+    }        
+    
+    .sb-row {
+        gap: 60px;
+
+        @include breakpoint(1024) {
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        @include breakpoint(768) {
+            gap: 30px;
+        }
+        .sb-dominate-seo-media {
+            width: 30%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            img {
+                border-radius: 20px;
+            }
+        }
+        .sb-dominate-seo-content {
+            width: 50%;
+            flex-grow: 1;
+
+            @include breakpoint(1024) {
+                width: 100%;
+            }
+
+            .sb-section-title {
+                h2 {
+                    color: $primary;
+                }
+                .sb-section-tag {
+                    h5 {
+                        @include breakpoint(1024) {
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sb-seo-action {
+        padding-top: 80px;
+
+        @include breakpoint(1024) {
+            padding-top: 40px;
+        }
+        @include breakpoint(768) {
+            padding-top: 20px;
+        }
+        @include breakpoint(575) {
+            padding-top: 10px;
+        }
+        h3 {
+            @include font(40, 50);
+
+            @include breakpoint(1024) {
+                @include font(30, 40);
+            }
+            @include breakpoint(768) {
+                @include font(26, 36);
+            }
+            @include breakpoint(575) {
+                @include font(22, 32);
             }
         }
     }
