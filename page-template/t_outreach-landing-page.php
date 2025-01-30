@@ -224,7 +224,7 @@ if (!empty($content['title'])):
     </div> <!-- Container  -->
 </section><!-- Marketing & Automation  -->
 
-<section class="sb-dominate-seo"> 
+<section class="sb-media-with-cta sb-dominate-seo"> 
     <div class="container">
         <?php
             $outreach_seo = get_field('outreach_seo');
@@ -232,12 +232,12 @@ if (!empty($content['title'])):
             $seo_image = $outreach_seo['seo_image'];
         ?>
         <div class="sb-row align-center space-between">
-            <div class="sb-dominate-seo-media">
+            <div class="sb-media-with-cta-media">
                 <?php if($seo_image): ?>
                 <img src="<?php echo esc_url($seo_image['url']); ?>" alt="<?php echo esc_attr($seo_image['alt']); ?>">
                 <?php endif; ?>
             </div><!-- Seo  media  -->
-            <div class="sb-dominate-seo-content">
+            <div class="sb-media-with-cta-content">
                 <div class="sb-section-title">
                     <div class="sb-section-tag">
                         <h5><?php echo esc_html($seo_content['sub_title'] ?? ''); ?></h5>
@@ -247,7 +247,7 @@ if (!empty($content['title'])):
                 </div>
             </div><!-- Seo Content  -->
         </div><!-- Row  -->
-        <div class="sb-seo-action text-center">
+        <div class="sb-media-with-cta-action text-center">
             <?php
                 $seo_cta = $seo_content['seo_cta'];
             ?>
@@ -258,6 +258,80 @@ if (!empty($content['title'])):
         </div><!-- Seo Action  -->
     </div><!-- Container  -->  
 </section><!-- Dominate SEO -->
+
+<section class="sb-media-with-cta sb-accelerate-booking relative"> 
+    <div class="container">
+        <?php
+            $accelerate_book_targert_automation = get_field('accelerate_book_targert_automation');
+            $accelerate_book_content = $accelerate_book_targert_automation['accelerate_book_content'];
+            $accelerate_book_image = $accelerate_book_targert_automation['accelerate_book_image'];
+        ?>
+        <div class="sb-row align-center space-between">
+            <div class="sb-media-with-cta-media">
+                <?php if($accelerate_book_image): ?>
+                <img src="<?php echo esc_url($accelerate_book_image['url']); ?>" alt="<?php echo esc_attr($accelerate_book_image['alt']); ?>">
+                <?php endif; ?>
+            </div><!-- Seo  media  -->
+            <div class="sb-media-with-cta-content">
+                <div class="sb-section-title">
+                    <div class="sb-section-tag">
+                        <h5><?php echo esc_html($accelerate_book_content['sub_title'] ?? ''); ?></h5>
+                    </div>
+                    <h2><?php echo wp_kses_post($accelerate_book_content['title'] ?? ''); ?></h2>
+                    <?php echo wp_kses_post($accelerate_book_content['description'] ?? ''); ?>
+                </div>
+            </div><!-- Seo Content  -->
+        </div><!-- Row  -->
+        <div class="sb-media-with-cta-action text-center">
+            <?php
+                $accelerate_book_cta = $accelerate_book_content['accelerate_book_cta'];
+            ?>
+            <h3><?php echo wp_kses_post($accelerate_book_cta['cta_title'] ?? ''); ?></h3>
+            <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($accelerate_book_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($accelerate_book_cta['cta_button']['target']); ?>">
+                <?php echo esc_html($accelerate_book_cta['cta_button']['title']); ?>
+            </a>
+        </div><!-- Seo Action  -->
+    </div><!-- Container  -->  
+</section><!-- Accelerate Booking -->
+
+<section class="sb-bring-to-life">
+    <div class="container text-center">
+        <?php
+            $bring_to_life = get_field('bring_to_life');
+        ?>            
+        <div class="sb-section-title">
+            <h5><?php echo esc_html( $bring_to_life['sub_title'] ?? "" ); ?></h5>
+            <h3><?php echo wp_kses_post( $bring_to_life['title'] ?? "" ); ?></h3>
+        </div>
+        <div class="sb-bring-life-steps-wrapper d-flex flex-wrap justify-center">
+
+                <?php
+                    $bring_to_life_step = $bring_to_life['bring_to_life_step'];
+
+                    if($bring_to_life_step):
+                        foreach($bring_to_life_step as $index => $step):
+                ?>
+
+            <div class="sb-bring-life-step" style="
+            --bring-life-step-first-color: <?php echo esc_html( $step['step_first_color'] ?? '#FE8D9D' ); ?>; 
+            --bring-life-step-sec-color: <?php echo esc_html($step['step_second_color'] ?? '') ?>; 
+            ">
+                <h3 class="sb-bring-life-step-number"><?php echo esc_html($index + 1); ?></h3>
+                <h4 class="sb-bring-life-step-title"><?php echo esc_html( $step['step_title'] ?? "#F9A58C" ); ?></h4>
+            </div><!-- step  -->
+            <?php
+                endforeach;
+                endif;
+            ?>
+
+        </div><!-- Steps Wrapper  -->
+ 
+        <a href="<?php echo esc_url( $bring_to_life['bring_to_life_link']['url'] ?? "#" ); ?>" class="sb-button button-bg-green icon-position-right button-icon-phone"
+        target="<?php echo esc_attr( $bring_to_life['bring_to_life_link']['target'] ?? "" ); ?>">
+            <?php echo esc_html($bring_to_life['bring_to_life_link']['title'] ?? ''); ?>
+        </a>
+    </div><!-- Container  -->
+</section><!-- Bring to Life  -->
 
 
 

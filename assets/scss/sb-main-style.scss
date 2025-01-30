@@ -5025,7 +5025,7 @@
 }
 
 // Dominate SEO style
-.sb-dominate-seo {
+.sb-media-with-cta {
     padding-top: 180px;
 
     @include breakpoint(1200) {        
@@ -5049,7 +5049,7 @@
         @include breakpoint(768) {
             gap: 30px;
         }
-        .sb-dominate-seo-media {
+        .sb-media-with-cta-media {
             width: 30%;
             flex-grow: 1;
 
@@ -5061,7 +5061,7 @@
                 border-radius: 20px;
             }
         }
-        .sb-dominate-seo-content {
+        .sb-media-with-cta-content {
             width: 50%;
             flex-grow: 1;
 
@@ -5083,7 +5083,7 @@
             }
         }
     }
-    .sb-seo-action {
+    .sb-media-with-cta-action {
         padding-top: 80px;
 
         @include breakpoint(1024) {
@@ -5106,6 +5106,106 @@
             }
             @include breakpoint(575) {
                 @include font(22, 32);
+            }
+        }
+    }
+}
+// Accelerate Booking style 
+.sb-accelerate-booking {
+    padding-top: 90px;
+
+    @include breakpoint(1024) {
+        padding-top: 70px;
+    }
+    @include breakpoint(768) {
+        padding-top: 50px;
+    }
+    @include breakpoint(768) {
+        padding-top: 40px;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        aspect-ratio: 16/12.4;
+        left: 0;
+        top: -250px;
+        background-image: url(../images/accelerate_book_bg.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+// Bring To Life section style 
+.sb-bring-to-life {
+    padding-top: 140px;
+
+    @include breakpoint(1200) {
+        padding-top: 100px;
+    }
+    @include breakpoint(1024) {
+        padding-top: 80px;
+    }
+    @include breakpoint(768) {
+        padding-top: 60px;
+    }
+    @include breakpoint(575) {
+        padding-top: 40px;
+    }
+
+    .sb-bring-life-steps-wrapper {
+        column-gap: 25px;
+        row-gap: 35px;
+        padding: 20px 0 35px;
+
+        @include breakpoint(768) {
+            padding: 10px 0 30px;
+            row-gap: 25px;
+        }
+
+
+        .sb-bring-life-step {
+            width: 100%;
+            max-width: 240px;
+            @extend .d-flex, .flex-col, .align-center;
+            gap: 25px;
+
+            @include breakpoint(1024) {
+                gap: 15px;
+            }
+            @include breakpoint(768) {
+                gap: 10px;
+            }
+
+            .sb-bring-life-step-number {
+                @include font(40, 52);
+                color: var(--bring-life-step-first-color);
+                padding: 5px;
+                margin: 0;
+                width: 58px;
+                height: 58px;
+                @extend .flex-center;
+                background: linear-gradient(180deg, #171717 61.02%, #2C2C31 100%);
+                border: 1px solid var(--bring-life-step-first-color);
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px 0px var(--bring-life-step-first-color);
+
+                @include breakpoint(768) {
+                    @include font(32, 42);
+                }
+            }
+            .sb-bring-life-step-title {
+                @include font(28, 36);
+                background: linear-gradient(90.35deg, var(--bring-life-step-first-color) 11.01%, var(--bring-life-step-sec-color) 62.6%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                @include breakpoint(768) {
+                    @include font(24, 34);
+                }
             }
         }
     }
