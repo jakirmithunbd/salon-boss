@@ -5210,3 +5210,24 @@
         }
     }
 }
+
+// Case Studies style 
+.outreach-case-studies {
+
+    .sb-section-title {
+        p {
+            color: currentColor !important;
+        }
+    }
+    .sb-case-studies-card-list {
+        margin-top: 50px;
+
+        @include breakpoint(1024) {
+            margin-top: 30px;
+        }
+        @include breakpoint(768) {
+            margin-top: 20px;
+        }
+
+    }
+}

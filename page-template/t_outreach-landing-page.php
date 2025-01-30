@@ -333,6 +333,147 @@ if (!empty($content['title'])):
     </div><!-- Container  -->
 </section><!-- Bring to Life  -->
 
+<section class="sb-case-studies outreach-case-studies">
+    <div class="container">
+        <?php
+            $outreach_case_studies = get_field('outreach_case_studies');
+            $case_study_section_title = $outreach_case_studies['case_study_section_title'];
+            $cases = $outreach_case_studies['select_case_study'];
+        ?>
+        <div class="sb-section-title text-center">
+            <h2><?php echo wp_kses_post($case_study_section_title['title'] ?? ""); ?></h2>
+           <?php echo wp_kses_post( $case_study_section_title['description'] ?? "" ); ?>
+        </div>
+
+        
+        <div class="sb-case-studies-card-list d-flex flex-wrap justify-center">
+
+            <?php if (!empty($cases)) : foreach ($cases as $case_id) : ?>
+                <?php
+                $case_post = get_post($case_id);
+                $case_title = get_the_title($case_post);
+                $case_permalink = get_permalink($case_post);
+                $case_image = get_field('featured_image', $case_id);
+                $case_image = get_field('featured_image', $case_id)
+                    ?? get_the_post_thumbnail_url($case_id, 'full')
+                    ?? esc_url(get_theme_file_uri('/assets/images/Placeholder Image.svg'));
+
+                $case_categories = wp_get_post_terms($case_id, 'case-study-category');
+                ?>
+                <div class="sb-post-card sb-card sb-card-filled-bg">
+                    <div class="sb-card-contents-wrapper">
+                        <div class="sb-card-image flex-center">
+                            <img src="<?php echo esc_url($case_image); ?>" alt="<?php echo esc_attr($case_title); ?>">
+                        </div>
+                        <div class="sb-card-content text-center">
+                            <ul class="unstyle d-flex flex-wrap">
+                                <?php if (!empty($case_categories)) : ?>
+                                    <?php foreach ($case_categories as $category) : ?>
+                                        <li>
+                                            <a href="<?php echo esc_url(get_term_link($category)); ?>">
+                                                <?php echo wp_kses_post($category->name); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ul>
+                            <h3><?php echo wp_kses_post($case_title); ?></h3>
+                            <div class="sb-card-btn">
+                                <a href="<?php echo esc_url($case_permalink); ?>">View Case Study ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Sb post card Item -->
+            <?php endforeach; endif; ?>
+
+        </div><!-- Case study list  -->
+    </div><!-- Container  -->
+</section><!-- Csae Studies  -->
+
+
+<section class="why-choose-sb">
+    <div class="container">
+
+        <?php
+            $salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach');
+
+            $salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'];
+            $customer_video = $salon_boss_expertise_outreach['customer_video_review'];
+            $vide_thumb = $salon_boss_expertise_outreach['video_thumbnail'] ?? get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
+            $client_name = $salon_boss_expertise_outreach['client_name'];
+            $client_title = $salon_boss_expertise_outreach['client_position'];
+            $website_link = $salon_boss_expertise_outreach['website_link'];
+            $quote = $salon_boss_expertise_outreach['quote'];
+        ?>
+
+        <div class="sb-row align-center">
+
+            <div class="sb-section-title text-center-mobile">
+                <h2><?php echo wp_kses_post( $salon_boss_expertise_content['title'] ?? "" ); ?></h2>
+                <h4><?php echo esc_html( $salon_boss_expertise_content['sub_title'] ?? "" ); ?></h4>
+
+                <?php echo wp_kses_post( $salon_boss_expertise_content['description'] ?? "" ); ?>
+
+                <a 
+                    class="sb-button button-bg-green icon-position-right button-icon-phone"
+                    href="<?php echo esc_url( $salon_boss_expertise_content['link']['url'] ?? "#" ) ?>"
+                    target="<?php echo esc_attr( $salon_boss_expertise_content['link']['target'] ?? "" ); ?>">
+                    <?php echo esc_html( $salon_boss_expertise_content['link']['title'] ?? "" ); ?>
+                </a>
+            </div>
+
+            <div class="sb-review-video">
+                <div class="sb-video flex-center" style="background-image: url(<?php echo $vide_thumb['url']; ?>);">
+                    <div class="sb-video-play-btn" style="--paly-button-color: #766EE8; --play-button-icon-color: #fff;"></div>
+                    <div class="sb-video-frame">
+                        <div class="sb-video-wrapper relative">
+                            <?php
+                            if (!empty($customer_video)): ?>
+                                <?php echo $customer_video; ?>
+                            <?php endif; ?>
+                            <button class="sb-video-close-btn">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-video-customer-info">
+                    <div class="review-video-customer-bio-wrapper d-flex space-between align-start">
+                        <div class="review-video-customer-bio text-center-mobile">
+                            <?php if (!empty($client_name)): ?>
+                                <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
+                            <?php endif; ?>
+                            <?php if (!empty($client_title)): ?>
+                                <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
+                            <?php endif; ?>
+                            <?php if (!empty($client_company)): ?>
+                            <?php printf('<a href="%s" target="%s" class="sb-customer-company-name">%s</a>', $client_company['url'], $client_company['target'], $client_company['title']);?>
+
+
+                            <?php endif; ?>
+                        </div>
+                        <div class="sb-customer-rating d-flex justify-end">
+                                <?php for ($i = 0; $i < 5; $i++): ?>
+                                    <span><img src="<?php echo get_theme_file_uri('/assets/images/vectors/rating-star.svg')?>" alt="Star"></span>
+                                <?php endfor; ?>
+                        </div>
+                    </div>
+                    <div class="sb-customer-quote text-center-mobile">
+                        <?php if (!empty($quote)): ?>
+                            <p>
+                                <?php echo wp_kses_post($quote); ?>
+                            </p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- Why Choose Us -->
+
 
 
 <?php get_footer(); ?>
