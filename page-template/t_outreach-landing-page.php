@@ -130,17 +130,17 @@ if (!empty($content['title'])):
 
 <?php get_template_part('/template-parts/hero-service-slider'); ?>
 
+<?php
+    $extend_service_section = get_field('extend_service_section');
+    $service_section_title = $extend_service_section['service_section_title'];
+
+    if(!empty($service_section_title['title'])):
+?>
 <section class="sb-extend-service">
     <div class="container">
         <div class="sb-row">
-            <?php
-                $extend_service_section = get_field('extend_service_section');
-            ?>
             <div class="sb-ex-service-content">
                 <div class="sb-section-title text-center-mobile">
-                    <?php
-                        $service_section_title = $extend_service_section['service_section_title'];
-                    ?>
                     <h2><?php echo wp_kses_post($service_section_title['title'] ?? ''); ?></h2>
                     <p><?php echo wp_kses_post($service_section_title['description'] ?? ''); ?></p>
 
@@ -180,38 +180,50 @@ if (!empty($content['title'])):
                 </div><!-- ex service wrapper  -->
             </div><!-- Service Content  -->
             <div class="sb-ex-service-form">
+                <?php
+                    $ex_form = $extend_service_section['form'];
+                    
+                    if($ex_form['form_title']):
+                ?>
                 <div class="sb-ex-form-heading flex-center">
-                    <?php
-                        $ex_form = $extend_service_section['form'];
-                    ?>
-                    <h3><?php echo wp_kses_post($ex_form['form_title'] ?? ''); ?></h3>
+                    <h3><?php echo wp_kses_post($ex_form['form_title']); ?></h3>
                 </div>
+                <?php  endif; ?>
                 <div class="sb-ex-from-wrapper">
+                    <?php
+                        $form_embed_code = $ex_form['form_embed_code'];
+                        if($form_embed_code):
+                    ?>
                     <div class="sb-form">
                         <?php
-                            $form_embed_code = $ex_form['form_embed_code'];
-
-                            if($form_embed_code):
-                                echo $form_embed_code;
-                            endif;
+                            echo $form_embed_code;
                         ?>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div><!-- Service form  --> 
         </div><!-- Row  -->
     </div><!-- Container  -->
 </section><!-- Extend Service  -->
+<?php endif; ?>
 
+<?php
+$marketing_automation = get_field('marketing_automation');
+$marketing_automation_content = $marketing_automation['marketing_automation_content'];
+$marketing_automation_image = $marketing_automation['marketing_automation_image'];
+
+if(!empty($marketing_automation_content['title'])):
+
+?>
 <section class="sb-marketing-automation">
     <div class="container">
         <?php
-            $marketing_automation = get_field('marketing_automation');
-            $marketing_automation_content = $marketing_automation['marketing_automation_content'];
-            $marketing_automation_image = $marketing_automation['marketing_automation_image'];
         ?>
         <div class="sb-section-title text-center">
             <div class="sb-section-tag">
-                <h5 class="m-auto"><?php echo esc_html($marketing_automation_content['sub_title'] ?? ''); ?></h5>
+                <?php if($marketing_automation_content['sub_title']): ?>
+                    <h5 class="m-auto"><?php echo esc_html($marketing_automation_content['sub_title'] ?? ''); ?></h5>
+                <?php endif; ?>
             </div>
             <h2><?php echo wp_kses_post($marketing_automation_content['title'] ?? ''); ?></h2>
             <?php echo wp_kses_post($marketing_automation_content['description'] ?? ''); ?>
@@ -223,14 +235,19 @@ if (!empty($content['title'])):
         </div>
     </div> <!-- Container  -->
 </section><!-- Marketing & Automation  -->
+<?php endif; ?>
 
+
+
+<?php
+    $outreach_seo = get_field('outreach_seo');
+    $seo_content = $outreach_seo['seo_content'];
+    $seo_image = $outreach_seo['seo_image'];
+
+    if(!empty($seo_content['title'])):
+?>
 <section class="sb-media-with-cta sb-dominate-seo"> 
     <div class="container">
-        <?php
-            $outreach_seo = get_field('outreach_seo');
-            $seo_content = $outreach_seo['seo_content'];
-            $seo_image = $outreach_seo['seo_image'];
-        ?>
         <div class="sb-row align-center space-between">
             <div class="sb-media-with-cta-media">
                 <?php if($seo_image): ?>
@@ -240,7 +257,9 @@ if (!empty($content['title'])):
             <div class="sb-media-with-cta-content">
                 <div class="sb-section-title">
                     <div class="sb-section-tag">
+                        <?php if($seo_content['sub_title']): ?>
                         <h5><?php echo esc_html($seo_content['sub_title'] ?? ''); ?></h5>
+                        <?php endif; ?>
                     </div>
                     <h2><?php echo wp_kses_post($seo_content['title'] ?? ''); ?></h2>
                     <?php echo wp_kses_post($seo_content['description'] ?? ''); ?>
@@ -252,20 +271,25 @@ if (!empty($content['title'])):
                 $seo_cta = $seo_content['seo_cta'];
             ?>
             <h3><?php echo wp_kses_post($seo_cta['cta_title'] ?? ''); ?></h3>
+            <?php if($seo_cta['cta_button']): ?>
             <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($seo_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($seo_cta['cta_button']['target']); ?>">
                 <?php echo esc_html($seo_cta['cta_button']['title']); ?>
             </a>
+            <?php endif; ?>
         </div><!-- Seo Action  -->
     </div><!-- Container  -->  
 </section><!-- Dominate SEO -->
+<?php endif; ?>
 
+<?php
+    $accelerate_book_targert_automation = get_field('accelerate_book_targert_automation');
+    $accelerate_book_content = $accelerate_book_targert_automation['accelerate_book_content'];
+    $accelerate_book_image = $accelerate_book_targert_automation['accelerate_book_image'];
+
+    if(!empty($accelerate_book_content['title'])):
+?>
 <section class="sb-media-with-cta sb-accelerate-booking relative"> 
     <div class="container">
-        <?php
-            $accelerate_book_targert_automation = get_field('accelerate_book_targert_automation');
-            $accelerate_book_content = $accelerate_book_targert_automation['accelerate_book_content'];
-            $accelerate_book_image = $accelerate_book_targert_automation['accelerate_book_image'];
-        ?>
         <div class="sb-row align-center space-between">
             <div class="sb-media-with-cta-media">
                 <?php if($accelerate_book_image): ?>
@@ -275,7 +299,9 @@ if (!empty($content['title'])):
             <div class="sb-media-with-cta-content">
                 <div class="sb-section-title">
                     <div class="sb-section-tag">
+                        <?php  if($accelerate_book_content['sub_title']): ?>
                         <h5><?php echo esc_html($accelerate_book_content['sub_title'] ?? ''); ?></h5>
+                        <?php endif; ?>
                     </div>
                     <h2><?php echo wp_kses_post($accelerate_book_content['title'] ?? ''); ?></h2>
                     <?php echo wp_kses_post($accelerate_book_content['description'] ?? ''); ?>
@@ -287,18 +313,23 @@ if (!empty($content['title'])):
                 $accelerate_book_cta = $accelerate_book_content['accelerate_book_cta'];
             ?>
             <h3><?php echo wp_kses_post($accelerate_book_cta['cta_title'] ?? ''); ?></h3>
+            <?php if($accelerate_book_cta['cta_button']): ?>
             <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($accelerate_book_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($accelerate_book_cta['cta_button']['target']); ?>">
                 <?php echo esc_html($accelerate_book_cta['cta_button']['title']); ?>
             </a>
+            <?php endif; ?>
         </div><!-- Seo Action  -->
     </div><!-- Container  -->  
 </section><!-- Accelerate Booking -->
+<?php endif; ?>
 
+<?php
+    $bring_to_life = get_field('bring_to_life');
+
+    if(!empty($bring_to_life['title'])):
+?>            
 <section class="sb-bring-to-life">
     <div class="container text-center">
-        <?php
-            $bring_to_life = get_field('bring_to_life');
-        ?>            
         <div class="sb-section-title">
             <h5><?php echo esc_html( $bring_to_life['sub_title'] ?? "" ); ?></h5>
             <h3><?php echo wp_kses_post( $bring_to_life['title'] ?? "" ); ?></h3>
@@ -326,20 +357,25 @@ if (!empty($content['title'])):
 
         </div><!-- Steps Wrapper  -->
  
+        <?php if($bring_to_life['bring_to_life_link']): ?>
         <a href="<?php echo esc_url( $bring_to_life['bring_to_life_link']['url'] ?? "#" ); ?>" class="sb-button button-bg-green icon-position-right button-icon-phone"
         target="<?php echo esc_attr( $bring_to_life['bring_to_life_link']['target'] ?? "" ); ?>">
             <?php echo esc_html($bring_to_life['bring_to_life_link']['title'] ?? ''); ?>
         </a>
+        <?php endif; ?>
     </div><!-- Container  -->
 </section><!-- Bring to Life  -->
+<?php endif; ?>
 
+<?php
+    $outreach_case_studies = get_field('outreach_case_studies');
+    $case_study_section_title = $outreach_case_studies['case_study_section_title'];
+    $cases = $outreach_case_studies['select_case_study'];
+
+    if(!empty($case_study_section_title['title'])):
+?>
 <section class="sb-case-studies outreach-case-studies">
     <div class="container">
-        <?php
-            $outreach_case_studies = get_field('outreach_case_studies');
-            $case_study_section_title = $outreach_case_studies['case_study_section_title'];
-            $cases = $outreach_case_studies['select_case_study'];
-        ?>
         <div class="sb-section-title text-center">
             <h2><?php echo wp_kses_post($case_study_section_title['title'] ?? ""); ?></h2>
            <?php echo wp_kses_post( $case_study_section_title['description'] ?? "" ); ?>
@@ -388,16 +424,19 @@ if (!empty($content['title'])):
 
         </div><!-- Case study list  -->
     </div><!-- Container  -->
-</section><!-- Csae Studies  -->
+</section><!-- Case Studies  -->
+<?php endif; ?>
 
+<?php
+$salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach');
+$salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'];
 
+if(!empty($salon_boss_expertise_content['title'])):
+?>
 <section class="why-choose-sb">
     <div class="container">
 
         <?php
-            $salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach');
-
-            $salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'];
             $customer_video = $salon_boss_expertise_outreach['customer_video_review'];
             $vide_thumb = $salon_boss_expertise_outreach['video_thumbnail'] ?? get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
             $client_name = $salon_boss_expertise_outreach['client_name'];
@@ -414,14 +453,16 @@ if (!empty($content['title'])):
 
                 <?php echo wp_kses_post( $salon_boss_expertise_content['description'] ?? "" ); ?>
 
+                <?php if($salon_boss_expertise_content['link']): ?>
                 <a 
                     class="sb-button button-bg-green icon-position-right button-icon-phone"
                     href="<?php echo esc_url( $salon_boss_expertise_content['link']['url'] ?? "#" ) ?>"
                     target="<?php echo esc_attr( $salon_boss_expertise_content['link']['target'] ?? "" ); ?>">
                     <?php echo esc_html( $salon_boss_expertise_content['link']['title'] ?? "" ); ?>
                 </a>
+                <?php endif; ?>
             </div>
-
+            <?php if($customer_video): ?>
             <div class="sb-review-video">
                 <div class="sb-video flex-center" style="background-image: url(<?php echo $vide_thumb['url']; ?>);">
                     <div class="sb-video-play-btn" style="--paly-button-color: #766EE8; --play-button-icon-color: #fff;"></div>
@@ -446,7 +487,7 @@ if (!empty($content['title'])):
                                 <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
                             <?php endif; ?>
                             <?php if (!empty($client_title)): ?>
-                                <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
+                                <h6 class="sb-customer-title"><?php echo wp_kses_post($client_title); ?></h6>
                             <?php endif; ?>
                             <?php if (!empty($client_company)): ?>
                             <?php printf('<a href="%s" target="%s" class="sb-customer-company-name">%s</a>', $client_company['url'], $client_company['target'], $client_company['title']);?>
@@ -469,19 +510,23 @@ if (!empty($content['title'])):
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
 
         </div>
     </div>
 </section><!-- Why Choose Us -->
+<?php endif; ?>
 
 
+<?php
+    $outreach_faq = get_field('outreach_faq');
+    $faqs_title = $outreach_faq['faqs_title'];
+    $faqs = $outreach_faq['faqs'];
+
+    if (!empty($faqs_title)) :
+?>
 <section class="sb-faq">
     <div class="container">
-        <?php
-            $outreach_faq = get_field('outreach_faq');
-            $faqs_title = $outreach_faq['faqs_title'];
-            $faqs = $outreach_faq['faqs'];
-        ?>
         <div class="sb-faq-section-title text-center">
             <h2><?php echo wp_kses_post($faqs_title ?? ''); ?></h2>
         </div>
@@ -508,34 +553,40 @@ if (!empty($content['title'])):
         </div>
     </div>
 </section><!-- Faq  -->
+<?php endif; ?>
 
+<?php
+    $outreach_booking_form = get_field('outreach_booking_form');
+
+    $section_title = $outreach_booking_form['section_title'];
+    $booking_form_code = $outreach_booking_form['form_embed_code'];
+
+    if(!empty($section_title['title'])):
+?>
 <section class="sb-outreach-booking-form sb-booking-form">
     <div class="container">
-        <?php
-            $outreach_booking_form = get_field('outreach_booking_form');
-
-            $section_title = $outreach_booking_form['section_title'];
-            $booking_form_code = $outreach_booking_form['form_embed_code'];
-        ?>
         <div class="sb-section-title text-center">
             <div class="sb-section-tag">
+                <?php if($section_title['sub_title']): ?>
                 <h5 class="m-auto"><?php echo esc_html($section_title['sub_title'] ?? ''); ?></h5>
+                <?php endif; ?>
             </div>
             <h2><?php echo wp_kses_post($section_title['title'] ?? ''); ?></h2>
             <?php echo wp_kses_post($section_title['description'] ?? ''); ?>
         </div>
 
         <div class="sb-booking-form-wrapper">
-            <div class="sb-form">
-                <?php
-                    if($booking_form_code) {
+            <?php if($booking_form_code): ?>
+                <div class="sb-form">
+                    <?php
                         echo $booking_form_code;
-                    };
-                ?>
-            </div>
+                    ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section><!-- Sb Booking Form  -->
+<?php endif; ?>
 
 
 

@@ -1178,6 +1178,10 @@
                             font-weight: 400;
                             color: $white;
                             margin: 0;
+
+                            span {
+                                color: #C5B7DD;
+                            }
                         }
                         .sb-customer-company-name {
                             @include font(16, 28);
@@ -4906,6 +4910,7 @@
                         }
 
                         h3 {
+                            color: #fff;
                             font-weight: 600;
                             text-transform: uppercase;
                             margin-bottom: 7px;
