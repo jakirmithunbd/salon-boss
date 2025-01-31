@@ -211,7 +211,7 @@ if (!empty($content['title'])):
         ?>
         <div class="sb-section-title text-center">
             <div class="sb-section-tag">
-                <h5><?php echo esc_html($marketing_automation_content['sub_title'] ?? ''); ?></h5>
+                <h5 class="m-auto"><?php echo esc_html($marketing_automation_content['sub_title'] ?? ''); ?></h5>
             </div>
             <h2><?php echo wp_kses_post($marketing_automation_content['title'] ?? ''); ?></h2>
             <?php echo wp_kses_post($marketing_automation_content['description'] ?? ''); ?>
@@ -473,6 +473,69 @@ if (!empty($content['title'])):
         </div>
     </div>
 </section><!-- Why Choose Us -->
+
+
+<section class="sb-faq">
+    <div class="container">
+        <?php
+            $outreach_faq = get_field('outreach_faq');
+            $faqs_title = $outreach_faq['faqs_title'];
+            $faqs = $outreach_faq['faqs'];
+        ?>
+        <div class="sb-faq-section-title text-center">
+            <h2><?php echo wp_kses_post($faqs_title ?? ''); ?></h2>
+        </div>
+
+        <div class="sb-accordians-wrapper d-flex flex-wrap">
+            <?php if (!empty($faqs)) : ?>
+                <?php foreach ($faqs as $faq) : ?>
+                    <?php
+                    $question = !empty($faq['question']) ? $faq['question'] : '';
+                    $answer = !empty($faq['answer']) ? $faq['answer'] : '';
+                    ?>
+                    <?php if (!empty($question) && !empty($answer)) : ?>
+                        <div class="sb-accordian-item">
+                            <div class="sb-accordian-header d-grid align-center relative">
+                                <h4><?php echo esc_html($question); ?></h4>
+                            </div>
+                            <div class="sb-accordian-body">
+                                <?php echo wp_kses_post($answer); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</section><!-- Faq  -->
+
+<section class="sb-outreach-booking-form sb-booking-form">
+    <div class="container">
+        <?php
+            $outreach_booking_form = get_field('outreach_booking_form');
+
+            $section_title = $outreach_booking_form['section_title'];
+            $booking_form_code = $outreach_booking_form['form_embed_code'];
+        ?>
+        <div class="sb-section-title text-center">
+            <div class="sb-section-tag">
+                <h5 class="m-auto"><?php echo esc_html($section_title['sub_title'] ?? ''); ?></h5>
+            </div>
+            <h2><?php echo wp_kses_post($section_title['title'] ?? ''); ?></h2>
+            <?php echo wp_kses_post($section_title['description'] ?? ''); ?>
+        </div>
+
+        <div class="sb-booking-form-wrapper">
+            <div class="sb-form">
+                <?php
+                    if($booking_form_code) {
+                        echo $booking_form_code;
+                    };
+                ?>
+            </div>
+        </div>
+    </div>
+</section><!-- Sb Booking Form  -->
 
 
 

@@ -4993,11 +4993,6 @@
     }
 
     .sb-section-title {
-        .sb-section-tag {
-            h5 {
-                margin: 0 auto;
-            }
-        }
         
         h2 {
             color: $primary;
@@ -5215,6 +5210,10 @@
 .outreach-case-studies {
 
     .sb-section-title {
+        width: 100%;
+        max-width: 780px;
+        margin: 0 auto;
+
         p {
             color: currentColor !important;
         }
@@ -5229,5 +5228,17 @@
             margin-top: 20px;
         }
 
+    }
+}
+
+// Outreach Booking form style
+.sb-outreach-booking-form {
+
+    .sb-section-title {
+        p {
+           width: 100%;
+           max-width: 720px;
+           margin: 0 auto;
+        }
     }
 }
