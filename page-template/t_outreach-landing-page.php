@@ -192,12 +192,18 @@ if (!empty($content['title'])):
                 <div class="sb-ex-from-wrapper">
                     <?php
                         $form_embed_code = $ex_form['form_embed_code'];
+                        $form_description = $ex_form['form_description'];
                         if($form_embed_code):
                     ?>
                     <div class="sb-form">
                         <?php
                             echo $form_embed_code;
+                            if($form_description):
                         ?>
+                        <div class="sb-form-description">
+                            <?php echo wp_kses_post($form_description); ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
                     <?php endif; ?>
                 </div>

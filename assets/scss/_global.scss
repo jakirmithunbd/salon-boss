@@ -2067,8 +2067,30 @@ section:has(.sb-video.video-popup-active) {
         margin: 20px 0 5px;
     }
 
-    .embed-form {
-        
+    .sb-form-description {
+        padding: 20px 40px 0;
+
+        @include breakpoint(575) {
+            padding: 20px 0 0;
+        }
+        @include breakpoint(575) {
+            padding: 20px 10px 0;
+        }
+
+        p {
+            margin: 0;
+            @include font(14, 21);
+            color: $black;
+
+            a {
+                color: $secondary;
+                @extend .transition;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
