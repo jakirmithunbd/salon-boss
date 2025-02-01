@@ -224,75 +224,85 @@ if (!empty($content['title'])):
     </div> <!-- Container  -->
 </section><!-- Marketing & Automation  -->
 
-<section class="sb-media-with-cta sb-dominate-seo"> 
-    <div class="container">
-        <?php
+    <section class="sb-media-with-cta sb-dominate-seo">
+        <div class="container">
+            <?php
             $outreach_seo = get_field('outreach_seo');
-            $seo_content = $outreach_seo['seo_content'];
-            $seo_image = $outreach_seo['seo_image'];
-        ?>
-        <div class="sb-row align-center space-between">
-            <div class="sb-media-with-cta-media">
-                <?php if($seo_image): ?>
-                <img src="<?php echo esc_url($seo_image['url']); ?>" alt="<?php echo esc_attr($seo_image['alt']); ?>">
-                <?php endif; ?>
-            </div><!-- Seo  media  -->
-            <div class="sb-media-with-cta-content">
-                <div class="sb-section-title">
-                    <div class="sb-section-tag">
-                        <h5><?php echo esc_html($seo_content['sub_title'] ?? ''); ?></h5>
-                    </div>
-                    <h2><?php echo wp_kses_post($seo_content['title'] ?? ''); ?></h2>
-                    <?php echo wp_kses_post($seo_content['description'] ?? ''); ?>
-                </div>
-            </div><!-- Seo Content  -->
-        </div><!-- Row  -->
-        <div class="sb-media-with-cta-action text-center">
-            <?php
-                $seo_cta = $seo_content['seo_cta'];
+            $seo_content = $outreach_seo['seo_content'] ?? null;
+            $seo_image = $outreach_seo['seo_image'] ?? null;
             ?>
-            <h3><?php echo wp_kses_post($seo_cta['cta_title'] ?? ''); ?></h3>
-            <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($seo_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($seo_cta['cta_button']['target']); ?>">
-                <?php echo esc_html($seo_cta['cta_button']['title']); ?>
-            </a>
-        </div><!-- Seo Action  -->
-    </div><!-- Container  -->  
-</section><!-- Dominate SEO -->
+            <div class="sb-row align-center space-between">
+                <div class="sb-media-with-cta-media">
+                    <?php if (!empty($seo_image)): ?>
+                        <img src="<?php echo esc_url($seo_image['url'] ?? ''); ?>" alt="<?php echo esc_attr($seo_image['alt'] ?? ''); ?>">
+                    <?php endif; ?>
+                </div><!-- Seo media -->
+                <div class="sb-media-with-cta-content">
+                    <div class="sb-section-title">
+                        <div class="sb-section-tag">
+                            <h5><?php echo esc_html($seo_content['sub_title'] ?? ''); ?></h5>
+                        </div>
+                        <h2><?php echo wp_kses_post($seo_content['title'] ?? ''); ?></h2>
+                        <?php echo wp_kses_post($seo_content['description'] ?? ''); ?>
+                    </div>
+                </div><!-- Seo Content -->
+            </div><!-- Row -->
+            <div class="sb-media-with-cta-action text-center">
+                <?php
+                $seo_cta = $seo_content['seo_cta'] ?? null;
+                $cta_button = $seo_cta['cta_button'] ?? null;
+                ?>
+                <?php if (!empty($seo_cta)): ?>
+                    <h3><?php echo wp_kses_post($seo_cta['cta_title'] ?? ''); ?></h3>
+                    <?php if (!empty($cta_button)): ?>
+                        <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($cta_button['url'] ?? '#'); ?>" target="<?php echo esc_attr($cta_button['target'] ?? '_self'); ?>">
+                            <?php echo esc_html($cta_button['title'] ?? 'Learn More'); ?>
+                        </a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div><!-- Seo Action -->
+        </div><!-- Container -->
+    </section><!-- Dominate SEO -->
 
-<section class="sb-media-with-cta sb-accelerate-booking relative"> 
-    <div class="container">
-        <?php
-            $accelerate_book_targert_automation = get_field('accelerate_book_targert_automation');
-            $accelerate_book_content = $accelerate_book_targert_automation['accelerate_book_content'];
-            $accelerate_book_image = $accelerate_book_targert_automation['accelerate_book_image'];
-        ?>
-        <div class="sb-row align-center space-between">
-            <div class="sb-media-with-cta-media">
-                <?php if($accelerate_book_image): ?>
-                <img src="<?php echo esc_url($accelerate_book_image['url']); ?>" alt="<?php echo esc_attr($accelerate_book_image['alt']); ?>">
-                <?php endif; ?>
-            </div><!-- Seo  media  -->
-            <div class="sb-media-with-cta-content">
-                <div class="sb-section-title">
-                    <div class="sb-section-tag">
-                        <h5><?php echo esc_html($accelerate_book_content['sub_title'] ?? ''); ?></h5>
-                    </div>
-                    <h2><?php echo wp_kses_post($accelerate_book_content['title'] ?? ''); ?></h2>
-                    <?php echo wp_kses_post($accelerate_book_content['description'] ?? ''); ?>
-                </div>
-            </div><!-- Seo Content  -->
-        </div><!-- Row  -->
-        <div class="sb-media-with-cta-action text-center">
+    <section class="sb-media-with-cta sb-accelerate-booking relative">
+        <div class="container">
             <?php
-                $accelerate_book_cta = $accelerate_book_content['accelerate_book_cta'];
+            $accelerate_book_targert_automation = get_field('accelerate_book_targert_automation');
+            $accelerate_book_content = $accelerate_book_targert_automation['accelerate_book_content'] ?? null;
+            $accelerate_book_image = $accelerate_book_targert_automation['accelerate_book_image'] ?? null;
             ?>
-            <h3><?php echo wp_kses_post($accelerate_book_cta['cta_title'] ?? ''); ?></h3>
-            <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($accelerate_book_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($accelerate_book_cta['cta_button']['target']); ?>">
-                <?php echo esc_html($accelerate_book_cta['cta_button']['title']); ?>
-            </a>
-        </div><!-- Seo Action  -->
-    </div><!-- Container  -->  
-</section><!-- Accelerate Booking -->
+            <div class="sb-row align-center space-between">
+                <div class="sb-media-with-cta-media">
+                    <?php if (!empty($accelerate_book_image)): ?>
+                        <img src="<?php echo esc_url($accelerate_book_image['url'] ?? ''); ?>" alt="<?php echo esc_attr($accelerate_book_image['alt'] ?? ''); ?>">
+                    <?php endif; ?>
+                </div><!-- Media -->
+                <div class="sb-media-with-cta-content">
+                    <div class="sb-section-title">
+                        <div class="sb-section-tag">
+                            <h5><?php echo esc_html($accelerate_book_content['sub_title'] ?? ''); ?></h5>
+                        </div>
+                        <h2><?php echo wp_kses_post($accelerate_book_content['title'] ?? ''); ?></h2>
+                        <?php echo wp_kses_post($accelerate_book_content['description'] ?? ''); ?>
+                    </div>
+                </div><!-- Content -->
+            </div><!-- Row -->
+            <div class="sb-media-with-cta-action text-center">
+                <?php
+                $accelerate_book_cta = $accelerate_book_content['accelerate_book_cta'] ?? null;
+                $cta_button = $accelerate_book_cta['cta_button'] ?? null;
+                ?>
+                <?php if (!empty($accelerate_book_cta)): ?>
+                    <h3><?php echo wp_kses_post($accelerate_book_cta['cta_title'] ?? ''); ?></h3>
+                    <?php if (!empty($cta_button)): ?>
+                        <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($cta_button['url'] ?? '#'); ?>" target="<?php echo esc_attr($cta_button['target'] ?? '_self'); ?>">
+                            <?php echo esc_html($cta_button['title'] ?? 'Learn More'); ?>
+                        </a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div><!-- CTA Action -->
+        </div><!-- Container -->
+    </section><!-- Accelerate Booking -->
 
 <section class="sb-bring-to-life">
     <div class="container text-center">
@@ -391,88 +401,87 @@ if (!empty($content['title'])):
 </section><!-- Csae Studies  -->
 
 
-<section class="why-choose-sb">
-    <div class="container">
+    <section class="why-choose-sb">
+        <div class="container">
 
-        <?php
-            $salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach');
+            <?php
+            $salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach') ?? [];
 
-            $salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'];
-            $customer_video = $salon_boss_expertise_outreach['customer_video_review'];
-            $vide_thumb = $salon_boss_expertise_outreach['video_thumbnail'] ?? get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
-            $client_name = $salon_boss_expertise_outreach['client_name'];
-            $client_title = $salon_boss_expertise_outreach['client_position'];
-            $website_link = $salon_boss_expertise_outreach['website_link'];
-            $quote = $salon_boss_expertise_outreach['quote'];
-        ?>
+            $salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'] ?? [];
+            $customer_video = $salon_boss_expertise_outreach['customer_video_review'] ?? '';
+            $video_thumb = $salon_boss_expertise_outreach['video_thumbnail']['url'] ?? get_theme_file_uri('/assets/images/Salon-Boss-Encore-Salon-Suites.png');
+            $client_name = $salon_boss_expertise_outreach['client_name'] ?? '';
+            $client_title = $salon_boss_expertise_outreach['client_position'] ?? '';
+            $client_company = $salon_boss_expertise_outreach['website_link'] ?? [];
+            $quote = $salon_boss_expertise_outreach['quote'] ?? '';
+            ?>
 
-        <div class="sb-row align-center">
+            <div class="sb-row align-center">
 
-            <div class="sb-section-title text-center-mobile">
-                <h2><?php echo wp_kses_post( $salon_boss_expertise_content['title'] ?? "" ); ?></h2>
-                <h4><?php echo esc_html( $salon_boss_expertise_content['sub_title'] ?? "" ); ?></h4>
+                <div class="sb-section-title text-center-mobile">
+                    <h2><?php echo wp_kses_post($salon_boss_expertise_content['title'] ?? ''); ?></h2>
+                    <h4><?php echo esc_html($salon_boss_expertise_content['sub_title'] ?? ''); ?></h4>
 
-                <?php echo wp_kses_post( $salon_boss_expertise_content['description'] ?? "" ); ?>
+                    <?php echo wp_kses_post($salon_boss_expertise_content['description'] ?? ''); ?>
 
-                <a 
-                    class="sb-button button-bg-green icon-position-right button-icon-phone"
-                    href="<?php echo esc_url( $salon_boss_expertise_content['link']['url'] ?? "#" ) ?>"
-                    target="<?php echo esc_attr( $salon_boss_expertise_content['link']['target'] ?? "" ); ?>">
-                    <?php echo esc_html( $salon_boss_expertise_content['link']['title'] ?? "" ); ?>
-                </a>
-            </div>
-
-            <div class="sb-review-video">
-                <div class="sb-video flex-center" style="background-image: url(<?php echo $vide_thumb['url']; ?>);">
-                    <div class="sb-video-play-btn" style="--paly-button-color: #766EE8; --play-button-icon-color: #fff;"></div>
-                    <div class="sb-video-frame">
-                        <div class="sb-video-wrapper relative">
-                            <?php
-                            if (!empty($customer_video)): ?>
-                                <?php echo $customer_video; ?>
-                            <?php endif; ?>
-                            <button class="sb-video-close-btn">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
+                    <?php if (!empty($salon_boss_expertise_content['link']['url'])): ?>
+                        <a
+                                class="sb-button button-bg-green icon-position-right button-icon-phone"
+                                href="<?php echo esc_url($salon_boss_expertise_content['link']['url']); ?>"
+                                target="<?php echo esc_attr($salon_boss_expertise_content['link']['target'] ?? '_self'); ?>">
+                            <?php echo esc_html($salon_boss_expertise_content['link']['title'] ?? 'Learn More'); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
 
-                <div class="review-video-customer-info">
-                    <div class="review-video-customer-bio-wrapper d-flex space-between align-start">
-                        <div class="review-video-customer-bio text-center-mobile">
-                            <?php if (!empty($client_name)): ?>
-                                <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
-                            <?php endif; ?>
-                            <?php if (!empty($client_title)): ?>
-                                <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
-                            <?php endif; ?>
-                            <?php if (!empty($client_company)): ?>
-                            <?php printf('<a href="%s" target="%s" class="sb-customer-company-name">%s</a>', $client_company['url'], $client_company['target'], $client_company['title']);?>
-
-
-                            <?php endif; ?>
+                <div class="sb-review-video">
+                    <div class="sb-video flex-center" style="background-image: url(<?php echo esc_url($video_thumb); ?>);">
+                        <div class="sb-video-play-btn" style="--paly-button-color: #766EE8; --play-button-icon-color: #fff;"></div>
+                        <div class="sb-video-frame">
+                            <div class="sb-video-wrapper relative">
+                                <?php if (!empty($customer_video)): ?>
+                                    <?php echo wp_kses_post($customer_video); ?>
+                                <?php endif; ?>
+                                <button class="sb-video-close-btn">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="sb-customer-rating d-flex justify-end">
+                    </div>
+
+                    <div class="review-video-customer-info">
+                        <div class="review-video-customer-bio-wrapper d-flex space-between align-start">
+                            <div class="review-video-customer-bio text-center-mobile">
+                                <?php if (!empty($client_name)): ?>
+                                    <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
+                                <?php endif; ?>
+                                <?php if (!empty($client_title)): ?>
+                                    <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
+                                <?php endif; ?>
+                                <?php if (!empty($client_company['url']) && !empty($client_company['title'])): ?>
+                                    <a href="<?php echo esc_url($client_company['url']); ?>" target="<?php echo esc_attr($client_company['target'] ?? '_blank'); ?>" class="sb-customer-company-name">
+                                        <?php echo esc_html($client_company['title']); ?>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                            <div class="sb-customer-rating d-flex justify-end">
                                 <?php for ($i = 0; $i < 5; $i++): ?>
-                                    <span><img src="<?php echo get_theme_file_uri('/assets/images/vectors/rating-star.svg')?>" alt="Star"></span>
+                                    <span><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/vectors/rating-star.svg')); ?>" alt="Star"></span>
                                 <?php endfor; ?>
+                            </div>
+                        </div>
+                        <div class="sb-customer-quote text-center-mobile">
+                            <?php if (!empty($quote)): ?>
+                                <p><?php echo wp_kses_post($quote); ?></p>
+                            <?php endif; ?>
                         </div>
                     </div>
-                    <div class="sb-customer-quote text-center-mobile">
-                        <?php if (!empty($quote)): ?>
-                            <p>
-                                <?php echo wp_kses_post($quote); ?>
-                            </p>
-                        <?php endif; ?>
-                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section><!-- Why Choose Us -->
+    </section><!-- Why Choose Us -->
 
 
 <section class="sb-faq">
