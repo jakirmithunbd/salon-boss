@@ -506,7 +506,7 @@ if (!empty($salon_boss_expertise_content['title'])):
                                             <h4 class="sb-customer-name"><?php echo esc_html($client_name); ?></h4>
                                         <?php endif; ?>
                                         <?php if (!empty($client_title)): ?>
-                                            <h6 class="sb-customer-title"><?php echo esc_html($client_title); ?></h6>
+                                            <h6 class="sb-customer-title"><?php echo wp_kses_post($client_title); ?></h6>
                                         <?php endif; ?>
                                         <?php if (!empty($client_company['url']) && !empty($client_company['title'])): ?>
                                             <a href="<?php echo esc_url($client_company['url']); ?>" target="<?php echo esc_attr($client_company['target'] ?? '_blank'); ?>" class="sb-customer-company-name">
