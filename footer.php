@@ -30,7 +30,7 @@
 
                 <div class="sb-footer-Company d-flex justify-center">
                     <div class="d-flex flex-col width-fit">
-                        <h4>Company</h4>
+                        <h4><?php echo esc_html__( 'Company', 'sb' ); ?></h4>
                         <div class="footer-Company-menu">
                             <?php wp_nav_menu([
                                 'theme_location' => 'company-menu',
@@ -57,13 +57,29 @@
                 </div>
 
                 <div class="sb-footer-subscribe-follow">
-                    <h4>Subscribe & Follow</h4>
-                    <p>Receive Marketing Tips Straight in Your Inbox</p>
+                <h4><?php echo esc_html__( 'Subscribe & Follow', 'sb' ); ?></h4>
+                    <p><?php echo esc_html__( 'Receive Marketing Tips Straight in Your Inbox', 'sb'); ?></p>
 
-                    <form action="" method="post" class="">
-                        <input placeholder="Enter Email Address" type="email" name="email" required>
-                        <input type="submit" class="submit-button w-button" value="Subscribe">
-                    </form>
+                    <?php 
+                        $newsletter_form_code = get_field('newsletter_form_code');
+                        if($newsletter_form_code) { ?>
+
+                        <div class="sb-newsletter-form-landing">
+                            <?php echo $newsletter_form_code; ?>
+                        </div>
+
+                        <?php    
+                        }else {
+                        ?>
+                            <form action="" method="post" class="">
+                                <input placeholder="Enter Email Address" type="email" name="email" required>
+                                <input type="submit" class="submit-button w-button" value="Subscribe">
+                            </form>
+
+                        <?php
+                        };
+                    ?>
+
 
                     <?php get_template_part('template-parts/social-media'); ?>
                 </div>
@@ -79,7 +95,7 @@
                 </div>
                 <div class="sb-footer-menu-bottom">
                     <ul class="unstyle d-flex align-center justify-end">
-                        <li><a href="#"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-Boss-Googlr-partner.png')); ?>" alt="Google Partner"></a></li>
+                        <li><a href="https://partnersdirectory.withgoogle.com/partners/6884349959" target="_blank"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-Boss-Googlr-partner.png')); ?>" alt="Google Partner"></a></li>
 
                         <?php $page_links = get_field('page_link_item', 'options');
                         if ($page_links) :

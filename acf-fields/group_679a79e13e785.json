@@ -3,6 +3,70 @@
     "title": "Outreach Landing Page",
     "fields": [
         {
+            "key": "field_67a053f184ca0",
+            "label": "Service Slider",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_67a0539736367",
+            "label": "",
+            "name": "service_slider",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67a0539736368",
+                    "label": "Service Name",
+                    "name": "service_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Enter your service name",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67a0539736367"
+                }
+            ]
+        },
+        {
             "key": "field_679a79e478711",
             "label": "Extend Servie, Expand Client",
             "name": "",
@@ -1661,6 +1725,45 @@
                     "delay": 0
                 }
             ]
+        },
+        {
+            "key": "field_67a0609ca29d6",
+            "label": "Newsletter Form",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_67a060c1a2111",
+            "label": "Newsletter Form Code",
+            "name": "newsletter_form_code",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -1684,5 +1787,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738388715
+    "modified": 1738563807
 }

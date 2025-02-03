@@ -5247,3 +5247,25 @@
         }
     }
 }
+
+// Footer Newsletter form style 
+.sb-newsletter-form-landing {
+    .signup-container {
+        input {
+            color: #000 !important;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    .form-builder--wrap-full {
+        padding: 0 !important;
+    }
+    .form-builder--btn-submit {
+
+        .btn {
+            @extend .sb-button;
+        }
+    }
+}
