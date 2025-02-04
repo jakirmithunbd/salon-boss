@@ -5210,13 +5210,18 @@
         }
     }
 }
+
+.sb-media-with-cta {
+    .sb-outreach-cta-sub-title {
+        text-transform: uppercase;
+    }
+}
 .sb-media-with-cta,
 .sb-bring-to-life {
     .sb-outreach-cta-sub-title {
         padding: 10px 10px 0;
         @include font(15, 28);
         color: #fff;
-        text-transform: uppercase;
     }
 }
 // Case Studies style 

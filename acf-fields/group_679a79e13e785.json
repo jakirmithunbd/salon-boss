@@ -162,7 +162,7 @@
                 },
                 {
                     "key": "field_679a7b4278716",
-                    "label": "Extend Service Item",
+                    "label": "Service Item",
                     "name": "extend_service_item",
                     "aria-label": "",
                     "type": "repeater",
@@ -174,7 +174,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
+                    "layout": "block",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
@@ -192,7 +192,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "20",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -219,7 +219,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "20",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -241,7 +241,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "20",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -259,7 +259,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "40",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -392,7 +392,7 @@
             "sub_fields": [
                 {
                     "key": "field_679b3c5b03869",
-                    "label": "Marketing Automation Content",
+                    "label": "Content",
                     "name": "marketing_automation_content",
                     "aria-label": "",
                     "type": "group",
@@ -404,7 +404,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "",
+                    "layout": "block",
                     "sub_fields": [
                         {
                             "key": "field_679b3c6e0386a",
@@ -473,7 +473,7 @@
                 },
                 {
                     "key": "field_679b3cc40386d",
-                    "label": "Marketing Automation Image",
+                    "label": "Image",
                     "name": "marketing_automation_image",
                     "aria-label": "",
                     "type": "image",
@@ -535,7 +535,7 @@
             "sub_fields": [
                 {
                     "key": "field_679b40c088c4b",
-                    "label": "Seo Content",
+                    "label": "Content",
                     "name": "seo_content",
                     "aria-label": "",
                     "type": "group",
@@ -630,7 +630,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b417e88c51",
-                                    "label": "CTA Title",
+                                    "label": "Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -651,7 +651,7 @@
                                 },
                                 {
                                     "key": "field_67a206a968d70",
-                                    "label": "CTA Sub Title",
+                                    "label": "Sub Title",
                                     "name": "cta_sub_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -672,7 +672,7 @@
                                 },
                                 {
                                     "key": "field_679b419988c52",
-                                    "label": "Cta Button",
+                                    "label": "Button",
                                     "name": "cta_button",
                                     "aria-label": "",
                                     "type": "link",
@@ -693,7 +693,7 @@
                 },
                 {
                     "key": "field_679b40c088c4f",
-                    "label": "Seo Image",
+                    "label": "Image",
                     "name": "seo_image",
                     "aria-label": "",
                     "type": "image",
@@ -755,7 +755,7 @@
             "sub_fields": [
                 {
                     "key": "field_679b4855c9eb6",
-                    "label": "Accelerate Booking Content",
+                    "label": "Content",
                     "name": "accelerate_book_content",
                     "aria-label": "",
                     "type": "group",
@@ -850,7 +850,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b4855c9ebb",
-                                    "label": "CTA Title",
+                                    "label": "Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -871,7 +871,7 @@
                                 },
                                 {
                                     "key": "field_67a207a0d3611",
-                                    "label": "CTA Sub Title",
+                                    "label": "Sub Title",
                                     "name": "cta_sub_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -892,7 +892,7 @@
                                 },
                                 {
                                     "key": "field_679b4855c9ebc",
-                                    "label": "Cta Button",
+                                    "label": "Button",
                                     "name": "cta_button",
                                     "aria-label": "",
                                     "type": "link",
@@ -913,7 +913,7 @@
                 },
                 {
                     "key": "field_679b4855c9ebd",
-                    "label": "Accelerate Booking Image",
+                    "label": "Image",
                     "name": "accelerate_book_image",
                     "aria-label": "",
                     "type": "image",
@@ -1017,7 +1017,7 @@
                 },
                 {
                     "key": "field_679b6a1e2c582",
-                    "label": "Bring to Life Step",
+                    "label": "Step",
                     "name": "bring_to_life_step",
                     "aria-label": "",
                     "type": "repeater",
@@ -1039,7 +1039,7 @@
                     "sub_fields": [
                         {
                             "key": "field_679b6a4a2c583",
-                            "label": "Step Title",
+                            "label": "Title",
                             "name": "step_title",
                             "aria-label": "",
                             "type": "text",
@@ -1061,7 +1061,7 @@
                         },
                         {
                             "key": "field_679b6a832c584",
-                            "label": "Step First Color",
+                            "label": "First Color",
                             "name": "step_first_color",
                             "aria-label": "",
                             "type": "color_picker",
@@ -1081,7 +1081,7 @@
                         },
                         {
                             "key": "field_679b6ac92c585",
-                            "label": "Step Second Color",
+                            "label": "Second Color",
                             "name": "step_second_color",
                             "aria-label": "",
                             "type": "color_picker",
@@ -1103,7 +1103,7 @@
                 },
                 {
                     "key": "field_679b6d362bc65",
-                    "label": "Bring to Life link",
+                    "label": "Link",
                     "name": "bring_to_life_link",
                     "aria-label": "",
                     "type": "link",
@@ -1288,7 +1288,7 @@
         },
         {
             "key": "field_679bcfcb1eac4",
-            "label": "Salon Boss Expertise (outreach)",
+            "label": "Salon Boss Expertise",
             "name": "salon_boss_expertise_outreach",
             "aria-label": "",
             "type": "group",
@@ -1671,7 +1671,7 @@
         },
         {
             "key": "field_679ccd48fb17a",
-            "label": "Outreach Booking form",
+            "label": "Booking form",
             "name": "outreach_booking_form",
             "aria-label": "",
             "type": "group",
@@ -1768,7 +1768,7 @@
                 },
                 {
                     "key": "field_679cc9ab2744a",
-                    "label": "Form Embed Code",
+                    "label": "Embed Code",
                     "name": "form_embed_code",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -1811,5 +1811,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738672280
+    "modified": 1738674891
 }
