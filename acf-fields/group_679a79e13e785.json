@@ -700,7 +700,7 @@
         },
         {
             "key": "field_679b4802c9eb4",
-            "label": "Accelerate Booking with target and Automation",
+            "label": "Booking Optimization And Automation",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -718,7 +718,7 @@
         },
         {
             "key": "field_679b4855c9eb5",
-            "label": "Accelerate Booking with target and Automation",
+            "label": "",
             "name": "accelerate_book_targert_automation",
             "aria-label": "",
             "type": "group",
@@ -1725,45 +1725,6 @@
                     "delay": 0
                 }
             ]
-        },
-        {
-            "key": "field_67a0609ca29d6",
-            "label": "Newsletter Form",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_67a060c1a2111",
-            "label": "Newsletter Form Code",
-            "name": "newsletter_form_code",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
         }
     ],
     "location": [
@@ -1787,5 +1748,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738563807
+    "modified": 1738669841
 }

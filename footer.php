@@ -61,7 +61,7 @@
                     <p><?php echo esc_html__( 'Receive Marketing Tips Straight in Your Inbox', 'sb'); ?></p>
 
                     <?php 
-                        $newsletter_form_code = get_field('newsletter_form_code');
+                        $newsletter_form_code = get_field('newsletter_form_code', 'options');
                         if($newsletter_form_code) { ?>
 
                         <div class="sb-newsletter-form-landing">
@@ -69,15 +69,7 @@
                         </div>
 
                         <?php    
-                        }else {
-                        ?>
-                            <form action="" method="post" class="">
-                                <input placeholder="Enter Email Address" type="email" name="email" required>
-                                <input type="submit" class="submit-button w-button" value="Subscribe">
-                            </form>
-
-                        <?php
-                        };
+                        }
                     ?>
 
 
@@ -95,7 +87,7 @@
                 </div>
                 <div class="sb-footer-menu-bottom">
                     <ul class="unstyle d-flex align-center justify-end">
-                        <li><a href="https://partnersdirectory.withgoogle.com/partners/6884349959" target="_blank"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-Boss-Googlr-partner.png')); ?>" alt="Google Partner"></a></li>
+                        <li><a href="<?php esc_url(the_field('google_partner_link', 'options'));?>" target="_blank"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/salon-Boss-Googlr-partner.png')); ?>" alt="Google Partner"></a></li>
 
                         <?php $page_links = get_field('page_link_item', 'options');
                         if ($page_links) :
