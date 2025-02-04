@@ -630,7 +630,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b417e88c51",
-                                    "label": "Cta Title",
+                                    "label": "CTA Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -638,7 +638,28 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "60",
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67a206a968d70",
+                                    "label": "CTA Sub Title",
+                                    "name": "cta_sub_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -659,7 +680,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "40",
+                                        "width": "100",
                                         "class": "",
                                         "id": ""
                                     },
@@ -829,7 +850,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b4855c9ebb",
-                                    "label": "Cta Title",
+                                    "label": "CTA Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -837,7 +858,28 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "60",
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67a207a0d3611",
+                                    "label": "CTA Sub Title",
+                                    "name": "cta_sub_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -858,7 +900,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "40",
+                                        "width": "100",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1069,12 +1111,33 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array",
                     "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_67a2080bc4b19",
+                    "label": "Link Sub Title",
+                    "name": "link_sub_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
         },
@@ -1748,5 +1811,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738669841
+    "modified": 1738672280
 }

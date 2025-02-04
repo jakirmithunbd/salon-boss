@@ -279,6 +279,10 @@ if (!empty($seo_content['title'])):
                     <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($seo_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($seo_cta['cta_button']['target']); ?>">
                         <?php echo esc_html($seo_cta['cta_button']['title']); ?>
                     </a>
+                <?php endif;
+                if($seo_cta['cta_sub_title']):
+                ?>
+                <h5 class="sb-outreach-cta-sub-title"><?php echo esc_html($seo_cta['cta_sub_title'] ?? ''); ?></h5>
                 <?php endif; ?>
             </div><!-- Seo Action  -->
         </div><!-- Container  -->
@@ -318,11 +322,17 @@ if (!empty($accelerate_book_content['title'])):
                 ?>
 
                 <h3><?php echo wp_kses_post($accelerate_book_cta['cta_title'] ?? ''); ?></h3>
+
                 <?php if ($accelerate_book_cta['cta_button']): ?>
                     <a class="sb-button button-bg-green icon-position-right button-icon-phone" href="<?php echo esc_url($accelerate_book_cta['cta_button']['url']); ?>" target="<?php echo esc_attr($accelerate_book_cta['cta_button']['target']); ?>">
                         <?php echo esc_html($accelerate_book_cta['cta_button']['title']); ?>
                     </a>
+                <?php endif;
+                    if($accelerate_book_cta['cta_sub_title']):
+                ?>
+                <h5 class="sb-outreach-cta-sub-title"><?php echo esc_html($accelerate_book_cta['cta_sub_title'] ?? ''); ?></h5>
                 <?php endif; ?>
+
             </div><!-- Seo Action  -->
         </div><!-- Container  -->
     </section><!-- Accelerate Booking -->
@@ -367,6 +377,10 @@ if (!empty($bring_to_life['title'])):
                     target="<?php echo esc_attr($bring_to_life['bring_to_life_link']['target'] ?? ""); ?>">
                     <?php echo esc_html($bring_to_life['bring_to_life_link']['title'] ?? ''); ?>
                 </a>
+            <?php endif;
+                if($bring_to_life['link_sub_title']):
+            ?>
+            <h5 class="sb-outreach-cta-sub-title"><?php echo esc_html($bring_to_life['link_sub_title'] ?? ''); ?></h5>
             <?php endif; ?>
         </div><!-- Container  -->
     </section><!-- Bring to Life  -->

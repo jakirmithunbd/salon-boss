@@ -5210,7 +5210,15 @@
         }
     }
 }
-
+.sb-media-with-cta,
+.sb-bring-to-life {
+    .sb-outreach-cta-sub-title {
+        padding: 10px 10px 0;
+        @include font(15, 28);
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
 // Case Studies style 
 .outreach-case-studies {
 
@@ -5249,23 +5257,3 @@
 }
 
 // Footer Newsletter form style 
-.sb-newsletter-form-landing {
-    .signup-container {
-        input {
-            color: #000 !important;
-        }
-        button {
-            display: none;
-        }
-    }
-
-    .form-builder--wrap-full {
-        padding: 0 !important;
-    }
-    .form-builder--btn-submit {
-
-        .btn {
-            @extend .sb-button;
-        }
-    }
-}
