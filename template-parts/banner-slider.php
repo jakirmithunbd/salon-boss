@@ -3,6 +3,7 @@ if (!function_exists('get_field') || empty($args['slider'])) {
     return;
 }
 $work_item = $args['slider'];
+
 ?>
 
 <div class="sb-our-work">

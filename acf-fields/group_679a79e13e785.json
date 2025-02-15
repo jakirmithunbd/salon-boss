@@ -86,7 +86,7 @@
         },
         {
             "key": "field_679a7a6078712",
-            "label": "Extend Service section",
+            "label": "",
             "name": "extend_service_section",
             "aria-label": "",
             "type": "group",
@@ -162,7 +162,7 @@
                 },
                 {
                     "key": "field_679a7b4278716",
-                    "label": "Service Item",
+                    "label": "Extend Service Item",
                     "name": "extend_service_item",
                     "aria-label": "",
                     "type": "repeater",
@@ -174,7 +174,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "block",
+                    "layout": "table",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
@@ -192,7 +192,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "20",
                                 "class": "",
                                 "id": ""
                             },
@@ -219,7 +219,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "20",
                                 "class": "",
                                 "id": ""
                             },
@@ -241,7 +241,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "20",
                                 "class": "",
                                 "id": ""
                             },
@@ -259,7 +259,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "40",
                                 "class": "",
                                 "id": ""
                             },
@@ -376,7 +376,7 @@
         },
         {
             "key": "field_679b3bb33a671",
-            "label": "Marketing Automation",
+            "label": "",
             "name": "marketing_automation",
             "aria-label": "",
             "type": "group",
@@ -519,7 +519,7 @@
         },
         {
             "key": "field_679b40bf88c4a",
-            "label": "Local SEO",
+            "label": "",
             "name": "outreach_seo",
             "aria-label": "",
             "type": "group",
@@ -614,7 +614,7 @@
                         },
                         {
                             "key": "field_679b416188c50",
-                            "label": "Seo Cta",
+                            "label": "CTA",
                             "name": "seo_cta",
                             "aria-label": "",
                             "type": "group",
@@ -630,7 +630,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b417e88c51",
-                                    "label": "Title",
+                                    "label": "CTA Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -651,7 +651,7 @@
                                 },
                                 {
                                     "key": "field_67a206a968d70",
-                                    "label": "Sub Title",
+                                    "label": "CTA Sub Title",
                                     "name": "cta_sub_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -672,7 +672,7 @@
                                 },
                                 {
                                     "key": "field_679b419988c52",
-                                    "label": "Button",
+                                    "label": "Cta Button",
                                     "name": "cta_button",
                                     "aria-label": "",
                                     "type": "link",
@@ -850,7 +850,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_679b4855c9ebb",
-                                    "label": "Title",
+                                    "label": "CTA Title",
                                     "name": "cta_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -871,7 +871,7 @@
                                 },
                                 {
                                     "key": "field_67a207a0d3611",
-                                    "label": "Sub Title",
+                                    "label": "CTA Sub Title",
                                     "name": "cta_sub_title",
                                     "aria-label": "",
                                     "type": "text",
@@ -892,7 +892,7 @@
                                 },
                                 {
                                     "key": "field_679b4855c9ebc",
-                                    "label": "Button",
+                                    "label": "Cta Button",
                                     "name": "cta_button",
                                     "aria-label": "",
                                     "type": "link",
@@ -959,7 +959,7 @@
         },
         {
             "key": "field_679b695236616",
-            "label": "Bring to Life",
+            "label": "",
             "name": "bring_to_life",
             "aria-label": "",
             "type": "group",
@@ -1017,7 +1017,7 @@
                 },
                 {
                     "key": "field_679b6a1e2c582",
-                    "label": "Step",
+                    "label": "Bring to Life Step",
                     "name": "bring_to_life_step",
                     "aria-label": "",
                     "type": "repeater",
@@ -1039,7 +1039,7 @@
                     "sub_fields": [
                         {
                             "key": "field_679b6a4a2c583",
-                            "label": "Title",
+                            "label": "Step Title",
                             "name": "step_title",
                             "aria-label": "",
                             "type": "text",
@@ -1061,7 +1061,7 @@
                         },
                         {
                             "key": "field_679b6a832c584",
-                            "label": "First Color",
+                            "label": "Step First Color",
                             "name": "step_first_color",
                             "aria-label": "",
                             "type": "color_picker",
@@ -1081,7 +1081,7 @@
                         },
                         {
                             "key": "field_679b6ac92c585",
-                            "label": "Second Color",
+                            "label": "Step Second Color",
                             "name": "step_second_color",
                             "aria-label": "",
                             "type": "color_picker",
@@ -1120,7 +1120,7 @@
                 },
                 {
                     "key": "field_67a2080bc4b19",
-                    "label": "Link Sub Title",
+                    "label": "Sub Title",
                     "name": "link_sub_title",
                     "aria-label": "",
                     "type": "text",
@@ -1161,7 +1161,7 @@
         },
         {
             "key": "field_679bc60cfcae8",
-            "label": "Outreach Case Studies",
+            "label": "",
             "name": "outreach_case_studies",
             "aria-label": "",
             "type": "group",
@@ -1270,7 +1270,7 @@
         },
         {
             "key": "field_679bcf8e1eac3",
-            "label": "Salon Boss Expertise",
+            "label": "Expertise",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -1288,7 +1288,7 @@
         },
         {
             "key": "field_679bcfcb1eac4",
-            "label": "Salon Boss Expertise",
+            "label": "",
             "name": "salon_boss_expertise_outreach",
             "aria-label": "",
             "type": "group",
@@ -1302,6 +1302,27 @@
             },
             "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_67b0052d0bd4f",
+                    "label": "Hide & Show",
+                    "name": "salon_boss_expertise_switcher",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "Show",
+                    "ui_off_text": "Hide",
+                    "ui": 1
+                },
                 {
                     "key": "field_679bd541077d1",
                     "label": "Content",
@@ -1546,7 +1567,7 @@
         },
         {
             "key": "field_679cbef2d4217",
-            "label": "Outreach Faq",
+            "label": "",
             "name": "outreach_faq",
             "aria-label": "",
             "type": "group",
@@ -1562,7 +1583,7 @@
             "sub_fields": [
                 {
                     "key": "field_679cba9da5f5e",
-                    "label": "FAQs Title",
+                    "label": "Title",
                     "name": "faqs_title",
                     "aria-label": "",
                     "type": "text",
@@ -1671,7 +1692,7 @@
         },
         {
             "key": "field_679ccd48fb17a",
-            "label": "Booking form",
+            "label": "",
             "name": "outreach_booking_form",
             "aria-label": "",
             "type": "group",
@@ -1768,7 +1789,7 @@
                 },
                 {
                     "key": "field_679cc9ab2744a",
-                    "label": "Embed Code",
+                    "label": "Form Embed Code",
                     "name": "form_embed_code",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -1811,5 +1832,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738674891
+    "modified": 1739589007
 }

@@ -450,9 +450,10 @@ if (!empty($case_study_section_title['title'])):
 <?php
 $salon_boss_expertise_outreach = get_field('salon_boss_expertise_outreach');
 $salon_boss_expertise_content = $salon_boss_expertise_outreach['salon_boss_expertise_content'];
+$salon_boss_expertise_switcher = $salon_boss_expertise_outreach['salon_boss_expertise_switcher'];
 
-if (!empty($salon_boss_expertise_content['title'])):
-?>
+if (!empty($salon_boss_expertise_content['title']) && !empty($salon_boss_expertise_switcher)):
+    ?>
     <section class="why-choose-sb">
         <div class="container">
 
